@@ -3,7 +3,6 @@ Gebaseerd op [Eleventy](https://www.11ty.com).
 Het aanpassen van publicaties in Canvas gaat traag en ouderwets. Met deze applicatie kun je direct werken met markdown documenten en is het eindresultaat live te zien in een browser.  
 Dit werkt uiteraarde veel sneller en plezieriger dan html aanpassen in webformulieren etc.
 
-* Deze versie is gebaseerd op de layout van Deltion in Zwolle
 * Eenvoudig om te bouwen naar andere layouts
 * Alleen veelvoorkomende opmaak is toegepast:
     * Sections met tekst en afbeeldingen (afbeeldingen links of rechts)
