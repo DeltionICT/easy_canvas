@@ -1,0 +1,6 @@
+{
+    "title": "Test",
+    "layout": "nav_layout.njk",
+    "permalink": "/test/{{ title | slug }}/{{ page.index }}",
+    "tags": "test"
+}
