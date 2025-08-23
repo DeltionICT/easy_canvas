@@ -7,7 +7,108 @@
     <title>Easy Canvas | Postgresql</title>
     <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
     <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
-    <link href="/easy_canvas/_css/extra.css" rel="stylesheet">
+    <style>
+
+    body {
+        padding:0;
+        margin:0;
+        font-family: BuenosAires, sans-serif;;
+    }
+
+    details {
+        /* border-bottom: 1px solid #ccc; */
+        font-family: BuenosAires, sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        border-radius: 1px;
+        margin-bottom: 0px;
+        background-color: #fff;
+        display: block;
+        outline: none;
+        padding: 20px 45px;
+        text-align: left;
+        transition: .4s;
+    }
+
+    summary {
+        font-size:18px;
+        padding-left: 25px;
+        cursor: pointer;
+        list-style: none;
+        /* Verberg de standaard marker */
+        position: relative;
+    }
+
+    summary::before {
+        content: '';
+        background-image: url('/easy_canvas/_assets/pijl.svg');
+        background-size: contain;
+        /* Zorgt ervoor dat de afbeelding binnen de box past */
+        background-repeat: no-repeat;
+        display: inline-block;
+        /* Maak het element een blok-element */
+        width: 1em;
+        /* Stel de gewenste grootte in */
+        height: 1em;
+        /* Zorg voor gelijke hoogte/breedte */
+        vertical-align: middle;
+        position: absolute;
+        left: 0px;
+        /* padding-right:28px; */
+        font-size: 24px;
+        line-height: 1;
+        transition: transform 0.3s;
+    }
+
+
+
+    details[open] summary::before {
+        background-image: url('/easy_canvas/_assets/pijl.svg');
+        transform: rotate(180deg);
+
+    }
+
+    details p {
+        font-family: BuenosAires, sans-serif;
+        font-weight: 400;
+        padding-left: 5px;
+        margin: 0;
+    }
+
+    details p.firstchild {
+        padding-top: 50px;
+    }
+
+            
+    .videoWrapper {
+        position: relative;
+        margin-top:2rem;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+    }
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+        background: #f5f4f7;
+    }  
+    
+    .adjusted-content {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 2rem 2.5rem;
+        background: #fff;
+        width: 65%;
+    }
+
+</style>
 </head>
 
 <body>
@@ -24,11 +125,19 @@
                     
                         <a href="/easy_canvas/dbq/introductie/">Introductie</a>
                     
+                        <a href="/easy_canvas/dbq/leerdoelen/">Leerdoelen</a>
+                    
                         <a href="/easy_canvas/dbq/installatie/">Installatie</a>
                     
                         <a href="/easy_canvas/dbq/postgresql/" aria-current="page" data-state="active">Postgresql</a>
                     
                         <a href="/easy_canvas/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+                    
+                        <a href="/easy_canvas/dbq/gegevens-filteren/">Gegevens filteren</a>
+                    
+                        <a href="/easy_canvas/dbq/crud/">CRUD</a>
+                    
+                        <a href="/easy_canvas/dbq/database-maken/">Database maken</a>
                     
                 </div>
             </div>
@@ -36,7 +145,7 @@
          <div class="deltionv2-content-section">
             <section class="deltionv2-textarea">
                 
-                <div style="display: flex; flex-direction: column; box-sizing: border-box; padding:2rem 2.5rem; background:#fff; width:65%;">
+                <div class="adjusted-content">
                 
                     <h1>Database Queries</h1>
 <h2>Postgresql</h2>
