@@ -1,6 +1,7 @@
 # Extra for eleventy
 # No need for a build-directory, in this case www
 www/
+docs/
 
 # OS specific
 # Folder view configuration files
