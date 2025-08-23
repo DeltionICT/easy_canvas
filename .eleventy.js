@@ -111,7 +111,7 @@ export default function(eleventyConfig) {
     });
 
     return {
-        pathPrefix: "//",
+        pathPrefix: "/easy_canvas/",
         dir: {
             input: "src",
             output: "docs",
