@@ -58,7 +58,6 @@ export default function(eleventyConfig) {
                 </section>`;
     });
 
-
     eleventyConfig.addPairedShortcode("navigatie", (content, title) => {
         return `<section class="deltionv2-addbanner">
                     <div class="deltionv2-addcontent">
@@ -111,23 +110,11 @@ export default function(eleventyConfig) {
         return `<div class="deltionv2-navigationbutton"><a href="${link}"><img src="/_assets/arrow-right-o.svg" alt="Arrow" />${text}<br /></a></div>`;
     });
 
-
-    // eleventyConfig.addPairedShortcode("accordeon_v2", (content, titel) => {
-    //     return `<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img
-    //                                     src="/_assets/pijl.svg"
-    //                                     alt="PijlOnder-1.svg"></div>
-    //                                     <summary>${titel}</summary>
-    //                                     <div class="deltionv2-accordion-panel"><details>${content}</details></div></div>`
-    // });
-
-
-    eleventyConfig.addPlugin(syntaxHighlight);
-
     return {
         pathPrefix: "//",
         dir: {
             input: "src",
-            output: "www",
+            output: "docs",
         },
     };
 }
