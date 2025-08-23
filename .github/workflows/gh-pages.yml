@@ -18,7 +18,7 @@ jobs:
           node-version: '24' # of de Node.js-versie die je wilt gebruiken
 
       - name: Install dependencies
-        run: npm c
+        run: npm ci
 
       - name: Build Eleventy site
         run: npm run build

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Installatie</title>
+    <link href="/_css/deltion.css" rel="stylesheet">
+    <link href="/_css/prism-one-light.css" rel="stylesheet">
+    <link href="/_css/extra.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Database Queries</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/dbq/introductie/">Introductie</a>
+                    
+                        <a href="/dbq/installatie/" aria-current="page" data-state="active">Installatie</a>
+                    
+                        <a href="/dbq/postgresql/">Postgresql</a>
+                    
+                        <a href="/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div style="display: flex; flex-direction: column; box-sizing: border-box; padding:2rem 2.5rem; background:#fff; width:65%;">
+                
+                    <h1>Database Queries</h1>
+<h2>Installatie</h2>
+<h2>Docker setup webapplication</h2>
+<h3>Installatie Docker voor Windows:</h3>
+<p>Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
+<ul>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Installeer Docker voor WSL2-backend</a></li>
+</ul>
+<h2>Installatie Docker voor Mac:</h2>
+<p>Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
+<h2>Gebruik maken van Docker images en het draaien van containers.</h2>
+<p>In deze github-respository vind je de installatiescripts voor 3 images.</p>
+<ul>
+<li>Drie images worden gedownload
+<ul>
+<li>PHPMyAdmin (beheer database server)</li>
+<li>MariaDB server (database server)</li>
+<li>Ubuntu Server (web- en applicatieserver)</li>
+</ul>
+</li>
+</ul>
+<h4>Database server</h4>
+<ul>
+<li>PHP kan gegevens uitwisselen met de database-server. De database-server draait in een aparte container.</li>
+</ul>
+<h4>PHPMyAdmin</h4>
+<ul>
+<li>PHPMyAdmin is een aparte image en draait in een aparte container. Dit is een PHP-applicatie in een aparte container waarmee je databases kunt beheren op de MySQL server.</li>
+</ul>
+<h4>Ubuntu (Apache/PHP)</h4>
+<ul>
+<li>De Ubuntu server is uitgebreid met een webserver (Apache). Naast Apache is ook PHP geinstalleerd en geconfigureerd als extensie van Apache. Apache en PHP werken dus samen om php-bestanden uit te voeren en te publiceren.</li>
+</ul>
+<h4>Docker</h4>
+<p>Om de containers te bouwen en te configureren met de benodigde componenten worden er 2 bestanden gebruikt:</p>
+<ul>
+<li>Dockerfile</li>
+<li>docker-compose.yml</li>
+</ul>
+<h4>Dockerfile</h4>
+<p>De dockerfile bevat de instructies die nodig zijn om een bestaand image (ubuntu:latest) uit te breiden en te configureren met een applicatieserver (Apache/PHP).</p>
+<h4>De docker-compose.yml</h4>
+<p>Dit bestand bevat de instructies om de verschillende containers met elkaar samen te laten werken.
+Pas onderstaande regels aan met eigen passwords:</p>
+<pre class="language-shell"><code class="language-shell">      MARIADB_ROOT_PASSWORD: root_password
+      MARIADB_DATABASE: my_database
+      MARIADB_USER: my_user
+      MARIADB_PASSWORD: my_password</code></pre>
+<h2>Installatie images en containers.</h2>
+<ul>
+<li>Voer onderstaand commando uit in een terminal (bijv. powershell)</li>
+<li>Hiermee worden de benodigde images gedownload en geconfigureerd en de containers worden opgestart.</li>
+</ul>
+<p><code>docker compose up</code></p>
+<h2>Check of alles het doet</h2>
+<ul>
+<li>Open een webbrowser en ga naar <code>http://127.0.0.1</code></li>
+<li>Klik op de link om naar <code>http://127.0.0.1:8080</code> te gaan. Kijk of je kunt inloggen in PHPMyAdmin met gebruikersnaam en wachtwoord zoals je hebt ingesteld.</li>
+</ul>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
