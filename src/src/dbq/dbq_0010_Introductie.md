@@ -8,7 +8,6 @@ afbeelding: /_assets/test_afbeelding.jpg
 ### {{ course_title }}
 ### {{ title }}
 
-### Wat is dit nou
-
+Introductietekst
 
 

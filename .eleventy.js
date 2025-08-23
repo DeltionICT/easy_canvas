@@ -83,6 +83,10 @@ export default function(eleventyConfig) {
         return `<div class="deltionv2-addintrotext">${text}</div>`;
     });
 
+    eleventyConfig.addPairedShortcode("text2", (text) => {
+        return `<section class="deltionv2-textarea">${text}</section>`;
+    });
+
     eleventyConfig.addPairedShortcode("code", (text) => {
         return `<div style="background-color: #fff; padding: 0px; ">${text}</div>`;
     });
@@ -98,7 +102,9 @@ export default function(eleventyConfig) {
     eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
         return `<div class="deltionv2-accordion-whole">
                     <details><summary><a>${titel}</a></summary>
-                    <p>${content}</p></details>
+                    <p>&nbsp;</p>
+                        ${content}
+                    </details>
                 </div>`
     });
     eleventyConfig.addPairedShortcode("button_collection", (content) => {
@@ -107,7 +113,7 @@ export default function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode("button", (link, text) => {
-        return `<div class="deltionv2-navigationbutton"><a href="${link}"><img src="/_assets/arrow-right-o.svg" alt="Arrow" />${text}<br /></a></div>`;
+        return `<div class="deltionv2-navigationbutton"><a href="${link}"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow" />${text}<br /></a></div>`;
     });
 
     return {

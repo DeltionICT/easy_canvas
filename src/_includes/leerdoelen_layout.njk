@@ -3,7 +3,30 @@
 {% block layout %}
 <div class="deltionv2-center-template">
     <div class="deltionv2-template-container">
-        {{ content | safe}}
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>{{ course_title }}</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    {% for p in collections[tags] | postsAscending %}
+                        <a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page" data-state="active" {% endif %}>{{ p.data.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+                {# Einde aanpassing #}
+                    {{ content | safe}}                    
+            <section class="deltionv2-accordeon">
+            {% for l in leerdoelen %}
+            <div class="deltionv2-accordion-whole">
+                    <details><summary><a>{{ l.title }}</a></summary>
+                    <p>{{ l.description }}</p></details>
+            </div>
+            {% endfor %}
+        </section>
+        </div>
     </div>
 </div>
 
