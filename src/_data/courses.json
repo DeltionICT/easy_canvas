@@ -7,8 +7,18 @@
     },
     {
       "url": "dbq/introductie/",
-      "name": "Database queries",
+      "name": "Werken met databases",
       "description": "Leren werken met data en queries"
-    }   
+    },
+    {
+      "url": "docker/introductie/",
+      "name": "Docker",
+      "description": "Leren werken met Docker"
+    },     
+    {
+      "url": "git/introductie/",
+      "name": "Git en Github",
+      "description": "Leren werken met Git en Github"
+    }
   ]
 }

@@ -74,8 +74,8 @@ export default function(eleventyConfig) {
     });
 
     eleventyConfig.addPairedShortcode("section", (content) => {
-        return `<section class="deltionv2-addinformation-section">
-                    <div class="deltionv2-addsize">${content}</div>
+        return `<section class="deltionv2-textarea">
+                    <div class="adjusted-content">${content}</div>
                 </section>`;
     });
 
@@ -101,10 +101,7 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
         return `<div class="deltionv2-accordion-whole">
-                    <details><summary><a>${titel}</a></summary>
-                    <p>&nbsp;</p>
-                        ${content}
-                    </details>
+                    <details><summary><a>${titel}</a></summary><p>&nbsp;</p>${content}</details>
                 </div>`
     });
     eleventyConfig.addPairedShortcode("button_collection", (content) => {

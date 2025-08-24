@@ -1,5 +1,5 @@
 ---
-title: Postgresql
+title: Authorisatie
 date: 2022-04-02
 ---
 
@@ -7,49 +7,37 @@ date: 2022-04-02
 
 ## {{ title }}
 
-## Voorwoord
 
-Een andere populaire database, die veel gebruikt wordt in combinatie met bijv. Python is Postgresql. Postgresql is o.a. populair als het gaat om het bouwen van ai-systemen. Postgresql kent een aantal extra data-typen waardoor het werken met LLM's en JSON makkelijker gaat.  
-Postgresql is een gratis open-source toepassing.
+Tijdens het ontwikkelen van een database wil je als developer graag toegang hebben tot alle mogelijkheden, functionaliteiten en data van je database-server. Je gebruikt hiervoor een account dat alle rechten heeft om aanpassingen te doen aan de database server.
 
-## Installatie
-* Je kunt Postgresql installeren via de website (https://www.postgresql.org/). 
-* Macgebruikers kunnen het beste gebruik maken van `homebrew`. Let op dat je de laatste versie installeert!
-* Pas indien nodig de `PATH` variabele aan, zodat je systeem de server- en clientapplicaties overal op je computer kan vinden.
-    * Bij windows gaat dat bij `omgevingsvariabelen` of in het engels `environment variables`
-    * Op de mac kun je `psql` starten vanuit `Terminal`. Als dat niet lukt dan pas je het bestand `~/.zprofile` aan.
+#### Configureer een super-user
+In MariaDB gaat dat als volgt:
+* Open PHPMyAdmin en log in met een bestaande gebruiker die de rechten heeft om gebruikers te beheren (bijvoorbeeld de rootgebruiker). 
+* Ga naar [PHPMyAdmin documentatie -> User management](https://docs.phpmyadmin.net/nl/latest/privileges.html)
 
+In Postgres gaat dat zo:
+* Open Adminer en log in als superuser
+* Voeg een sql-commando in:
 
-## Client applicatie
-Postgresql is net als MySQL en MariaDB een client-server applicatie. Je gebruikt de client-applicatie om commando's naar de server te sturen.  
-Hieronder zie je hoe je voor de eerste keer kunt inloggen (standaard naam is postgres zonder wachtwoord)
-
-```shell
-psql postgres
-```
-
-## Nieuwe superuser
-* Maak een nieuwe superuser aan die je gebruikt voor development-doeleinden
 ```sql
-CREATE ROLE mijngebruiker WITH LOGIN PASSWORD 'mijnwachtwoord' SUPERUSER;
-CREATE DATABASE mijngebruiker;
+CREATE ROLE student WITH LOGIN PASSWORD 'student' SUPERUSER;
 ```
 
-## Cursus bestanden
-* Je kunt de database <code>school</code> hier downloaden.... [School database](https://static.edutorial.nl/dbq/school_pg.sql)  
-Als je op bovenstaande link klikt, wordt het bestand 'school_pg.sql' in je downloadmap geplaatst.
-* Start psql en maak eerst een database aan:
+Je hebt nu een superuser aangemaakt waarmee je alle rechten hebt om databases aan te maken en te bewerken.
 
-````sql
-create database school;
-````
-* Je kunt checken of door een listing van alle databases op te vragen met `\l`:
-* Laad het sql bestand om de tabellen en gegevens te importeren.
+#### Configureer een gebruiker die alleen gegevens kan weergeven
+In MariaDB:
+* Dat kan via het user-panel in PHPMyAdmin of via sql-commando's
+* `CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'password'`
+* `GRANT SELECT ON '*.my_database' TO 'my_user@localhost'`
 
+In Postgres:
+* Via sql venster in Adminer
+* `CREATE USER my_user WITH PASSWORD 'secret';`
+* `GRANT CONNECT ON DATABASE school TO my_user;`
+* `GRANT USAGE ON SCHEMA public TO my_user;`
+* `GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;`
 
-```shell
-psql postgres -f C:\school_pg.sql
-```
 
 ## Cheatsheet Postgresql
 
@@ -115,3 +103,21 @@ psql postgres -f C:\school_pg.sql
 </tr>
 </tbody>
 </table>
+
+## Vragen en opdrachten
+
+**Basisvragen**  
+* Wat is het verschil tussen een gebruiker en een rol? 
+* Welke SQL-opdracht gebruik je om een nieuwe gebruiker aan te maken in MariaDB? 
+* Welke SQL-opdracht gebruik je om een gebruiker een wachtwoord te geven in PostgreSQL? 
+
+**Praktische vragen**  
+* Creëer een gebruiker genaamd `webshop_admin` die alleen vanaf de lokale machine (localhost) verbinding mag maken, met een wachtwoord naar keuze.
+* Stel je voor dat de gebruiker `webshop_admin` ook een database mag aanmaken. Welke `GRANT`-opdracht moet je daarvoor gebruiken? 
+* Wat is het verschil tussen `GRANT ALL PRIVILEGES` en het geven van specifieke privileges, zoals `CREATE` of `SELECT`? 
+
+**Diepere kennis**   
+* Welk risico loop je als je een gebruiker aanmaakt zonder `WITH GRANT OPTION`? 
+* Stel, je hebt een gebruiker gemaakt met de naam `api_gebruiker` en je wilt dat deze gebruiker alleen `SELECT`-rechten heeft op de tabel `producten` in de database `webshop`. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL? 
+* Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken? Dit is een troubleshooting-vraag die laat zien of ze ook aan 
+
