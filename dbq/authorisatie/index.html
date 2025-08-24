@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Canvas | Postgresql</title>
+    <title>Easy Canvas | Authorisatie</title>
     <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
     <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
     <style>
@@ -99,6 +99,7 @@
         background: #f5f4f7;
     }  
     
+    /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. */
     .adjusted-content {
         display: flex;
         flex-direction: column;
@@ -108,6 +109,11 @@
         width: 65%;
     }
 
+   blockquote {
+        background-color: #f5f4f7;
+        margin: 10px 0px 20px 0px;
+        padding: 20px;
+    }
 </style>
 </head>
 
@@ -119,7 +125,7 @@
         <section class="deltionv2-addbanner">
             <div class="deltionv2-addcontent">
                 <div class="deltionv2-addcontent-header">
-                    <h2>Database Queries</h2>
+                    <h2>Werken met databases</h2>
                 </div>
                 <div class="deltionv2-addcontent-header">
                     
@@ -129,7 +135,7 @@
                     
                         <a href="/easy_canvas/dbq/installatie/">Installatie</a>
                     
-                        <a href="/easy_canvas/dbq/postgresql/" aria-current="page" data-state="active">Postgresql</a>
+                        <a href="/easy_canvas/dbq/authorisatie/" aria-current="page" data-state="active">Authorisatie</a>
                     
                         <a href="/easy_canvas/dbq/eenvoudige-queries/">Eenvoudige queries</a>
                     
@@ -147,44 +153,37 @@
                 
                 <div class="adjusted-content">
                 
-                    <h1>Database Queries</h1>
-<h2>Postgresql</h2>
-<h2>Voorwoord</h2>
-<p>Een andere populaire database, die veel gebruikt wordt in combinatie met bijv. Python is Postgresql. Postgresql is o.a. populair als het gaat om het bouwen van ai-systemen. Postgresql kent een aantal extra data-typen waardoor het werken met LLM's en JSON makkelijker gaat.<br>
-Postgresql is een gratis open-source toepassing.</p>
-<h2>Installatie</h2>
+                    <h1>Werken met databases</h1>
+<h2>Authorisatie</h2>
+<p>Tijdens het ontwikkelen van een database wil je als developer graag toegang hebben tot alle mogelijkheden, functionaliteiten en data van je database-server. Je gebruikt hiervoor een account dat alle rechten heeft om aanpassingen te doen aan de database server.</p>
+<h4>Configureer een super-user</h4>
+<p>In MariaDB gaat dat als volgt:</p>
 <ul>
-<li>Je kunt Postgresql installeren via de website (https://www.postgresql.org/).</li>
-<li>Macgebruikers kunnen het beste gebruik maken van <code>homebrew</code>. Let op dat je de laatste versie installeert!</li>
-<li>Pas indien nodig de <code>PATH</code> variabele aan, zodat je systeem de server- en clientapplicaties overal op je computer kan vinden.
+<li>Open PHPMyAdmin en log in met een bestaande gebruiker die de rechten heeft om gebruikers te beheren (bijvoorbeeld de rootgebruiker).</li>
+<li>Ga naar <a href="https://docs.phpmyadmin.net/nl/latest/privileges.html">PHPMyAdmin documentatie -&gt; User management</a></li>
+</ul>
+<p>In Postgres gaat dat zo:</p>
 <ul>
-<li>Bij windows gaat dat bij <code>omgevingsvariabelen</code> of in het engels <code>environment variables</code></li>
-<li>Op de mac kun je <code>psql</code> starten vanuit <code>Terminal</code>. Als dat niet lukt dan pas je het bestand <code>~/.zprofile</code> aan.</li>
+<li>Open Adminer en log in als superuser</li>
+<li>Voeg een sql-commando in:</li>
 </ul>
-</li>
-</ul>
-<h2>Client applicatie</h2>
-<p>Postgresql is net als MySQL en MariaDB een client-server applicatie. Je gebruikt de client-applicatie om commando's naar de server te sturen.<br>
-Hieronder zie je hoe je voor de eerste keer kunt inloggen (standaard naam is postgres zonder wachtwoord)</p>
-<pre class="language-shell"><code class="language-shell">psql postgres</code></pre>
-<h2>Nieuwe superuser</h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE student <span class="token keyword">WITH</span> LOGIN PASSWORD <span class="token string">'student'</span> SUPERUSER<span class="token punctuation">;</span></code></pre>
+<p>Je hebt nu een superuser aangemaakt waarmee je alle rechten hebt om databases aan te maken en te bewerken.</p>
+<h4>Configureer een gebruiker die alleen gegevens kan weergeven</h4>
+<p>In MariaDB:</p>
 <ul>
-<li>Maak een nieuwe superuser aan die je gebruikt voor development-doeleinden</li>
+<li>Dat kan via het user-panel in PHPMyAdmin of via sql-commando's</li>
+<li><code>CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'password'</code></li>
+<li><code>GRANT SELECT ON '*.my_database' TO 'my_user@localhost'</code></li>
 </ul>
-<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE mijngebruiker <span class="token keyword">WITH</span> LOGIN PASSWORD <span class="token string">'mijnwachtwoord'</span> SUPERUSER<span class="token punctuation">;</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> mijngebruiker<span class="token punctuation">;</span></code></pre>
-<h2>Cursus bestanden</h2>
+<p>In Postgres:</p>
 <ul>
-<li>Je kunt de database <code>school</code> hier downloaden.... <a href="https://static.edutorial.nl/dbq/school_pg.sql">School database</a><br>
-Als je op bovenstaande link klikt, wordt het bestand 'school_pg.sql' in je downloadmap geplaatst.</li>
-<li>Start psql en maak eerst een database aan:</li>
+<li>Via sql venster in Adminer</li>
+<li><code>CREATE USER my_user WITH PASSWORD 'secret';</code></li>
+<li><code>GRANT CONNECT ON DATABASE school TO my_user;</code></li>
+<li><code>GRANT USAGE ON SCHEMA public TO my_user;</code></li>
+<li><code>GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;</code></li>
 </ul>
-<pre class="language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> school<span class="token punctuation">;</span></code></pre>
-<ul>
-<li>Je kunt checken of door een listing van alle databases op te vragen met <code>\l</code>:</li>
-<li>Laad het sql bestand om de tabellen en gegevens te importeren.</li>
-</ul>
-<pre class="language-shell"><code class="language-shell">psql postgres <span class="token parameter variable">-f</span> C:<span class="token punctuation">\</span>school_pg.sql</code></pre>
 <h2>Cheatsheet Postgresql</h2>
 <table style="border-collapse:collapse; border:1px black solid;">
 <thead>
@@ -247,6 +246,26 @@ Als je op bovenstaande link klikt, wordt het bestand 'school_pg.sql' in je downl
 </tr>
 </tbody>
 </table>
+<h2>Vragen en opdrachten</h2>
+<p><strong>Basisvragen</strong></p>
+<ul>
+<li>Wat is het verschil tussen een gebruiker en een rol?</li>
+<li>Welke SQL-opdracht gebruik je om een nieuwe gebruiker aan te maken in MariaDB?</li>
+<li>Welke SQL-opdracht gebruik je om een gebruiker een wachtwoord te geven in PostgreSQL?</li>
+</ul>
+<p><strong>Praktische vragen</strong></p>
+<ul>
+<li>Creëer een gebruiker genaamd <code>webshop_admin</code> die alleen vanaf de lokale machine (localhost) verbinding mag maken, met een wachtwoord naar keuze.</li>
+<li>Stel je voor dat de gebruiker <code>webshop_admin</code> ook een database mag aanmaken. Welke <code>GRANT</code>-opdracht moet je daarvoor gebruiken?</li>
+<li>Wat is het verschil tussen <code>GRANT ALL PRIVILEGES</code> en het geven van specifieke privileges, zoals <code>CREATE</code> of <code>SELECT</code>?</li>
+</ul>
+<p><strong>Diepere kennis</strong></p>
+<ul>
+<li>Welk risico loop je als je een gebruiker aanmaakt zonder <code>WITH GRANT OPTION</code>?</li>
+<li>Stel, je hebt een gebruiker gemaakt met de naam <code>api_gebruiker</code> en je wilt dat deze gebruiker alleen <code>SELECT</code>-rechten heeft op de tabel <code>producten</code> in de database <code>webshop</code>. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL?</li>
+<li>Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken? Dit is een troubleshooting-vraag die laat zien of ze ook aan</li>
+</ul>
+
                     
                 </div>
             </section>

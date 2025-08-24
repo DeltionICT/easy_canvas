@@ -99,6 +99,7 @@
         background: #f5f4f7;
     }  
     
+    /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. */
     .adjusted-content {
         display: flex;
         flex-direction: column;
@@ -108,6 +109,11 @@
         width: 65%;
     }
 
+   blockquote {
+        background-color: #f5f4f7;
+        margin: 10px 0px 20px 0px;
+        padding: 20px;
+    }
 </style>
 </head>
 
@@ -137,8 +143,8 @@
                 
                 <div class="adjusted-content">
                 
-                    <section class="deltionv2-addinformation-section">
-                    <div class="deltionv2-addsize">
+                    <section class="deltionv2-textarea">
+                    <div class="adjusted-content">
 <div class="deltionv2-addcontentarea"><img src="/easy_canvas/_assets/test_afbeelding.jpg" alt="test_afbeelding.jpg" style="min-width:100%; width: 100%; height: 100%; object-fit: cover;"></div>
 <div class="deltionv2-addintrotext">
 <h3>Dit is de section met tekst.</h3>
@@ -159,11 +165,10 @@ zo kan ik er nog wel wat bijtypen. Gooooh wat handig zeg.</p>
                 </section>
 <section class="deltionv2-accordeon"><h3>Leerdoelen</h3>
     <div class="deltionv2-accordion-whole">
-                    <details><summary><a>Komt afspraken na</a></summary>
-                    <p>&nbsp;</p>
-<p>Ja, je moet je afspraken natuurlijk wel nakomen mensen.</p>
-<p></p></details>
-</div><p></p>
+                    <details><summary><a>Komt afspraken na</a></summary><p>&nbsp;</p>
+        Ja, je moet je afspraken natuurlijk wel nakomen mensen.
+    </details>
+                </div>
 </section>
 <p></p><section class="deltionv2-buttoncollection">
 <div class="deltionv2-navigationbutton"><a href="https://www.apple.com"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow">Apple<br></a></div>

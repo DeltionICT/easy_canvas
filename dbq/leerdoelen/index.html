@@ -99,6 +99,7 @@
         background: #f5f4f7;
     }  
     
+    /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. */
     .adjusted-content {
         display: flex;
         flex-direction: column;
@@ -108,6 +109,11 @@
         width: 65%;
     }
 
+   blockquote {
+        background-color: #f5f4f7;
+        margin: 10px 0px 20px 0px;
+        padding: 20px;
+    }
 </style>
 </head>
 
@@ -119,7 +125,7 @@
         <section class="deltionv2-addbanner">
             <div class="deltionv2-addcontent">
                 <div class="deltionv2-addcontent-header">
-                    <h2>Database Queries</h2>
+                    <h2>Werken met databases</h2>
                 </div>
                 <div class="deltionv2-addcontent-header">
                     
@@ -129,7 +135,7 @@
                     
                         <a href="/easy_canvas/dbq/installatie/">Installatie</a>
                     
-                        <a href="/easy_canvas/dbq/postgresql/">Postgresql</a>
+                        <a href="/easy_canvas/dbq/authorisatie/">Authorisatie</a>
                     
                         <a href="/easy_canvas/dbq/eenvoudige-queries/">Eenvoudige queries</a>
                     
@@ -144,48 +150,53 @@
         </section>
          <div class="deltionv2-content-section">
                 
-                     <section class="deltionv2-textarea">
-    <div class="adjusted-content">
-<h3>Database Queries</h3>
-<p>Een van de kerntaken van een ict system engineer is het ontwikkelen van digitale informatievoorzieningen (P2-K1).
-Binnen deze kerntaak zijn de volgende werkprocessen van toepassing:</p>
+                    <section class="deltionv2-textarea">
+                    <div class="adjusted-content">
+<h1>Werken met databases</h1>
+<p>Welkom bij de cursus Werken met databases. Deze cursus is gericht op MBO-studenten die zich voorbereiden op de rol van <strong>ICT System Engineer op niveau 4</strong>. Met deze deze cursus duik je in het <strong>beheren van databases (P2-K1-W3)</strong> en essentiële basisbeheeractiviteiten. Je leert hoe je <strong>gebruikers toevoegt en hun autorisaties configureert</strong> in databases, met oog voor geldende procedures, afspraken en veiligheidsrichtlijnen. Je leert het <strong>opstellen van complexe queries met SQL</strong> om specifieke informatie uit meerdere gelinkte tabellen of bronnen op te vragen. Daarnaast leer je hoe je, op verzoek, <strong>aanpassingen doet aan de gegevens in databases</strong></p>
+<h3>Benodigde Voorkennis</h3>
+<p>Voor het succesvol volgen van deze cursus is een <strong>solide basis in algemene ICT-kennis en -vaardigheden</strong> nodig. Dit betekent dat je al kennis hebt van:</p>
 <ul>
-<li>Automatiseert processen</li>
-<li><strong>Beheert Databases</strong></li>
-<li>Ontwerpt en beheert een informatievoorziening</li>
+<li><strong>Algemene ICT-begrippen</strong>: Begrip van hardware, software, gebruikersdevices, fysieke en logische verbindingen, en basiskennis van <strong>back-up &amp; security en cloud diensten</strong>.</li>
+<li><strong>Infrastructuur basics</strong>: Kennis van netwerk- en infrastructuuronderdelen, inclusief basisinstallatie, configuratie, beheer en monitoring van veelvoorkomende componenten. Je hebt ervaring met het <strong>lezen en interpreteren van gegevens, tekeningen en schema's</strong>.</li>
+<li><strong>Applicatiebeheer basics</strong>: Kennis van gangbare software/applicaties, het uitvoeren van updates en basisonderhoud.</li>
+<li><strong>Basis security en procedures</strong>: Bekendheid met eenvoudige securitymaatregelen (zoals antivirus en firewalling) en begrip van procedures rondom beschikbaarheid, betrouwbaarheid, integriteit, privacy en beveiliging van informatievoorzieningen.</li>
+<li><strong>Basis programmeer- en scriptvaardigheden</strong>: Kennis van minimaal één veelgebruikte scripttaal, zoals <strong>Python, Powershell of Bash</strong>, en de basisconcepten van programmeren (variabelen, datatypes, beslissingen, lussen). Kennis van <strong>dataformaten zoals JSON, YAML of XML</strong>.</li>
+<li><strong>Communicatieve en analytische vaardigheden</strong>: Het vermogen om mondeling en schriftelijk te communiceren, gerichte vragen te stellen om informatie op te halen, en oplossingsgericht te denken.</li>
+<li><strong>Docker en Git/Github</strong>: In de cursus wordt veelvuldig gebruik gemaakt van images en repositories. Er wordt van je verwacht dat je hiermee uit de voeten kunt. Kun je dat nog niet volg dan eerst de volgende cursussen:
+<ul>
+<li><a href="https://deltionict.github.io/easy_canvas/docker/introductie/">Docker</a></li>
+<li><a href="https://deltionict.github.io/easy_canvas/git/introductie/">Git</a></li>
 </ul>
-<p>In deze cursus wordt dieper ingegaan op het beheren van databases. De volgende leerdoelen zijn van toepassing:
-Voor de opleiding ICT system engineer leer je in deze cursus de volgende zaken rondom het beheren van databases:
-om gebruikers toe te voegen, voegt gebruikers toe en configureert de autorisatie conform procedures, afspraken, o.a. op het gebied van veiligheid. Op verzoek van gebruikers vraagt die informatie op uit databases door het opstellen van queries op meerdere gelinkte tabellen of informatiebronnen. De beginnend beroepsbeoefenaar doet desgevraagd aanpassingen aan de gegevens in databases.</p>
- </div>
-</section>
+</li>
+</ul>
+</div>
+                </section>
 <section class="deltionv2-accordeon"><h3>Leerdoelen</h3>
-    <div class="deltionv2-accordion-whole">
-                    <details><summary><a>Authenticatie en autorisatie</a></summary>
-                    <p>&nbsp;</p>
-<p><strong>En dit is een kopje</strong></p>
+<div class="deltionv2-accordion-whole">
+                    <details><summary><a>Kan databases installeren en configureren</a></summary><p>&nbsp;</p>
 <ul>
-<li>
-<p>Gebruikers toevoegen</p>
-</li>
-<li>
-<p>Authorisatie configureren</p>
-</li>
-<li>
-<p>Gegevens opvragen uit een database met behulp van queries</p>
-</li>
-<li>
-<p>Een database installeren</p>
-</li>
-<li>
-<p>Structuur van een database aanpassen</p>
-</li>
-<li>
-<p>Gegevens manipuleren binnen een database-omgeving.</p>
-<p></p></li></ul></details>
-</div><p></p>
-
-
+<li>Een database installeren</li>
+<li>Structuur van een database aanpassen</li>
+</ul>
+</details>
+                </div>
+<div class="deltionv2-accordion-whole">
+                    <details><summary><a>Kan basisbeheeractiviteiten uitvoeren</a></summary><p>&nbsp;</p>
+<ul>
+<li>Gebruikers toevoegen</li>
+<li>Authorisatie configureren</li>
+</ul>
+</details>
+                </div>
+<div class="deltionv2-accordion-whole">
+                    <details><summary><a>Kan gegevens opvragen en aanpassen</a></summary><p>&nbsp;</p>
+<ul>
+<li>Gegevens opvragen uit een database met behulp van queries</li>
+<li>Gegevens manipuleren binnen een database-omgeving.</li>
+</ul>
+</details>
+                </div>
 </section>                    
             <section class="deltionv2-accordeon">
             
