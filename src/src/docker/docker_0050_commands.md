@@ -3,7 +3,7 @@ title: Commands
 date: 2025-08-25
 ---
 
-### {{ course_title }}
+# {{ course_title }}
 ### {{ title }}
 
 Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.

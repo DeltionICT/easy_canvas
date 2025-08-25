@@ -1,6 +1,6 @@
 {
     "course_title": "Git",
     "layout": "nav_layout.njk",
-    "permalink": "/git/{{ title | slug }}/{{ page.index }}",
+    "permalink": "courses/9600/pages/git-{{ title | slug }}/{{ page.index }}",
     "tags": "git"
 }

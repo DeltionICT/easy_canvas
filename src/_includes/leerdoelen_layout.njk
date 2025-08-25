@@ -15,17 +15,8 @@
                 </div>
             </div>
         </section>
-         <div class="deltionv2-content-section">
-                {# Einde aanpassing #}
+        <div class="deltionv2-content-section">
                     {{ content | safe}}                    
-            <section class="deltionv2-accordeon">
-            {% for l in leerdoelen %}
-            <div class="deltionv2-accordion-whole">
-                    <details><summary><a>{{ l.title }}</a></summary>
-                    <p>{{ l.description }}</p></details>
-            </div>
-            {% endfor %}
-        </section>
         </div>
     </div>
 </div>

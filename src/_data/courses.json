@@ -1,22 +1,17 @@
 {
   "courses": [   
     {
-      "url": "test/introductie/",
-      "name": "Test",
-      "description": "Even testen"
-    },
-    {
-      "url": "dbq/introductie/",
+      "url": "courses/9600/pages/dbq-introductie/",
       "name": "Werken met databases",
       "description": "Leren werken met data en queries"
     },
     {
-      "url": "docker/introductie/",
+      "url": "courses/9600/pages/docker-introductie/",
       "name": "Docker",
       "description": "Leren werken met Docker"
     },     
     {
-      "url": "git/introductie/",
+      "url": "courses/9600/pages/git-introductie",
       "name": "Git en Github",
       "description": "Leren werken met Git en Github"
     }

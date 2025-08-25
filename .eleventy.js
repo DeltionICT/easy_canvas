@@ -75,7 +75,7 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPairedShortcode("section", (content) => {
         return `<section class="deltionv2-textarea">
-                    <div class="adjusted-content">${content}</div>
+                    <div class="deltionv2-text">${content}</div>
                 </section>`;
     });
 
@@ -98,12 +98,19 @@ export default function(eleventyConfig) {
     eleventyConfig.addPairedShortcode("section_accordeon", (content, titel) => {
         return `<section class="deltionv2-accordeon"><h3>${titel}</h3>${content}</section>`
     });
+    
+    // Easy Canvas style
+    // eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
+    //     return `<div class="deltionv2-accordion-whole">
+    //                 <details><summary><a>${titel}</a></summary><p>&nbsp;</p>${content}</details>
+    //             </div>`
+    // });
 
+    // Deltion style
     eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
-        return `<div class="deltionv2-accordion-whole">
-                    <details><summary><a>${titel}</a></summary><p>&nbsp;</p>${content}</details>
-                </div>`
+        return `<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://leeromgeving.deltion.nl/courses/4128/files/109205/preview" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File" /></div><a>${titel}</a></div><div class="deltionv2-accordion-panel">${content}</div></div>`
     });
+
     eleventyConfig.addPairedShortcode("button_collection", (content) => {
         return `
         <section class="deltionv2-buttoncollection">${content}</section>`;
@@ -115,6 +122,7 @@ export default function(eleventyConfig) {
 
     return {
         pathPrefix: "/easy_canvas/",
+        // pathPrefix: "/",
         dir: {
             input: "src",
             output: "docs",
