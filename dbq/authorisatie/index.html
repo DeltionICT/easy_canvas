@@ -182,7 +182,8 @@
 <li><code>CREATE USER my_user WITH PASSWORD 'secret';</code></li>
 <li><code>GRANT CONNECT ON DATABASE school TO my_user;</code></li>
 <li><code>GRANT USAGE ON SCHEMA public TO my_user;</code></li>
-<li><code>GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;</code></li>
+<li><code>GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;</code>
+my_user kan nu uit alle tabellen van de database <code>school</code> gegevens weergeven.</li>
 </ul>
 <h2>Cheatsheet Postgresql</h2>
 <table style="border-collapse:collapse; border:1px black solid;">
@@ -263,7 +264,8 @@
 <ul>
 <li>Welk risico loop je als je een gebruiker aanmaakt zonder <code>WITH GRANT OPTION</code>?</li>
 <li>Stel, je hebt een gebruiker gemaakt met de naam <code>api_gebruiker</code> en je wilt dat deze gebruiker alleen <code>SELECT</code>-rechten heeft op de tabel <code>producten</code> in de database <code>webshop</code>. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL?</li>
-<li>Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken? Dit is een troubleshooting-vraag die laat zien of ze ook aan</li>
+<li>Hoe gaat dit in MariaDB?</li>
+<li>Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken?</li>
 </ul>
 
                     
