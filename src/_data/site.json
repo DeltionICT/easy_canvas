@@ -1,4 +1,5 @@
 {
   "name" : "Easy Canvas",
-  "description" : "Easy Canvas is a template for creating educational content on the Canvas platform."
+  "description" : "Easy Canvas is a template for creating educational content on the Canvas platform.",
+  "baseurl" : "https://deltionict.github.io/easy_canvas"
 }

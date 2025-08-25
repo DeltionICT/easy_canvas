@@ -1,6 +1,6 @@
 ---
 title: Eenvoudige queries
-date: 2022-04-03
+date: 2025-08-25
 ---
 
 # {{ course_title }}

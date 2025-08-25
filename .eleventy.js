@@ -91,8 +91,8 @@ export default function(eleventyConfig) {
         return `<div style="background-color: #fff; padding: 0px; ">${text}</div>`;
     });
 
-    eleventyConfig.addShortcode("afbeelding", (afbeelding, width = 100, height = 100) => {
-        return `<div class="deltionv2-addcontentarea"><img src="/_assets/${afbeelding}" alt="${afbeelding}" style="min-width:${width}%; width: ${width}%; height: ${height}%; object-fit: cover;" /></div>`
+    eleventyConfig.addShortcode("afbeelding", (afbeelding, width=100, height=100, align="left") => {
+        return `<div class="deltionv2-addcontentarea" style="text-align:${align}; padding:40px;"><img src="/_assets/${afbeelding}" alt="${afbeelding}" style="min-width:${width}%; width: ${width}%; height: ${height}%; object-fit: cover;" /></div>`
     });
 
     eleventyConfig.addPairedShortcode("section_accordeon", (content, titel) => {

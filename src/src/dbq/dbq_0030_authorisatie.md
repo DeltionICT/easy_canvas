@@ -1,6 +1,6 @@
 ---
 title: Authorisatie
-date: 2022-04-02
+date: 2025-08-25
 ---
 
 # {{ course_title }}
@@ -37,6 +37,7 @@ In Postgres:
 * `GRANT CONNECT ON DATABASE school TO my_user;`
 * `GRANT USAGE ON SCHEMA public TO my_user;`
 * `GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;`
+my_user kan nu uit alle tabellen van de database `school` gegevens weergeven.
 
 
 ## Cheatsheet Postgresql
@@ -118,6 +119,6 @@ In Postgres:
 
 **Diepere kennis**   
 * Welk risico loop je als je een gebruiker aanmaakt zonder `WITH GRANT OPTION`? 
-* Stel, je hebt een gebruiker gemaakt met de naam `api_gebruiker` en je wilt dat deze gebruiker alleen `SELECT`-rechten heeft op de tabel `producten` in de database `webshop`. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL? 
-* Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken? Dit is een troubleshooting-vraag die laat zien of ze ook aan 
-
+* Stel, je hebt een gebruiker gemaakt met de naam `api_gebruiker` en je wilt dat deze gebruiker alleen `SELECT`-rechten heeft op de tabel `producten` in de database `webshop`. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL?
+* Hoe gaat dit in MariaDB? 
+* Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken?
