@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Starten met Docker</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Docker</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-leerdoelen/">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-ecosysteem/">Docker Ecosysteem</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-starten-met-docker/" aria-current="page" data-state="active">Starten met Docker</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-compose/">Docker compose</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-commands/">Commands</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div class="deltionv2-text">
+                
+                    <h1>Docker</h1>
+<h3>Starten met Docker</h3>
+<p><strong>Installatie Docker voor Windows:</strong><br>
+Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
+<ul>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Installeer Docker voor WSL2-backend</a></li>
+</ul>
+<p><strong>Installatie Docker voor Mac:</strong><br>
+Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
+<p><strong>Installatie Docker voor Linux:</strong><br>
+Installeer op Linux de docker desktop omgeving. Docker is gebaseerd op Linux, dus installatie is eenvoudig. Er zijn echter 2 versies. Je kunt docker engine installeren en docker desktop. Docker desktop geeft ook een grafische interface. Om zaken simpel te houden is het advies om alleen Docker Desktop te installeren.</p>
+<h2>Docker images</h2>
+<p>Als je docker desktop hebt geinstalleerd kun je gebruik maken van de grafische interface, maar hier gebruiken we de docker-cli. Dit programma werkt in de terminal.
+Om je eerste image te downloaden en een container op te starten type je de volgende regel in je favoriete terminal app (powershell of bash of terminal op mac):</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> run hello-world</code></pre>
+<ul>
+<li>Je ziet nu heel even dat een image wordt gedownload</li>
+<li>Er wordt een container gestart</li>
+<li><code>Hello World</code> wordt weergegeven op het scherm</li>
+<li>De container is weer gestopt en je kijkt naar de prompt in je terminal</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> ubuntu <span class="token function">bash</span></code></pre>
+<p>Met docker run maak je nu opnieuw een container. Met de argumenten -ti maak je de container interactief. Je start de container nu op ubuntu wordt geladen en het programma <code>bash</code> wordt gestart. Verschil met <code>hello-word</code> is dat door de toevoeging <code>-ti</code> de container blijft draaien.</p>
+<ul>
+<li>De <code>ubuntu:latest</code> image wordt gedownload</li>
+<li>Er wordt een container opgestart</li>
+<li>Je zit naar een terminal-prompt te kijken zoals hieronder</li>
+<li>Als je het commando ls intypt zie je de inhoud van het startup-volume van een ubuntu server</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">root@24d8a14bb475:/<span class="token comment"># ls</span>
+bin  boot  dev  etc  home  lib  lib64  media  <span class="token punctuation">..</span>.</code></pre>
+<h2>Dockerfile</h2>
+<p>Tot nu toe heb je steeds gebruik gemaakt van standaard images die verkrijgbaar zijn op <a href="https://hub.docker.com">docker hub</a>.
+Hier kun je talloze images vinden die je vrij kunt gebruiken voor projecten.
+Meestal maak je gebruik van een bestaand image om het vervolgens aan te passen naar je eigen wensen.
+Dit doe je met een <code>Dockerfile</code>. Dockerfile is de naam van een simpel tekst-bestand dat je kunt vullen met instructies voor docker.<br>
+Doe het volgende:</p>
+<ul>
+<li>Open een terminal</li>
+<li>Maak een nieuwe directory (=map) met <code>mkdir mijnmap</code></li>
+<li>Navigeer naar die map <code>cd mijnmap</code></li>
+<li>Maak een leeg tekst-bestand aan <code>touch Dockerfile</code></li>
+<li>Gebruik een teksteditor om <code>Dockerfile</code> aan te passen (bijv. nano of notepad++)</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">FROM ubuntu:latest
+RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> apache2
+COPY index.html /var/www/html/index.html
+CMD <span class="token punctuation">[</span><span class="token string">"/usr/sbin/apachectl"</span>, <span class="token string">"-D"</span>, <span class="token string">"FOREGROUND"</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Maak nog en tweede bestand in dezelfde map -&gt; <code>index.html</code> met de tekst: <code>&lt;h1&gt;Message from container&lt;/h1&gt;</code></li>
+<li>Maak het image van de Dockerfile</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">docker</span> build <span class="token parameter variable">-t</span> deltion/apachetest <span class="token builtin class-name">.</span>
+</code></pre>
+<ul>
+<li>Docker zoekt automatisch naar de Dockerfile</li>
+<li>De instructies worden uitgevoerd:
+<ul>
+<li>Ubuntu:latest wordt gedownload</li>
+<li><code>apt-get</code> wordt uitgevoerd om apache webserver te downloaden</li>
+<li>Het bestand <code>index.html</code> wordt vanaf je host naar de image gekopieerd <code>/var/www/html/index.html</code></li>
+<li>De image wordt gestart in detached mode (in de achtergrond). Verwarrend is dan &quot;FOREGROUND&quot;, maar dat is omdat de container anders meteen weer zou worden gestopt.</li>
+<li>Nu kun je de image maken met het build command: <code>docker build -t deltion/apachetest</code></li>
+</ul>
+</li>
+<li>Je hebt nu een image met een apache webserver en een html-file. Om een container op te starten op basis van je nieuwe image gebruik je het volgende commando:</li>
+<li><code>docker run -p 8084:80 deltion/apachetest .</code> (en vergeet die punt niet aan het eind!!)</li>
+<li>Als het goed is heb je nu een webserver opgestart die je met een browser vanaf je host kunt benaderen met <code>http://127.0.0.1:8084/</code></li>
+<li>De opstelling is helemaal geslaagd als je ook nog <code>Message from container</code> in je browserscherm ziet staan.</li>
+</ul>
+<h2>Andere handige commando's</h2>
+<ul>
+<li>Bekijken welke containers op dit moment actief zijn op je computer met <code>docker ps</code></li>
+<li>De terminal van een draaiende webserver starten met <code>docker exec</code>
+Om de terminal van de webserver te bekijken zoek je de naam (of id) op van de container waarin de webserver draait en start je <code>bash</code></li>
+</ul>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">docker</span> <span class="token function">ps</span>
+
+CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+a0e7ee749dc2   deltion/apachetest    <span class="token string">"/usr/sbin/apachectl…"</span>   <span class="token number">10</span> minutes ago   Up <span class="token number">32</span> seconds   <span class="token number">0.0</span>.0.0:8084-<span class="token operator">></span><span class="token number">80</span>/tcp, <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:8084-<span class="token operator">></span><span class="token number">80</span>/tcp       focused_heisenberg
+ee73e0982163   alpine/psql           <span class="token string">"/usr/bin/psql -h db…"</span>   <span class="token number">5</span> hours ago      Up <span class="token number">5</span> hours                                                    gracious_banach
+3e446b9d2df8   adminer:latest        <span class="token string">"entrypoint.sh docke…"</span>   <span class="token number">5</span> hours ago      Up <span class="token number">5</span> hours      <span class="token number">0.0</span>.0.0:8083-<span class="token operator">></span><span class="token number">8080</span>/tcp, <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:8083-<span class="token operator">></span><span class="token number">8080</span>/tcp   adminer
+e2be9d9d4140   python-postgres-app   <span class="token string">"python3"</span>                <span class="token number">5</span> hours ago      Up <span class="token number">5</span> hours                                                    python-postgres-app-1
+
+$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> a0e7ee749dc2 <span class="token function">bash</span>
+
+root@a0e7ee749dc2:/<span class="token comment"># ls</span>
+bin  boot  dev  etc  home  lib  lib.usr-is-merged  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@a0e7ee749dc2:/<span class="token comment"># </span>
+
+</code></pre>
+<h2>Opdrachten</h2>
+<ul>
+<li>Probeer bovenstaande uitleg natuurlijk zelf op je eigen laptop</li>
+<li>Gebruik Docker Desktop om te zien of je container nog draait. Zo ja, stop de container dan en start hem daarna weer</li>
+<li>Wat moet je doen als je de container per ongeluk hebt weggegooid?</li>
+<li>En als je de image per ongeluk hebt weggegooid, wat dan?</li>
+<li>Maak zelf een webserver
+<ul>
+<li>Maak een <code>index.html</code> met de tekst <code>Dat mag je zelf weten!</code></li>
+<li>Gebruik <code>docker exec</code> om de pagina aan te passen</li>
+<li>Check of de veranderingen zijn doorgevoerd door met je browser de webpagina te openen.</li>
+<li>Stop de container</li>
+<li>Start de container en ga met je browser naar de website</li>
+<li>Wat zie je nu?</li>
+</ul>
+</li>
+</ul>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

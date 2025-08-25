@@ -1134,7 +1134,7 @@ button .icon-plus {
     border-top: 1px solid #f5f4f7;
     box-sizing: border-box;
     margin-top: 3px;
-    max-height: 0;
+    /* max-height: 0;  Disabled anders wordt summary niet weergegeven */ 
     overflow: hidden;
     padding: 0 2rem;
     transform: translateY(-4px);

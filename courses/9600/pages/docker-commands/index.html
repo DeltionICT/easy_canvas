@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Commands</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Docker</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-leerdoelen/">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-ecosysteem/">Docker Ecosysteem</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-starten-met-docker/">Starten met Docker</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-compose/">Docker compose</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-commands/" aria-current="page" data-state="active">Commands</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div class="deltionv2-text">
+                
+                    <h1>Docker</h1>
+<h3>Commands</h3>
+<p>Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.
+Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de docker-cli in een terminal</p>
+<p><strong>Locaties waar je uitbreide docker instructies kunt vinden:</strong></p>
+<ul>
+<li><a href="https://docs.docker.com/get-started/get-docker/">Starten met Docker</a></li>
+<li><a href="https://docs.docker.com/get-started/docker_cheatsheet.pdf">Docker Cheat Sheet</a></li>
+<li><a href="https://github.com/Nikoo-Asadnejad/Docker-Commands-Cheat-Sheet">Cheatsheet from Nikoo Asadnejad</a></li>
+</ul>
+<h2>Docker Command Cheat Sheet</h2>
+<p><em><strong>Getting Started</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker --version</code></td>
+<td>Display the installed Docker version</td>
+</tr>
+<tr>
+<td><code>docker info</code></td>
+<td>Display system-wide information about Docker</td>
+</tr>
+<tr>
+<td><code>docker help</code></td>
+<td>Display help for Docker commands</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em><strong>Images</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker pull &lt;image&gt;</code></td>
+<td>Pull an image from Docker Hub</td>
+</tr>
+<tr>
+<td><code>docker images</code></td>
+<td>List all available images</td>
+</tr>
+<tr>
+<td><code>docker rmi &lt;image&gt;</code></td>
+<td>Remove an image</td>
+</tr>
+<tr>
+<td><code>docker build -t &lt;image-name&gt;:&lt;tag&gt; &lt;path&gt;</code></td>
+<td>Build an image from a Dockerfile</td>
+</tr>
+<tr>
+<td><code>docker tag &lt;source-image&gt; &lt;target-image&gt;</code></td>
+<td>Tag an image with a new name</td>
+</tr>
+<tr>
+<td><code>docker search &lt;term&gt;</code></td>
+<td>Search for images on Docker Hub</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em><strong>Containers</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker run &lt;image&gt;</code></td>
+<td>Run a command in a new container</td>
+</tr>
+<tr>
+<td><code>docker run -d &lt;image&gt;</code></td>
+<td>Run a container in detached mode</td>
+</tr>
+<tr>
+<td><code>docker run -d  --name &lt;name&gt; -p &lt;Serverport&gt;:&lt;containerport&gt; &lt;image&gt;</code></td>
+<td>Run a container in detached mode give it specific name and map the port of the container</td>
+</tr>
+<tr>
+<td><code>docker run -tid &lt;image&gt; sh</code></td>
+<td>Open shell of the container in current terminal</td>
+</tr>
+<tr>
+<td><code>docker ps</code> or <code>docker container ls</code></td>
+<td>List running containers</td>
+</tr>
+<tr>
+<td><code>docker ps -a</code> or <code>docker container ls -a</code></td>
+<td>List all containers, including stopped ones</td>
+</tr>
+<tr>
+<td><code>docker stop &lt;container&gt;</code></td>
+<td>Stop a running container</td>
+</tr>
+<tr>
+<td><code>docker container kill &lt;container&gt;</code></td>
+<td>Kill a running container</td>
+</tr>
+<tr>
+<td><code>docker start &lt;container&gt;</code></td>
+<td>Start a stopped container</td>
+</tr>
+<tr>
+<td><code>docker restart &lt;container&gt;</code></td>
+<td>Restart a container</td>
+</tr>
+<tr>
+<td><code>docker rm &lt;container&gt;</code></td>
+<td>Remove a stopped container</td>
+</tr>
+<tr>
+<td><code>docker rm &lt;container&gt; --force</code></td>
+<td>Remove a stopped container forcably</td>
+</tr>
+<tr>
+<td><code>docker exec -it &lt;container&gt; &lt;command&gt;</code></td>
+<td>Execute a command inside a running container</td>
+</tr>
+<tr>
+<td><code>docker logs &lt;container&gt;</code></td>
+<td>Fetch the logs of a container</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Docker Compose</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker-compose up</code></td>
+<td>Start all services defined in a <code>docker-compose.yml</code> file. Creates and starts containers as needed.</td>
+</tr>
+<tr>
+<td><code>docker-compose up -d</code></td>
+<td>Start services in detached mode (running in the background).</td>
+</tr>
+<tr>
+<td><code>docker-compose down</code></td>
+<td>Stop and remove containers, networks, volumes, and images created by <code>docker-compose up</code>.</td>
+</tr>
+<tr>
+<td><code>docker-compose down -v</code></td>
+<td>Stop and remove services along with their associated volumes.</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Networking</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker network ls</code></td>
+<td>List all existing Docker networks. Displays details such as network name, ID, driver type, and scope.</td>
+</tr>
+<tr>
+<td><code>docker network create &lt;network-name&gt;</code></td>
+<td>Create a new user-defined network with the specified name. By default, it uses the <code>bridge</code> driver.</td>
+</tr>
+<tr>
+<td><code>docker network create --driver &lt;driver-name&gt; &lt;network-name&gt;</code></td>
+<td>Create a network using a specific driver (e.g., <code>bridge</code>, <code>overlay</code>, <code>host</code>, or <code>none</code>).</td>
+</tr>
+<tr>
+<td><code>docker network rm &lt;network-name&gt;</code></td>
+<td>Remove a Docker network. The network must not be in use by any containers.</td>
+</tr>
+<tr>
+<td><code>docker network inspect &lt;network-name&gt;</code></td>
+<td>Display detailed information about a network, including connected containers, IP ranges, and driver type.</td>
+</tr>
+<tr>
+<td><code>docker run --network &lt;network-name&gt; &lt;image&gt;</code></td>
+<td>Start a container and connect it to a specific network at runtime.</td>
+</tr>
+<tr>
+<td><code>docker network connect &lt;network-name&gt; &lt;container-id&gt;</code></td>
+<td>Connect an existing container to a specified network.</td>
+</tr>
+<tr>
+<td><code>docker network disconnect &lt;network-name&gt; &lt;container-id&gt;</code></td>
+<td>Disconnect a container from a specific network.</td>
+</tr>
+<tr>
+<td><code>docker network prune</code></td>
+<td>Remove all unused Docker networks. Be cautious as it deletes networks not being used by containers.</td>
+</tr>
+<tr>
+<td><code>docker-compose up</code></td>
+<td>Automatically creates and manages a network for the services defined in the <code>docker-compose.yml</code> file.</td>
+</tr>
+<tr>
+<td><code>docker network create --subnet=&lt;CIDR&gt; &lt;network-name&gt;</code></td>
+<td>Create a network with a custom subnet (CIDR notation).</td>
+</tr>
+<tr>
+<td><code>docker network create --gateway=&lt;IP&gt; &lt;network-name&gt;</code></td>
+<td>Create a network with a custom gateway IP address.</td>
+</tr>
+<tr>
+<td><code>docker network create -o com.docker.network.bridge.name=&lt;bridge-name&gt; &lt;network-name&gt;</code></td>
+<td>Create a <code>bridge</code> network with a specific bridge name.</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Volumes</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker volume ls</code></td>
+<td>List all volumes</td>
+</tr>
+<tr>
+<td><code>docker volume create &lt;volume-name&gt;</code></td>
+<td>Create a new volume</td>
+</tr>
+<tr>
+<td><code>docker volume rm &lt;volume-name&gt;</code></td>
+<td>Remove a volume</td>
+</tr>
+<tr>
+<td><code>docker run -v &lt;volume-name&gt;:&lt;container-path&gt; &lt;image&gt;</code></td>
+<td>Mount a volume into a container</td>
+</tr>
+</tbody>
+</table>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

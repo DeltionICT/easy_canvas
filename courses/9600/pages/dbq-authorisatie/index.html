@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Authorisatie</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Werken met databases</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-leerdoelen/">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-installatie/">Installatie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-authorisatie/" aria-current="page" data-state="active">Authorisatie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-eenvoudige-queries/">Eenvoudige queries</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-gegevens-filteren/">Gegevens filteren</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-crud/">CRUD</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/dbq-database-maken/">Database maken</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div class="deltionv2-text">
+                
+                    <h1>Werken met databases</h1>
+<h2>Authorisatie</h2>
+<p>Tijdens het ontwikkelen van een database wil je als developer graag toegang hebben tot alle mogelijkheden, functionaliteiten en data van je database-server. Je gebruikt hiervoor een account dat alle rechten heeft om aanpassingen te doen aan de database server.</p>
+<h4>Configureer een super-user</h4>
+<p>In MariaDB gaat dat als volgt:</p>
+<ul>
+<li>Open PHPMyAdmin en log in met een bestaande gebruiker die de rechten heeft om gebruikers te beheren (bijvoorbeeld de rootgebruiker).</li>
+<li>Ga naar <a href="https://docs.phpmyadmin.net/nl/latest/privileges.html">PHPMyAdmin documentatie -&gt; User management</a></li>
+</ul>
+<p>In Postgres gaat dat zo:</p>
+<ul>
+<li>Open Adminer en log in als superuser</li>
+<li>Voeg een sql-commando in:</li>
+</ul>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE student <span class="token keyword">WITH</span> LOGIN PASSWORD <span class="token string">'student'</span> SUPERUSER<span class="token punctuation">;</span></code></pre>
+<p>Je hebt nu een superuser aangemaakt waarmee je alle rechten hebt om databases aan te maken en te bewerken.</p>
+<h4>Configureer een gebruiker die alleen gegevens kan weergeven</h4>
+<p>In MariaDB:</p>
+<ul>
+<li>Dat kan via het user-panel in PHPMyAdmin of via sql-commando's</li>
+<li><code>CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'password'</code></li>
+<li><code>GRANT SELECT ON '*.my_database' TO 'my_user@localhost'</code></li>
+</ul>
+<p>In Postgres:</p>
+<ul>
+<li>Via sql venster in Adminer</li>
+<li><code>CREATE USER my_user WITH PASSWORD 'secret';</code></li>
+<li><code>GRANT CONNECT ON DATABASE school TO my_user;</code></li>
+<li><code>GRANT USAGE ON SCHEMA public TO my_user;</code></li>
+<li><code>GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;</code>
+my_user kan nu uit alle tabellen van de database <code>school</code> gegevens weergeven.</li>
+</ul>
+<h2>Cheatsheet Postgresql</h2>
+<table style="border-collapse:collapse; border:1px black solid;">
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border: 1px solid black; padding:4px">[-d] <database></database></td>
+<td style="border: 1px solid black; padding:4px">psql -d mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting to database</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-U</td>
+<td style="border: 1px solid black; padding:4px">psql -U john mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting as a specific user</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-h -p</td>
+<td style="border: 1px solid black; padding:4px">psql -h localhost -p 5432 mydb</td>
+<td style="border: 1px solid black; padding:4px">Connecting to a host/port</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-U -h -p -d</td>
+<td style="border: 1px solid black; padding:4px">psql -U admin -h 192.168.1.5 -p 2506 -d mydb</td>
+<td style="border: 1px solid black; padding:4px">Connect remote PostgreSQL</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-W</td>
+<td style="border: 1px solid black; padding:4px">psql -W mydb</td>
+<td style="border: 1px solid black; padding:4px">Force password</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-c</td>
+<td style="border: 1px solid black; padding:4px">psql -c '\c postgres' -c '\dt'</td>
+<td style="border: 1px solid black; padding:4px">Execute a SQL query or command</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-H</td>
+<td style="border: 1px solid black; padding:4px">psql -c &quot;\l+&quot; -H postgres &gt; database.html</td>
+<td style="border: 1px solid black; padding:4px">Generate HTML report</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-l</td>
+<td style="border: 1px solid black; padding:4px">psql -l</td>
+<td style="border: 1px solid black; padding:4px">List all databases</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-f</td>
+<td style="border: 1px solid black; padding:4px">psql mydb -f file.sql</td>
+<td style="border: 1px solid black; padding:4px">Execute commands from a file</td>
+</tr>
+<tr>
+<td style="border: 1px solid black; padding:4px">-V</td>
+<td style="border: 1px solid black; padding:4px">psql -V</td>
+<td style="border: 1px solid black; padding:4px">Print the psql version</td>
+</tr>
+</tbody>
+</table>
+<h2>Vragen en opdrachten</h2>
+<p><strong>Basisvragen</strong></p>
+<ul>
+<li>Wat is het verschil tussen een gebruiker en een rol?</li>
+<li>Welke SQL-opdracht gebruik je om een nieuwe gebruiker aan te maken in MariaDB?</li>
+<li>Welke SQL-opdracht gebruik je om een gebruiker een wachtwoord te geven in PostgreSQL?</li>
+</ul>
+<p><strong>Praktische vragen</strong></p>
+<ul>
+<li>Creëer een gebruiker genaamd <code>webshop_admin</code> die alleen vanaf de lokale machine (localhost) verbinding mag maken, met een wachtwoord naar keuze.</li>
+<li>Stel je voor dat de gebruiker <code>webshop_admin</code> ook een database mag aanmaken. Welke <code>GRANT</code>-opdracht moet je daarvoor gebruiken?</li>
+<li>Wat is het verschil tussen <code>GRANT ALL PRIVILEGES</code> en het geven van specifieke privileges, zoals <code>CREATE</code> of <code>SELECT</code>?</li>
+</ul>
+<p><strong>Diepere kennis</strong></p>
+<ul>
+<li>Welk risico loop je als je een gebruiker aanmaakt zonder <code>WITH GRANT OPTION</code>?</li>
+<li>Stel, je hebt een gebruiker gemaakt met de naam <code>api_gebruiker</code> en je wilt dat deze gebruiker alleen <code>SELECT</code>-rechten heeft op de tabel <code>producten</code> in de database <code>webshop</code>. Welke SQL-opdracht(en) gebruik je hiervoor in PostgreSQL?</li>
+<li>Hoe gaat dit in MariaDB?</li>
+<li>Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken?</li>
+</ul>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

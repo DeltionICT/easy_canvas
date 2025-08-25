@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Leerdoelen</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Docker</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-leerdoelen/" aria-current="page" data-state="active">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-ecosysteem/">Docker Ecosysteem</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-starten-met-docker/">Starten met Docker</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-compose/">Docker compose</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-commands/">Commands</a>
+                    
+                </div>
+            </div>
+        </section>
+        <div class="deltionv2-content-section">
+                    <section class="deltionv2-textarea">
+                    <div class="deltionv2-text">
+<h1>Docker</h1>
+<h3>Leerdoelen</h3>
+<p><strong>Aansluiting in de Kwalificatiedossiers:</strong>
+<strong>ICT system engineer (Crebonr. 27016, MBO niveau 4)</strong>:</p>
+<ul>
+<li>Heeft kennis van virtualisatie- en containerisatietechnieken.</li>
+<li>De ICT system engineer heeft daarnaast nog specialistische kennis van fysieke of virtuele infrastructuurdevices en veelgebruikte cloudomgevingen. Docker is een essentieel hulpmiddel in deze virtuele en cloudomgevingen.</li>
+<li>ICT Engineers hebben een proactieve rol bij het zorgen voor stabiliteit en continuïteit en de veiligheid van (onderdelen van) de infrastructuur, waarbij het beheren en/of bouwen van complexere infrastructuren aan bod komt. Containers dragen bij aan deze proactieve benadering.</li>
+<li>Bij het automatiseren in netwerken en infrastructuren, spelen Docker en container-orchestratie tools een grote rol.</li>
+</ul>
+<p><strong>Software developer (Crebonr. 25998, MBO niveau 4)</strong>:</p>
+<ul>
+<li>Van software developers wordt verwacht dat zij brede kennis hebben van ontwikkelingen op het gebied van software-development-tools, zoals DevOps. Docker is een fundamenteel onderdeel van de DevOps-pipeline voor het bouwen, verzenden en uitvoeren van applicaties.</li>
+<li>De developer moet ook kennis hebben van ontwikkelingen op het vlak van ICT-infrastructuur en devices, zoals '...as a service' (SaaS, IaaS, PaaS) en cloud, en de consequenties hiervan voor software development. Containers zijn de basis voor veel van deze &quot;as a service&quot; oplossingen en cloud-native applicaties.</li>
+<li>De software kan op verschillende devices draaien en kan betrekking hebben op een complexe (fysieke of virtuele) IT-infrastructuur. Containers bieden een manier om software consistent en geïsoleerd te implementeren over diverse infrastructuren.</li>
+<li>De rol van de Software developer is ook om processen te automatiseren door middel van software, wat door containerisatie efficiënter kan worden gedaan.</li>
+</ul>
+</div>
+                </section>
+<section class="deltionv2-accordeon"><h3>Leerdoelen</h3>
+<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://leeromgeving.deltion.nl/courses/4128/files/109205/preview" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File"></div><a>Basisconcepten</a></div><div class="deltionv2-accordion-panel">
+<ul>
+<li>Basisconcepten van containerisatie en Docker uitleggen</li>
+<li>Lokaal installeren en configureren van Docker</li>
+<li>Standaardcommando's gebruiken om images en containers te beheren</li>
+<li>Een eenvoudige Dockerfile schrijven</li>
+</ul>
+</div></div>
+<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://leeromgeving.deltion.nl/courses/4128/files/109205/preview" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File"></div><a>Automatisering en implementatie</a></div><div class="deltionv2-accordion-panel">
+<ul>
+<li>CI/CD-piplines opzetten met bijvoorbeeld Github actions</li>
+<li>Processen automatiseren met scripts (bijv. Python of Powershell of Bash)</li>
+<li>Containers implementeren in cloud-omgevingen</li>
+</ul>
+</div></div>
+<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://leeromgeving.deltion.nl/courses/4128/files/109205/preview" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File"></div><a>Security in Docker omgevingen</a></div><div class="deltionv2-accordion-panel">
+<ul>
+<li>Fouten en problemen oplossen in docker-omgevingen</li>
+<li>Basale security maatregelen toepassen</li>
+<li>Risico's inschatten met betrekking tot containerbeveiliging</li>
+</ul>
+</div></div>
+</section>
+                    
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

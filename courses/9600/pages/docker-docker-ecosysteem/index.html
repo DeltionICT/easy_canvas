@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Docker Ecosysteem</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Docker</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-leerdoelen/">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-ecosysteem/" aria-current="page" data-state="active">Docker Ecosysteem</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-starten-met-docker/">Starten met Docker</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-docker-compose/">Docker compose</a>
+                    
+                        <a href="/easy_canvas/courses/9600/pages/docker-commands/">Commands</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div class="deltionv2-text">
+                
+                    <h1>Docker</h1>
+<h3>Docker Ecosysteem</h3>
+<p>Een Docker container is een manier om een applicatie te verpakken samen met alles wat het nodig heeft om te kunnen draaien, zoals code, bibliotheken en andere bestanden. Denk aan een container zoals die op schepen worden vervoerd.</p>
+<ul>
+<li><strong>Geïsoleerd:</strong> De container is compleet gescheiden van de rest van je computer. De applicatie binnenin heeft zijn eigen omgeving, dus het kan geen andere programma's beïnvloeden en andere programma's kunnen de container niet zomaar beïnvloeden.</li>
+<li><strong>Draagbaar:</strong> Je kunt de container gemakkelijk verplaatsen van je eigen laptop naar een server van het bedrijf, of naar de computer van een collega. Omdat alles wat de applicatie nodig heeft in de container zit, werkt het overal precies hetzelfde. Dit is de oplossing voor het bekende probleem &quot;bij mij werkt het wel&quot;.</li>
+<li><strong>Lichtgewicht:</strong> Containers zijn kleiner en efficiënter dan een complete virtuele machine, omdat ze de besturingssysteemkern van de hostcomputer delen. Dit maakt ze snel om op te starten en verbruikt minder bronnen.</li>
+</ul>
+<p>Het grootste verschil tussen een <strong>Docker container</strong> en een <strong>virtuele machine (VM)</strong> is wat ze inpakken en delen. Een Docker container is als een appartement in een flatgebouw, terwijl een virtuele machine meer lijkt op een compleet, losstaand huis.</p>
+<h3>Virtuele Machine (VM)</h3>
+<p>Een VM is een volledige simulatie van een fysieke computer. Bovenop je computer (de <strong>host</strong>) draait een speciaal programma, de <strong>hypervisor</strong>, die ervoor zorgt dat je meerdere complete, onafhankelijke besturingssystemen (de <strong>guest OS</strong>) kunt draaien. Elk besturingssysteem heeft zijn eigen kernel, geheugen en opslagruimte. Dit maakt ze groot en zwaar, want je moet elke keer een compleet besturingssysteem opstarten.</p>
+<ul>
+<li><strong>Vergelijking:</strong> Een apart huis met zijn eigen keuken, badkamer, en elektriciteit.</li>
+<li><strong>Besturingssysteem:</strong> Elk VM heeft zijn eigen besturingssysteem.</li>
+<li><strong>Grootte:</strong> Vaak meerdere gigabytes.</li>
+<li><strong>Opstarttijd:</strong> Duurt minuten, omdat het een heel besturingssysteem moet laden.</li>
+</ul>
+<hr>
+<h3>Docker Container</h3>
+<p>Een Docker container is veel lichter en efficiënter. De container deelt de <strong>kernel</strong> van het besturingssysteem van de hostcomputer. Je pakt alleen je applicatie en de bestanden en bibliotheken die je applicatie nodig heeft in de container in. Je hebt geen apart, compleet besturingssysteem meer nodig. Hierdoor zijn containers veel kleiner en starten ze razendsnel op.</p>
+<ul>
+<li><strong>Vergelijking:</strong> Een appartement in een flatgebouw. Meerdere appartementen (containers) delen de fundering en de nutsvoorzieningen (de kernel en het besturingssysteem van de host).</li>
+<li><strong>Besturingssysteem:</strong> Deelt het besturingssysteem van de host.</li>
+<li><strong>Grootte:</strong> Vaak slechts megabytes.</li>
+<li><strong>Opstarttijd:</strong> Duurt seconden.</li>
+</ul>
+<div class="deltionv2-addcontentarea" style="text-align:center; padding:40px;"><img src="/easy_canvas/_assets/vm_docker.png" alt="/vm_docker.png" style="min-width:60%; width: 60%; height: 100%; object-fit: cover;"></div>
+<h3>Docker Ecosystem</h3>
+<p><strong>Docker Engine:</strong> De Docker Engine is het hart van het Docker-platform. Het bestaat uit twee hoofdcomponenten:</p>
+<p><strong>Docker Daemon (dockerd):</strong> De Docker-daemon draait op de hostmachine en is verantwoordelijk voor het beheren van Docker-objecten, zoals afbeeldingen, containers, netwerken en volumes.</p>
+<p><strong>Docker Client:</strong> De Docker client is een command-line interface (CLI) tool waarmee gebruikers via commando's met de Docker-daemon kunnen communiceren. Gebruikers kunnen Docker-containers bouwen, uitvoeren, stoppen en beheren met behulp van de Docker CLI.</p>
+<p><strong>Docker-images:</strong> zijn de bouwstenen van containers. Het zijn alleen-lezen sjablonen die de applicatiecode, runtime, systeemtools, bibliotheken en andere afhankelijkheden bevatten. Docker-images worden gemaakt op basis van Dockerfiles, tekstbestanden met instructies voor het bouwen van de afbeelding laag voor laag.</p>
+<p><strong>Docker-containers:</strong> zijn uitvoerbare instanties van Docker-afbeeldingen. Ze kapselen de applicatie en zijn afhankelijkheden in en bieden een geïsoleerde omgeving voor uitvoering. Containers kunnen worden gemaakt, gestart, gestopt, verplaatst en verwijderd met behulp van Docker-opdrachten.</p>
+<p><strong>Docker-register:</strong> Docker Registry is een gecentraliseerde opslagplaats voor het opslaan en delen van Docker-afbeeldingen. Het standaard openbare register is Docker Hub, waar gebruikers een uitgebreide verzameling afbeeldingen kunnen vinden.</p>
+<p><strong>Docker Compose:</strong> is een tool voor het definiëren en uitvoeren van Docker-applicaties met meerdere containers. Het gebruikt een YAML-bestand (docker-compose.yml) om services, netwerken, volumes en andere configuraties op te geven die nodig zijn voor de applicatie. Docker Compose vereenvoudigt het beheer van complexe applicaties die zijn samengesteld uit meerdere onderling verbonden containers.</p>
+<p><strong>Docker-volumes</strong> worden gebruikt voor persistente gegevens die worden gegenereerd door en worden gebruikt door Docker-containers. Ze bieden een manier voor containers om gegevens op te slaan en te delen, onafhankelijk van de levenscyclus van de container, en zorgen voor persistentie en overdraagbaarheid van gegevens.</p>
+<p><strong>Docker-netwerk:</strong> biedt netwerkmogelijkheden voor containers om met elkaar en met externe netwerken te communiceren. Het maakt gebruik van software-defined netwerken (SDN) om virtuele netwerken te creëren, waardoor connectiviteit en isolatie mogelijk zijn. Gebruikers kunnen aangepaste netwerken maken, containers verbinden met netwerken en netwerkbeleid definiëren met behulp van Docker-opdrachten of Docker Compose.</p>
+<div class="deltionv2-addcontentarea" style="text-align:center; padding:40px;"><img src="/easy_canvas/_assets/docker_eco.jpg" alt="docker_eco.jpg" style="min-width:80%; width: 80%; height: 100%; object-fit: cover;"></div>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
