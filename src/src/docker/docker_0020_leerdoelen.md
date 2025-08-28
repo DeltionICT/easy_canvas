@@ -11,7 +11,6 @@ date: 2025-08-25
 # {{ course_title }}
 ### {{ title }}
 
-**Aansluiting in de Kwalificatiedossiers:**
 **ICT system engineer (Crebonr. 27016, MBO niveau 4)**:
 *   Heeft kennis van virtualisatie- en containerisatietechnieken.
 *   De ICT system engineer heeft daarnaast nog specialistische kennis van fysieke of virtuele infrastructuurdevices en veelgebruikte cloudomgevingen. Docker is een essentieel hulpmiddel in deze virtuele en cloudomgevingen.

@@ -1,23 +1,20 @@
 ---
 layout: front_layout.njk
-course_title: Onderwerpen
-title: Onderwerpen
+course_title: Cursussen
+title: Cursussen
 date: 2025-08-21
-aan_de_slag_link: https://www.apple.com
-afbeelding: /_assets/test_afbeelding.jpg
+afbeelding: /_assets/computer_code.jpg
 tags: home
 ---
 
 
-### Dit is de section met tekst.
-Blaberdie bla ben bla
-Hier nog een button
-zo kan ik er nog wel wat bijtypen. Gooooh wat handig zeg.
-* En nog wat
-* Yeah great stuff.
+### Welkom, aanstaande software developers!
 
-Hier nog wat tekst
-* hier nog een lijsetje
-* En nog wat
+Deze site is  gemaakt voor jou als MBO student in de opleiding software development. Hier duik je direct in de praktijk.
 
+De cursussen zijn ontworpen om naadloos aan te sluiten op jouw leerplan, met onderwerpen die ertoe doen: van het bouwen van robuuste databases en het schrijven van efficiënte queries tot het creëren van strakke webapplicaties. Hier leer je de vaardigheden die de IT-sector vandaag de dag zoekt.
+
+Leer hier problemen oplossen en de toekomst van software bouwen.
+
+Klaar om te beginnen? Pak je toetsenbord en ga aan de slag!
 

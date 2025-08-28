@@ -2,7 +2,7 @@
 layout: home_layout.njk
 title: Introductie
 date: 2025-08-21
-afbeelding: /_assets/test_afbeelding.jpg
+afbeelding: /_assets/db_olifant.png
 ---
 
 ### {{ course_title }}

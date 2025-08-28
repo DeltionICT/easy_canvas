@@ -1,6 +1,8 @@
 ---
 title: Introductie
 date: 2025-08-21
+afbeelding: /_assets/computer_code.jpg
+
 ---
 
 {% section %}

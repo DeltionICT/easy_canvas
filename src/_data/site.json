@@ -1,9 +1,4 @@
 {
   "name" : "Easy Canvas",
-  "description" : "Easy Canvas is a template for creating educational content on the Canvas platform.",
-  "baseurl" : "https://deltionict.github.io/easy_canvas",
-  "deploy_site" : "https://leeromgeving.deltion.nl",
-  "canvas_course_id" : 9600,
-  "canvas_course_name" : "verdieping",
-  "canvas_course_url" : "/courses/9600/pages/verdieping"
+  "description" : "Easy Canvas is a template for creating educational content on the Canvas platform."
 }
