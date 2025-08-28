@@ -1,6 +1,6 @@
 {
     "course_title": "Werken met databases",
     "layout": "nav_layout.njk",
-    "permalink": "courses/9600/pages/dbq-{{ title | slug }}/{{ page.index }}",
+    "permalink": "/dbq/{{ title | slug }}/{{ page.index }}",
     "tags": "dbq"
 }

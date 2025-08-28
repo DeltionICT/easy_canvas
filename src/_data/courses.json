@@ -1,19 +1,30 @@
 {
   "courses": [   
     {
-      "url": "courses/9600/pages/dbq-introductie/",
+      "url": "dbq",
+      "section": "verdieping",
       "name": "Werken met databases",
       "description": "Leren werken met data en queries"
     },
     {
-      "url": "courses/9600/pages/docker-introductie/",
+      "url": "docker",
+      "section": "verdieping",
       "name": "Docker",
       "description": "Leren werken met Docker"
     },     
     {
-      "url": "courses/9600/pages/git-introductie",
+      "url": "git",
+      "section": "verdieping",
       "name": "Git en Github",
       "description": "Leren werken met Git en Github"
+    },
+    {
+      "url": "html",
+      "section": "verdieping",
+      "name": "HTML",
+      "description": "Leren werken met HTML"
     }
   ]
-}
+}    
+
+  

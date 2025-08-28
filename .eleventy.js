@@ -10,17 +10,17 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(HtmlBasePlugin);
     eleventyConfig.addPlugin(RenderPlugin);
 
-    eleventyConfig.addCollection("pages", function(collection) {
-        const coll = collection.getFilteredByTag("pages");
-        for(let i = 0; i < coll.length ; i++) {
-            const prevPost = coll[i-1];
-            const nextPost = coll[i + 1];
+    // eleventyConfig.addCollection("pages", function(collection) {
+    //     const coll = collection.getFilteredByTag("pages");
+    //     for(let i = 0; i < coll.length ; i++) {
+    //         const prevPost = coll[i-1];
+    //         const nextPost = coll[i + 1];
 
-            coll[i].data["prevPost"] = prevPost;
-            coll[i].data["nextPost"] = nextPost;
-        }
-        return coll;
-    });
+    //         coll[i].data["prevPost"] = prevPost;
+    //         coll[i].data["nextPost"] = nextPost;
+    //     }
+    //     return coll;
+    // });
 
     eleventyConfig.addFilter("postsAscending", (collection) => {
         return collection.sort((a,b) => {
@@ -100,16 +100,16 @@ export default function(eleventyConfig) {
     });
     
     // Easy Canvas style
-    // eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
-    //     return `<div class="deltionv2-accordion-whole">
-    //                 <details><summary><a>${titel}</a></summary><p>&nbsp;</p>${content}</details>
-    //             </div>`
-    // });
-
-    // Deltion style
     eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
-        return `<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://leeromgeving.deltion.nl/courses/4128/files/109205/preview" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File" /></div><a>${titel}</a></div><div class="deltionv2-accordion-panel">${content}</div></div>`
+        return `<div class="deltionv2-accordion-whole">
+                    <details><summary><a>${titel}</a></summary><p>&nbsp;</p>${content}</details>
+                </div>`
     });
+
+    // // Deltion style
+    // eleventyConfig.addPairedShortcode("accordeon", (content, titel) => {
+    //     return `<div class="deltionv2-accordion-whole"><div class="deltionv2-accordion"><div class="deltionv2-arrow-container"><img src="https://deltionict.github.io/easy_canvas/_assets/pijl.svg" alt="PijlOnder-1.svg" data-api-endpoint="https://leeromgeving.deltion.nl/api/v1/courses/4128/files/109205" data-api-returntype="File" /></div><a>${titel}</a></div><div class="deltionv2-accordion-panel">${content}</div></div>`
+    // });
 
     eleventyConfig.addPairedShortcode("button_collection", (content) => {
         return `
@@ -119,10 +119,12 @@ export default function(eleventyConfig) {
     eleventyConfig.addShortcode("button", (link, text) => {
         return `<div class="deltionv2-navigationbutton"><a href="${link}"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow" />${text}<br /></a></div>`;
     });
+    
+    // eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });
 
     return {
         pathPrefix: "/easy_canvas/",
-        // pathPrefix: "/",
+        // pathPrefix: "//",
         dir: {
             input: "src",
             output: "docs",

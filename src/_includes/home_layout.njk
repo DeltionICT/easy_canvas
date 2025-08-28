@@ -22,7 +22,7 @@
         <section class="deltionv2-buttoncollection">
             {% for p in collections[tags] | postsAscending %}
             <div class="deltionv2-navigationbutton"><a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page"
-                    data-state="active" {% endif %}><img src="https://deltionict.github.io/easy_canvas/_assets/arrow-right-o.svg" alt="Arrow" />{{ p.data.title }}<br /></a></div> 
+                    data-state="active" {% endif %}><img src="/_assets/arrow-right-o.svg" alt="Arrow" />{{ p.data.title }}<br /></a></div> 
                     <!-- easy_canvas  arrow right - /_assets/arrow-right-o.svg -->
                     <!-- canvas  arrow right - https://leeromgeving.deltion.nl/courses/4128/files/109196/preview -->
             {% endfor %}

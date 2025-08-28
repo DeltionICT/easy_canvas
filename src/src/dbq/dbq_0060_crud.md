@@ -56,7 +56,7 @@ Om een record te kunnen verwijderen is weer een unieke waarde nodig zoals 'cursi
 ```sql
 delete from cursist where cursistnr = 92;
 
-Query OK, 1 row affected (0,00 sec)```
+Query OK, 1 row affected (0,00 sec)
 ```
 
 ## Oefeningen
