@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Canvas | Bla</title>
+    <title>Easy Canvas | Installatie</title>
     <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
     <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
     <style>
@@ -131,15 +131,25 @@
         <section class="deltionv2-addbanner">
             <div class="deltionv2-addcontent">
                 <div class="deltionv2-addcontent-header">
-                    <h2></h2>
+                    <h2>Werken met databases</h2>
                 </div>
                 <div class="deltionv2-addcontent-header">
                     
-                        <a href="/easy_canvas/test/introductie/">Introductie</a>
+                        <a href="/easy_canvas/dbq/introductie/">Introductie</a>
                     
-                        <a href="/easy_canvas/test/bla/" aria-current="page" data-state="active">Bla</a>
+                        <a href="/easy_canvas/dbq/leerdoelen/">Leerdoelen</a>
                     
-                        <a href="/easy_canvas/test/render/">Render</a>
+                        <a href="/easy_canvas/dbq/installatie/" aria-current="page" data-state="active">Installatie</a>
+                    
+                        <a href="/easy_canvas/dbq/authorisatie/">Authorisatie</a>
+                    
+                        <a href="/easy_canvas/dbq/eenvoudige-queries/">Eenvoudige queries</a>
+                    
+                        <a href="/easy_canvas/dbq/gegevens-filteren/">Gegevens filteren</a>
+                    
+                        <a href="/easy_canvas/dbq/crud/">CRUD</a>
+                    
+                        <a href="/easy_canvas/dbq/database-maken/">Database maken</a>
                     
                 </div>
             </div>
@@ -151,39 +161,45 @@
                 
                 
 
-                    <section class="deltionv2-textarea">
-                    <div class="deltionv2-text">
-<div class="deltionv2-addcontentarea" style="text-align:left; padding:40px;"><img src="/easy_canvas/_assets/test_afbeelding.jpg" alt="test_afbeelding.jpg" style="min-width:100%; width: 100%; height: 100%; object-fit: cover;"></div>
-<div class="deltionv2-addintrotext">
-<h3>Dit is de section met tekst.</h3>
-<p>Blaberdie bla ben bla
-Hier nog een button
-zo kan ik er nog wel wat bijtypen. Gooooh wat handig zeg.</p>
+                    <h1>Werken met databases</h1>
+<h2>Installatie</h2>
+<blockquote>
+<h4>Installatie bestanden</h4>
+<p><strong>Python en MariaDB</strong>.</p>
 <ul>
-<li>En nog wat</li>
-<li>Yeah great stuff.</li>
+<li>De installatiebestanden staan op github.
+<a href="https://github.com/siewers32/docker_python">Docker images met python en mariadb</a></li>
+<li>Lees de README.md met uitleg over het installeren van de verschillende images.</li>
 </ul>
-<p>Hier nog wat tekst</p>
+<p>Voor sommige toepassingen kun je gebruik maken van postgres in plaats van mariadb. Beide zijn relatieve SQL-databases.</p>
+<p><strong>Python en Postgres</strong></p>
 <ul>
-<li>hier nog een lijsetje</li>
-<li>En nog wat</li>
+<li>Installatiebestanden op github <a href="https://github.com/siewers32/docker_python_postgres">Docker images met python en postgres</a></li>
+<li>Lees de README.md met uitleg over het installeren van de verschillende images.</li>
 </ul>
-</div>
-</div>
-                </section>
-<section class="deltionv2-accordeon"><h3>Leerdoelen</h3>
-    <div class="deltionv2-accordion-whole">
-                    <details><summary><a>Komt afspraken na</a></summary><p>&nbsp;</p>
-        Ja, je moet je afspraken natuurlijk wel nakomen mensen.
-    </details>
-                </div>
-</section>
-<p></p><section class="deltionv2-buttoncollection">
-<div class="deltionv2-navigationbutton"><a href="https://www.apple.com"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow">Apple<br></a></div>
-<div class="deltionv2-navigationbutton"><a href="https://www.apple.com"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow">Apple<br></a></div>
-<div class="deltionv2-navigationbutton"><a href="https://www.apple.com"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow">Apple<br></a></div>
-<div class="deltionv2-navigationbutton"><a href="https://www.apple.com"><img src="{{ '/_assets/arrow-right-o.svg' | htmlBaseUrl }}" alt="Arrow">Apple<br></a></div><p></p>
-</section>
+</blockquote>
+<h4>Installatie Docker voor Windows:</h4>
+<p>Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
+<ul>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Installeer Docker voor WSL2-backend</a></li>
+</ul>
+<h4>Installatie Docker voor Mac:</h4>
+<p>Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
+<h4>Installatie van een database</h4>
+<p><strong>Installatie MariaDB</strong>
+Als docker is opgestart met <code>docker compose up</code> kun je gebruik maken van PHPMyAdmin.<br>
+In docker-compose.yml vind je ergens de definitie van de PHPMyAdmin image. Kijk bij <code>ports</code>:</p>
+<pre class="language-python"><code class="language-python">    ports<span class="token punctuation">:</span>
+      <span class="token operator">-</span> <span class="token string">"8080:80"</span></code></pre>
+<p>Hieraan zie je dat de image zelf intern poortnummer 80 gebruikt, maar naar buiten toe (naar jouw host) is dat 8080.<br>
+Dit betekent dat je met <code>http://127.0.0.1:8080</code> gebruik kunt maken van phpmyadmin.
+Zoek naam en password op in de docker-compose.yml file om in te loggen.</p>
+<p><strong>Installatie Postgres</strong>.</p>
+<ul>
+<li>Lees het README.md bestand in de repository <a href="https://github.com/siewers32/docker_python_postgres">docker python postgres</a></li>
+<li>Je vind poortnummer in docker-compose.yml</li>
+</ul>
 
                     
                 </div>

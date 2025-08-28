@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Canvas | Docker compose</title>
+    <link href="/easy_canvas/_css/deltion.css" rel="stylesheet">
+    <link href="/easy_canvas/_css/prism-one-light.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: auto;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
+
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
+
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
+
+        summary::before {
+            content: '';
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+
+
+
+        details[open] summary::before {
+            background-image: url('/easy_canvas/_assets/pijl.svg');
+            transform: rotate(180deg);
+
+        }
+
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<div class="deltionv2-center-template">
+    <div class="deltionv2-template-container">
+        <section class="deltionv2-addbanner">
+            <div class="deltionv2-addcontent">
+                <div class="deltionv2-addcontent-header">
+                    <h2>Docker</h2>
+                </div>
+                <div class="deltionv2-addcontent-header">
+                    
+                        <a href="/easy_canvas/docker/introductie/">Introductie</a>
+                    
+                        <a href="/easy_canvas/docker/leerdoelen/">Leerdoelen</a>
+                    
+                        <a href="/easy_canvas/docker/docker-ecosysteem/">Docker Ecosysteem</a>
+                    
+                        <a href="/easy_canvas/docker/starten-met-docker/">Starten met Docker</a>
+                    
+                        <a href="/easy_canvas/docker/docker-compose/" aria-current="page" data-state="active">Docker compose</a>
+                    
+                        <a href="/easy_canvas/docker/commands/">Commands</a>
+                    
+                </div>
+            </div>
+        </section>
+         <div class="deltionv2-content-section">
+            <section class="deltionv2-textarea">
+                
+                <div class="deltionv2-text">
+                
+                
+
+                    <h1>Docker</h1>
+<h3>Docker compose</h3>
+<p>Het is handig om voor verschillende processen aparte Docker-images en een <code>docker-compose.yml</code> te gebruiken, omdat je zo je applicatie in onafhankelijke onderdelen opdeelt. Dit principe heet <strong>microservices</strong>.</p>
+<h3>Scheiding van verantwoordelijkheden</h3>
+<p>Elk proces, zoals je PHP webserver en je database, heeft zijn eigen unieke taak en afhankelijkheden. De PHP-webserver heeft Apache of Nginx nodig en de PHP-code, terwijl de database PostgreSQL of MySQL en de dataopslag nodig heeft.</p>
+<ul>
+<li><strong>Zonder Docker:</strong> Je installeert en configureert alles op dezelfde machine. Dit kan leiden tot conflicten tussen de software en het is moeilijk te beheren.</li>
+<li><strong>Met Docker:</strong> Je bouwt één image voor je PHP-webserver en een aparte image voor je database. Elke image is gespecialiseerd in één taak en bevat alleen de bestanden die daarvoor nodig zijn. Je kunt de database bijvoorbeeld updaten zonder je PHP-webserver te verstoren. Dit maakt het systeem <strong>stabieler</strong> en <strong>gemakkelijker te onderhouden</strong>.</li>
+</ul>
+<p>Door je project op te splitsen in aparte services, is het eenvoudiger voor meerdere mensen om aan verschillende onderdelen te werken. Ook is het makkelijker om de applicatie te testen en te implementeren.</p>
+<h3>De rol van <code>docker-compose.yml</code></h3>
+<p>Het <code>docker-compose.yml</code> bestand brengt al deze losse onderdelen samen. Zie het als een <strong>recept</strong> voor je hele applicatie. Je definieert daarin welke services je nodig hebt (bijvoorbeeld <code>php-app</code> en <code>db</code>), welke images ze moeten gebruiken en hoe ze met elkaar moeten communiceren.</p>
+<p><strong>Voorbeeld met PHP en PostgreSQL:</strong></p>
+<ol>
+<li><strong>php-app service:</strong> Deze service gebruikt een image die je PHP-webserver en code bevat. Het luistert op poort 8080 naar binnenkomende verzoeken.</li>
+<li><strong>db service:</strong> Deze service gebruikt de <code>postgres</code> image. Het beheert de database en is alleen toegankelijk voor de <code>php-app</code> service via het interne Docker-netwerk.</li>
+</ol>
+<p>Het <code>docker-compose.yml</code> bestand zorgt ervoor dat wanneer je het commando <code>docker-compose up</code> uitvoert, beide services tegelijkertijd starten en automatisch met elkaar worden verbonden in hetzelfde netwerk. Zo werken je webapplicatie en database samen alsof ze op dezelfde machine draaien, maar dan zonder de nadelen van een gedeelde omgeving.</p>
+<p>Als je deze opzet wil installeren op je eigen laptop, doe dan het volgende:</p>
+<ul>
+<li>Open een terminal</li>
+<li>Maak een nieuwe map aan voor je project <code>mkdir mijnproject</code></li>
+<li>Ga in de map staan: <code>cd mijnproject</code></li>
+<li>Maak de Dockerfile</li>
+<li>Maak de docker-compose.yml</li>
+</ul>
+<p>De structuur ziet er nu zo uit:</p>
+<pre><code>mijnproject/
+├── php-app/
+│   └── index.php
+├── docker-compose.yml
+└── Dockerfile
+</code></pre>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># Dockerfile</span>
+<span class="token comment"># Gebruik een officiële PHP-image met Apache als basis</span>
+FROM php:8.3-apache
+
+<span class="token comment"># Kopieer de bestanden van je applicatie naar de webserver</span>
+COPY php-app/ /var/www/html/
+
+<span class="token comment"># Installeer de nodige PHP-extensies, inclusief de PostgreSQL-driver</span>
+RUN docker-php-ext-install pdo pdo_pgsql</code></pre>
+<pre class="language-yml"><code class="language-yml"><span class="token comment"># docker-compose.yml</span>
+
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">web</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> .
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"8080:80"</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./php<span class="token punctuation">-</span>app<span class="token punctuation">:</span>/var/www/html
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+    
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>17<span class="token punctuation">-</span>alpine
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">POSTGRES_USER</span><span class="token punctuation">:</span> <span class="token string">"postgres"</span>
+      <span class="token key atrule">POSTGRES_PASSWORD</span><span class="token punctuation">:</span> <span class="token string">"secret!"</span>
+      <span class="token key atrule">POSTGRES_DB</span><span class="token punctuation">:</span> <span class="token string">"my_database"</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./db_data<span class="token punctuation">:</span>/var/lib/postgresql/data</code></pre>
+<p><strong>Draai de applicatie</strong>
+Gebruik <code>docker compose up</code></p>
+<ul>
+<li>De <code>docker-compose.yml</code> wordt gelezen en uitgevoerd:
+<ul>
+<li>web: Er wordt een image gemaakt op basis van de <code>Dockerfile</code></li>
+<li>Bij het opstarten van de applicatie wordt poort <code>8080</code> bereikbaar gemaakt voor de host. M.a.w. met <code>http://127.0.0.1:8080</code> beriek je de webserver</li>
+<li>De map <code>./php-app</code> wordt gekopieerd naar <code>/var/www/html</code> in de container</li>
+<li>db: Er wordt een image gedownload met de naam <code>postgres:17-alpine</code></li>
+<li>Er worden namen en wachtwoorden ingesteld.</li>
+<li>Er wordt een <code>volume</code> aangemaakt in je projectmap met de naam <code>db_data</code></li>
+<li>De gegevens uit <code>/var/lib/postgresql/data</code> worden daarin opgeslagen. Hierdoor kun je de data die de database-server gebruikt blijvend bewaren. Als je dit niet zou doen, ben je na iedere herstart al je data weer kwijt uit de database.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Stop de applicatie</strong>
+<code>docker compose down -v</code></p>
+<h2>Opdrachten</h2>
+<ul>
+<li>Gelukkig zijn er al heel veel <code>docker-compose.yml</code> bestanden gemaakt. Je hoeft dus niet steeds het wiel opnieuw uit te vinden. Ga naar <a href="https://github.com/docker/awesome-compose">awesome-compose</a> en kies minimaal 2 sets met microservices. Installeer en laat zien dat je alle services kunt draaien op je laptop.</li>
+<li>Maak zelf twee microservices voor het verwerken van afbeeldingen
+<ul>
+<li>De eerste microservice is een website waar je plaatjes kunt uploaden</li>
+<li>De tweede microservice is een proces dat de plaatjes aanpast naar een ander formaat bijv. 200px x 200px.</li>
+</ul>
+</li>
+<li>Maak zelf twee microservices voor het converteren van bestanden bijv. csv naar excel
+<ul>
+<li>De eerste microservice is een website waar je csv-bestanden kunt uploaden</li>
+<li>De tweede microservice is een proces dat de bestanden converteer naar excel.</li>
+</ul>
+</li>
+<li>Leg</li>
+</ul>
+
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>
