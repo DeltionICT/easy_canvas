@@ -33,3 +33,14 @@ npm run start
     * Een section is een flexbox geschikt voor 2 containers (bijv. links een tekst en rechts een afbeelding)
 * `{% tekst %}{% endtext %}`: Tekstcontainer binnen een section
 * `{% afbeelding "naam_afbeelding.jpg", "100", "100" %}`: Afbeelding met formaat width: 100% en height: 100% (formaat is optioneel)
+
+## Installatie
+* Maak een nieuwe canvas-pagina aan.
+* Maak van de canvas-pagina een voorpagina
+* Maak een iframe:
+
+```html
+<p>
+    <iframe id="easy_canvas" style="width: 100%; height: 4500px; border: none; overflow: hidden;" src="https://deltionict.github.io/easy_canvas/" loading="lazy"></iframe>
+</p>
+```
