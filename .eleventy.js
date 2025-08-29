@@ -34,6 +34,9 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/_css");
     eleventyConfig.addPassthroughCopy("./src/_assets");
     eleventyConfig.addPassthroughCopy("./src/_fonts");
+    eleventyConfig.addPassthroughCopy("manifest.json");
+    eleventyConfig.addPassthroughCopy("script.js");
+    eleventyConfig.addPassthroughCopy("service-worker.js");
 
     eleventyConfig.addShortcode("video", (yt_id, width=640, height=480, align="left") => {
         return `<p class="lti-embed" style="text-align: ${align}; margin-top:40px; margin-bottom:0px"><strong>

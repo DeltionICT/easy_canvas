@@ -29,7 +29,7 @@
  */
 @font-face {
     font-family: "Fira Code";
-    src: url("/_fonts/FiraCode-VariableFont_wght.ttf");
+    src: url("../_fonts/FiraCode-VariableFont_wght.ttf");
 }
 
 code[class*="language-"],

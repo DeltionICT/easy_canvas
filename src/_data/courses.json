@@ -23,6 +23,12 @@
       "section": "verdieping",
       "name": "HTML",
       "description": "Leren werken met HTML"
+    },
+    {
+      "url": "projecten",
+      "section": "verdieping",
+      "name": "Projecten",
+      "description": "Leren werken met projecten"
     }
   ]
 }    

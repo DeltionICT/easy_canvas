@@ -7,7 +7,6 @@
             <div class="deltionv2-content">
                 <div class="deltionv2-content-header">
                     <h2>{{ course_title }}</h2>
-                    <a href="/">Home</a>
                 </div>
             </div>
         </section>
@@ -21,7 +20,7 @@
         </section>
         <section class="deltionv2-buttoncollection">
             {% for p in collections[tags] | postsAscending %}
-            <div class="deltionv2-navigationbutton"><a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page"
+            <div class="deltionv2-navigationbutton" {% if p.url==page.url %}aria-current="page"{% endif %}><a href="{{ p.url }}" {% if p.url==page.url %}aria-current="page"
                     data-state="active" {% endif %}><img src="/_assets/arrow-right-o.svg" alt="Arrow" />{{ p.data.title }}<br /></a></div> 
                     <!-- easy_canvas  arrow right - /_assets/arrow-right-o.svg -->
                     <!-- canvas  arrow right - https://leeromgeving.deltion.nl/courses/4128/files/109196/preview -->

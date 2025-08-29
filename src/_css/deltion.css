@@ -1,4 +1,3 @@
-@import url(https://unpkg.com/css.gg/icons/icons.css);
 @import url(https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css);
 
 .deltion-template-container * {
@@ -467,7 +466,7 @@ button .icon-plus {
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul {
     color: #343368;
     font-family: BuenosAires, sans-serif;
@@ -479,14 +478,14 @@ button .icon-plus {
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a ul,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img a,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img img,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img ul,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li a,
@@ -494,35 +493,35 @@ button .icon-plus {
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li ul,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol a,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol img,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol ul,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p a,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p img,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p ul,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span a,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span img,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span li,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span ol,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span span,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span ul,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span a, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span img, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span li, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span ol, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span p, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span span, */
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext span ul, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul a,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul img,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul li,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul ol,
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul p,
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul span,
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul span, */
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul ul {
     padding: 0
 }
@@ -770,8 +769,9 @@ button .icon-plus {
     font-family: BuenosAires, sans-serif
 }
 
-.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,
-.deltionv2-template-container .deltionv2-textarea .deltionv2-text span {
+/* .deltionv2-template-container .deltionv2-textarea .deltionv2-text span, */
+.deltionv2-template-container .deltionv2-textarea .deltionv2-text a
+ {
     color: #343368;
     font-family: BuenosAires, sans-serif;
     margin: 0;
@@ -948,8 +948,9 @@ button .icon-plus {
     font-family: BuenosAires, sans-serif
 }
 
-.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext a,
-.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext span {
+/* .deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext span, */
+.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext a
+ {
     color: #343368;
     font-family: BuenosAires, sans-serif;
     margin: 0;
@@ -1281,41 +1282,41 @@ button .icon-plus {
     }
 }
 
-.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external span {
-    color: #fff
-}
+/* .deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external span { */
+    /* color: #fff
+} */
 
 .deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external .external_link_icon {
     display: none !important
 }
 
-.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external:hover span {
-    color: #f58220 !important;
+/* .deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external:hover span { */
+    /* color: #f58220 !important;
     text-decoration: none !important
-}
+} */
 
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external span {
-    color: #fff
-}
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external span { */
+    /* color: #fff
+} */
 
 .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external .external_link_icon {
     display: none !important
 }
 
-.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external:hover span {
-    color: #f58220 !important;
+/* .deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external:hover span { */
+    /* color: #f58220 !important;
     text-decoration: none !important
-}
+} */
 
-.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton:hover .external span {
-    color: #fff !important;
+/* .deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton:hover .external span { */
+    /* color: #fff !important;
     text-decoration: none !important
-}
+} */
 
-.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton .external span {
-    color: #fff !important;
+/* .deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton .external span { */
+    /* color: #fff !important;
     padding: 0 !important
-}
+} */
 
 .deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton .external .external_link_icon,
 .external_link_icon {

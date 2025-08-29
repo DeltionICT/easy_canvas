@@ -36,7 +36,8 @@ Als je deze opzet wil installeren op je eigen laptop, doe dan het volgende:
 * Maak de docker-compose.yml
 
 De structuur ziet er nu zo uit:
-```
+
+```shell
 mijnproject/
 ├── php-app/
 │   └── index.php
@@ -105,5 +106,4 @@ Gebruik `docker compose up`
 * Maak zelf twee microservices voor het converteren van bestanden bijv. csv naar excel
     * De eerste microservice is een website waar je csv-bestanden kunt uploaden
     * De tweede microservice is een proces dat de bestanden converteer naar excel.
-* Leg
 

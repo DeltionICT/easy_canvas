@@ -1,0 +1,6 @@
+{
+    "course_title": "Projectmatig werken",
+    "layout": "home_layout.njk",
+    "permalink": "/projecten/{{ title | slug }}/{{ page.index }}",
+    "tags": "projecten"
+}
