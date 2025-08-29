@@ -1,90 +1,128 @@
-    body {
-        padding:0;
-        margin:0;
-        font-family: BuenosAires, sans-serif;;
-    }
+        body {
+            padding: 0;
+            margin:0;
+            font-family: BuenosAires, sans-serif;
+            color: #343368;
+        }
 
-    details {
-        /* border-bottom: 1px solid #ccc; */
-        font-family: BuenosAires, sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        border-radius: 1px;
-        margin-bottom: 0px;
-        background-color: #fff;
-        display: block;
-        outline: none;
-        padding: 20px 25px;
-        text-align: left;
-        transition: .4s;
-        width: 100%
-    }
+        .page_wrapper {
+            width: 1200px;
+            margin: auto;
+        }
 
-    summary {
-        font-size:18px;
-        padding-left: 45px;
-        cursor: pointer;
-        list-style: none;
-        /* Verberg de standaard marker */
-        position: relative;
-    }
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*="language-"] code[class*="language-"] span {
+            font-family: Fira, monospace;
+        }
 
-    summary::before {
-        content: '';
-        background-image: url('{{ "/_assets/pijl.svg" | htmlBaseUrl }}');
-        background-size: contain;
-        /* Zorgt ervoor dat de afbeelding binnen de box past */
-        background-repeat: no-repeat;
-        display: inline-block;
-        /* Maak het element een blok-element */
-        width: 1em;
-        /* Stel de gewenste grootte in */
-        height: 1em;
-        /* Zorg voor gelijke hoogte/breedte */
-        vertical-align: middle;
-        position: absolute;
-        left: 15px;
-        /* padding-right:28px; */
-        font-size: 24px;
-        line-height: 1;
-        transition: transform 0.3s;
-    }
+        details {
+            /* border-bottom: 1px solid #ccc; */
+            font-family: BuenosAires, sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            background-color: #fff;
+            display: block;
+            outline: none;
+            padding: 20px 45px;
+            text-align: left;
+            transition: .4s;
+        }
 
-    details[open] p.firstchild {
-        border-top: 1px solid #ccc;
-    }
+        summary {
+            font-size: 18px;
+            padding-left: 25px;
+            cursor: pointer;
+            list-style: none;
+            /* Verberg de standaard marker */
+            position: relative;
+        }
 
-    details[open] summary::before {
-        background-image: url('{{ "/_assets/pijl.svg" | htmlBaseUrl }}');
-        transform: rotate(180deg);
+        summary::before {
+            content: '';
+            background-image: url('../_assets/pijl.svg');
+            background-size: contain;
+            /* Zorgt ervoor dat de afbeelding binnen de box past */
+            background-repeat: no-repeat;
+            display: inline-block;
+            /* Maak het element een blok-element */
+            width: 1em;
+            /* Stel de gewenste grootte in */
+            height: 1em;
+            /* Zorg voor gelijke hoogte/breedte */
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            /* padding-right:28px; */
+            font-size: 24px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
 
-    }
 
-    details p {
-        font-family: BuenosAires, sans-serif;
-        font-weight: 400;
-        padding: 20px;
-        margin: 0;
-    }
 
-            
-    .videoWrapper {
-        position: relative;
-        margin-top:2rem;
-        padding-bottom: 56.25%; /* 16:9 */
-        height: 0;
-    }
-    .videoWrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+        details[open] summary::before {
+            background-image: url('../_assets/pijl.svg');
+            transform: rotate(180deg);
 
-    code[class*="language-"],
-    pre[class*="language-"] {
-        background: #f5f4f7;
-    }
+        }
 
- 
+        details p {
+            font-family: BuenosAires, sans-serif;
+            font-weight: 400;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        details p.firstchild {
+            padding-top: 50px;
+        }
+
+
+        .videoWrapper {
+            position: relative;
+            margin-top: 2rem;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+            height: 0;
+        }
+
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f4f7;
+        }
+
+        /* Klasse adjusted-content voegt geen nieuwe opmaak toe, maar zorgt ervoor dat opmaak kan worden aangepast door elementen specifieker te maken. Was deltionv2-text */
+        .deltionv2-text {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            width: 65%;
+        }
+
+        blockquote {
+            background-color: #f5f4f7;
+            margin: 10px 0px 20px 0px;
+            padding: 20px;
+        }
+
+        .deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header a[aria-current="page"] {
+            color: #f58220;
+            font-weight: bold;
+        }
+
+        .deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a[aria-current="page"] {
+            background-color: #343368;
+            border-top-color: #343368;
+            color: #fff;
+        }
