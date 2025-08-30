@@ -3,9 +3,6 @@ title: Docker Ecosysteem
 date: 2025-08-25
 ---
 
-# {{ course_title }}
-### {{ title }}
-
 Een Docker container is een manier om een applicatie te verpakken samen met alles wat het nodig heeft om te kunnen draaien, zoals code, bibliotheken en andere bestanden. Denk aan een container zoals die op schepen worden vervoerd.
 
 * **Geïsoleerd:** De container is compleet gescheiden van de rest van je computer. De applicatie binnenin heeft zijn eigen omgeving, dus het kan geen andere programma's beïnvloeden en andere programma's kunnen de container niet zomaar beïnvloeden.
@@ -36,7 +33,7 @@ Een Docker container is veel lichter en efficiënter. De container deelt de **ke
 
 {% afbeelding "/vm_docker.png", "60", "100", "center"%}
 
-### Docker Ecosystem
+### Docker Ecosysteem
 
 **Docker Engine:** De Docker Engine is het hart van het Docker-platform. Het bestaat uit twee hoofdcomponenten:
 

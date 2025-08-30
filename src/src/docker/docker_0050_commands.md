@@ -3,9 +3,6 @@ title: Commands
 date: 2025-08-25
 ---
 
-# {{ course_title }}
-### {{ title }}
-
 Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.
 Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de docker-cli in een terminal
 

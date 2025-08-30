@@ -126,3 +126,65 @@
             border-top-color: #343368;
             color: #fff;
         }
+
+        div#inhoudsopgave {
+            background-color: #f5f4f7; 
+            padding: 20px;
+        }
+        div#inhoudsopgave > div.toc ul {
+            padding: 5px;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text ul li a {
+            font-family: BuenosAires, sans-serif;
+            padding:0;
+        }
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text ul li {
+            padding:0;
+        }
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text ul {
+            padding: 0rem 0rem 0rem 0.5rem;
+        }
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text a, .deltionv2-template-container .deltionv2-textarea .deltionv2-text ul ul {
+            padding: 0rem 0rem 0rem 1rem;
+            margin: 0;
+        }
+
+         div#inhoudsopgave > div.toc ul li a {
+            font-family: BuenosAires, sans-serif;
+            padding: 0rem 0rem 0rem 0rem;
+            margin: 0;
+        }
+
+        div#inhoudsopgave > div.toc ul li > ul {
+            font-family: BuenosAires, sans-serif;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        div#inhoudsopgave > div.toc ul li > ul li {
+            font-family: BuenosAires, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        div#inhoudsopgave > div.toc ul li > ul li a {
+            font-family: BuenosAires, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text table {
+            background-color: #f5f4f7;
+            margin: 0;
+            width:100%;
+            border-collapse: collapse;
+
+        }
+
+        .deltionv2-template-container .deltionv2-textarea .deltionv2-text th, .deltionv2-template-container .deltionv2-textarea .deltionv2-text td {
+            text-align: left;
+            padding: 0.5rem;
+            border: 1px solid #343368;
+        }
+

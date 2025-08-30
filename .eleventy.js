@@ -1,6 +1,23 @@
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { RenderPlugin } from "@11ty/eleventy";
 import { HtmlBasePlugin } from "@11ty/eleventy";
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import pluginTOC from 'eleventy-plugin-toc'; 
+
+const markdownItOptions = {
+    html:true,
+    breaks: false
+}
+const markdownItAnchorOptions = {
+    permalink: false,
+    tabIndex: false
+}
+
+const markdownLib = markdownIt(markdownItOptions).use(
+    markdownItAnchor,
+    markdownItAnchorOptions
+)
 
 export default function(eleventyConfig) {
         // Order matters, put this at the top of your configuration file.
@@ -9,6 +26,18 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(HtmlBasePlugin);
     eleventyConfig.addPlugin(RenderPlugin);
+
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags:['h2','h3','h4'], // which headings to include
+        wrapper:'div',
+        ul: true,
+        flat: false
+    })
+
+
+
+    eleventyConfig.setLibrary("md", markdownLib);
+
 
     // eleventyConfig.addCollection("pages", function(collection) {
     //     const coll = collection.getFilteredByTag("pages");
