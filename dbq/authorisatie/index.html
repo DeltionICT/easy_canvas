@@ -47,12 +47,18 @@
                 
                 <div class="deltionv2-text">
                 
-                
-
-                    <h1>Werken met databases</h1>
-<h2>Authorisatie</h2>
+                <h1 id="top">Werken met databases</h1>
+                <h3>Authorisatie</h3>
+                <div id="inhoudsopgave">
+                <b>Inhoudsopgave</b>
+                <div class="toc">
+        <ul><li><a href="#configureer-een-super-user">Configureer een super-user</a></li><li><a href="#authorisatie">Authorisatie</a></li><li><a href="#configureer-een-gebruiker-die-alleen-gegevens-kan-weergeven">Configureer een gebruiker die alleen gegevens kan weergeven</a></li><li><a href="#cheatsheet-postgresql">Cheatsheet Postgresql</a></li><li><a href="#vragen-en-opdrachten">Vragen en opdrachten</a></li></ul>
+      </div>
+                </div>
+                <h1 id="werken-met-databases">Werken met databases</h1>
+<h2 id="authorisatie">Authorisatie</h2>
 <p>Tijdens het ontwikkelen van een database wil je als developer graag toegang hebben tot alle mogelijkheden, functionaliteiten en data van je database-server. Je gebruikt hiervoor een account dat alle rechten heeft om aanpassingen te doen aan de database server.</p>
-<h4>Configureer een super-user</h4>
+<h4 id="configureer-een-super-user">Configureer een super-user</h4>
 <p>In MariaDB gaat dat als volgt:</p>
 <ul>
 <li>Open PHPMyAdmin en log in met een bestaande gebruiker die de rechten heeft om gebruikers te beheren (bijvoorbeeld de rootgebruiker).</li>
@@ -65,7 +71,7 @@
 </ul>
 <pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> ROLE student <span class="token keyword">WITH</span> LOGIN PASSWORD <span class="token string">'student'</span> SUPERUSER<span class="token punctuation">;</span></code></pre>
 <p>Je hebt nu een superuser aangemaakt waarmee je alle rechten hebt om databases aan te maken en te bewerken.</p>
-<h4>Configureer een gebruiker die alleen gegevens kan weergeven</h4>
+<h4 id="configureer-een-gebruiker-die-alleen-gegevens-kan-weergeven">Configureer een gebruiker die alleen gegevens kan weergeven</h4>
 <p>In MariaDB:</p>
 <ul>
 <li>Dat kan via het user-panel in PHPMyAdmin of via sql-commando's</li>
@@ -81,7 +87,7 @@
 <li><code>GRANT SELECT ON ALL TABLES IN SCHEMA public TO my_user;</code>
 my_user kan nu uit alle tabellen van de database <code>school</code> gegevens weergeven.</li>
 </ul>
-<h2>Cheatsheet Postgresql</h2>
+<h2 id="cheatsheet-postgresql">Cheatsheet Postgresql</h2>
 <table style="border-collapse:collapse; border:1px black solid;">
 <thead>
 <tr>
@@ -143,7 +149,7 @@ my_user kan nu uit alle tabellen van de database <code>school</code> gegevens we
 </tr>
 </tbody>
 </table>
-<h2>Vragen en opdrachten</h2>
+<h2 id="vragen-en-opdrachten">Vragen en opdrachten</h2>
 <p><strong>Basisvragen</strong></p>
 <ul>
 <li>Wat is het verschil tussen een gebruiker en een rol?</li>
@@ -164,7 +170,8 @@ my_user kan nu uit alle tabellen van de database <code>school</code> gegevens we
 <li>Een gebruiker klaagt dat hij geen verbinding kan maken. Je weet zeker dat het wachtwoord klopt. Welke twee meest voorkomende oorzaken kunnen dit probleem veroorzaken?</li>
 </ul>
 
-                    
+
+
                 </div>
             </section>
         </div>

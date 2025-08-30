@@ -47,10 +47,16 @@
                 
                 <div class="deltionv2-text">
                 
-                
-
-                    <h1>Werken met databases</h1>
-<h2>Database maken</h2>
+                <h1 id="top">Werken met databases</h1>
+                <h3>Database maken</h3>
+                <div id="inhoudsopgave">
+                <b>Inhoudsopgave</b>
+                <div class="toc">
+        <ul><li><a href="#uitleg">Uitleg</a></li><li><a href="#database-maken">Database maken</a></li><li><a href="#oefeningen">Oefeningen</a></li></ul>
+      </div>
+                </div>
+                <h1 id="werken-met-databases">Werken met databases</h1>
+<h2 id="database-maken">Database maken</h2>
 <p>Tot nu toe heb je steeds gebruik gemaakt van een bestaande database. De queries om de database aan te maken vond je in een sql-bestand. In dit hoofdstuk ga je zelf een database maken.</p>
 <p>Stel je moet een database maken voor een bibliotheek. De database bestaat uit 3 tabellen:</p>
 <ul>
@@ -92,7 +98,7 @@
     <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>klant_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> klanten<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>boek_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> boeken<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h4>Uitleg</h4>
+<h4 id="uitleg">Uitleg</h4>
 <ul>
 <li>In de regel <code>id INT AUTO_INCREMENT PRIMARY KEY</code> geef je aan dat je een veld met de naam <code>id</code> wilt aanmaken van het type <code>INT</code>. <code>id</code> is een primaire sleutel. De waarde is een unieke integer die het record identificeert. Met <code>AUTO_INCREMENT</code> wordt aangegeven bij ieder nieuw record het <code>id</code> automatisch wordt gegenereerd naar het eerst volgende integer.</li>
 <li>Met <code>VAR_CHAR(50)</code> wordt aangegeven dat de waarde van het type <code>string</code> of <code>tekst</code> is. Het mag maximaal 50 karakters bevatten.</li>
@@ -100,7 +106,7 @@
 <li>Met <code>DATE</code> gaat het om een datum-veld.</li>
 <li>Onderaan bij uitleen zie je dat de vreemde sleutels <code>FOREIGN KEY</code> verwijzen naar de velden id in de klanten- en boekentabel.</li>
 </ul>
-<h2>Oefeningen</h2>
+<h2 id="oefeningen">Oefeningen</h2>
 <p>Voeg onderstaande records toe aan de tabel boeken van de database:</p>
 <pre class="language-shell"><code class="language-shell">+----+----------------------------+------+------+
 <span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> titel                      <span class="token operator">|</span> jaar <span class="token operator">|</span> druk <span class="token operator">|</span>
@@ -137,7 +143,8 @@
 <li>Gebruik logische namen voor de naam van velden en denk om primaire en vreemde sleutels!</li>
 </ul>
 
-                    
+
+
                 </div>
             </section>
         </div>

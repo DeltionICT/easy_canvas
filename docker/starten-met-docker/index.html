@@ -43,11 +43,15 @@
                 
                 <div class="deltionv2-text">
                 
-                
-
-                    <h1>Docker</h1>
-<h3>Starten met Docker</h3>
-<p><strong>Installatie Docker voor Windows:</strong><br>
+                <h1 id="top">Docker</h1>
+                <h3>Starten met Docker</h3>
+                <div id="inhoudsopgave">
+                <b>Inhoudsopgave</b>
+                <div class="toc">
+        <ul><li><a href="#docker-images">Docker images</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#andere-handige-commando's">Andere handige commando's</a></li><li><a href="#opdrachten">Opdrachten</a></li></ul>
+      </div>
+                </div>
+                <p><strong>Installatie Docker voor Windows:</strong><br>
 Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
 <ul>
 <li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
@@ -57,7 +61,7 @@ Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="
 Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
 <p><strong>Installatie Docker voor Linux:</strong><br>
 Installeer op Linux de docker desktop omgeving. Docker is gebaseerd op Linux, dus installatie is eenvoudig. Er zijn echter 2 versies. Je kunt docker engine installeren en docker desktop. Docker desktop geeft ook een grafische interface. Om zaken simpel te houden is het advies om alleen Docker Desktop te installeren.</p>
-<h2>Docker images</h2>
+<h2 id="docker-images">Docker images</h2>
 <p>Als je docker desktop hebt geinstalleerd kun je gebruik maken van de grafische interface, maar hier gebruiken we de docker-cli. Dit programma werkt in de terminal.
 Om je eerste image te downloaden en een container op te starten type je de volgende regel in je favoriete terminal app (powershell of bash of terminal op mac):</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> run hello-world</code></pre>
@@ -77,7 +81,7 @@ Om je eerste image te downloaden en een container op te starten type je de volge
 </ul>
 <pre class="language-shell"><code class="language-shell">root@24d8a14bb475:/<span class="token comment"># ls</span>
 bin  boot  dev  etc  home  lib  lib64  media  <span class="token punctuation">..</span>.</code></pre>
-<h2>Dockerfile</h2>
+<h2 id="dockerfile">Dockerfile</h2>
 <p>Tot nu toe heb je steeds gebruik gemaakt van standaard images die verkrijgbaar zijn op <a href="https://hub.docker.com">docker hub</a>.
 Hier kun je talloze images vinden die je vrij kunt gebruiken voor projecten.
 Meestal maak je gebruik van een bestaand image om het vervolgens aan te passen naar je eigen wensen.
@@ -116,7 +120,7 @@ CMD <span class="token punctuation">[</span><span class="token string">"/usr/sbi
 <li>Als het goed is heb je nu een webserver opgestart die je met een browser vanaf je host kunt benaderen met <code>http://127.0.0.1:8084/</code></li>
 <li>De opstelling is helemaal geslaagd als je ook nog <code>Message from container</code> in je browserscherm ziet staan.</li>
 </ul>
-<h2>Andere handige commando's</h2>
+<h2 id="andere-handige-commando's">Andere handige commando's</h2>
 <ul>
 <li>Bekijken welke containers op dit moment actief zijn op je computer met <code>docker ps</code></li>
 <li>De terminal van een draaiende webserver starten met <code>docker exec</code>
@@ -137,7 +141,7 @@ bin  boot  dev  etc  home  lib  lib.usr-is-merged  lib64  media  mnt  opt  proc 
 root@a0e7ee749dc2:/<span class="token comment"># </span>
 
 </code></pre>
-<h2>Opdrachten</h2>
+<h2 id="opdrachten">Opdrachten</h2>
 <ul>
 <li>Probeer bovenstaande uitleg natuurlijk zelf op je eigen laptop</li>
 <li>Gebruik Docker Desktop om te zien of je container nog draait. Zo ja, stop de container dan en start hem daarna weer</li>
@@ -155,7 +159,8 @@ root@a0e7ee749dc2:/<span class="token comment"># </span>
 </li>
 </ul>
 
-                    
+
+
                 </div>
             </section>
         </div>

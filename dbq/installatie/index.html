@@ -47,12 +47,18 @@
                 
                 <div class="deltionv2-text">
                 
-                
-
-                    <h1>Werken met databases</h1>
-<h2>Installatie</h2>
+                <h1 id="top">Werken met databases</h1>
+                <h3>Installatie</h3>
+                <div id="inhoudsopgave">
+                <b>Inhoudsopgave</b>
+                <div class="toc">
+        <ul><li><a href="#installatie-bestanden">Installatie bestanden</a></li><li><a href="#installatie">Installatie</a></li><li><a href="#installatie-docker-voor-windows%3A">Installatie Docker voor Windows:</a></li><li><a href="#installatie-docker-voor-mac%3A">Installatie Docker voor Mac:</a></li><li><a href="#installatie-van-een-database">Installatie van een database</a></li></ul>
+      </div>
+                </div>
+                <h1 id="werken-met-databases">Werken met databases</h1>
+<h2 id="installatie">Installatie</h2>
 <blockquote>
-<h4>Installatie bestanden</h4>
+<h4 id="installatie-bestanden">Installatie bestanden</h4>
 <p><strong>Python en MariaDB</strong>.</p>
 <ul>
 <li>De installatiebestanden staan op github.
@@ -66,15 +72,15 @@
 <li>Lees de README.md met uitleg over het installeren van de verschillende images.</li>
 </ul>
 </blockquote>
-<h4>Installatie Docker voor Windows:</h4>
+<h4 id="installatie-docker-voor-windows%3A">Installatie Docker voor Windows:</h4>
 <p>Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
 <ul>
 <li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Installeer Docker voor WSL2-backend</a></li>
 </ul>
-<h4>Installatie Docker voor Mac:</h4>
+<h4 id="installatie-docker-voor-mac%3A">Installatie Docker voor Mac:</h4>
 <p>Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
-<h4>Installatie van een database</h4>
+<h4 id="installatie-van-een-database">Installatie van een database</h4>
 <p><strong>Installatie MariaDB</strong>
 Als docker is opgestart met <code>docker compose up</code> kun je gebruik maken van PHPMyAdmin.<br>
 In docker-compose.yml vind je ergens de definitie van de PHPMyAdmin image. Kijk bij <code>ports</code>:</p>
@@ -89,7 +95,8 @@ Zoek naam en password op in de docker-compose.yml file om in te loggen.</p>
 <li>Je vind poortnummer in docker-compose.yml</li>
 </ul>
 
-                    
+
+
                 </div>
             </section>
         </div>
