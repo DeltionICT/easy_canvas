@@ -17,7 +17,7 @@
             {{ content | safe}}
 
             </div>
-            <div class="deltionv2-contentarea"><img src="{{ afbeelding }}" alt="{{ afbeelding }}" /></div>
+            <div class="deltionv2-contentarea"><img src="{{ afbeelding }}" alt="{{ afbeelding }}" eleventy:widths="400"/></div>
         </section>
         <section class="deltionv2-buttoncollection">
             {% for course in courses.courses|sort(attribute='name')%}

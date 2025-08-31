@@ -6,6 +6,7 @@ import markdownItAnchor from 'markdown-it-anchor';
 import pluginTOC from 'eleventy-plugin-toc'; 
 import CleanCSS from "clean-css";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import path from "node:path";
 
 const markdownItOptions = {
     html:true,
@@ -43,7 +44,7 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         // output image formats
-		formats: ["avif", "webp", "jpeg"]
+		formats: ["avif", "webp", "jpeg", "svg"]
     });
 
     eleventyConfig.setLibrary("md", markdownLib);
@@ -71,7 +72,7 @@ export default function(eleventyConfig) {
     });
     
     eleventyConfig.addPassthroughCopy("./src/_css");
-    eleventyConfig.addPassthroughCopy("./src/_assets");
+    // eleventyConfig.addPassthroughCopy("./src/_assets");
     eleventyConfig.addPassthroughCopy("./src/_fonts");
     eleventyConfig.addPassthroughCopy("manifest.json");
     eleventyConfig.addPassthroughCopy("service-worker.js");

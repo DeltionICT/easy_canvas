@@ -31,7 +31,7 @@ Een Docker container is veel lichter en efficiënter. De container deelt de **ke
 * **Opstarttijd:** Duurt seconden.
 
 
-{% afbeelding "/vm_docker.png", "60", "100", "center"%}
+<img src="/_assets/vm_docker.png" eleventy:widths="400" alt="vm_doker afbeelding">
 
 ### Docker Ecosysteem
 
