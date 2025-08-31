@@ -1,14 +1,14 @@
 {
   "name": "Easy Canvas PWA",
-  "short_name": "PWA",
+  "short_name": "Easy Canvas",
   "description": "Een educatieve progressive web app.",
-  "start_url": "/index.html",
+  "start_url": "https://deltionict.github.io/easy_canvas/index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#fff",
+  "theme_color": "#343368",
   "icons": [
     {
-      "src": "_assets/edutorial-logo_orange.svg",
+      "src": "https://deltionict.github.io/easy_canvas/_assets/edutorial-logo_orange.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
