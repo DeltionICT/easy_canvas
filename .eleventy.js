@@ -4,6 +4,8 @@ import { HtmlBasePlugin } from "@11ty/eleventy";
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 import pluginTOC from 'eleventy-plugin-toc'; 
+import CleanCSS from "clean-css";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 const markdownItOptions = {
     html:true,
@@ -18,6 +20,7 @@ const markdownLib = markdownIt(markdownItOptions).use(
     markdownItAnchor,
     markdownItAnchorOptions
 )
+
 
 export default function(eleventyConfig) {
         // Order matters, put this at the top of your configuration file.
@@ -34,7 +37,14 @@ export default function(eleventyConfig) {
         flat: false
     })
 
+    eleventyConfig.addFilter("cssmin", function (code) {
+        return new CleanCSS({}).minify(code).styles;
+    });
 
+	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+        // output image formats
+		formats: ["avif", "webp", "jpeg"]
+    });
 
     eleventyConfig.setLibrary("md", markdownLib);
 
@@ -64,7 +74,6 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/_assets");
     eleventyConfig.addPassthroughCopy("./src/_fonts");
     eleventyConfig.addPassthroughCopy("manifest.json");
-    eleventyConfig.addPassthroughCopy("script.js");
     eleventyConfig.addPassthroughCopy("service-worker.js");
 
     eleventyConfig.addShortcode("video", (yt_id, width=640, height=480, align="left") => {

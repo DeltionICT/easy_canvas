@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.name }} | {{ title }}</title>
     <link rel="manifest" href='/manifest.json'>
-    <link href="{{ ' /_css/deltion.css' |  htmlBaseUrl }}" rel="stylesheet">
-    <link href="{{ ' /_css/prism-one-light.css' | htmlBaseUrl }}" rel="stylesheet">
-    <link href="{{ ' /_css/extra.css' | htmlBaseUrl }}" rel="stylesheet">
-</head>
-
+    {% set css %}
+      {% include "css/deltion.css" %}
+      {% include "css/extra.css" %}
+      {% include "css/prism-one-light.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin |safe }}
+    </style>
 <body>
 <div class="page_wrapper">
     {% block layout %}{% endblock %}

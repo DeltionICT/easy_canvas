@@ -40,7 +40,7 @@
 
         summary::before {
             content: '';
-            background-image: url('../_assets/pijl.svg');
+            background-image: url('{{ "/_assets/pijl.svg" | htmlBaseUrl }}');
             background-size: contain;
             /* Zorgt ervoor dat de afbeelding binnen de box past */
             background-repeat: no-repeat;
@@ -62,7 +62,7 @@
 
 
         details[open] summary::before {
-            background-image: url('../_assets/pijl.svg');
+            background-image: url('{{ "/_assets/pijl.svg" | htmlBaseUrl }}');
             transform: rotate(180deg);
 
         }
