@@ -8,7 +8,7 @@
   "theme_color": "#343368",
   "icons": [
     {
-      "src": "https://deltionict.github.io/easy_canvas/_assets/edutorial-logo_orange.svg",
+      "src": "https://deltionict.github.io/easy_canvas/_pwa/edutorial-logo_orange.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
