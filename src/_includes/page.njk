@@ -8,11 +8,11 @@
     {% set css %}
       {% include "css/prism.css" %}
       {% include "css/style.css" %}
-      {% include "css/leerdoelen.css" %}
+      {% include "css/leerdoelen.njk" %}
       {% if title == "Introductie" %}
         {% include "css/introductie.css" %}
       {% elif title == "Leerdoelen" %}
-        {% include "css/leerdoelen.css" %}
+        {% include "css/leerdoelen.njk" %}
         {% include "css/regular_text.css" %}
       {% else  %}
         {% include "css/regular_text.css" %}
