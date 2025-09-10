@@ -107,7 +107,7 @@ export default function(eleventyConfig) {
     // eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });
 
     return {
-        pathPrefix: "//",
+        pathPrefix: "/easy_canvas/",
         // pathPrefix: "//",
         dir: {
             input: "src",
