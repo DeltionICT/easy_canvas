@@ -1,8 +1,0 @@
-{
-    "course_title": "Git",
-    "section": "verdieping-git",
-    "layout": "nav_layout.njk",
-    "permalink": "/git/{{ title | slug }}/{{ page.index }}",
-    "permalink_canvas": "{{ site.canvas_course_url }}-git-{{ title | slug }}/{{ page.index }}",
-    "tags": "git"
-}

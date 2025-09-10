@@ -6,6 +6,11 @@
       "description": "Effectief gebruik van ChatGPT en bouwen van AI apps"
     },
     {
+      "url": "/blog/introductie/",
+      "name": "Blog",
+      "description": "Een overzicht van youtube-movies die zijn opgenomen tijdens online lessen"
+    },
+    {
       "url": "/python/introductie/",
       "name": "Python",
       "description": "Beginnen met Python voor IT-ers."
@@ -31,6 +36,16 @@
       "description": "Introductie tot object geörienteerd programmeren. Voorbereiding op het werken met frameworks."
     },
     {
+      "url": "/html/introductie/",
+      "name": "HTML 5",
+      "description": "Absolute basiscursus. De beste plek om te beginnen met software development."
+    },
+    {
+      "url": "/css/introductie/",
+      "name": "CSS",
+      "description": "Beginnen met het ontwerpen en vormgeven van websites en applicaties."
+    },
+    {
       "url": "/git/introductie/",
       "name": "Versiebeheer met Git",
       "description": "Starten met versiebeheer en het veilig stellen van bestanden met Git. Opstap naar het samenwerken in projecten."
@@ -46,6 +61,11 @@
       "description": "Fullstack applicaties met Laravel maken."
     },
     {
+      "url": "/javascript/introductie/",
+      "name": "Javascript",
+      "description": "Beginnen met javascript. Elementen in de browser interactief maken."
+    },
+    {
       "url": "/dbq/introductie/",
       "name": "Database queries",
       "description": "Basiscursus voor developers en IT-ers. Alles over het opvragen en opslaan van gegevens in databases."
@@ -54,6 +74,11 @@
       "url": "/dbo/introductie/",
       "name": "Database ontwerp",
       "description": "Efficiënt leren ontwerpen van relationele databases."
+    },
+    {
+      "url": "/examen/introductie/",
+      "name": "Examenvoorbereiding",
+      "description": "Voorbereiding op het beroepsexamen in de vorm van het examenproject op school."
     },
     {
       "url": "/projecten/introductie/",
