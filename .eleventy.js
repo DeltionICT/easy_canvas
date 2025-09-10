@@ -59,7 +59,7 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         // output image formats
-		formats: ["avif", "webp", "jpeg", "svg"]
+		formats: ["avif", "webp", "jpeg"]
     });
 
     eleventyConfig.setLibrary("md", markdownLib);
