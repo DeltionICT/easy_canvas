@@ -1,57 +1,615 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Canvas | Commands</title>
-    <link rel="apple-touch-icon" href="/easy_canvas/_pwa/edutorial-logo_orange.svg">
-    <link rel="manifest" href="/easy_canvas/manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-      @import url(https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css);.deltion-template-container *{font-family:BuenosAires,sans-serif}.deltion-template-container h2,.deltion-template-container h3{font-family:BuenosAires,sans-serif;font-size:24pt;font-weight:600}h1{color:#17171a!important;font-family:BuenosAires,sans-serif;font-size:24pt!important;font-weight:200!important}@font-face{font-family:BuenosAires;font-style:normal;font-weight:100;src:url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Thin.23cc4f34.woff2) format("woff2"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Thin.7ef423b6.woff) format("woff"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Thin.d28e8b25.ttf) format("truetype")}@font-face{font-family:BuenosAires;font-style:normal;font-weight:300;src:url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Light.bfbfb4cf.woff2) format("woff2"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Light.49b94ccd.woff) format("woff"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Light.b8238720.ttf) format("truetype")}@font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Regular.bebd88c4.woff2) format("woff2"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Regular.3ff93054.woff) format("woff"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Regular.78534721.ttf) format("truetype")}@font-face{font-family:BuenosAires;font-style:normal;font-weight:700;src:url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Bold.450f872d.woff2) format("woff2"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Bold.0672a34c.woff) format("woff"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Bold.8b64c088.ttf) format("truetype")}@font-face{font-family:BuenosAires;font-style:normal;font-weight:900;src:url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Black.44aa4857.woff2) format("woff2"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Black.ed9e43eb.woff) format("woff"),url(https://templates.drieam.com/templates/production/deltionv2/fonts/BuenosAires-Black.63f7b791.ttf) format("truetype")}.ic-app-header__main-navigation{background:#f5f4f7!important}.icon-hamburger{color:#343368!important}.ic-app-header__secondary-navigation{background:#f5f4f7!important}.ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-icon-svg{fill:#f58220!important}.ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link{background:#343368}body.primary-nav-expanded .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .menu-item__text{color:#fff}.list-view>nav>ul>li>a,.list-view>ul>li>a{color:#343368!important}#breadcrumbs,.ellipsible{color:#f58220}#wiki_page_show .show-content .page-title{display:none}.ic-app-header__menu-list-item .ic-icon-svg{fill:#343368!important}body.primary-nav-expanded .menu-item__text{color:#343368;font-family:BuenosAires,sans-serif;font-size:10pt}.ic-app-header__logomark,.ic-app-header__logomark-container{background-color:#f5f4f7!important}.ic-app-header__logomark{background-image:url(https://templates.drieam.com/templates/production/deltionv2/images/icon.6793cf4b.svg)!important}.list-view>nav>ul>li>a,.list-view>ul>li>a{color:#343368}.ellipsible{color:#17171a}.events_list .event-list-view-calendar{color:#f58220}.list-view a{color:#17171a}.list-view a.active{border-left:2px solid #f58220;color:#343368}.ic-avatar{border:2px solid #343368}.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link .menu-item__text{font-weight:700}.icon-line{color:#343368}nav #section-tabs .section a{color:#343368;font-family:BuenosAires,sans-serif}.item-group-condensed .ig-header{background:#f5f4f7;border-style:none;color:#343368!important;font-family:BuenosAires,sans-serif;font-weight:600;height:50px;padding:1rem 2rem}@media (max-width:767px){.item-group-condensed .ig-header{height:35px}}.item-group-condensed .ig-header .accessible-toggler{color:#343368!important}.item-group-condensed .ig-header .ig-header-title{font-size:16pt}.item-group-condensed .ig-header .name{color:#343368;text-shadow:none}.publish-icon{color:#343368}.ig-row{border:0;padding:1.5rem 2rem!important}.pill{color:#343368;font-family:BuenosAires,sans-serif;font-weight:500}.assignment_group .ig-header-title{color:#343368!important}.ig-title{font-family:BuenosAires,sans-serif;font-size:12pt;font-weight:400}button .icon-plus{color:#17171a}.icon-plus{color:#343368}.add_rubric_link{color:#17171a}.btn-primary{background-color:#343368;border:#343368;color:#fff}.btn-primary:hover{background-color:#f58220}.btn-primary .icon-plus{color:#fff}.deltionv2-template-container .deltionv2-buttoncollection{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr);margin-bottom:1rem;position:relative;width:100%}.deltionv2-template-container .deltionv2-buttoncollection a{display:block;text-decoration:none!important;width:100%}@media (max-width:1449px){.deltionv2-template-container .deltionv2-buttoncollection{grid-template-columns:repeat(3,1fr)}}@media (max-width:1199px){.deltionv2-template-container .deltionv2-buttoncollection{grid-template-columns:repeat(2,1fr)}}@media (max-width:767px){.deltionv2-template-container .deltionv2-buttoncollection{grid-template-columns:repeat(1,1fr);padding:0}}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton{background:#f5f4f7;display:flex;flex-direction:column;max-height:200px;position:relative}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a{align-items:center;border-top:solid;border-top-width:20px;color:#343368;display:flex;flex-wrap:wrap;font-family:BuenosAires,sans-serif;font-size:13pt;font-weight:700;padding:5rem 1rem 1.5rem;position:relative;text-decoration:none!important;width:calc(100% - 2rem);z-index:1}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a img{height:22px;margin-bottom:5px;margin-right:8px}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a .gg-arrow-right-o{color:#f58220;margin-right:8px}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a:hover{background-color:#343368;border-top-color:#343368;color:#fff;transition:all .2s ease-in-out}@media (max-width:1449px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a{font-size:12pt}}@media (max-width:991px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a{font-size:14pt}}@media (max-width:767px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a{padding:2rem 1rem 1.5rem}}@media (max-width:1199px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton{max-height:190px}}@media (max-width:767px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton{max-height:110px}}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton p{color:#17171a;font-size:12pt;font-weight:500}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton .deltion-button-arrow{align-items:center;bottom:25px;display:flex;height:40px;justify-content:center;left:23px;pointer-events:none;position:absolute;text-align:center;z-index:1}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton .deltion-button-arrow img{height:20px;margin-top:10px}@media (max-width:767px){.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton .deltion-button-arrow{display:none}}.deltionv2-template-container .deltionv2-banner{background:#343368;margin-bottom:1rem}.deltionv2-template-container .deltionv2-banner .deltionv2-content{margin:0 10px;padding:20px}.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header{display:flex;justify-content:space-between;padding:20px 10px}@media (max-width:767px){.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header{flex-direction:row}}.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header h2{color:#fff}@media (max-width:767px){.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header h2{padding-right:10px}}.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header a{align-items:center;background-color:#f58220;border-radius:60px;color:#fff;display:flex;font-family:BuenosAires,sans-serif;font-size:14pt;font-weight:600;height:50px;justify-content:center!important;min-width:170px;text-decoration:none!important;transition:all .2s ease-in-out;width:170px}@media (max-width:991px){.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header a{margin:20px 0 0}}@media (max-width:767px){.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header a{font-size:12pt;height:45px;min-width:130px!important;width:160px}}.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header a:hover{background-color:#fff;color:#f58220}.deltionv2-template-container .deltionv2-information-section{display:grid;gap:1rem;grid-template-columns:1fr 1fr;margin:1rem 0}@media (max-width:991px){.deltionv2-template-container .deltionv2-information-section{grid-template-columns:1fr}}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext{background-color:#f5f4f7;padding:3rem 0;width:100%}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext h3{color:#343368;font-family:BuenosAires,sans-serif;font-weight:600;padding:0 2.5rem}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul{color:#343368;font-family:BuenosAires,sans-serif;padding:0 2.5rem}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext a ul,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext img ul,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext li ul,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ol ul,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext p ul,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul a,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul img,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul li,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul ol,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul p,.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext ul ul{padding:0}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton{align-items:center;display:flex;margin-top:2rem;padding:0 2.5rem}@media (max-width:1449px){.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton{justify-content:center;padding:0 0 2.5rem}}@media (max-width:991px){.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton{align-items:flex-start;flex-direction:column;justify-content:normal;padding:0 2.5rem 2.5rem}}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton a{align-items:center;background-color:#f58220;border-radius:60px;color:#fff;display:flex;font-family:BuenosAires,sans-serif;font-size:12pt;font-weight:600;height:40px;justify-content:center!important;margin:0 30px 0 0;text-decoration:none!important;transition:all .2s ease-in-out}@media (max-width:1449px){.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton a{margin:0}}@media (max-width:991px){.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton a{margin:0 30px 0 0}}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton a:hover{background-color:#fff;color:#f58220}.deltionv2-template-container .deltionv2-information-section .deltionv2-contentarea{width:100%}.deltionv2-template-container .deltionv2-information-section .deltionv2-contentarea img{height:100%;left:0;min-width:100%;object-fit:cover;position:relative;top:0;width:100%}.deltionv2-template-container .deltionv2-footer{align-items:center;border:1px solid #343368;display:flex;flex-direction:row;justify-content:space-between;padding:14px 0;width:100%}.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons{align-items:center;display:flex;gap:2rem}@media (max-width:991px){.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons{gap:1rem}}@media (max-width:767px){.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons{align-items:normal;flex-direction:column}}.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons a{color:#343368;font-family:BuenosAires,sans-serif;font-size:14px;font-weight:300;text-decoration:none!important}.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons a:first-child{margin-left:14px}@media (max-width:991px){.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons a{font-size:"BuenosAires",sans-serif}}@media (max-width:767px){.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons a{margin-left:14px}}.deltionv2-template-container .deltionv2-footer .deltionv2-footerbuttons a .external_link_icon{display:none!important}#tinymce .deltionv2-footer{display:none}.deltionv2-template-container .deltionv2-addbanner{background:#343368}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent{margin:0 10px;padding:20px}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-around;padding:10px 5px}@media (max-width:767px){.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header{flex-direction:column}}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header h2{color:#fff;font-family:BuenosAires,sans-serif;font-weight:700;margin:0}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header a{align-items:center;border-radius:60px;color:#fff;display:flex;font-family:BuenosAires,sans-serif;font-size:12pt;font-weight:600;height:50px;justify-content:center!important;padding:0 10px;text-decoration:none!important;transition:all .2s ease-in-out}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header a:hover{color:#f58220}.deltionv2-template-container .deltionv2-textarea{background:#f5f4f7;display:flex;justify-content:center;padding:30px 0;width:100%}.deltionv2-template-container .deltionv2-textarea .deltionv2-text{background:#fff;box-sizing:border-box;display:flex;flex-direction:column;padding:2rem 2.5rem;width:65%}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table{color:#343368;font-family:BuenosAires,sans-serif;margin:0 2.5rem;width:unset!important}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table p{margin:unset!important;padding:0 .5rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table ul{margin:unset!important;padding:0 1rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table img{margin:unset!important;width:max-content}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table ol{margin:unset!important;padding:0 1rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table td{padding:.5rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table td p{padding:.5rem 0}@media (max-width:767px){.deltionv2-template-container .deltionv2-textarea .deltionv2-text{width:calc(100% - 60px)}}.deltionv2-template-container .deltionv2-textarea .deltionv2-text p{color:#343368;font-family:BuenosAires,sans-serif}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a{color:#343368;font-family:BuenosAires,sans-serif;margin:0;padding:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text li,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ol,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul{color:#343368;font-family:BuenosAires,sans-serif;margin:12px;padding:0 2.5rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text li img,.deltionv2-template-container .deltionv2-textarea .deltionv2-text li li,.deltionv2-template-container .deltionv2-textarea .deltionv2-text li ol,.deltionv2-template-container .deltionv2-textarea .deltionv2-text li ul,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ol img,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ol li,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ol ol,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ol ul,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul img,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul li,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul ol,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul ul{margin:2px;padding:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text li{padding:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton{align-items:center;display:flex;justify-content:flex-end;margin:1rem 0 2rem;padding:0 2.5rem}@media (max-width:767px){.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton{flex-direction:column;justify-content:center}}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton a{align-items:center;background-color:#f58220;border-radius:60px;color:#fff;display:flex;font-family:BuenosAires,sans-serif;font-size:12pt;font-weight:400;height:40px;justify-content:center!important;text-decoration:none!important;transition:all .2s ease-in-out;width:190px}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton a:hover{background-color:#343368}@media (max-width:767px){.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton a{font-size:10pt;width:150px}}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton p{align-items:center;display:flex}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton p img{padding-right:12px}@media (max-width:767px){.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton p{padding:0}}.deltionv2-template-container .deltionv2-content-section{background:#f5f4f7}.deltionv2-template-container .deltionv2-addinformation-section{background-color:#f5f4f7;display:flex;justify-content:center;padding:30px 0}.deltionv2-template-container .deltionv2-addsize{display:flex;gap:1rem;width:65%}@media (max-width:767px){.deltionv2-template-container .deltionv2-addsize{width:calc(100% - 60px)}}@media (max-width:1449px){.deltionv2-template-container .deltionv2-addsize{flex-direction:column}}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext{background-color:#fff;box-sizing:border-box;padding:2rem 2.5rem;width:100%}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table{color:#343368;font-family:BuenosAires,sans-serif;margin:0 2.5rem;width:unset!important}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table p{margin:unset!important;padding:0 .5rem}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table ul{margin:unset!important;padding:0 1rem}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table img{margin:unset!important;padding:0!important;width:max-content}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table ol{margin:unset!important;padding:0 1rem}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table td{padding:.5rem}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext table td p{padding:.5rem 0}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext h3{color:#343368;font-family:BuenosAires,sans-serif;font-size:20pt;font-weight:600}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext p{color:#343368;font-family:BuenosAires,sans-serif}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext a{color:#343368;font-family:BuenosAires,sans-serif;margin:0;padding:0}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext li,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ol,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ul{color:#343368;font-family:BuenosAires,sans-serif;margin:12px}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext li li,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext li ol,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext li ul,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ol li,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ol ol,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ol ul,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ul li,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ul ol,.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext ul ul{margin:2px;padding:0}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext li{padding:0}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton{align-items:center;display:flex;margin-top:2rem;padding:0 2.5rem 2.5rem}@media (max-width:1449px){.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton{justify-content:center;padding:0 0 2.5rem}}@media (max-width:991px){.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton{align-items:flex-start;flex-direction:column;justify-content:normal;padding:0 2.5rem 2.5rem}}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton a{align-items:center;background-color:#f58220;border-radius:60px;color:#fff;display:flex;font-family:BuenosAires,sans-serif;font-size:12pt;font-weight:600;height:40px;justify-content:center!important;margin:0 30px 0 0;text-decoration:none!important;transition:all .2s ease-in-out;width:190px}@media (max-width:1449px){.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton a{margin:0}}@media (max-width:991px){.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton a{margin:0 30px 0 0}}.deltionv2-template-container .deltionv2-addsize .deltionv2-addintrotext .deltionv2-addintrobutton a:hover{background-color:#fff;color:#f58220}.deltionv2-template-container .deltionv2-addsize .deltionv2-addcontentarea{width:100%}.deltionv2-template-container .deltionv2-addsize .deltionv2-addcontentarea img{height:100%;left:0;min-width:100%;object-fit:cover;position:relative;top:0;width:100%}@media (max-width:1449px){.deltionv2-template-container .bottom .deltionv2-addsize{flex-direction:column-reverse}}.deltionv2-template-container .deltionv2-accordeon{align-items:center;background-color:#f5f4f7;display:flex;flex-direction:column;padding:30px 0}.deltionv2-template-container .deltionv2-accordeon h3{color:#343368;font-family:BuenosAires,sans-serif;font-size:19pt;font-weight:600;margin-bottom:1rem;text-align:center;text-wrap:pretty;width:65%}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-whole{margin:1rem;width:65%}@media (max-width:767px){.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-whole{width:calc(100% - 60px)}}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-whole:last-child{margin:1rem 0 0}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion{background-color:#fff;box-sizing:border-box;cursor:pointer;display:flex;font-weight:700;outline:0;padding:20px 25px;text-align:left;transition:.4s;width:100%}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion a{color:#343368;font-family:BuenosAires,sans-serif;font-size:14pt;font-weight:500;text-decoration:none!important}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion .deltionv2-arrow-container{align-items:center;align-self:center;display:flex;height:100%;padding-right:28px;width:22px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion .deltionv2-arrow-container img{height:30px;max-width:unset!important;transition:transform .3s ease;width:30px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-panel{background-color:#fff;border-top:1px solid #f5f4f7;box-sizing:border-box;margin-top:3px;overflow:hidden;padding:0 2rem;transform:translateY(-4px);transition:max-height .2s ease-out;width:100%}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-panel p,.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-panel ul{color:#343368;font-family:BuenosAires,sans-serif;padding:20px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-active{max-height:none}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-active .deltionv2-arrow-container img{transform:rotate(180deg)}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question{background-color:#f5f4f7;border:1px solid #0a1f3f;box-sizing:border-box;color:#fff;cursor:pointer;display:flex;font-weight:700;outline:0;padding:20px 0 17px 12px;text-align:left;transition:.4s;width:100%}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question a{color:#343368;font-size:22px;text-decoration:none!important}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question .deltionv2-arrow-container-question{align-items:center;align-self:center;display:flex;height:100%;padding-right:28px;width:50px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question .deltionv2-arrow-container-question img{height:40px;transition:transform .3s ease;width:40px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question .deltionv2-arrow-container-question #afterimg{display:none}@media (min-width:768px){.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question .deltionv2-arrow-container-question{align-self:flex-end;padding:0 7px 0 10px}}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-panel-question{border:1px solid #343368;box-sizing:border-box;margin-top:3px;max-height:0;overflow:hidden;padding:0 0 0 18px;transform:translateY(-4px);transition:max-height .2s ease-out;width:100%}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-panel-question p{font-family:BuenosAires,sans-serif;padding:20px}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question-active{max-height:none}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question-active .deltionv2-arrow-container-question #beforeimg{display:none}.deltionv2-template-container .deltionv2-accordeon .deltionv2-accordion-question-active .deltionv2-arrow-container-question #afterimg{display:block}#tinymce .deltionv2-accordion-panel{max-height:none}@media screen and (min-width:1600px){.deltionv2-center-template{display:flex;justify-content:center}}.course-title{display:none!important}.deltionv2-template-container{max-width:1200px;word-break:unset!important}.deltionv2-template-container h2{color:#343368;font-family:BuenosAires,sans-serif;font-weight:700}.deltionv2-template-container h3{color:#343368;font-family:BuenosAires,sans-serif;font-size:19pt;font-weight:600}.deltionv2-template-container h4{color:#343368;font-family:BuenosAires,sans-serif;font-size:18pt;font-weight:500;margin:0;word-break:unset!important}@media (min-width:544px){.deltionv2-template-container{width:100%}}.deltionv2-template-container .deltionv2-banner .deltionv2-content .deltionv2-content-header .external .external_link_icon{display:none!important}.deltionv2-template-container .deltionv2-information-section .deltionv2-introtext .deltionv2-introbutton .external .external_link_icon{display:none!important}.deltionv2-template-container .deltionv2-textarea .deltionv2-text .deltionv2-introbutton .external .external_link_icon,.external_link_icon{display:none!important}.external_link_icon{text-decoration:none!important}body{padding:0;margin:0;font-family:BuenosAires,sans-serif;color:#343368}.page_wrapper{width:1200px;margin:auto}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,.deltionv2-template-container .deltionv2-textarea .deltionv2-text pre[class*=language-] code[class*=language-] span{font-family:Fira,monospace}details{font-family:BuenosAires,sans-serif;font-weight:500;font-size:16px;border-radius:1px;margin-bottom:0;background-color:#fff;display:block;outline:0;padding:20px 45px;text-align:left;transition:.4s}summary{font-size:18px;padding-left:25px;cursor:pointer;list-style:none;position:relative}summary::before{content:'';background-image:url('/easy_canvas/_assets/pijl.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;width:1em;height:1em;vertical-align:middle;position:absolute;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/pijl.svg');transform:rotate(180deg)}details p{font-family:BuenosAires,sans-serif;font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}.videoWrapper{position:relative;margin-top:2rem;padding-bottom:56.25%;height:0}.videoWrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}code[class*=language-],pre[class*=language-]{background:#f5f4f7}.deltionv2-text{display:flex;flex-direction:column;box-sizing:border-box;padding:2rem 2.5rem;background:#fff;width:65%}blockquote{background-color:#f5f4f7;margin:10px 0 20px 0;padding:20px}.deltionv2-template-container .deltionv2-addbanner .deltionv2-addcontent .deltionv2-addcontent-header a[aria-current=page]{color:#f58220;font-weight:700}.deltionv2-template-container .deltionv2-buttoncollection .deltionv2-navigationbutton a[aria-current=page]{background-color:#343368;border-top-color:#343368;color:#fff}div#inhoudsopgave{background-color:#f5f4f7;padding:20px}div#inhoudsopgave>div.toc ul{padding:5px}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul li a{font-family:BuenosAires,sans-serif;padding:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul li{padding:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul{padding:0 0 0 .5rem}.deltionv2-template-container .deltionv2-textarea .deltionv2-text a,.deltionv2-template-container .deltionv2-textarea .deltionv2-text ul ul{padding:0 0 0 1rem;margin:0}div#inhoudsopgave>div.toc ul li a{font-family:BuenosAires,sans-serif;padding:0;margin:0}div#inhoudsopgave>div.toc ul li>ul{font-family:BuenosAires,sans-serif;padding:0;margin-left:1rem}div#inhoudsopgave>div.toc ul li>ul li{font-family:BuenosAires,sans-serif;padding:0;margin:0}div#inhoudsopgave>div.toc ul li>ul li a{font-family:BuenosAires,sans-serif;padding:0;margin:0}.deltionv2-template-container .deltionv2-textarea .deltionv2-text table{background-color:#f5f4f7;margin:0;width:100%;border-collapse:collapse}.deltionv2-template-container .deltionv2-textarea .deltionv2-text td,.deltionv2-template-container .deltionv2-textarea .deltionv2-text th{text-align:left;padding:.5rem;border:1px solid #343368}@font-face{font-family:"Fira Code";src:url("../_fonts/FiraCode-VariableFont_wght.ttf")}code[class*=language-],pre[class*=language-]{background:#f5f4f7;color:#383942;font-family:"Fira Code","Fira Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:#e5e5e5;color:inherit}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection{background:#e5e5e5;color:inherit}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-]{padding:.2em .3em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.prolog{color:#9fa0a6}.token.doctype,.token.entity,.token.punctuation{color:#383942}.token.atrule,.token.attr-name,.token.boolean,.token.class-name,.token.constant,.token.number{color:#b66a00}.token.keyword{color:#a625a4}.token.deleted,.token.important,.token.property,.token.symbol,.token.tag{color:#e35549}.token.attr-value,.token.attr-value>.token.punctuation,.token.builtin,.token.char,.token.inserted,.token.regex,.token.selector,.token.string{color:#50a04f}.token.function,.token.operator,.token.variable{color:#4078f1}.token.url{color:#0083bb}.token.attr-value>.token.punctuation.attr-equals,.token.special-attr>.token.attr-value>.token.value.css{color:#383942}.language-css .token.selector{color:#e35549}.language-css .token.property{color:#383942}.language-css .token.function,.language-css .token.url>.token.function{color:#0083bb}.language-css .token.url>.token.string.url{color:#50a04f}.language-css .token.atrule .token.rule,.language-css .token.important{color:#a625a4}.language-javascript .token.operator{color:#a625a4}.language-javascript .token.template-string>.token.interpolation>.token.interpolation-punctuation.punctuation{color:#c91142}.language-json .token.operator{color:#383942}.language-json .token.null.keyword{color:#b66a00}.language-markdown .token.url,.language-markdown .token.url-reference.url>.token.string,.language-markdown .token.url>.token.operator{color:#383942}.language-markdown .token.url>.token.content{color:#4078f1}.language-markdown .token.url-reference.url,.language-markdown .token.url>.token.url{color:#0083bb}.language-markdown .token.blockquote.punctuation,.language-markdown .token.hr.punctuation{color:#9fa0a6;font-style:italic}.language-markdown .token.code-snippet{color:#50a04f}.language-markdown .token.bold .token.content{color:#b66a00}.language-markdown .token.italic .token.content{color:#a625a4}.language-markdown .token.list.punctuation,.language-markdown .token.strike .token.content,.language-markdown .token.strike .token.punctuation,.language-markdown .token.title.important>.token.punctuation{color:#e35549}.token.bold{font-weight:700}.token.comment,.token.italic{font-style:italic}.token.entity{cursor:help}.token.namespace{opacity:.8}.token.token.cr:before,.token.token.lf:before,.token.token.space:before,.token.token.tab:not(:empty):before{color:hsla(230,8%,24%,.2)}div.code-toolbar>.toolbar.toolbar>.toolbar-item{margin-right:.4em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span{background:#e5e5e5;color:#696b76;padding:.1em .4em;border-radius:.3em}div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus,div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover{background:#c6c6c7;color:#383942}.line-highlight.line-highlight{background:hsla(230,8%,24%,.05)}.line-highlight.line-highlight:before,.line-highlight.line-highlight[data-end]:after{background:#e5e5e5;color:#383942;padding:.1em .6em;border-radius:.3em;box-shadow:0 2px 0 0 rgba(0,0,0,.2)}pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before{background-color:hsla(230,8%,24%,.05)}.command-line .command-line-prompt,.line-numbers.line-numbers .line-numbers-rows{border-right-color:hsla(230,8%,24%,.2)}.command-line .command-line-prompt>span:before,.line-numbers .line-numbers-rows>span:before{color:#9d9d9f}.rainbow-braces .token.token.punctuation.brace-level-1,.rainbow-braces .token.token.punctuation.brace-level-5,.rainbow-braces .token.token.punctuation.brace-level-9{color:#e35549}.rainbow-braces .token.token.punctuation.brace-level-10,.rainbow-braces .token.token.punctuation.brace-level-2,.rainbow-braces .token.token.punctuation.brace-level-6{color:#50a04f}.rainbow-braces .token.token.punctuation.brace-level-11,.rainbow-braces .token.token.punctuation.brace-level-3,.rainbow-braces .token.token.punctuation.brace-level-7{color:#4078f1}.rainbow-braces .token.token.punctuation.brace-level-12,.rainbow-braces .token.token.punctuation.brace-level-4,.rainbow-braces .token.token.punctuation.brace-level-8{color:#a625a4}pre.diff-highlight>code .token.token.deleted:not(.prefix),pre>code.diff-highlight .token.token.deleted:not(.prefix){background-color:hsla(353,100%,66%,.15)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::-moz-selection{background-color:hsla(353,95%,66%,.25)}pre.diff-highlight>code .token.token.deleted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.deleted:not(.prefix)::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.deleted:not(.prefix)::selection{background-color:hsla(353,95%,66%,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix),pre>code.diff-highlight .token.token.inserted:not(.prefix){background-color:hsla(137,100%,55%,.15)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::-moz-selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::-moz-selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::-moz-selection{background-color:hsla(135,73%,55%,.25)}pre.diff-highlight>code .token.token.inserted:not(.prefix) ::selection,pre.diff-highlight>code .token.token.inserted:not(.prefix)::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix) ::selection,pre>code.diff-highlight .token.token.inserted:not(.prefix)::selection{background-color:hsla(135,73%,55%,.25)}.prism-previewer-gradient.prism-previewer-gradient div,.prism-previewer.prism-previewer:before{border-color:#f2f2f2}.prism-previewer-color.prism-previewer-color:before,.prism-previewer-easing.prism-previewer-easing:before,.prism-previewer-gradient.prism-previewer-gradient div{border-radius:.3em}.prism-previewer.prism-previewer:after{border-top-color:#f2f2f2}.prism-previewer-flipped.prism-previewer-flipped.after{border-bottom-color:#f2f2f2}.prism-previewer-angle.prism-previewer-angle:before,.prism-previewer-easing.prism-previewer-easing,.prism-previewer-time.prism-previewer-time:before{background:#fff}.prism-previewer-angle.prism-previewer-angle circle,.prism-previewer-time.prism-previewer-time circle{stroke:hsl(230,8%,24%);stroke-opacity:1}.prism-previewer-easing.prism-previewer-easing circle,.prism-previewer-easing.prism-previewer-easing line,.prism-previewer-easing.prism-previewer-easing path{stroke:hsl(230,8%,24%)}.prism-previewer-easing.prism-previewer-easing circle{fill:transparent}code{background-color:#e6f9ff;padding:2px;border-radius:2px}
-    </style>
-</head><body>
-<div class="page_wrapper">
+      
+      
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #393A34;
+	background-color: var(--light-grey);
+	font-family: "IBM Plex Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	font-size: .9em;
+	line-height: 1.2em;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre > code[class*="language-"] {
+	font-size: 1em;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: #C1DEF1;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: #C1DEF1;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: 1px solid #dddddd;
+	background-color: white;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .2em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background: #f8f8f8;
+	border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #008000;
+	font-style: italic;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.string {
+	color: #A31515;
+}
+
+.token.punctuation,
+.token.operator {
+	color: #393A34; /* no highlight */
+}
+
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.inserted {
+	color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-value,
+.language-autohotkey .token.selector,
+.language-json .token.boolean,
+.language-json .token.number,
+code[class*="language-css"] {
+	color: #0000ff;
+}
+
+.token.function {
+	color: #393A34;
+}
+
+.token.deleted,
+.language-autohotkey .token.tag {
+	color: #9a050f;
+}
+
+.token.selector,
+.language-autohotkey .token.keyword {
+	color: #00009f;
+}
+
+.token.important {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.class-name,
+.language-json .token.property {
+	color: #2B91AF;
+}
+
+.token.tag,
+.token.selector {
+	color: #800000;
+}
+
+.token.attr-name,
+.token.property,
+.token.regex,
+.token.entity {
+	color: #ff0000;
+}
+
+.token.directive.tag .tag {
+	background: #ffff00;
+	color: #393A34;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers.line-numbers .line-numbers-rows {
+	border-right-color: #a5a5a5;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+	color: #2B91AF;
+}
+
+/* overrides color-values for the Line Highlight plugin
+* http://prismjs.com/plugins/line-highlight/
+*/
+.line-highlight.line-highlight {
+	background: rgba(193, 222, 241, 0.2);
+	background: -webkit-linear-gradient(left, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+	background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+}
+      :root {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6rem ;
+    color: var(--blue);
+
+    scroll-behavior: smooth;
+
+    --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #1a1a28;
+    --light-grey: #f3f3f5;
+    --dark-grey: #5e5e71;
+    --code-color:#dcf0ff;
+}
+
+html {
+    scroll-padding-top: 60px;
+    overflow-y: scroll;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    background-color: var(--light-grey);
+}
+
+div#page_wrapper {
+    max-width:1200px;
+    margin:0 auto 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-height: 90vh;
+} 
+
+
+main {
+    /* flex: 2; */
+    flex: 1 1 200px;
+    margin:0rem auto 0rem auto;
+    background-color: white;
+    padding: 0.5rem 2rem 2rem 2rem;
+    overflow: hidden;
+} 
+header {
+    box-sizing: border-box;
+    width:100%;
+    height:60px;
+    max-height:60px;
+    position:sticky;
+    top:0;
+    z-index: 100;
+    color: white;
+    padding: 0rem 1rem 1rem 0rem;
+    background-color: var(--blue);
+}
+
+header div#title h1{
+    font-weight: 700;
+    font-size:1.5rem;
+    width:100%
+}
+
+nav#top {
+    max-width:1200px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0 auto 0 auto;
+    padding:0;
+}
+
+nav#side {
+    display:none;
+}   
+
+nav#top ul.hide {
+    display:none;
+}
+
+nav#top img, nav#side img {
+    display:none;
+    position:relative;
+    top:20px;
+    left:10px;
+}
+
+
+nav#top ul {
+    box-sizing: border-box;
+    list-style-type: none;
+    margin:0;
+    padding:1rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align : right;
+}   
+
+nav#top ul li {
+    box-sizing: border-box;
+    padding:0;
+}
+
+nav#top ul li a, nav#side ul li a {
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-wrap: nowrap;
+    padding:0 0.3em 0 0.3rem;
+    margin:0 0.2rem 0 0.8rem;
+}
+
+nav#top ul li a.navlinks:visited, nav#side ul li a.navlinks:visited {
+    color: white;
+} 
+
+nav#top ul li a.navlinks:hover, nav#top ul li a.navlinks.active, nav#side ul li a.navlinks:hover, nav#side ul li a.navlinks.active {
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+}
+
+a.active {
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+}
+
+aside#inhoudsopgave {
+    flex: 0 0 250px;
+    background-color: var(--light-grey);
+    padding: 1rem;
+    text-wrap: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+aside#hiddeninhoudsopgave {
+    display:none;
+}
+
+/* aside#inhoudsopgave div.head {
+    display:block;
+
+    width:100%
+} */
+
+aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
+    display:inline-block;
+    background-color: white;
+    border-radius: 0.2rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+aside#hiddeninhoudsopgave a {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    margin-right:20px;
+}
+div.toc ul {
+    list-style-type: none;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+div.toc ul li a {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+
+/* div.section ~ div.section {
+    display:none;
+} */
+
+div.show {
+    display:block;
+}
+
+div.hide {
+    display: none;
+}
+
+/* pre[class*="language-"] > code {
+    overflow-x:scroll;
+} */
+
+pre[class*="language-"] {
+    background-color: var(--light-grey);
+    font-size:0.9rem;
+	overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+	white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
+}
+
+pre[class*="language-"] code[class*="language-"] {
+    display:block;
+    overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+    white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
+}
+
+code {
+    background-color: var(--code-color);
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+
+@media (max-width:1449px) {
+  /* //test */
+}
+
+@media (max-width:1199px) {
+    /* pre[class*="language-"] {
+        width: 800px;
+    }
+    main {
+        width: 900px;
+    }    */
+} 
+
+
+@media (max-width:750px) {
+    /* pre[class*="language-"] {
+        width: 400px;
+    } 
+    main {
+        width: 500px;
+    } 
+     */
+    nav#top {
+        display:none;
+    }
     
-<div class="deltionv2-center-template">
-    <div class="deltionv2-template-container">
-        <section class="deltionv2-addbanner">
-            <div class="deltionv2-addcontent">
-                <div class="deltionv2-addcontent-header">
-                    <h2>Docker</h2>
-                </div>
-                <div class="deltionv2-addcontent-header">
-                    
-                        <a href="/easy_canvas/docker/introductie/">Introductie</a>
-                    
-                        <a href="/easy_canvas/docker/leerdoelen/">Leerdoelen</a>
-                    
-                        <a href="/easy_canvas/docker/docker-ecosysteem/">Docker Ecosysteem</a>
-                    
-                        <a href="/easy_canvas/docker/starten-met-docker/">Starten met Docker</a>
-                    
-                        <a href="/easy_canvas/docker/docker-compose/">Docker compose</a>
-                    
-                        <a href="/easy_canvas/docker/commands/" aria-current="page" data-state="active">Commands</a>
-                    
-                </div>
-            </div>
-        </section>
-         <div class="deltionv2-content-section">
-            <section class="deltionv2-textarea">
-                
-                <div class="deltionv2-text">
-                
-                <h1 id="top">Docker</h1>
-                <h3>Commands</h3>
-                <div id="inhoudsopgave">
-                <b>Inhoudsopgave</b>
-                <div class="toc">
-        <ul><li><a href="#docker-command-cheat-sheet">Docker Command Cheat Sheet</a></li></ul>
-      </div>
-                </div>
-                <p>Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.
+    nav#side {
+        max-width:300px;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:0 0 0 0;
+        padding:0;
+        background-color: var(--blue);
+        position: absolute;
+        top:0px;    
+    }
+    nav#side img {
+        display:block;
+    }
+    nav#side ul {
+        display:none;
+        box-sizing: border-box;
+        margin:0;
+        padding:3rem 0 1rem 0rem;
+        flex-direction: column;
+        text-align : left;
+        justify-content: flex-start;
+    }
+
+    nav#side ul li {
+        padding:0.3rem 1rem 0.3rem 1rem;
+    }
+
+    nav#side ul li a.navlinks {
+        padding:0.3rem 0.3rem 0.3rem 0.3rem;
+        margin:0;
+    }
+}
+
+@media (max-width:550px) {
+    /* pre[class*="language-"] {
+        width: 200px;
+    }
+    main {
+        width: 300px;
+    } */
+}
+      details {
+    /* border-bottom: 1px solid #ccc; */
+    box-sizing: border-box;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    display: block;
+    outline: none;
+    padding: 0 0 0 0 ;
+    text-align: left;
+    transition: .4s;
+    background-color:var(--light-grey);
+    width:100%;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+summary {
+    font-weight: 700;
+    padding-left: 38px;
+    cursor: pointer;
+    list-style: none;
+    /* Verberg de standaard marker */
+    position: relative;
+
+}
+
+summary a {
+    color:var(--blue);
+    text-decoration: none;
+
+}
+
+summary::before {
+    content: '';
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(90deg);
+
+    background-size: contain;
+    /* Zorgt ervoor dat de afbeelding binnen de box past */
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* Maak het element een blok-element */
+    width: 20px;
+    /* Stel de gewenste grootte in */
+    height: 20px;
+    /* Zorg voor gelijke hoogte/breedte */
+    vertical-align: middle;
+    position: absolute;
+    top:3px;
+    left: 0px;
+    /* padding-right:28px; */
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+
+
+details[open] summary::before {
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(270deg);
+}
+
+details p {
+    font-weight: 400;
+    padding-left: 5px;
+    margin: 0;
+
+}
+
+details p.firstchild {
+    padding-top: 50px;
+}
+
+h3#leerdoelen {
+    background-color: var(--light-grey);
+    text-align:center
+}
+      
+        
+      
+      h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1rem;
+    text-wrap: nowrap;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+
+
+
+    
+    </style>
+    <title>Docker</title>
+</head>
+<body>
+    <header>
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-104.svg" alt="menu" width="104" height="80"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/docker/introductie/">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/docker/leerdoelen/">Leerdoelen</a></li>
+      
+          <li><a href="/easy_canvas/docker/docker-ecosysteem/">Docker Ecosysteem</a></li>
+      
+          <li><a href="/easy_canvas/docker/starten-met-docker/">Starten met Docker</a></li>
+      
+          <li><a href="/easy_canvas/docker/docker-compose/">Docker compose</a></li>
+      
+          <li><a href="/easy_canvas/docker/commands/" class="active">Commands</a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-104.svg" alt="menu" width="104" height="80"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/docker/introductie/">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/docker/leerdoelen/">Leerdoelen</a></li>
+      
+          <li><a href="/easy_canvas/docker/docker-ecosysteem/">Docker Ecosysteem</a></li>
+      
+          <li><a href="/easy_canvas/docker/starten-met-docker/">Starten met Docker</a></li>
+      
+          <li><a href="/easy_canvas/docker/docker-compose/">Docker compose</a></li>
+      
+          <li><a href="/easy_canvas/docker/commands/" class="active">Commands</a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+        <h1 id="top">Docker</h1>
+        <p>Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.
 Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de docker-cli in een terminal</p>
 <p><strong>Locaties waar je uitbreide docker instructies kunt vinden:</strong></p>
 <ul>
@@ -305,28 +863,112 @@ Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de d
 </tbody>
 </table>
 
-
-
-                </div>
-            </section>
+        <div id="leerdoelen_wrapper">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                
+            
         </div>
-    </div>
-</div>
+    </main>
+    <aside id="inhoudsopgave">
+            <a href="#" class="klapper" onclick="hidePanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-560.svg" alt="inklappen" style="position:relative; top:1px;" width="560" height="495"></picture></a>
+            <span><b>Inhoudsopgave</b></span>
+        <div class="toc">
+        <ul><li><a href="#docker-command-cheat-sheet">Docker Command Cheat Sheet</a></li></ul>
+      </div>
+    </aside>
+    <aside id="hiddeninhoudsopgave">
+            <a href="#" class="klapper" onclick="showPanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-560.svg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " width="560" height="495"></picture></a>
+    </aside>
+ 
 
+  </div>
 
-</div>
-<script>
-    if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register("/easy_canvas/service-worker.js")
-      .then(registration => {
-        console.log('Service Worker geregistreerd met succes:', registration.scope);
-      })
-      .catch(err => {
-        console.log('Registratie van Service Worker mislukt:', err);
+      <footer>
+
+    </footer>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        setlinks();
+        first_section = document.querySelectorAll('aside ul a')[0];
+        console.log(first_section);
+        showSection(first_section);
       });
-  });
-}
-</script>
-</body>
+
+
+      function setlinks() {
+        document.querySelectorAll('aside ul a').forEach(el => {
+          el.addEventListener('click', function(event) {
+              event.preventDefault();
+              const targetId = this
+              showSection(targetId);
+          });
+        });
+        }
+
+      function hidePanel() {
+        console.log("hidePanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        console.log(panel);
+        panel.style.flex = 0;
+        //panel.style.width = '0px';
+        panel.style.padding = 0;
+        panel.style.overflow = 'hidden';
+        hiddenPanel.style.position = 'absolute';
+        hiddenPanel.style.display = 'block';
+        hiddenPanel.style.top = '60px';
+        hiddenPanel.style.right = '10px';
+        hiddenPanel.style.zIndex = 100;
+      }
+
+      function showPanel() {
+        console.log("showPanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        panel.style.flexBasis = 'content';
+        panel.style.padding = '1rem';
+        panel.style.overflow = 'auto';
+        hiddenPanel.style.display = 'none';
+      }
+
+      function toggleNav() {
+        const nav = document.querySelector('nav#side ul');
+        if (nav.style.display === 'flex')  {
+          nav.style.display = 'none';
+        } else {
+          nav.style.display = 'flex';
+        }
+      }
+      
+
+
+      function showSection(link) {
+        id = link.getAttribute('href').substring(1);
+        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
+        const kop = document.getElementById(id);
+            console.log(kop);
+        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
+        link.style.textDecoration = "underline";
+        if (kop) {
+                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
+                console.log(kop.parentElement)
+                kop.parentElement.classList.remove('hide')
+                kop.parentElement.classList.add('show')
+            }
+        }   
+    </script>
+    </body> 
 </html>

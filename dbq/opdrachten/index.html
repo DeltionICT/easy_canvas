@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+      
+      
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #393A34;
+	background-color: var(--light-grey);
+	font-family: "IBM Plex Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	font-size: .9em;
+	line-height: 1.2em;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre > code[class*="language-"] {
+	font-size: 1em;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: #C1DEF1;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: #C1DEF1;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: 1px solid #dddddd;
+	background-color: white;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .2em;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background: #f8f8f8;
+	border: 1px solid #dddddd;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #008000;
+	font-style: italic;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.string {
+	color: #A31515;
+}
+
+.token.punctuation,
+.token.operator {
+	color: #393A34; /* no highlight */
+}
+
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.inserted {
+	color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-value,
+.language-autohotkey .token.selector,
+.language-json .token.boolean,
+.language-json .token.number,
+code[class*="language-css"] {
+	color: #0000ff;
+}
+
+.token.function {
+	color: #393A34;
+}
+
+.token.deleted,
+.language-autohotkey .token.tag {
+	color: #9a050f;
+}
+
+.token.selector,
+.language-autohotkey .token.keyword {
+	color: #00009f;
+}
+
+.token.important {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.class-name,
+.language-json .token.property {
+	color: #2B91AF;
+}
+
+.token.tag,
+.token.selector {
+	color: #800000;
+}
+
+.token.attr-name,
+.token.property,
+.token.regex,
+.token.entity {
+	color: #ff0000;
+}
+
+.token.directive.tag .tag {
+	background: #ffff00;
+	color: #393A34;
+}
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers.line-numbers .line-numbers-rows {
+	border-right-color: #a5a5a5;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+	color: #2B91AF;
+}
+
+/* overrides color-values for the Line Highlight plugin
+* http://prismjs.com/plugins/line-highlight/
+*/
+.line-highlight.line-highlight {
+	background: rgba(193, 222, 241, 0.2);
+	background: -webkit-linear-gradient(left, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+	background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
+}
+      :root {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6rem ;
+    color: var(--blue);
+
+    scroll-behavior: smooth;
+
+    --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #1a1a28;
+    --light-grey: #f3f3f5;
+    --dark-grey: #5e5e71;
+    --code-color:#dcf0ff;
+}
+
+html {
+    scroll-padding-top: 60px;
+    overflow-y: scroll;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+    background-color: var(--light-grey);
+}
+
+div#page_wrapper {
+    max-width:1200px;
+    margin:0 auto 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    min-height: 90vh;
+} 
+
+
+main {
+    /* flex: 2; */
+    flex: 1 1 200px;
+    margin:0rem auto 0rem auto;
+    background-color: white;
+    padding: 0.5rem 2rem 2rem 2rem;
+    overflow: hidden;
+} 
+header {
+    box-sizing: border-box;
+    width:100%;
+    height:60px;
+    max-height:60px;
+    position:sticky;
+    top:0;
+    z-index: 100;
+    color: white;
+    padding: 0rem 1rem 1rem 0rem;
+    background-color: var(--blue);
+}
+
+header div#title h1{
+    font-weight: 700;
+    font-size:1.5rem;
+    width:100%
+}
+
+nav#top {
+    max-width:1200px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0 auto 0 auto;
+    padding:0;
+}
+
+nav#side {
+    display:none;
+}   
+
+nav#top ul.hide {
+    display:none;
+}
+
+nav#top img, nav#side img {
+    display:none;
+    position:relative;
+    top:20px;
+    left:10px;
+}
+
+
+nav#top ul {
+    box-sizing: border-box;
+    list-style-type: none;
+    margin:0;
+    padding:1rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align : right;
+}   
+
+nav#top ul li {
+    box-sizing: border-box;
+    padding:0;
+}
+
+nav#top ul li a, nav#side ul li a {
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-wrap: nowrap;
+    padding:0 0.3em 0 0.3rem;
+    margin:0 0.2rem 0 0.8rem;
+}
+
+nav#top ul li a.navlinks:visited, nav#side ul li a.navlinks:visited {
+    color: white;
+} 
+
+nav#top ul li a.navlinks:hover, nav#top ul li a.navlinks.active, nav#side ul li a.navlinks:hover, nav#side ul li a.navlinks.active {
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+}
+
+a.active {
+    background-color: var(--orange);
+    border-radius: 0.3rem;
+}
+
+aside#inhoudsopgave {
+    flex: 0 0 250px;
+    background-color: var(--light-grey);
+    padding: 1rem;
+    text-wrap: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+aside#hiddeninhoudsopgave {
+    display:none;
+}
+
+/* aside#inhoudsopgave div.head {
+    display:block;
+
+    width:100%
+} */
+
+aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
+    display:inline-block;
+    background-color: white;
+    border-radius: 0.2rem;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+aside#hiddeninhoudsopgave a {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    margin-right:20px;
+}
+div.toc ul {
+    list-style-type: none;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+div.toc ul li a {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+
+/* div.section ~ div.section {
+    display:none;
+} */
+
+div.show {
+    display:block;
+}
+
+div.hide {
+    display: none;
+}
+
+/* pre[class*="language-"] > code {
+    overflow-x:scroll;
+} */
+
+pre[class*="language-"] {
+    background-color: var(--light-grey);
+    font-size:0.9rem;
+	overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+	white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
+}
+
+pre[class*="language-"] code[class*="language-"] {
+    display:block;
+    overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
+    white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
+}
+
+code {
+    background-color: var(--code-color);
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+
+@media (max-width:1449px) {
+  /* //test */
+}
+
+@media (max-width:1199px) {
+    /* pre[class*="language-"] {
+        width: 800px;
+    }
+    main {
+        width: 900px;
+    }    */
+} 
+
+
+@media (max-width:750px) {
+    /* pre[class*="language-"] {
+        width: 400px;
+    } 
+    main {
+        width: 500px;
+    } 
+     */
+    nav#top {
+        display:none;
+    }
+    
+    nav#side {
+        max-width:300px;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:0 0 0 0;
+        padding:0;
+        background-color: var(--blue);
+        position: absolute;
+        top:0px;    
+    }
+    nav#side img {
+        display:block;
+    }
+    nav#side ul {
+        display:none;
+        box-sizing: border-box;
+        margin:0;
+        padding:3rem 0 1rem 0rem;
+        flex-direction: column;
+        text-align : left;
+        justify-content: flex-start;
+    }
+
+    nav#side ul li {
+        padding:0.3rem 1rem 0.3rem 1rem;
+    }
+
+    nav#side ul li a.navlinks {
+        padding:0.3rem 0.3rem 0.3rem 0.3rem;
+        margin:0;
+    }
+}
+
+@media (max-width:550px) {
+    /* pre[class*="language-"] {
+        width: 200px;
+    }
+    main {
+        width: 300px;
+    } */
+}
+      details {
+    /* border-bottom: 1px solid #ccc; */
+    box-sizing: border-box;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+    display: block;
+    outline: none;
+    padding: 0 0 0 0 ;
+    text-align: left;
+    transition: .4s;
+    background-color:var(--light-grey);
+    width:100%;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+summary {
+    font-weight: 700;
+    padding-left: 38px;
+    cursor: pointer;
+    list-style: none;
+    /* Verberg de standaard marker */
+    position: relative;
+
+}
+
+summary a {
+    color:var(--blue);
+    text-decoration: none;
+
+}
+
+summary::before {
+    content: '';
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(90deg);
+
+    background-size: contain;
+    /* Zorgt ervoor dat de afbeelding binnen de box past */
+    background-repeat: no-repeat;
+    display: inline-block;
+    /* Maak het element een blok-element */
+    width: 20px;
+    /* Stel de gewenste grootte in */
+    height: 20px;
+    /* Zorg voor gelijke hoogte/breedte */
+    vertical-align: middle;
+    position: absolute;
+    top:3px;
+    left: 0px;
+    /* padding-right:28px; */
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+
+
+details[open] summary::before {
+    background-image: url('/_assets/right-arrow.svg');
+    transform: rotate(270deg);
+}
+
+details p {
+    font-weight: 400;
+    padding-left: 5px;
+    margin: 0;
+
+}
+
+details p.firstchild {
+    padding-top: 50px;
+}
+
+h3#leerdoelen {
+    background-color: var(--light-grey);
+    text-align:center
+}
+      
+        
+      
+      h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1rem;
+    text-wrap: nowrap;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+
+
+
+    
+    </style>
+    <title>Database Querying</title>
+</head>
+<body>
+    <header>
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-104.svg" alt="menu" width="104" height="80"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/dbq/introductie/">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/dbq/installeren/">Installeren</a></li>
+      
+          <li><a href="/easy_canvas/dbq/gegevens-opvragen/">Gegevens opvragen</a></li>
+      
+          <li><a href="/easy_canvas/dbq/opdrachten/" class="active">Opdrachten</a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-104.svg" alt="menu" width="104" height="80"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/dbq/introductie/">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/dbq/installeren/">Installeren</a></li>
+      
+          <li><a href="/easy_canvas/dbq/gegevens-opvragen/">Gegevens opvragen</a></li>
+      
+          <li><a href="/easy_canvas/dbq/opdrachten/" class="active">Opdrachten</a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+        <h1 id="top">Database Querying</h1>
+        <div class="section">
+<h3 id="eenvoudige-queries">Eenvoudige queries</h3>
+<p>Gebruik voor onderstaande opdrachten de database <code>school</code></p>
+<ul>
+<li>Geef de query voor een overzicht van de naam en roepnaam van alle cursisten die in Oosterhout wonen.</li>
+<li>Geef de query voor een overzicht van het cursistnummer en de roepnaam van alle cursisten die niet in Oosterhout wonen.</li>
+<li>Geef de query voor een overzicht van alle cursisten die vrouw zijn.</li>
+<li>Geef de query voor een overzicht van alle cursisten die niet man zijn. (dit is een andere query dan de vorige vraag, maar met hetzelfde resultaat)</li>
+<li>Geef de query voor een overzicht van alle cursisten die in Breda wonen en vrouw zijn.</li>
+<li>Geef de query voor een overzicht van alle cursisten die in Oosterhout of Made wonen.</li>
+<li>Geef de query voor een overzicht van alle plaatsen waar cursussen worden gegeven.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="aggregeren">Aggregeren</h3>
+<p>Voor onderstaande vragen heb je de database <code>school</code> nodig.</p>
+<ul>
+<li>
+<p>Wat is de hoogste en laagste prijs van alle cursussen?</p>
+</li>
+<li>
+<p>Bereken de som van alle bedragen die de cursisten betaald hebben (betaald).</p>
+</li>
+<li>
+<p>Wat is het gemiddelde cijfer dat per cursus is behaald? Toon de cursuscode en het gemiddelde cijfer.</p>
+</li>
+<li>
+<p>Tel het aantal cursisten per plaats. Toon de plaats en het aantal cursisten.</p>
+</li>
+<li>
+<p>Tel hoeveel cursisten er in totaal ingeschreven zijn voor cursussen in de plaats 'Den Haag'.</p>
+</li>
+<li>
+<p>Wat is de gemiddelde prijs van cursussen per docent? Toon de doc_code en de gemiddelde prijs.</p>
+</li>
+<li>
+<p>Toon de curs_code en het totale aantal cursisten dat is ingeschreven voor cursussen die meer dan 5 cursisten hebben.</p>
+</li>
+<li>
+<p>Welke docent heeft het hoogste gemiddelde uurloon van alle docenten die in 'Utrecht' wonen?</p>
+</li>
+<li>
+<p>Toon de curs_code en het gemiddelde cijfer van die cursus, maar alleen voor cursussen waarvan het gemiddelde cijfer hoger is dan 7.</p>
+</li>
+<li>
+<p>Toon de namen van cursisten die voor meer dan één cursus zijn ingeschreven.</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="databases-maken">Databases maken</h3>
+<p>Gebruik voor onderstaande opdrachten de database <code>bibliotheek</code>. Bekijk op gegevens-opvragen -&gt; databases-maken hoe je de database moet maken.</p>
+<p>Voeg onderstaande records toe aan de tabel boeken van de database:</p>
+<pre class="language-shell"><code class="language-shell">+----+----------------------------+------+------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> titel                      <span class="token operator">|</span> jaar <span class="token operator">|</span> druk <span class="token operator">|</span>
++----+----------------------------+------+------+
+<span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> De Avonden                 <span class="token operator">|</span> <span class="token number">1947</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> Het Diner                  <span class="token operator">|</span> <span class="token number">2009</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">3</span> <span class="token operator">|</span> De Ontdekking van de Hemel <span class="token operator">|</span> <span class="token number">1992</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">4</span> <span class="token operator">|</span> De Aanslag                 <span class="token operator">|</span> <span class="token number">1982</span> <span class="token operator">|</span>    <span class="token number">1</span> <span class="token operator">|</span>
++----+----------------------------+------+------+</code></pre>
+<p>Voeg onderstaande records toe aan de tabel klanten:</p>
+<pre class="language-shell"><code class="language-shell">+----+----------+------------+--------------------------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> voornaam <span class="token operator">|</span> achternaam <span class="token operator">|</span> emailadres               <span class="token operator">|</span>
++----+----------+------------+--------------------------+
+<span class="token operator">|</span>  <span class="token number">1</span> <span class="token operator">|</span> Jan      <span class="token operator">|</span> Jansen     <span class="token operator">|</span> jan.jansen@email.com     <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">2</span> <span class="token operator">|</span> Piet     <span class="token operator">|</span> Pietersen  <span class="token operator">|</span> piet.pietersen@email.com <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">3</span> <span class="token operator">|</span> Klaas    <span class="token operator">|</span> Klaassen   <span class="token operator">|</span> klaas.klaassen@email.com <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">4</span> <span class="token operator">|</span> Emma     <span class="token operator">|</span> de Vries   <span class="token operator">|</span> emma.devries@email.com   <span class="token operator">|</span>
++----+----------+------------+--------------------------+</code></pre>
+<p>Voeg onderstaande records toe aan de tabel uitleengegevens:</p>
+<pre class="language-shell"><code class="language-shell">+----+--------------+-------------+----------+---------+
+<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> uitleendatum <span class="token operator">|</span> retourdatum <span class="token operator">|</span> klant_id <span class="token operator">|</span> boek_id <span class="token operator">|</span>
++----+--------------+-------------+----------+---------+
+<span class="token operator">|</span>  <span class="token number">5</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-01   <span class="token operator">|</span> <span class="token number">2023</span>-01-15  <span class="token operator">|</span>        <span class="token number">1</span> <span class="token operator">|</span>       <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-02   <span class="token operator">|</span> <span class="token number">2023</span>-01-16  <span class="token operator">|</span>        <span class="token number">2</span> <span class="token operator">|</span>       <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">7</span> <span class="token operator">|</span> <span class="token number">2023</span>-01-03   <span class="token operator">|</span> <span class="token number">2023</span>-01-17  <span class="token operator">|</span>        <span class="token number">3</span> <span class="token operator">|</span>       <span class="token number">3</span> <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">2023</span>-12-29   <span class="token operator">|</span> <span class="token number">2024</span>-01-12  <span class="token operator">|</span>        <span class="token number">4</span> <span class="token operator">|</span>       <span class="token number">4</span> <span class="token operator">|</span>
++----+--------------+-------------+----------+---------+</code></pre>
+<p>Maak nu het sql-script voor een database met 3 tabellen:</p>
+<ul>
+<li>Voor een autoverhuurbedrijf moet je een database maken</li>
+<li>De tabel auto's bevat gegevens over het merk, kenteken, kilometerstand en aankoopdatum</li>
+<li>De tabel huurders bevat gegevens zoals voornaam, achternaam, rijbewijsnummer, adres, postcode, plaats en geboortedatum.</li>
+<li>De tabel verhuur bevat gegevens over de auto, de datum van verhuur, de verwachte datum waarop de auto wordt ingeleverd en de huurder.</li>
+<li>Gebruik logische namen voor de naam van velden en denk om primaire en vreemde sleutels!</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="crud-oefeningen">CRUD oefeningen</h3>
+<ul>
+<li>Maak een nieuwe database aan met de naam 'reisbureau' en voer de queries uit van <a href="https://static.edutorial.nl/projecten/reisbureau_001.sql">dit sql-bestand</a>.</li>
+<li>Als je de postgres-variant gebruikt vind je de database-bestanden in de <a href="https://github.com/siewers32/docker_python_postgres">siewers32/docker_python_postgres repository</a></li>
+<li>Geef de query om alle tabellen in de database 'reisbureau' weer te gegeven</li>
+<li>Voeg 2 nieuwe klanten toe aan de tabel 'customers' (je mag de waarden zelf bedenken)</li>
+<li>Geef de query om de eerste 10 boekingen te verwijderen (reservations)</li>
+<li>De klant met id 13 is verhuist naar 'De van der veldensteeg 81' in 'Apeldoorn'. Pas het record aan en geef de query om het record weer te geven. Controleer of de gegevens correct zijn.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="tabellen-combineren">Tabellen combineren</h3>
+<p>Maak gebruik van de database <code>bibliotheek</code> die je bij het onderdeel 'Database maken' hebt gemaakt.<br>
+Zorg ervoor dat de gegevens correct zijn toegevoegd.<br>
+Maak de queries bij onderstaande vragen:</p>
+<ul>
+<li>Schrijf een query om alle klanten met hun voornaam, achternaam en emailadres te tonen.</li>
+<li>Schrijf een query om de titel, het jaar en de druk van alle boeken te tonen die na het jaar 2000 zijn gepubliceerd.</li>
+<li>Schrijf een query om de voornaam en achternaam van klanten te tonen die een boek hebben geleend in 2023.</li>
+<li>Schrijf een query om de titel van de boeken te tonen die momenteel zijn uitgeleend (retourdatum is nog niet bereikt).</li>
+<li>Schrijf een query om het aantal keren dat elk boek is uitgeleend te tonen, samen met de titel van het boek.</li>
+<li>Schrijf een query om het totale aantal boeken dat in 2022 is uitgeleend te tonen.</li>
+<li>Schrijf een query om de voornaam en achternaam van klanten te tonen die meer dan 3 boeken hebben uitgeleend.</li>
+<li>Schrijf een query om de gemiddelde uitleenperiode (verschil tussen uitleendatum en retourdatum) van alle boeken te berekenen.</li>
+<li>Schrijf een query om alle boeken die na de 3e druk zijn gepubliceerd te tonen.</li>
+<li>Schrijf een query om de klantgegevens van klanten die nog geen enkel boek hebben uitgeleend te tonen.</li>
+<li>Schrijf een query om de 5 meest uitgeleende boeken te tonen, inclusief hun titel en het aantal keer dat ze zijn uitgeleend.</li>
+<li>Schrijf een query om de naam en emailadres van klanten te tonen die een boek met de titel 'De Hobbit' hebben uitgeleend.</li>
+<li>Schrijf een query om de titel van de boeken en de totale uitleenperiode per boek te tonen (het totaal aantal dagen dat elk boek is uitgeleend).</li>
+<li>Schrijf een query om de klant(en) te tonen die het vaakst een boek hebben geleend, samen met het aantal keer dat ze iets hebben geleend.</li>
+<li>Schrijf een query om de titel van boeken te tonen die zowel in 2022 als in 2023 zijn uitgeleend.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="verschillende-queries">Verschillende queries</h3>
+<p>Schrijf de queries voor onderstaande vragen. Maak gebruik van de database <code>reisbureau</code>. Je vindt de sql-bestanden voor data en structuur in deze repository: <a href="https://github.com/siewers32/docker_python_postgres">siewers32/docker_python_postgres repository</a></p>
+<h4 id="deel-1%3A-de-basis-(select-en-where)">Deel 1: De Basis (SELECT en WHERE)</h4>
+<ul>
+<li>
+<p>Toon alle kolommen en rijen van de tabel countries.</p>
+</li>
+<li>
+<p>Toon alleen de description van alle landen uit de tabel countries.</p>
+</li>
+<li>
+<p>Toon de first_name en last_name van alle klanten uit de tabel customers.</p>
+</li>
+<li>
+<p>Zoek de klant met het e-mailadres 'j.smith@example.com'. Toon al hun gegevens.</p>
+</li>
+<li>
+<p>Toon alle steden (description) uit de tabel cities die in het land 'da_DK' liggen.</p>
+</li>
+<li>
+<p>Toon alle reizen (id) uit de tabel trips die meer dan 5 dagen duren.</p>
+</li>
+</ul>
+<h4 id="deel-2%3A-sorteren-en-limiteren-(order-by-en-limit)">Deel 2: Sorteren en Limiteren (ORDER BY en LIMIT)</h4>
+<ul>
+<li>
+<p>Toon de id en departure_date van de 10 duurste reizen (price). Sorteer van hoog naar laag.</p>
+</li>
+<li>
+<p>Toon de 5 goedkoopste reizen. Sorteer ze op prijs van laag naar hoog.</p>
+</li>
+<li>
+<p>Toon de first_name en last_name van alle klanten, gesorteerd op last_name in alfabetische volgorde.</p>
+</li>
+</ul>
+<h4 id="deel-3%3A-gegevens-groeperen-en-aggregeren-(count%2C-sum%2C-avg%2C-group-by)">Deel 3: Gegevens Groeperen en Aggregeren (COUNT, SUM, AVG, GROUP BY)</h4>
+<ul>
+<li>
+<p>Tel het totale aantal klanten in de tabel customers.</p>
+</li>
+<li>
+<p>Bereken de gemiddelde prijs van alle reizen (price).</p>
+</li>
+<li>
+<p>Tel hoeveel steden er per land (country_code) zijn. Groepeer het resultaat per land.</p>
+</li>
+<li>
+<p>Wat is de gemiddelde prijs van een reis per stad (city_id)? Toon de city_id en de gemiddelde prijs.</p>
+</li>
+<li>
+<p>Welke klant heeft de meeste reserveringen? Toon de customer_id en het aantal reserveringen.</p>
+</li>
+<li>
+<p>Tel het aantal reizen per stad en filter de resultaten, zodat je alleen steden ziet met meer dan 5 reizen.</p>
+</li>
+</ul>
+<h4 id="deel-4%3A-gegevens-combineren-(join)">Deel 4: Gegevens Combineren (JOIN)</h4>
+<ul>
+<li>
+<p>Toon de first_name en last_name van de klant en de description van de stad van de reserveringen. Combineer de tabellen customers, reservations, trips en cities.</p>
+</li>
+<li>
+<p>Toon de description van de stad en het aantal dagen (number_of_days) van alle reizen. Combineer de tabellen trips en cities.</p>
+</li>
+<li>
+<p>Toon de description van de stad en de description van het land voor elke stad. Combineer de tabellen cities en countries.</p>
+</li>
+<li>
+<p>Zoek de klantgegevens (first_name, last_name) en het land (description) van herkomst voor de reservering met id = 112. Combineer de tabellen customers, reservations, countries en trips.</p>
+</li>
+<li>
+<p>Toon de description van elke stad en de first_name en last_name van elke klant die een reservering heeft gemaakt voor een reis naar die stad. Zorg ervoor dat je elke stad maar één keer toont, samen met de bijbehorende klantgegevens.</p>
+</li>
+</ul>
+</div>
+
+        <div id="leerdoelen_wrapper">
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                
+            
+        </div>
+    </main>
+    <aside id="inhoudsopgave">
+            <a href="#" class="klapper" onclick="hidePanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-560.svg" alt="inklappen" style="position:relative; top:1px;" width="560" height="495"></picture></a>
+            <span><b>Inhoudsopgave</b></span>
+        <div class="toc">
+        <ul><li><a href="#eenvoudige-queries">Eenvoudige queries</a></li><li><a href="#aggregeren">Aggregeren</a></li><li><a href="#databases-maken">Databases maken</a></li><li><a href="#crud-oefeningen">CRUD oefeningen</a></li><li><a href="#tabellen-combineren">Tabellen combineren</a></li><li><a href="#verschillende-queries">Verschillende queries</a></li></ul>
+      </div>
+    </aside>
+    <aside id="hiddeninhoudsopgave">
+            <a href="#" class="klapper" onclick="showPanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-560.svg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " width="560" height="495"></picture></a>
+    </aside>
+ 
+
+  </div>
+
+      <footer>
+
+    </footer>
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        setlinks();
+        first_section = document.querySelectorAll('aside ul a')[0];
+        console.log(first_section);
+        showSection(first_section);
+      });
+
+
+      function setlinks() {
+        document.querySelectorAll('aside ul a').forEach(el => {
+          el.addEventListener('click', function(event) {
+              event.preventDefault();
+              const targetId = this
+              showSection(targetId);
+          });
+        });
+        }
+
+      function hidePanel() {
+        console.log("hidePanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        console.log(panel);
+        panel.style.flex = 0;
+        //panel.style.width = '0px';
+        panel.style.padding = 0;
+        panel.style.overflow = 'hidden';
+        hiddenPanel.style.position = 'absolute';
+        hiddenPanel.style.display = 'block';
+        hiddenPanel.style.top = '60px';
+        hiddenPanel.style.right = '10px';
+        hiddenPanel.style.zIndex = 100;
+      }
+
+      function showPanel() {
+        console.log("showPanel");
+        const panel = document.getElementById('inhoudsopgave');
+        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        panel.style.flexBasis = 'content';
+        panel.style.padding = '1rem';
+        panel.style.overflow = 'auto';
+        hiddenPanel.style.display = 'none';
+      }
+
+      function toggleNav() {
+        const nav = document.querySelector('nav#side ul');
+        if (nav.style.display === 'flex')  {
+          nav.style.display = 'none';
+        } else {
+          nav.style.display = 'flex';
+        }
+      }
+      
+
+
+      function showSection(link) {
+        id = link.getAttribute('href').substring(1);
+        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
+        const kop = document.getElementById(id);
+            console.log(kop);
+        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
+        link.style.textDecoration = "underline";
+        if (kop) {
+                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
+                console.log(kop.parentElement)
+                kop.parentElement.classList.remove('hide')
+                kop.parentElement.classList.add('show')
+            }
+        }   
+    </script>
+    </body> 
+</html>
