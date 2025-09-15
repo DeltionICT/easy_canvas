@@ -37,7 +37,7 @@ section#buttons .button-container div::before {
     content: '';
     width: 2rem;
     height: 1.4rem;
-    background-image: url('/_assets/right-arrow.svg');
+    background-image: url('/_assets/right-arrow_f58220.svg');
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;

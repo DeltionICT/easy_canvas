@@ -1,19 +1,45 @@
 :root {
-    font-family: "IBM Plex Sans", sans-serif;
+    --dark-grey:#17171a;
+    --light-grey:#f5f4f7;
+    --orange: #f58220;
+    --blue:#343368;
+    --code-color:#dcf0ff;
+
+    /* --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #1a1a28;
+    --light-grey: #f3f3f5;
+    --dark-grey: #5e5e71;
+    --code-color:#dcf0ff; */
+    
+    /* font-family: "IBM Plex Sans", sans-serif; */
+    font-family: "BuenosAires", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.6rem ;
+    line-height: 1.9rem ;
     color: var(--blue);
 
     scroll-behavior: smooth;
 
+}
+
+.dark-mode {
+    /* --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #f3f3f5;
+    --light-grey: #1a1a28;
+    --dark-grey: #a1a1b3;
+    --code-color:#2b2b38; */
+}
+
+.light-mode {
     --orange: #cd4611;
     --dark-orange: #6b1e00;
     --blue: #1a1a28;
     --light-grey: #f3f3f5;
     --dark-grey: #5e5e71;
     --code-color:#dcf0ff;
-}
+}   
 
 html {
     scroll-padding-top: 60px;
