@@ -233,23 +233,23 @@ code[class*="language-css"] {
 
 }
 
-.dark-mode {
-    /* --orange: #cd4611;
+/* .dark-mode {
+    --orange: #cd4611;
     --dark-orange: #6b1e00;
     --blue: #f3f3f5;
     --light-grey: #1a1a28;
     --dark-grey: #a1a1b3;
-    --code-color:#2b2b38; */
-}
+    --code-color:#2b2b38;
+} */
 
-.light-mode {
+/* .light-mode {
     --orange: #cd4611;
     --dark-orange: #6b1e00;
     --blue: #1a1a28;
     --light-grey: #f3f3f5;
     --dark-grey: #5e5e71;
     --code-color:#dcf0ff;
-}   
+}    */
 
 html {
     scroll-padding-top: 60px;
@@ -269,7 +269,7 @@ div#page_wrapper {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    min-height: 90vh;
+    /* min-height: calc(100vh-60px); */
 } 
 
 
@@ -366,6 +366,7 @@ a.active {
 }
 
 aside#inhoudsopgave {
+    min-width:250px;
     flex: 0 0 250px;
     background-color: var(--light-grey);
     padding: 1rem;
@@ -444,6 +445,37 @@ code {
     border-radius: 0.3rem;
     font-size: 0.9rem;
     width: 100%;
+}
+
+nav#top #hoogte-indicator {
+    display:block;
+    position:relative;
+    top:10px;
+    line-height:0.2rem;
+    height:10px;
+    background-color: var(--dark-grey);
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 0.3rem;
+    padding:0.3rem 0.3rem 0.5rem 0.3rem;
+}
+
+#panel-in, #panel-out {
+    height: 0;
+    width: 0;
+}
+
+#panel-in img, #panel-out img {
+    position:relative; 
+    padding:2px; 
+    width:10px; 
+    height:10px; 
+    top:0px; 
+    right:30px;
+}
+
+#panel-in img {
+    transform: rotate(180deg)
 }
 
 
@@ -665,6 +697,7 @@ h5 {
       
           <li><a href="/easy_canvas/python/projectopdrachten/">Projectopdrachten</a></li>
       
+        <li id="hoogte-indicator">0px</li>
         </ul>
       </nav>
       <nav id="side">   
@@ -815,15 +848,14 @@ Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
         </div>
     </main>
     <aside id="inhoudsopgave">
-            <a href="#" class="klapper" onclick="hidePanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/brdwZxDnce-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/brdwZxDnce-12.webp 12w"><img src="/easy_canvas/img/brdwZxDnce-12.jpeg" alt="inklappen" style="position:relative; top:1px;" width="12" height="10"></picture></a>
             <span><b>Inhoudsopgave</b></span>
         <div class="toc">
         <ul><li><a href="#condities">Condities</a></li><li><a href="#and-en-of">AND en OF</a></li><li><a href="#if-else-statements">if-else statements</a></li></ul>
       </div>
     </aside>
-    <aside id="hiddeninhoudsopgave">
-            <a href="#" class="klapper" onclick="showPanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/brdwZxDnce-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/brdwZxDnce-12.webp 12w"><img src="/easy_canvas/img/brdwZxDnce-12.jpeg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " width="12" height="10"></picture></a>
-    </aside>
+    <a href="#" id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></a>
+    <a href="#" id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></a>
+
  
 
   </div>
@@ -831,6 +863,7 @@ Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
       <footer>
 
     </footer>
+    <script src="/easy_canvas/_js/hoogte_indicator.js"></script>
     <script>
 
       document.addEventListener('DOMContentLoaded', function() {
@@ -838,6 +871,8 @@ Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
         first_section = document.querySelectorAll('aside ul a')[0];
         console.log(first_section);
         showSection(first_section);
+        showPanel();
+        console.log(window.innerHeight);
       });
 
 
@@ -853,28 +888,39 @@ Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
 
       function hidePanel() {
         console.log("hidePanel");
+        const arrow_in = document.getElementById('panel-in');
+        const arrow_out = document.getElementById('panel-out');
         const panel = document.getElementById('inhoudsopgave');
-        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
-        console.log(panel);
+        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        arrow_out.style.display = 'none';
+        arrow_in.style.display = 'block';
+        //console.log(panel);
         panel.style.flex = 0;
         //panel.style.width = '0px';
         panel.style.padding = 0;
         panel.style.overflow = 'hidden';
-        hiddenPanel.style.position = 'absolute';
-        hiddenPanel.style.display = 'block';
-        hiddenPanel.style.top = '60px';
-        hiddenPanel.style.right = '10px';
-        hiddenPanel.style.zIndex = 100;
+        panel.style.minWidth = '0px';
+        //hiddenPanel.style.position = 'absolute';
+       // hiddenPanel.style.display = 'block';
+        //hiddenPanel.style.top = '60px';
+        //hiddenPanel.style.right = '10px';
+        //hiddenPanel.style.zIndex = 100;
       }
 
       function showPanel() {
         console.log("showPanel");
         const panel = document.getElementById('inhoudsopgave');
-        const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
+        const arrow_in = document.getElementById('panel-in');
+        const arrow_out = document.getElementById('panel-out');
+        arrow_out.style.display = 'block';
+        arrow_in.style.display = 'none';
         panel.style.flexBasis = 'content';
         panel.style.padding = '1rem';
         panel.style.overflow = 'auto';
-        hiddenPanel.style.display = 'none';
+        panel.style.minWidth = '250px';
+        //hiddenPanel.style.position = 'static';
+        //hiddenPanel.style.display = 'none';
       }
 
       function toggleNav() {
@@ -901,7 +947,20 @@ Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
                 kop.parentElement.classList.remove('hide')
                 kop.parentElement.classList.add('show')
             }
-        }   
+        } 
+
+        const hoogteIndicator = document.getElementById('hoogte-indicator');
+
+        function updateHoogte() {
+            const scrollHeight = document.querySelector('main').scrollHeight;
+            hoogteIndicator.innerText = `${scrollHeight}px`;
+        }
+
+        // Roep de functie aan bij het laden van de pagina
+        updateHoogte();
+
+        // Roep de functie aan telkens wanneer de gebruiker scrollt
+        window.addEventListener('scroll', updateHoogte);  
     </script>
     </body> 
 </html>
