@@ -8,6 +8,41 @@
     
     <style>
       
+      @font-face {
+    font-family: BuenosAires;
+    font-style: normal;
+    font-weight: 400;
+    src: url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2");
+}
+
+@font-face {
+    font-family: BuenosAires;
+    font-style: bold;
+    font-weight: 700;
+    src: url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2");
+}
+
+@font-face {
+    font-family: BuenosAires;
+    font-style: black;
+    font-weight: 900;
+    src: url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2");
+}
+
+@font-face {
+    font-family: BuenosAires;
+    font-style: light;
+    font-weight: 300;
+    src: url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2");
+}
+
+@font-face {
+    font-family: BuenosAires;
+    font-style: thin;
+    font-weight: 100;
+    src: url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2");
+}
+
       
 code[class*="language-"],
 pre[class*="language-"] {
@@ -174,21 +209,47 @@ code[class*="language-css"] {
 	background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
 }
       :root {
-    font-family: "IBM Plex Sans", sans-serif;
+    --dark-grey:#17171a;
+    --light-grey:#f5f4f7;
+    --orange: #f58220;
+    --blue:#343368;
+    --code-color:#dcf0ff;
+
+    /* --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #1a1a28;
+    --light-grey: #f3f3f5;
+    --dark-grey: #5e5e71;
+    --code-color:#dcf0ff; */
+    
+    /* font-family: "IBM Plex Sans", sans-serif; */
+    font-family: "BuenosAires", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.6rem ;
+    line-height: 1.9rem ;
     color: var(--blue);
 
     scroll-behavior: smooth;
 
+}
+
+.dark-mode {
+    /* --orange: #cd4611;
+    --dark-orange: #6b1e00;
+    --blue: #f3f3f5;
+    --light-grey: #1a1a28;
+    --dark-grey: #a1a1b3;
+    --code-color:#2b2b38; */
+}
+
+.light-mode {
     --orange: #cd4611;
     --dark-orange: #6b1e00;
     --blue: #1a1a28;
     --light-grey: #f3f3f5;
     --dark-grey: #5e5e71;
     --code-color:#dcf0ff;
-}
+}   
 
 html {
     scroll-padding-top: 60px;
@@ -489,7 +550,7 @@ summary a {
 
 summary::before {
     content: '';
-    background-image: url('/easy_canvas/_assets/right-arrow.svg');
+    background-image: url('/easy_canvas/_assets/right-arrow_f58220.svg');
     transform: rotate(90deg);
 
     background-size: contain;
@@ -514,7 +575,7 @@ summary::before {
 
 
 details[open] summary::before {
-    background-image: url('/easy_canvas/_assets/right-arrow.svg');
+    background-image: url('/easy_canvas/_assets/right-arrow_f58220.svg');
     transform: rotate(270deg);
 }
 
@@ -566,7 +627,7 @@ h5 {
     </style>
     <title>Database Querying</title>
 </head>
-<body>
+<body class="dark-mode">
     <header>
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
@@ -665,14 +726,14 @@ h5 {
         </div>
     </main>
     <aside id="inhoudsopgave">
-            <a href="#" class="klapper" onclick="hidePanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-12.jpeg" alt="inklappen" style="position:relative; top:1px;" width="12" height="10"></picture></a>
+            <a href="#" class="klapper" onclick="hidePanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/brdwZxDnce-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/brdwZxDnce-12.webp 12w"><img src="/easy_canvas/img/brdwZxDnce-12.jpeg" alt="inklappen" style="position:relative; top:1px;" width="12" height="10"></picture></a>
             <span><b>Inhoudsopgave</b></span>
         <div class="toc">
         <ul><li><a href="#mariadb">MariaDB</a></li><li><a href="#postgresql">PostgreSQL</a></li><li><a href="#samenvatting">Samenvatting</a></li></ul>
       </div>
     </aside>
     <aside id="hiddeninhoudsopgave">
-            <a href="#" class="klapper" onclick="showPanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/eTE-OY1tg6-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/eTE-OY1tg6-12.webp 12w"><img src="/easy_canvas/img/eTE-OY1tg6-12.jpeg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " width="12" height="10"></picture></a>
+            <a href="#" class="klapper" onclick="showPanel()"><picture><source type="image/avif" srcset="/easy_canvas/img/brdwZxDnce-12.avif 12w"><source type="image/webp" srcset="/easy_canvas/img/brdwZxDnce-12.webp 12w"><img src="/easy_canvas/img/brdwZxDnce-12.jpeg" alt="uitklappen" style="position:relative; top:1px; transform: rotate(180deg); " width="12" height="10"></picture></a>
     </aside>
  
 
