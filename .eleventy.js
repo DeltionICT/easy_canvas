@@ -90,6 +90,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/_assets");
     eleventyConfig.addPassthroughCopy("./src/_fonts");
     eleventyConfig.addPassthroughCopy("./src/_css");
+    // eleventyConfig.addPassthroughCopy("./src/_js");
     // eleventyConfig.addPassthroughCopy("manifest.json");
     // eleventyConfig.addPassthroughCopy("service-worker.js");
 
