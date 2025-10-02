@@ -25,82 +25,83 @@
     </style>
     <title>{{ course_title }}</title>
 </head>
-<body class="dark-mode">
+<body>
     <header>
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
         <ul>
+          <li><a href="/">Home</a></li>
       {% for p in collections[tags] | postsAscending %}
-          <li><a href="{{ p.url }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
+          <li><a href="{{ p.url }}#{{ p.data.title | slugify }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
       {% endfor %}
-        <li id="hoogte-indicator">0px</li>
         </ul>
       </nav>
       <nav id="side">   
         <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
         <ul>
       {% for p in collections[tags] | postsAscending %}
-          <li><a href="{{ p.url }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
+          <li><a href="{{ p.url }}#{{ p.data.title | slugify }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
       {% endfor %}
         </ul>
       </nav>
   </header>
   <div id="page_wrapper">
   {% block layout %}{% endblock %} 
-
+    <div id="panel-in" class="klapper" onclick="showPanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+    <div id="panel-out" class="klapper" onclick="hidePanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
   </div>
 
-      <footer>
+    <footer>
 
     </footer>
-    <script src="/_js/hoogte_indicator.js"></script>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        setlinks();
-        first_section = document.querySelectorAll('aside ul a')[0];
-        console.log(first_section);
-        showSection(first_section);
+      window.addEventListener('DOMContentLoaded', function() {
         showPanel();
-        console.log(window.innerHeight);
+      });
+      window.addEventListener('hashchange', function() {
+        if (!window.location.hash) return;
+        console.log('De URL-hashtag is veranderd!');
+        
+        // Je kunt nu de nieuwe URL ophalen
+        const newHash = window.location.hash;
+        console.log('Nieuwe hashtag:', newHash);
+        
+        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
+        handleHashChange(newHash);
       });
 
-
-      function setlinks() {
-        document.querySelectorAll('aside ul a').forEach(el => {
-          el.addEventListener('click', function(event) {
-              event.preventDefault();
-              const targetId = this
-              showSection(targetId);
-          });
-        });
-        }
+      function handleHashChange(hash) {
+        setTimeout(function() {
+          const targetElement = document.querySelector(window.location.hash);
+          
+          if (targetElement) {
+            const newScrollPosition = targetElement.offsetTop - 160;
+            
+            window.scrollTo({
+              top: newScrollPosition,
+              //behavior: 'smooth'
+            });
+          }
+        }, 0);
+      } 
 
       function hidePanel() {
         console.log("hidePanel");
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         arrow_out.style.display = 'none';
         arrow_in.style.display = 'block';
-        //console.log(panel);
         panel.style.flex = 0;
-        //panel.style.width = '0px';
         panel.style.padding = 0;
         panel.style.overflow = 'hidden';
         panel.style.minWidth = '0px';
-        //hiddenPanel.style.position = 'absolute';
-       // hiddenPanel.style.display = 'block';
-        //hiddenPanel.style.top = '60px';
-        //hiddenPanel.style.right = '10px';
-        //hiddenPanel.style.zIndex = 100;
       }
 
       function showPanel() {
         console.log("showPanel");
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         arrow_out.style.display = 'block';
@@ -109,9 +110,9 @@
         panel.style.padding = '1rem';
         panel.style.overflow = 'auto';
         panel.style.minWidth = '250px';
-        //hiddenPanel.style.position = 'static';
-        //hiddenPanel.style.display = 'none';
       }
+
+
 
       function toggleNav() {
         const nav = document.querySelector('nav#side ul');
@@ -121,36 +122,7 @@
           nav.style.display = 'flex';
         }
       }
-      
-
-
-      function showSection(link) {
-        id = link.getAttribute('href').substring(1);
-        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
-        const kop = document.getElementById(id);
-            console.log(kop);
-        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
-        link.style.textDecoration = "underline";
-        if (kop) {
-                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
-                console.log(kop.parentElement)
-                kop.parentElement.classList.remove('hide')
-                kop.parentElement.classList.add('show')
-            }
-        } 
-
-        const hoogteIndicator = document.getElementById('hoogte-indicator');
-
-        function updateHoogte() {
-            const scrollHeight = document.querySelector('main').scrollHeight;
-            hoogteIndicator.innerText = `${scrollHeight}px`;
-        }
-
-        // Roep de functie aan bij het laden van de pagina
-        updateHoogte();
-
-        // Roep de functie aan telkens wanneer de gebruiker scrollt
-        window.addEventListener('scroll', updateHoogte);  
+    
     </script>
     </body> 
 </html>

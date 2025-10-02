@@ -5,13 +5,7 @@
     --blue:#343368;
     --code-color:#dcf0ff;
 
-    /* --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff; */
-    
+      
     /* font-family: "IBM Plex Sans", sans-serif; */
     font-family: "BuenosAires", sans-serif;
     font-weight: 400;
@@ -22,24 +16,6 @@
     scroll-behavior: smooth;
 
 }
-
-/* .dark-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #f3f3f5;
-    --light-grey: #1a1a28;
-    --dark-grey: #a1a1b3;
-    --code-color:#2b2b38;
-} */
-
-/* .light-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff;
-}    */
 
 html {
     scroll-padding-top: 60px;
@@ -65,6 +41,7 @@ div#page_wrapper {
 
 main {
     /* flex: 2; */
+    position:relative;
     flex: 1 1 200px;
     margin:0rem auto 0rem auto;
     background-color: white;
@@ -168,12 +145,6 @@ aside#hiddeninhoudsopgave {
     display:none;
 }
 
-/* aside#inhoudsopgave div.head {
-    display:block;
-
-    width:100%
-} */
-
 aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
     display:inline-block;
     background-color: white;
@@ -199,10 +170,25 @@ div.toc ul li a {
     color: var(--dark-grey);
 }
 
-
-/* div.section ~ div.section {
+div.section {
     display:none;
+}
+
+div.section:first-child:not(:has(:target)) {
+    display:block;
+}
+
+:target {
+    display:block
+}
+
+/* :target:has(div.section) {
+    display:block
 } */
+
+div.section:has(:target) {
+    display:block
+}
 
 div.show {
     display:block;
@@ -269,28 +255,9 @@ nav#top #hoogte-indicator {
 }
 
 
-@media (max-width:1449px) {
-  /* //test */
-}
-
-@media (max-width:1199px) {
-    /* pre[class*="language-"] {
-        width: 800px;
-    }
-    main {
-        width: 900px;
-    }    */
-} 
-
 
 @media (max-width:750px) {
-    /* pre[class*="language-"] {
-        width: 400px;
-    } 
-    main {
-        width: 500px;
-    } 
-     */
+
     nav#top {
         display:none;
     }
@@ -327,13 +294,4 @@ nav#top #hoogte-indicator {
         padding:0.3rem 0.3rem 0.3rem 0.3rem;
         margin:0;
     }
-}
-
-@media (max-width:550px) {
-    /* pre[class*="language-"] {
-        width: 200px;
-    }
-    main {
-        width: 300px;
-    } */
 }

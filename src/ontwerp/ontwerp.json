@@ -1,0 +1,7 @@
+{
+    "course_title": "Ontwerpen",
+    "layout": "nav_layout.njk",
+    "permalink": "/ontwerpen/{{ title | slug }}/{{ page.index }}",
+    "tags": "ontwerpen"
+}
+

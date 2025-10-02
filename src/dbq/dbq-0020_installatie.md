@@ -3,8 +3,12 @@ title: Installeren
 date: 2022-04-02
 ---
 
+::: section
+### {{ title }}
 
-#### {{ title }}
+Om de cursus te volgen heb je een laptop nodig en moet je een database-server installeren. Aangezien veel relationele database servers compatible zijn met SQL (structured query language) kun je kiezen. Werk je veel met python dan is meestal Postgres de beste keuze. Werk je met php of een php-framework zoals Laravel of Symfony, dan is meestal mariadb de logische keuze. 
+
+:::
 
 ::: section
 ### MariaDB

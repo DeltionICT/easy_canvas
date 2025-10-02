@@ -39,9 +39,12 @@ leerdoelen:
     - Beveiligingsoverwegingen. Kennis van veelvoorkomende beveiligingsrisico's, zoals SQL-injectie, en methoden om deze te voorkomen.
 ---
 
+::: section
+### {{ title }}
 
-#### {{ title }}
+Deze cursus is gericht op studenten van de mbo-opleidingen software developer en ict engineer. In de cursus leer je de basisprincipes voor het werken met relationele databases. Hieronder zie je leerdoelen verder uitgewerkt. In de cursus staan voorbeelden en bestanden die geschikt zijn voor mysql, mariadb en postgresql.
 
+:::
 ::: section
 ### Software Developer
 #### De Noodzaak van Databases

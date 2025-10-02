@@ -1,11 +1,14 @@
 ---
-title: Docker Ecosysteem
+title: Docker 
 date: 2025-08-25
 ---
 
 
+::: section
+### {{ title }}
 
-#### {{ title }}
+Docker is de verzameling van alle tools en diensten die samenwerken om het makkelijker te maken software te bouwen, te verschepen en te draaien.
+:::
 
 ::: section
 ### Docker Container

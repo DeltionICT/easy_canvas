@@ -3,8 +3,13 @@ title: Gegevens opvragen
 date: 2025-09-09
 ---
 
+::: section
+### {{ title }}
 
-#### {{ title }}
+Databases zijn uitermate geschikt om gestructureerde data in op te slaan. Denk bijvoorbeeld aan persoonsgegevens, producten of ordergegevens. Voor dit soort gegevens kun je een kaartenbakje maken waarbij je voor iedere persoon of produkt dezelfde soort gegevens opslaat. 
+Door deze manier van data-opslag is een database in staat om heel snel gegevens op te  zoeken en te presenteren.
+
+:::
 
 ::: section
 ### Starten met queries

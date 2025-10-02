@@ -3,27 +3,33 @@ layout: nav_layout.njk
 title: Leerdoelen
 date: 2025-08-25
 leerdoelen:
--
-    titel: Basis leerdoelen
-    items:  
-        - Docker installeren en configureren. De student is in staat om Docker Desktop (of de juiste Docker-engine voor het besturingssysteem) te installeren, te configureren en de basisfunctionaliteit te verifiëren.
-        - Werken met images en containers. De student kan een Docker image ophalen uit een registry (zoals Docker Hub), een container opstarten, stoppen en verwijderen
-        - Eigen images bouwen. De student kan een eenvoudige Dockerfile schrijven om een eigen applicatie te containeriseren.
-        - Poorten en volumes. De student leert hoe poorten te mappen tussen de host en de container en hoe data persistent te maken door volumes te gebruiken.
--	
-    titel: Gespecialiseerde doelen
+  - titel: Basis leerdoelen
     items:
-        - Ontwikkelworkflow. De student kan Docker integreren in een ontwikkelworkflow, inclusief het opzetten van een ontwikkelomgeving voor een specifieke taal of framework.
-        - Docker in CI/CD. De student begrijpt hoe een continuous integration/continuous deployment (CI/CD) pipeline kan worden opgezet met Docker, waarbij images automatisch worden gebouwd en getest na elke code commit.
-        - Microservices. De student kan een simpele microservices architectuur opzetten met behulp van Docker Compose, waarbij verschillende services in aparte containers draaien.
--   
-    titel: Beveiliging
-    items: 
-        - Beveiliging. De student leert over de basisprincipes van Docker security, zoals het gebruik van non-root gebruikers, het scannen van images op kwetsbaarheden en het configureren van resource-limieten. 
-        - Docker in productie. De student heeft inzicht in het draaien van Docker containers in een productieomgeving, inclusief het gebruik van orchestration tools zoals Docker Swarm of een introductie tot Kubernetes concepten.
-        - Monitoring en logging. De student is in staat om de logs en metrics van containers te verzamelen en te analyseren, en kan tools gebruiken om de gezondheid van containers en de onderliggende host te monitoren.
+      - Docker installeren en configureren. De student is in staat om Docker Desktop (of de juiste Docker-engine voor het besturingssysteem) te installeren, te configureren en de basisfunctionaliteit te verifiëren.
+      - Werken met images en containers. De student kan een Docker image ophalen uit een registry (zoals Docker Hub), een container opstarten, stoppen en verwijderen
+      - Eigen images bouwen. De student kan een eenvoudige Dockerfile schrijven om een eigen applicatie te containeriseren.
+      - Poorten en volumes. De student leert hoe poorten te mappen tussen de host en de container en hoe data persistent te maken door volumes te gebruiken.
+  - titel: Gespecialiseerde doelen
+    items:
+      - Ontwikkelworkflow. De student kan Docker integreren in een ontwikkelworkflow, inclusief het opzetten van een ontwikkelomgeving voor een specifieke taal of framework.
+      - Docker in CI/CD. De student begrijpt hoe een continuous integration/continuous deployment (CI/CD) pipeline kan worden opgezet met Docker, waarbij images automatisch worden gebouwd en getest na elke code commit.
+      - Microservices. De student kan een simpele microservices architectuur opzetten met behulp van Docker Compose, waarbij verschillende services in aparte containers draaien.
+  - titel: Beveiliging
+    items:
+      - Beveiliging. De student leert over de basisprincipes van Docker security, zoals het gebruik van non-root gebruikers, het scannen van images op kwetsbaarheden en het configureren van resource-limieten.
+      - Docker in productie. De student heeft inzicht in het draaien van Docker containers in een productieomgeving, inclusief het gebruik van orchestration tools zoals Docker Swarm of een introductie tot Kubernetes concepten.
+      - Monitoring en logging. De student is in staat om de logs en metrics van containers te verzamelen en te analyseren, en kan tools gebruiken om de gezondheid van containers en de onderliggende host te monitoren.
 ---
 
+::: section
+### {{ title }}
+
+Hoewel ICT-engineers en softwareontwikkelaars verschillende beroepspaden bewandelen, krijgen ze in hun werk beide te maken met virtualisatie en containers. Deze cursus biedt een praktische introductie tot Docker, een krachtig platform dat het mogelijk maakt om applicaties te verpakken in containers.
+
+#### Wat is Docker en waarom is het belangrijk?
+Docker vereenvoudigt de manier waarop je software bouwt, deelt en uitvoert. Traditionele virtualisatietechnieken zoals virtuele machines (VM's) zijn vaak zwaar en traag. Docker-containers zijn daarentegen licht en efficiënt. Ze bundelen een applicatie en al haar afhankelijkheden – zoals bibliotheken en configuratiebestanden – in een geïsoleerde omgeving. Dit zorgt ervoor dat een applicatie overal hetzelfde werkt, of het nu op je laptop is, op een server in de cloud, of in een testomgeving. Deze consistentie lost het klassieke probleem op van "het werkt op mijn machine, maar niet op de jouwe."
+
+:::
 ::: section
 ### ICT system engineer
 **(Crebonr. 27016, MBO niveau 4)**

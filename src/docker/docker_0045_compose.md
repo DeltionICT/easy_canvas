@@ -3,10 +3,8 @@ title: Docker compose
 date: 2025-08-25
 ---
 
-#### {{ title }}
-
 ::: section
-### Scheiding van taken
+### {{ title }}
 Het is handig om voor verschillende processen aparte Docker-images en een `docker-compose.yml` te gebruiken, omdat je zo je applicatie in onafhankelijke onderdelen opdeelt. Dit principe heet **microservices**.  
 Elk proces, zoals je PHP webserver en je database, heeft zijn eigen unieke taak en afhankelijkheden. De PHP-webserver heeft Apache of Nginx nodig en de PHP-code, terwijl de database PostgreSQL of MySQL en de dataopslag nodig heeft.
 * **Zonder Docker:** Je installeert en configureert alles op dezelfde machine. Dit kan leiden tot conflicten tussen de software en het is moeilijk te beheren.

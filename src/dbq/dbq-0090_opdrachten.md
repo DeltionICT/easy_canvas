@@ -4,6 +4,13 @@ date: 2025-09-09
 ---
 
 ::: section
+### Opdrachten
+
+Hier vind je de oefen-opdrachten die je moet maken om te leren werken met databases, tabellen en queries. Je kunt de opdrachten uitvoeren met behulp van een database-client. We gaan er van uit dat je de benodigde applicaties hebt geinstalleerd. Als je met mysql / mariadb werkt dan kun je werken met phpMyAdmin. Je kunt queries uitvoeren in het tabblad `SQL`.
+Bij Postgresql heb je de client Adminer geïnstalleerd. Hierin heb je de optie `SQL Commando's`. 
+:::
+
+::: section
 ### Eenvoudige queries
 Gebruik voor onderstaande opdrachten de database `school`
 * Geef de query voor een overzicht van de naam en roepnaam van alle cursisten die in Oosterhout wonen.

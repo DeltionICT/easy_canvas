@@ -3,6 +3,10 @@ title: Commands
 date: 2025-08-25
 ---
 
+
+::: section
+### {{ title }}
+
 Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem.
 Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de docker-cli in een terminal
 
@@ -93,3 +97,4 @@ Met de docker-cli kun je commando's sturen naar de docker deamon.  Je start de d
 | `docker volume rm <volume-name>`            | Remove a volume                                     |
 | `docker run -v <volume-name>:<container-path> <image>`| Mount a volume into a container             |
 
+:::

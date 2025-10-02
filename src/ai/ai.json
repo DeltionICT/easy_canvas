@@ -1,0 +1,6 @@
+{
+    "course_title": "AI Development",
+    "layout": "nav_layout.njk",
+    "permalink": "/ai/{{ title | slug }}/{{ page.index }}",
+    "tags": "ai"
+}
