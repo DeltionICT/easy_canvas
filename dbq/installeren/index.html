@@ -215,13 +215,7 @@ code[class*="language-css"] {
     --blue:#343368;
     --code-color:#dcf0ff;
 
-    /* --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff; */
-    
+      
     /* font-family: "IBM Plex Sans", sans-serif; */
     font-family: "BuenosAires", sans-serif;
     font-weight: 400;
@@ -232,24 +226,6 @@ code[class*="language-css"] {
     scroll-behavior: smooth;
 
 }
-
-/* .dark-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #f3f3f5;
-    --light-grey: #1a1a28;
-    --dark-grey: #a1a1b3;
-    --code-color:#2b2b38;
-} */
-
-/* .light-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff;
-}    */
 
 html {
     scroll-padding-top: 60px;
@@ -275,6 +251,7 @@ div#page_wrapper {
 
 main {
     /* flex: 2; */
+    position:relative;
     flex: 1 1 200px;
     margin:0rem auto 0rem auto;
     background-color: white;
@@ -378,12 +355,6 @@ aside#hiddeninhoudsopgave {
     display:none;
 }
 
-/* aside#inhoudsopgave div.head {
-    display:block;
-
-    width:100%
-} */
-
 aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
     display:inline-block;
     background-color: white;
@@ -409,10 +380,25 @@ div.toc ul li a {
     color: var(--dark-grey);
 }
 
-
-/* div.section ~ div.section {
+div.section {
     display:none;
+}
+
+div.section:first-child:not(:has(:target)) {
+    display:block;
+}
+
+:target {
+    display:block
+}
+
+/* :target:has(div.section) {
+    display:block
 } */
+
+div.section:has(:target) {
+    display:block
+}
 
 div.show {
     display:block;
@@ -479,28 +465,9 @@ nav#top #hoogte-indicator {
 }
 
 
-@media (max-width:1449px) {
-  /* //test */
-}
-
-@media (max-width:1199px) {
-    /* pre[class*="language-"] {
-        width: 800px;
-    }
-    main {
-        width: 900px;
-    }    */
-} 
-
 
 @media (max-width:750px) {
-    /* pre[class*="language-"] {
-        width: 400px;
-    } 
-    main {
-        width: 500px;
-    } 
-     */
+
     nav#top {
         display:none;
     }
@@ -537,15 +504,6 @@ nav#top #hoogte-indicator {
         padding:0.3rem 0.3rem 0.3rem 0.3rem;
         margin:0;
     }
-}
-
-@media (max-width:550px) {
-    /* pre[class*="language-"] {
-        width: 200px;
-    }
-    main {
-        width: 300px;
-    } */
 }
       details {
     /* border-bottom: 1px solid #ccc; */
@@ -622,10 +580,6 @@ details p.firstchild {
     padding-top: 50px;
 }
 
-h3#leerdoelen {
-    background-color: var(--light-grey);
-    text-align:center
-}
       
         
       
@@ -659,34 +613,34 @@ h5 {
     </style>
     <title>Database Querying</title>
 </head>
-<body class="dark-mode">
+<body>
     <header>
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
         <ul>
+          <li><a href="/easy_canvas/">Home</a></li>
       
-          <li><a href="/easy_canvas/dbq/introductie/">Introductie</a></li>
+          <li><a href="/easy_canvas/dbq/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/dbq/installeren/" class="active">Installeren</a></li>
+          <li><a href="/easy_canvas/dbq/installeren/#installeren" class="active">Installeren</a></li>
       
-          <li><a href="/easy_canvas/dbq/gegevens-opvragen/">Gegevens opvragen</a></li>
+          <li><a href="/easy_canvas/dbq/gegevens-opvragen/#gegevens-opvragen">Gegevens opvragen</a></li>
       
-          <li><a href="/easy_canvas/dbq/opdrachten/">Opdrachten</a></li>
+          <li><a href="/easy_canvas/dbq/opdrachten/#opdrachten">Opdrachten</a></li>
       
-        <li id="hoogte-indicator">0px</li>
         </ul>
       </nav>
       <nav id="side">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
         <ul>
       
-          <li><a href="/easy_canvas/dbq/introductie/">Introductie</a></li>
+          <li><a href="/easy_canvas/dbq/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/dbq/installeren/" class="active">Installeren</a></li>
+          <li><a href="/easy_canvas/dbq/installeren/#installeren" class="active">Installeren</a></li>
       
-          <li><a href="/easy_canvas/dbq/gegevens-opvragen/">Gegevens opvragen</a></li>
+          <li><a href="/easy_canvas/dbq/gegevens-opvragen/#gegevens-opvragen">Gegevens opvragen</a></li>
       
-          <li><a href="/easy_canvas/dbq/opdrachten/">Opdrachten</a></li>
+          <li><a href="/easy_canvas/dbq/opdrachten/#opdrachten">Opdrachten</a></li>
       
         </ul>
       </nav>
@@ -695,7 +649,10 @@ h5 {
   
     <main>
         <h1 id="top">Database Querying</h1>
-        <h4 id="installeren">Installeren</h4>
+        <div class="section">
+<h3 id="installeren">Installeren</h3>
+<p>Om de cursus te volgen heb je een laptop nodig en moet je een database-server installeren. Aangezien veel relationele database servers compatible zijn met SQL (structured query language) kun je kiezen. Werk je veel met python dan is meestal Postgres de beste keuze. Werk je met php of een php-framework zoals Laravel of Symfony, dan is meestal mariadb de logische keuze.</p>
+</div>
 <div class="section">
 <h3 id="mariadb">MariaDB</h3>
 <p>MariaDB is een doorontwikkeling van MySQL. Het is een database die bekend staat om zijn <strong>snelheid</strong> en <strong>eenvoud</strong>. Het is heel vergelijkbaar met MySQL, dus als je al ervaring hebt met MySQL, voelt MariaDB direct vertrouwd.</p>
@@ -761,67 +718,66 @@ h5 {
     <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
         <div class="toc">
-        <ul><li><a href="#mariadb">MariaDB</a></li><li><a href="#postgresql">PostgreSQL</a></li><li><a href="#samenvatting">Samenvatting</a></li></ul>
+        <ul><li><a href="#installeren">Installeren</a></li><li><a href="#mariadb">MariaDB</a></li><li><a href="#postgresql">PostgreSQL</a></li><li><a href="#samenvatting">Samenvatting</a></li></ul>
       </div>
     </aside>
-    <a href="#" id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></a>
-    <a href="#" id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></a>
 
  
-
+    <div id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+    <div id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
   </div>
 
-      <footer>
+    <footer>
 
     </footer>
-    <script src="/easy_canvas/_js/hoogte_indicator.js"></script>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        setlinks();
-        first_section = document.querySelectorAll('aside ul a')[0];
-        console.log(first_section);
-        showSection(first_section);
+      window.addEventListener('DOMContentLoaded', function() {
         showPanel();
-        console.log(window.innerHeight);
+      });
+      window.addEventListener('hashchange', function() {
+        if (!window.location.hash) return;
+        console.log('De URL-hashtag is veranderd!');
+        
+        // Je kunt nu de nieuwe URL ophalen
+        const newHash = window.location.hash;
+        console.log('Nieuwe hashtag:', newHash);
+        
+        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
+        handleHashChange(newHash);
       });
 
-
-      function setlinks() {
-        document.querySelectorAll('aside ul a').forEach(el => {
-          el.addEventListener('click', function(event) {
-              event.preventDefault();
-              const targetId = this
-              showSection(targetId);
-          });
-        });
-        }
+      function handleHashChange(hash) {
+        setTimeout(function() {
+          const targetElement = document.querySelector(window.location.hash);
+          
+          if (targetElement) {
+            const newScrollPosition = targetElement.offsetTop - 160;
+            
+            window.scrollTo({
+              top: newScrollPosition,
+              //behavior: 'smooth'
+            });
+          }
+        }, 0);
+      } 
 
       function hidePanel() {
         console.log("hidePanel");
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         arrow_out.style.display = 'none';
         arrow_in.style.display = 'block';
-        //console.log(panel);
         panel.style.flex = 0;
-        //panel.style.width = '0px';
         panel.style.padding = 0;
         panel.style.overflow = 'hidden';
         panel.style.minWidth = '0px';
-        //hiddenPanel.style.position = 'absolute';
-       // hiddenPanel.style.display = 'block';
-        //hiddenPanel.style.top = '60px';
-        //hiddenPanel.style.right = '10px';
-        //hiddenPanel.style.zIndex = 100;
       }
 
       function showPanel() {
         console.log("showPanel");
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         arrow_out.style.display = 'block';
@@ -830,9 +786,9 @@ h5 {
         panel.style.padding = '1rem';
         panel.style.overflow = 'auto';
         panel.style.minWidth = '250px';
-        //hiddenPanel.style.position = 'static';
-        //hiddenPanel.style.display = 'none';
       }
+
+
 
       function toggleNav() {
         const nav = document.querySelector('nav#side ul');
@@ -842,36 +798,7 @@ h5 {
           nav.style.display = 'flex';
         }
       }
-      
-
-
-      function showSection(link) {
-        id = link.getAttribute('href').substring(1);
-        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
-        const kop = document.getElementById(id);
-            console.log(kop);
-        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
-        link.style.textDecoration = "underline";
-        if (kop) {
-                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
-                console.log(kop.parentElement)
-                kop.parentElement.classList.remove('hide')
-                kop.parentElement.classList.add('show')
-            }
-        } 
-
-        const hoogteIndicator = document.getElementById('hoogte-indicator');
-
-        function updateHoogte() {
-            const scrollHeight = document.querySelector('main').scrollHeight;
-            hoogteIndicator.innerText = `${scrollHeight}px`;
-        }
-
-        // Roep de functie aan bij het laden van de pagina
-        updateHoogte();
-
-        // Roep de functie aan telkens wanneer de gebruiker scrollt
-        window.addEventListener('scroll', updateHoogte);  
+    
     </script>
     </body> 
 </html>

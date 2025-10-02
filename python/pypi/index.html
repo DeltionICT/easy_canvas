@@ -215,13 +215,7 @@ code[class*="language-css"] {
     --blue:#343368;
     --code-color:#dcf0ff;
 
-    /* --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff; */
-    
+      
     /* font-family: "IBM Plex Sans", sans-serif; */
     font-family: "BuenosAires", sans-serif;
     font-weight: 400;
@@ -232,24 +226,6 @@ code[class*="language-css"] {
     scroll-behavior: smooth;
 
 }
-
-/* .dark-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #f3f3f5;
-    --light-grey: #1a1a28;
-    --dark-grey: #a1a1b3;
-    --code-color:#2b2b38;
-} */
-
-/* .light-mode {
-    --orange: #cd4611;
-    --dark-orange: #6b1e00;
-    --blue: #1a1a28;
-    --light-grey: #f3f3f5;
-    --dark-grey: #5e5e71;
-    --code-color:#dcf0ff;
-}    */
 
 html {
     scroll-padding-top: 60px;
@@ -275,6 +251,7 @@ div#page_wrapper {
 
 main {
     /* flex: 2; */
+    position:relative;
     flex: 1 1 200px;
     margin:0rem auto 0rem auto;
     background-color: white;
@@ -378,12 +355,6 @@ aside#hiddeninhoudsopgave {
     display:none;
 }
 
-/* aside#inhoudsopgave div.head {
-    display:block;
-
-    width:100%
-} */
-
 aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
     display:inline-block;
     background-color: white;
@@ -409,10 +380,25 @@ div.toc ul li a {
     color: var(--dark-grey);
 }
 
-
-/* div.section ~ div.section {
+div.section {
     display:none;
+}
+
+div.section:first-child:not(:has(:target)) {
+    display:block;
+}
+
+:target {
+    display:block
+}
+
+/* :target:has(div.section) {
+    display:block
 } */
+
+div.section:has(:target) {
+    display:block
+}
 
 div.show {
     display:block;
@@ -479,28 +465,9 @@ nav#top #hoogte-indicator {
 }
 
 
-@media (max-width:1449px) {
-  /* //test */
-}
-
-@media (max-width:1199px) {
-    /* pre[class*="language-"] {
-        width: 800px;
-    }
-    main {
-        width: 900px;
-    }    */
-} 
-
 
 @media (max-width:750px) {
-    /* pre[class*="language-"] {
-        width: 400px;
-    } 
-    main {
-        width: 500px;
-    } 
-     */
+
     nav#top {
         display:none;
     }
@@ -537,15 +504,6 @@ nav#top #hoogte-indicator {
         padding:0.3rem 0.3rem 0.3rem 0.3rem;
         margin:0;
     }
-}
-
-@media (max-width:550px) {
-    /* pre[class*="language-"] {
-        width: 200px;
-    }
-    main {
-        width: 300px;
-    } */
 }
       details {
     /* border-bottom: 1px solid #ccc; */
@@ -622,10 +580,6 @@ details p.firstchild {
     padding-top: 50px;
 }
 
-h3#leerdoelen {
-    background-color: var(--light-grey);
-    text-align:center
-}
       
         
       
@@ -659,82 +613,82 @@ h5 {
     </style>
     <title>Python</title>
 </head>
-<body class="dark-mode">
+<body>
     <header>
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
         <ul>
+          <li><a href="/easy_canvas/">Home</a></li>
       
-          <li><a href="/easy_canvas/python/introductie/">Introductie</a></li>
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/python/leerdoelen/">Leerdoelen</a></li>
+          <li><a href="/easy_canvas/python/leerdoelen/#leerdoelen">Leerdoelen</a></li>
       
-          <li><a href="/easy_canvas/python/werkwijze/">Werkwijze</a></li>
+          <li><a href="/easy_canvas/python/werkwijze/#werkwijze">Werkwijze</a></li>
       
-          <li><a href="/easy_canvas/python/variabelen/">Variabelen</a></li>
+          <li><a href="/easy_canvas/python/variabelen/#variabelen">Variabelen</a></li>
       
-          <li><a href="/easy_canvas/python/berekeningen/">Berekeningen</a></li>
+          <li><a href="/easy_canvas/python/berekeningen/#berekeningen">Berekeningen</a></li>
       
-          <li><a href="/easy_canvas/python/tekstfuncties/">Tekstfuncties</a></li>
+          <li><a href="/easy_canvas/python/tekstfuncties/#tekstfuncties">Tekstfuncties</a></li>
       
-          <li><a href="/easy_canvas/python/lists/">Lists</a></li>
+          <li><a href="/easy_canvas/python/lists/#lists">Lists</a></li>
       
-          <li><a href="/easy_canvas/python/input-functions/">Input functions</a></li>
+          <li><a href="/easy_canvas/python/input-functions/#input-functions">Input functions</a></li>
       
-          <li><a href="/easy_canvas/python/loops-en-lists/">Loops en lists</a></li>
+          <li><a href="/easy_canvas/python/loops-en-lists/#loops-en-lists">Loops en lists</a></li>
       
-          <li><a href="/easy_canvas/python/condities/">Condities</a></li>
+          <li><a href="/easy_canvas/python/condities/#condities">Condities</a></li>
       
-          <li><a href="/easy_canvas/python/werken-met-tekst/">Werken met tekst</a></li>
+          <li><a href="/easy_canvas/python/werken-met-tekst/#werken-met-tekst">Werken met tekst</a></li>
       
-          <li><a href="/easy_canvas/python/foutafhandeling/">Foutafhandeling</a></li>
+          <li><a href="/easy_canvas/python/foutafhandeling/#foutafhandeling">Foutafhandeling</a></li>
       
-          <li><a href="/easy_canvas/python/functions/">Functions</a></li>
+          <li><a href="/easy_canvas/python/functions/#functions">Functions</a></li>
       
-          <li><a href="/easy_canvas/python/modules/">Modules</a></li>
+          <li><a href="/easy_canvas/python/modules/#modules">Modules</a></li>
       
-          <li><a href="/easy_canvas/python/pypi/" class="active">PyPi</a></li>
+          <li><a href="/easy_canvas/python/pypi/#pypi" class="active">PyPi</a></li>
       
-          <li><a href="/easy_canvas/python/projectopdrachten/">Projectopdrachten</a></li>
+          <li><a href="/easy_canvas/python/projectopdrachten/#projectopdrachten">Projectopdrachten</a></li>
       
-        <li id="hoogte-indicator">0px</li>
         </ul>
       </nav>
       <nav id="side">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
         <ul>
       
-          <li><a href="/easy_canvas/python/introductie/">Introductie</a></li>
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/python/leerdoelen/">Leerdoelen</a></li>
+          <li><a href="/easy_canvas/python/leerdoelen/#leerdoelen">Leerdoelen</a></li>
       
-          <li><a href="/easy_canvas/python/werkwijze/">Werkwijze</a></li>
+          <li><a href="/easy_canvas/python/werkwijze/#werkwijze">Werkwijze</a></li>
       
-          <li><a href="/easy_canvas/python/variabelen/">Variabelen</a></li>
+          <li><a href="/easy_canvas/python/variabelen/#variabelen">Variabelen</a></li>
       
-          <li><a href="/easy_canvas/python/berekeningen/">Berekeningen</a></li>
+          <li><a href="/easy_canvas/python/berekeningen/#berekeningen">Berekeningen</a></li>
       
-          <li><a href="/easy_canvas/python/tekstfuncties/">Tekstfuncties</a></li>
+          <li><a href="/easy_canvas/python/tekstfuncties/#tekstfuncties">Tekstfuncties</a></li>
       
-          <li><a href="/easy_canvas/python/lists/">Lists</a></li>
+          <li><a href="/easy_canvas/python/lists/#lists">Lists</a></li>
       
-          <li><a href="/easy_canvas/python/input-functions/">Input functions</a></li>
+          <li><a href="/easy_canvas/python/input-functions/#input-functions">Input functions</a></li>
       
-          <li><a href="/easy_canvas/python/loops-en-lists/">Loops en lists</a></li>
+          <li><a href="/easy_canvas/python/loops-en-lists/#loops-en-lists">Loops en lists</a></li>
       
-          <li><a href="/easy_canvas/python/condities/">Condities</a></li>
+          <li><a href="/easy_canvas/python/condities/#condities">Condities</a></li>
       
-          <li><a href="/easy_canvas/python/werken-met-tekst/">Werken met tekst</a></li>
+          <li><a href="/easy_canvas/python/werken-met-tekst/#werken-met-tekst">Werken met tekst</a></li>
       
-          <li><a href="/easy_canvas/python/foutafhandeling/">Foutafhandeling</a></li>
+          <li><a href="/easy_canvas/python/foutafhandeling/#foutafhandeling">Foutafhandeling</a></li>
       
-          <li><a href="/easy_canvas/python/functions/">Functions</a></li>
+          <li><a href="/easy_canvas/python/functions/#functions">Functions</a></li>
       
-          <li><a href="/easy_canvas/python/modules/">Modules</a></li>
+          <li><a href="/easy_canvas/python/modules/#modules">Modules</a></li>
       
-          <li><a href="/easy_canvas/python/pypi/" class="active">PyPi</a></li>
+          <li><a href="/easy_canvas/python/pypi/#pypi" class="active">PyPi</a></li>
       
-          <li><a href="/easy_canvas/python/projectopdrachten/">Projectopdrachten</a></li>
+          <li><a href="/easy_canvas/python/projectopdrachten/#projectopdrachten">Projectopdrachten</a></li>
       
         </ul>
       </nav>
@@ -809,64 +763,63 @@ een python-script de IPv4 adressen opvraagt van alle netwerkinterfaces in je com
         <ul><li><a href="#pypi">PyPi</a></li><li><a href="#psutil">PSUtil</a></li><li><a href="#externe-module">Externe module</a></li><li><a href="#opdracht">Opdracht</a></li></ul>
       </div>
     </aside>
-    <a href="#" id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></a>
-    <a href="#" id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></a>
 
  
-
+    <div id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+    <div id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
   </div>
 
-      <footer>
+    <footer>
 
     </footer>
-    <script src="/easy_canvas/_js/hoogte_indicator.js"></script>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        setlinks();
-        first_section = document.querySelectorAll('aside ul a')[0];
-        console.log(first_section);
-        showSection(first_section);
+      window.addEventListener('DOMContentLoaded', function() {
         showPanel();
-        console.log(window.innerHeight);
+      });
+      window.addEventListener('hashchange', function() {
+        if (!window.location.hash) return;
+        console.log('De URL-hashtag is veranderd!');
+        
+        // Je kunt nu de nieuwe URL ophalen
+        const newHash = window.location.hash;
+        console.log('Nieuwe hashtag:', newHash);
+        
+        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
+        handleHashChange(newHash);
       });
 
-
-      function setlinks() {
-        document.querySelectorAll('aside ul a').forEach(el => {
-          el.addEventListener('click', function(event) {
-              event.preventDefault();
-              const targetId = this
-              showSection(targetId);
-          });
-        });
-        }
+      function handleHashChange(hash) {
+        setTimeout(function() {
+          const targetElement = document.querySelector(window.location.hash);
+          
+          if (targetElement) {
+            const newScrollPosition = targetElement.offsetTop - 160;
+            
+            window.scrollTo({
+              top: newScrollPosition,
+              //behavior: 'smooth'
+            });
+          }
+        }, 0);
+      } 
 
       function hidePanel() {
         console.log("hidePanel");
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         arrow_out.style.display = 'none';
         arrow_in.style.display = 'block';
-        //console.log(panel);
         panel.style.flex = 0;
-        //panel.style.width = '0px';
         panel.style.padding = 0;
         panel.style.overflow = 'hidden';
         panel.style.minWidth = '0px';
-        //hiddenPanel.style.position = 'absolute';
-       // hiddenPanel.style.display = 'block';
-        //hiddenPanel.style.top = '60px';
-        //hiddenPanel.style.right = '10px';
-        //hiddenPanel.style.zIndex = 100;
       }
 
       function showPanel() {
         console.log("showPanel");
         const panel = document.getElementById('inhoudsopgave');
-        //const hiddenPanel = document.getElementById('hiddeninhoudsopgave');
         const arrow_in = document.getElementById('panel-in');
         const arrow_out = document.getElementById('panel-out');
         arrow_out.style.display = 'block';
@@ -875,9 +828,9 @@ een python-script de IPv4 adressen opvraagt van alle netwerkinterfaces in je com
         panel.style.padding = '1rem';
         panel.style.overflow = 'auto';
         panel.style.minWidth = '250px';
-        //hiddenPanel.style.position = 'static';
-        //hiddenPanel.style.display = 'none';
       }
+
+
 
       function toggleNav() {
         const nav = document.querySelector('nav#side ul');
@@ -887,36 +840,7 @@ een python-script de IPv4 adressen opvraagt van alle netwerkinterfaces in je com
           nav.style.display = 'flex';
         }
       }
-      
-
-
-      function showSection(link) {
-        id = link.getAttribute('href').substring(1);
-        document.querySelectorAll('div.section').forEach(el => el.classList.remove('show'));
-        const kop = document.getElementById(id);
-            console.log(kop);
-        document.querySelectorAll('aside ul a').forEach(el => el.style.textDecoration = "none");
-        link.style.textDecoration = "underline";
-        if (kop) {
-                document.querySelectorAll('div.section').forEach(el => el.classList.add('hide')); 
-                console.log(kop.parentElement)
-                kop.parentElement.classList.remove('hide')
-                kop.parentElement.classList.add('show')
-            }
-        } 
-
-        const hoogteIndicator = document.getElementById('hoogte-indicator');
-
-        function updateHoogte() {
-            const scrollHeight = document.querySelector('main').scrollHeight;
-            hoogteIndicator.innerText = `${scrollHeight}px`;
-        }
-
-        // Roep de functie aan bij het laden van de pagina
-        updateHoogte();
-
-        // Roep de functie aan telkens wanneer de gebruiker scrollt
-        window.addEventListener('scroll', updateHoogte);  
+    
     </script>
     </body> 
 </html>
