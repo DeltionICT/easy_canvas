@@ -8,7 +8,7 @@ import pluginTOC from 'eleventy-plugin-toc';
 import CleanCSS from "clean-css";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import path from "node:path";
-
+import { minify } from "terser";
 
 const markdownItOptions = {
     html:true,
@@ -57,6 +57,18 @@ export default function(eleventyConfig) {
         return new CleanCSS({}).minify(code).styles;
     });
 
+    eleventyConfig.addFilter("jsmin", async function (code) {
+		try {
+			const minified = await minify(code);
+			return minified.code;
+		} catch (err) {
+			console.error("Terser error: ", err);
+			// Fail gracefully.
+            return code;
+		}
+	});
+
+
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
         // output image formats
 		formats: ["avif", "webp", "jpeg"],
@@ -89,7 +101,7 @@ export default function(eleventyConfig) {
     
     eleventyConfig.addPassthroughCopy("./src/_assets");
     eleventyConfig.addPassthroughCopy("./src/_fonts");
-    eleventyConfig.addPassthroughCopy("./src/_css");
+    // eleventyConfig.addPassthroughCopy("./src/_css");
     // eleventyConfig.addPassthroughCopy("./src/_js");
     // eleventyConfig.addPassthroughCopy("manifest.json");
     // eleventyConfig.addPassthroughCopy("service-worker.js");
@@ -104,6 +116,19 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addShortcode("afbeelding", (afbeelding, width=100, height=100, align="left") => {
         return `<div class="deltionv2-addcontentarea" style="text-align:${align}; padding:40px;"><img src="/_assets/${afbeelding}" alt="${afbeelding}" style="min-width:${width}%; width: ${width}%; height: ${height}%; object-fit: cover;" /></div>`
+    });
+
+    eleventyConfig.addFilter("leerdoelFilter", (leerdoelen) => {
+        let html = "";
+        html += leerdoelen.map( l => {
+         return `<details>  
+                <summary><a>${l.titel}</a></summary>
+                <ul>
+                ${l.items.map( i => `<li>${i}</li>` ).join("\n")}
+                </ul>
+            </details>`
+        }).join("\n");
+        return html;
     });
 
     // eleventyConfig.configureErrorReporting({ allowMissingExtensions: true });

@@ -9,28 +9,22 @@
       {% include "css/fonts.njk" %}
       {% include "css/prism.css" %}
       {% include "css/style.css" %}
+      {% include "css/introductie.css" %}
       {% include "css/leerdoelen.njk" %}
-      {% if title == "Introductie" %}
-        {% include "css/introductie.css" %}
-      {% elif title == "Leerdoelen" %}
-        {% include "css/leerdoelen.njk" %}
-        {% include "css/regular_text.css" %}
-      {% else  %}
-        {% include "css/regular_text.css" %}
-      {% endif %}
-      {% include "css/text.css" %}
+    {% endset %}
+    {% set js %}
+      {% include "js/panel.js" %}
     {% endset %}
     <style>
-      {{ css | safe }}
+      {{ css | cssmin | safe }}
     </style>
     <title>{{ course_title }}</title>
 </head>
 <body>
-    <header>
+    <header>     
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
         <ul>
-          <li><a href="/">Home</a></li>
       {% for p in collections[tags] | postsAscending %}
           <li><a href="{{ p.url }}#{{ p.data.title | slugify }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
       {% endfor %}
@@ -47,82 +41,10 @@
   </header>
   <div id="page_wrapper">
   {% block layout %}{% endblock %} 
-    <div id="panel-in" class="klapper" onclick="showPanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
-    <div id="panel-out" class="klapper" onclick="hidePanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
-  </div>
-
-    <footer>
-
-    </footer>
+   </div>
     <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        showPanel();
-      });
-      window.addEventListener('hashchange', function() {
-        if (!window.location.hash) return;
-        console.log('De URL-hashtag is veranderd!');
-        
-        // Je kunt nu de nieuwe URL ophalen
-        const newHash = window.location.hash;
-        console.log('Nieuwe hashtag:', newHash);
-        
-        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
-        handleHashChange(newHash);
-      });
-
-      function handleHashChange(hash) {
-        setTimeout(function() {
-          const targetElement = document.querySelector(window.location.hash);
-          
-          if (targetElement) {
-            const newScrollPosition = targetElement.offsetTop - 160;
-            
-            window.scrollTo({
-              top: newScrollPosition,
-              //behavior: 'smooth'
-            });
-          }
-        }, 0);
-      } 
-
-      function hidePanel() {
-        console.log("hidePanel");
-        const arrow_in = document.getElementById('panel-in');
-        const arrow_out = document.getElementById('panel-out');
-        const panel = document.getElementById('inhoudsopgave');
-        arrow_out.style.display = 'none';
-        arrow_in.style.display = 'block';
-        panel.style.flex = 0;
-        panel.style.padding = 0;
-        panel.style.overflow = 'hidden';
-        panel.style.minWidth = '0px';
-      }
-
-      function showPanel() {
-        console.log("showPanel");
-        const panel = document.getElementById('inhoudsopgave');
-        const arrow_in = document.getElementById('panel-in');
-        const arrow_out = document.getElementById('panel-out');
-        arrow_out.style.display = 'block';
-        arrow_in.style.display = 'none';
-        panel.style.flexBasis = 'content';
-        panel.style.padding = '1rem';
-        panel.style.overflow = 'auto';
-        panel.style.minWidth = '250px';
-      }
-
-
-
-      function toggleNav() {
-        const nav = document.querySelector('nav#side ul');
-        if (nav.style.display === 'flex')  {
-          nav.style.display = 'none';
-        } else {
-          nav.style.display = 'flex';
-        }
-      }
-    
+     {{  js | jsmin | safe }}
     </script>
     </body> 
 </html>

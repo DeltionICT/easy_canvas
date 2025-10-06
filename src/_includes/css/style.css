@@ -17,37 +17,79 @@
 
 }
 
-html {
-    scroll-padding-top: 60px;
-    overflow-y: scroll;
-}
-
 
 body {
     margin:0;
     padding:0;
-    background-color: var(--light-grey);
+    background-color: var(--light-grey);        
+    font-size: 16px;
+    line-height: 1.5rem; 
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1rem;
+    text-wrap: nowrap;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h1[id], h2[id], h3[id]{
+    scroll-margin-top: 300px; /* Pas deze waarde aan aan de hoogte van je vaste header, plus een beetje extra */
 }
 
 div#page_wrapper {
     max-width:1200px;
     margin:0 auto 0 auto;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    /* min-height: calc(100vh-60px); */
 } 
-
 
 main {
+    display: flex;
+    flex-direction: row;
     /* flex: 2; */
-    position:relative;
-    flex: 1 1 200px;
+    /* position:relative; */
     margin:0rem auto 0rem auto;
     background-color: white;
-    padding: 0.5rem 2rem 2rem 2rem;
-    overflow: hidden;
-} 
+    /* padding: 0.5rem 2rem 2rem 2rem; */
+    justify-content: space-between;
+}
+
+div.section {
+    display:none;
+    /* flex: 1 1 200px; */
+    width:100%;
+    align-items: top;
+}
+
+div#title {
+    display:block
+}
+
+div#content {
+    display: flex;
+    flex-direction: column;
+    padding:2rem 2rem 0 2rem;
+    min-width:290px;
+    width:100%;
+
+}
+
 header {
     box-sizing: border-box;
     width:100%;
@@ -57,7 +99,7 @@ header {
     top:0;
     z-index: 100;
     color: white;
-    padding: 0rem 1rem 1rem 0rem;
+    padding: 0rem 1rem 0rem 0rem;
     background-color: var(--blue);
 }
 
@@ -114,7 +156,7 @@ nav#top ul li a, nav#side ul li a {
     text-decoration: none;
     font-weight: 700;
     text-wrap: nowrap;
-    padding:0 0.3em 0 0.3rem;
+    padding:0 0 0.3rem 0;
     margin:0 0.2rem 0 0.8rem;
 }
 
@@ -123,13 +165,17 @@ nav#top ul li a.navlinks:visited, nav#side ul li a.navlinks:visited {
 } 
 
 nav#top ul li a.navlinks:hover, nav#top ul li a.navlinks.active, nav#side ul li a.navlinks:hover, nav#side ul li a.navlinks.active {
-    background-color: var(--orange);
-    border-radius: 0.3rem;
+    /* background-color: var(--orange); */
+    border-bottom: #f58220 3px solid;
+    padding-bottom:5px;
+    /* border-radius: 0.3rem; */
 }
 
 a.active {
-    background-color: var(--orange);
-    border-radius: 0.3rem;
+    /* background-color: var(--orange);
+    border-radius: 0.3rem; */
+    border-bottom: #f58220 2px solid;
+
 }
 
 aside#inhoudsopgave {
@@ -145,7 +191,7 @@ aside#hiddeninhoudsopgave {
     display:none;
 }
 
-aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
+aside#inhoudsopgave a.panel, aside#hiddeninhoudsopgave a.panel {
     display:inline-block;
     background-color: white;
     border-radius: 0.2rem;
@@ -169,14 +215,7 @@ div.toc ul li a {
     text-decoration: none;
     color: var(--dark-grey);
 }
-
-div.section {
-    display:none;
-}
-
-div.section:first-child:not(:has(:target)) {
-    display:block;
-}
+  
 
 :target {
     display:block
@@ -246,14 +285,19 @@ nav#top #hoogte-indicator {
     padding:2px; 
     width:10px; 
     height:10px; 
-    top:0px; 
-    right:30px;
+    top:5px; 
+    right:20px;
 }
 
 #panel-in img {
     transform: rotate(180deg)
 }
 
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid var(--dark-grey);
+    padding:2px;
+}
 
 
 @media (max-width:750px) {

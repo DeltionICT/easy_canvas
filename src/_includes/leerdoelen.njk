@@ -1,0 +1,17 @@
+<div class="section">
+    <h1>Leerdoelen</h1>
+{% for p in collections[tags] | postsAscending %}
+    {% if p.url==page.url %}
+        {% for l in p.data.leerdoelen %}
+            <details>
+                <summary><a>{{ l.titel }}</a></summary>
+                <ul>
+                {% for i in l.items %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+                </ul>
+            </details>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</div>

@@ -65,3 +65,9 @@ Als ICT engineer ben je verantwoordelijk voor het beheer en de beveiliging van d
 #### Jouw Rol in Beheer en Beveiliging
 Het is jouw taak om de prestaties van databases te controleren en te zorgen dat ze optimaal functioneren. Je spoort problemen op zoals trage queries en zorgt dat de servers niet overbelast raken. Nog belangrijker: jij bent de sleutel tot **databeveiliging**. Je beheert de toegangsrechten en zorgt voor back-ups, essentieel voor de continuïteit en veiligheid van een organisatie.
 :::
+
+::: section
+### Leerdoelen
+
+{{ leerdoelen | leerdoelFilter }}
+:::

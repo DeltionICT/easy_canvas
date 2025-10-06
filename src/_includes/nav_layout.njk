@@ -2,29 +2,20 @@
 
 {% block layout %}
     <main>
-        <h1 id="top">{{ course_title }}</h1>
-        {{ content | safe }}
-        <div id="leerdoelen_wrapper">
-            {% for p in collections[tags] | postsAscending %}
-                {% if p.url==page.url %}
-                    {% for l in p.data.leerdoelen %}
-                        <details>
-                            <summary><a>{{ l.titel }}</a></summary>
-                            <ul>
-                            {% for i in l.items %}
-                                <li>{{ i }}</li>
-                            {% endfor %}
-                            </ul>
-                        </details>
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-        </div>
-    </main>
-    <aside id="inhoudsopgave">
-            <span><b>Inhoudsopgave</b></span>
-        {{ content | toc | safe }}
-    </aside>
 
+        <div id="content">
+        <div class="section" id="title">
+            <h1>{{ course_title }}</h1>
+        </div>
+        {{ content | safe }}
+        {% block leerdoelen %}{% endblock %}
+        </div>
+        <aside id="inhoudsopgave">
+            <span><b>Inhoudsopgave</b></span>
+            {{ content | toc | safe }}        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img eleventy:ignore src="/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
 {% endblock %}
 
