@@ -6,619 +6,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    
     <style>
-      
-      @font-face {
-    font-family: BuenosAires;
-    font-style: normal;
-    font-weight: 400;
-    src: url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2");
-}
-
-@font-face {
-    font-family: BuenosAires;
-    font-style: bold;
-    font-weight: 700;
-    src: url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2");
-}
-
-@font-face {
-    font-family: BuenosAires;
-    font-style: black;
-    font-weight: 900;
-    src: url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2");
-}
-
-@font-face {
-    font-family: BuenosAires;
-    font-style: light;
-    font-weight: 300;
-    src: url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2");
-}
-
-@font-face {
-    font-family: BuenosAires;
-    font-style: thin;
-    font-weight: 100;
-    src: url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2");
-}
-
-      
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #393A34;
-	background-color: var(--light-grey);
-	font-family: "IBM Plex Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	font-size: .9em;
-	line-height: 1.2em;
-
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-pre > code[class*="language-"] {
-	font-size: 1em;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: #C1DEF1;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: #C1DEF1;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-	border: 1px solid #dddddd;
-	background-color: white;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .2em;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	background: #f8f8f8;
-	border: 1px solid #dddddd;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #008000;
-	font-style: italic;
-}
-
-.token.namespace {
-	opacity: .7;
-}
-
-.token.string {
-	color: #A31515;
-}
-
-.token.punctuation,
-.token.operator {
-	color: #393A34; /* no highlight */
-}
-
-.token.url,
-.token.symbol,
-.token.number,
-.token.boolean,
-.token.variable,
-.token.constant,
-.token.inserted {
-	color: #36acaa;
-}
-
-.token.atrule,
-.token.keyword,
-.token.attr-value,
-.language-autohotkey .token.selector,
-.language-json .token.boolean,
-.language-json .token.number,
-code[class*="language-css"] {
-	color: #0000ff;
-}
-
-.token.function {
-	color: #393A34;
-}
-
-.token.deleted,
-.language-autohotkey .token.tag {
-	color: #9a050f;
-}
-
-.token.selector,
-.language-autohotkey .token.keyword {
-	color: #00009f;
-}
-
-.token.important {
-	color: #e90;
-}
-
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-
-.token.italic {
-	font-style: italic;
-}
-
-.token.class-name,
-.language-json .token.property {
-	color: #2B91AF;
-}
-
-.token.tag,
-.token.selector {
-	color: #800000;
-}
-
-.token.attr-name,
-.token.property,
-.token.regex,
-.token.entity {
-	color: #ff0000;
-}
-
-.token.directive.tag .tag {
-	background: #ffff00;
-	color: #393A34;
-}
-
-/* overrides color-values for the Line Numbers plugin
- * http://prismjs.com/plugins/line-numbers/
- */
-.line-numbers.line-numbers .line-numbers-rows {
-	border-right-color: #a5a5a5;
-}
-
-.line-numbers .line-numbers-rows > span:before {
-	color: #2B91AF;
-}
-
-/* overrides color-values for the Line Highlight plugin
-* http://prismjs.com/plugins/line-highlight/
-*/
-.line-highlight.line-highlight {
-	background: rgba(193, 222, 241, 0.2);
-	background: -webkit-linear-gradient(left, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
-	background: linear-gradient(to right, rgba(193, 222, 241, 0.2) 70%, rgba(221, 222, 241, 0));
-}
-      :root {
-    --dark-grey:#17171a;
-    --light-grey:#f5f4f7;
-    --orange: #f58220;
-    --blue:#343368;
-    --code-color:#dcf0ff;
-
-      
-    /* font-family: "IBM Plex Sans", sans-serif; */
-    font-family: "BuenosAires", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.9rem ;
-    color: var(--blue);
-
-    scroll-behavior: smooth;
-
-}
-
-html {
-    scroll-padding-top: 60px;
-    overflow-y: scroll;
-}
-
-
-body {
-    margin:0;
-    padding:0;
-    background-color: var(--light-grey);
-}
-
-div#page_wrapper {
-    max-width:1200px;
-    margin:0 auto 0 auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    /* min-height: calc(100vh-60px); */
-} 
-
-
-main {
-    /* flex: 2; */
-    position:relative;
-    flex: 1 1 200px;
-    margin:0rem auto 0rem auto;
-    background-color: white;
-    padding: 0.5rem 2rem 2rem 2rem;
-    overflow: hidden;
-} 
-header {
-    box-sizing: border-box;
-    width:100%;
-    height:60px;
-    max-height:60px;
-    position:sticky;
-    top:0;
-    z-index: 100;
-    color: white;
-    padding: 0rem 1rem 1rem 0rem;
-    background-color: var(--blue);
-}
-
-header div#title h1{
-    font-weight: 700;
-    font-size:1.5rem;
-    width:100%
-}
-
-nav#top {
-    max-width:1200px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin:0 auto 0 auto;
-    padding:0;
-}
-
-nav#side {
-    display:none;
-}   
-
-nav#top ul.hide {
-    display:none;
-}
-
-nav#top img, nav#side img {
-    display:none;
-    position:relative;
-    top:20px;
-    left:10px;
-}
-
-
-nav#top ul {
-    box-sizing: border-box;
-    list-style-type: none;
-    margin:0;
-    padding:1rem 0 0 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    text-align : right;
-}   
-
-nav#top ul li {
-    box-sizing: border-box;
-    padding:0;
-}
-
-nav#top ul li a, nav#side ul li a {
-    box-sizing: border-box;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    text-wrap: nowrap;
-    padding:0 0.3em 0 0.3rem;
-    margin:0 0.2rem 0 0.8rem;
-}
-
-nav#top ul li a.navlinks:visited, nav#side ul li a.navlinks:visited {
-    color: white;
-} 
-
-nav#top ul li a.navlinks:hover, nav#top ul li a.navlinks.active, nav#side ul li a.navlinks:hover, nav#side ul li a.navlinks.active {
-    background-color: var(--orange);
-    border-radius: 0.3rem;
-}
-
-a.active {
-    background-color: var(--orange);
-    border-radius: 0.3rem;
-}
-
-aside#inhoudsopgave {
-    min-width:250px;
-    flex: 0 0 250px;
-    background-color: var(--light-grey);
-    padding: 1rem;
-    text-wrap: nowrap;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-aside#hiddeninhoudsopgave {
-    display:none;
-}
-
-aside#inhoudsopgave a.klapper, aside#hiddeninhoudsopgave a.klapper {
-    display:inline-block;
-    background-color: white;
-    border-radius: 0.2rem;
-    padding: 0rem 0.5rem 0rem 0.5rem;
-}
-
-aside#hiddeninhoudsopgave a {
-    position: relative;
-    top: 1rem;
-    left: 1rem;
-    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-    margin-right:20px;
-}
-div.toc ul {
-    list-style-type: none;
-    font-weight: 500;
-    padding-left: 0;
-}
-
-div.toc ul li a {
-    text-decoration: none;
-    color: var(--dark-grey);
-}
-
-div.section {
-    display:none;
-}
-
-div.section:first-child:not(:has(:target)) {
-    display:block;
-}
-
-:target {
-    display:block
-}
-
-/* :target:has(div.section) {
-    display:block
-} */
-
-div.section:has(:target) {
-    display:block
-}
-
-div.show {
-    display:block;
-}
-
-div.hide {
-    display: none;
-}
-
-/* pre[class*="language-"] > code {
-    overflow-x:scroll;
-} */
-
-pre[class*="language-"] {
-    background-color: var(--light-grey);
-    font-size:0.9rem;
-	overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
-	white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
-}
-
-pre[class*="language-"] code[class*="language-"] {
-    display:block;
-    overflow-x: auto; /* Voegt een horizontale scrollbalk toe wanneer nodig */
-    white-space: pre; /* Behoudt witruimte en voorkomt woordafbreking */
-}
-
-code {
-    background-color: var(--code-color);
-    padding: 0.15rem 0.3rem;
-    border-radius: 0.3rem;
-    font-size: 0.9rem;
-    width: 100%;
-}
-
-nav#top #hoogte-indicator {
-    display:block;
-    position:relative;
-    top:10px;
-    line-height:0.2rem;
-    height:10px;
-    background-color: var(--dark-grey);
-    color: white;
-    font-size: 0.5rem;
-    border-radius: 0.3rem;
-    padding:0.3rem 0.3rem 0.5rem 0.3rem;
-}
-
-#panel-in, #panel-out {
-    height: 0;
-    width: 0;
-}
-
-#panel-in img, #panel-out img {
-    position:relative; 
-    padding:2px; 
-    width:10px; 
-    height:10px; 
-    top:0px; 
-    right:30px;
-}
-
-#panel-in img {
-    transform: rotate(180deg)
-}
-
-
-
-@media (max-width:750px) {
-
-    nav#top {
-        display:none;
-    }
-    
-    nav#side {
-        max-width:300px;
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin:0 0 0 0;
-        padding:0;
-        background-color: var(--blue);
-        position: absolute;
-        top:0px;    
-    }
-    nav#side img {
-        display:block;
-    }
-    nav#side ul {
-        display:none;
-        box-sizing: border-box;
-        margin:0;
-        padding:3rem 0 1rem 0rem;
-        flex-direction: column;
-        text-align : left;
-        justify-content: flex-start;
-    }
-
-    nav#side ul li {
-        padding:0.3rem 1rem 0.3rem 1rem;
-    }
-
-    nav#side ul li a.navlinks {
-        padding:0.3rem 0.3rem 0.3rem 0.3rem;
-        margin:0;
-    }
-}
-      details {
-    /* border-bottom: 1px solid #ccc; */
-    box-sizing: border-box;
-    border-radius: 1px;
-    margin-bottom: 1rem;
-    display: block;
-    outline: none;
-    padding: 0 0 0 0 ;
-    text-align: left;
-    transition: .4s;
-    background-color:var(--light-grey);
-    width:100%;
-    padding: 1rem 2rem 1rem 2rem;
-    border-radius: 0.3rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-summary {
-    font-weight: 700;
-    padding-left: 38px;
-    cursor: pointer;
-    list-style: none;
-    /* Verberg de standaard marker */
-    position: relative;
-
-}
-
-summary a {
-    color:var(--blue);
-    text-decoration: none;
-
-}
-
-summary::before {
-    content: '';
-    background-image: url('/easy_canvas/_assets/right-arrow_f58220.svg');
-    transform: rotate(90deg);
-
-    background-size: contain;
-    /* Zorgt ervoor dat de afbeelding binnen de box past */
-    background-repeat: no-repeat;
-    display: inline-block;
-    /* Maak het element een blok-element */
-    width: 20px;
-    /* Stel de gewenste grootte in */
-    height: 20px;
-    /* Zorg voor gelijke hoogte/breedte */
-    vertical-align: middle;
-    position: absolute;
-    top:3px;
-    left: 0px;
-    /* padding-right:28px; */
-    font-size: 24px;
-    line-height: 1;
-    transition: transform 0.3s;
-}
-
-
-
-details[open] summary::before {
-    background-image: url('/easy_canvas/_assets/right-arrow_f58220.svg');
-    transform: rotate(270deg);
-}
-
-details p {
-    font-weight: 400;
-    padding-left: 5px;
-    margin: 0;
-
-}
-
-details p.firstchild {
-    padding-top: 50px;
-}
-
-      
-        
-      
-      h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1rem;
-    text-wrap: nowrap;
-}
-
-h2 {
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
-h4 {
-    font-size: 1.1rem;
-}
-
-h5 {
-    font-size: 1rem;
-}
-
-
-
-
-    
+      @font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:bold;font-weight:700;src:url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:black;font-weight:900;src:url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:light;font-weight:300;src:url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:thin;font-weight:100;src:url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2")}code[class*=language-],pre[class*=language-]{color:#393a34;background-color:var(--light-grey);font-family:"IBM Plex Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L","Courier New",Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre>code[class*=language-]{font-size:1em}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#c1def1}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#c1def1}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border:1px solid #ddd;background-color:#fff}:not(pre)>code[class*=language-]{padding:.2em;padding-top:1px;padding-bottom:1px;background:#f8f8f8;border:1px solid #ddd}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:green;font-style:italic}.token.namespace{opacity:.7}.token.string{color:#a31515}.token.operator,.token.punctuation{color:#393a34}.token.boolean,.token.constant,.token.inserted,.token.number,.token.symbol,.token.url,.token.variable{color:#36acaa}.language-autohotkey .token.selector,.language-json .token.boolean,.language-json .token.number,.token.atrule,.token.attr-value,.token.keyword,code[class*=language-css]{color:#00f}.token.function{color:#393a34}.language-autohotkey .token.tag,.token.deleted{color:#9a050f}.language-autohotkey .token.keyword,.token.selector{color:#00009f}.token.important{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.language-json .token.property,.token.class-name{color:#2b91af}.token.selector,.token.tag{color:maroon}.token.attr-name,.token.entity,.token.property,.token.regex{color:red}.token.directive.tag .tag{background:#ff0;color:#393a34}.line-numbers.line-numbers .line-numbers-rows{border-right-color:#a5a5a5}.line-numbers .line-numbers-rows>span:before{color:#2b91af}.line-highlight.line-highlight{background:rgba(193,222,241,.2);background:-webkit-linear-gradient(left,rgba(193,222,241,.2) 70%,rgba(221,222,241,0));background:linear-gradient(to right,rgba(193,222,241,.2) 70%,rgba(221,222,241,0))}:root{--dark-grey:#17171a;--light-grey:#f5f4f7;--orange:#f58220;--blue:#343368;--code-color:#dcf0ff;font-family:BuenosAires,sans-serif;font-weight:400;font-size:16px;line-height:1.9rem;color:var(--blue);scroll-behavior:smooth}body{margin:0;padding:0;background-color:var(--light-grey);font-size:16px;line-height:1.5rem}h1{font-size:2rem;font-weight:700;line-height:1rem;text-wrap:nowrap}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.1rem}h5{font-size:1rem}h1[id],h2[id],h3[id]{scroll-margin-top:300px}div#page_wrapper{max-width:1200px;margin:0 auto 0 auto;box-sizing:border-box}main{display:flex;flex-direction:row;margin:0 auto 0 auto;background-color:#fff;justify-content:space-between}div.section{display:none;width:100%;align-items:top}div#title{display:block}div#content{display:flex;flex-direction:column;padding:2rem 2rem 0 2rem;min-width:290px;width:100%}header{box-sizing:border-box;width:100%;height:60px;max-height:60px;position:sticky;top:0;z-index:100;color:#fff;padding:0 1rem 0 0;background-color:var(--blue)}header div#title h1{font-weight:700;font-size:1.5rem;width:100%}nav#top{max-width:1200px;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 0 auto;padding:0}nav#side{display:none}nav#top ul.hide{display:none}nav#side img,nav#top img{display:none;position:relative;top:20px;left:10px}nav#top ul{box-sizing:border-box;list-style-type:none;margin:0;padding:1rem 0 0 0;display:flex;flex-direction:row;justify-content:flex-end;text-align:right}nav#top ul li{box-sizing:border-box;padding:0}nav#side ul li a,nav#top ul li a{box-sizing:border-box;color:#fff;text-decoration:none;font-weight:700;text-wrap:nowrap;padding:0 0 .3rem 0;margin:0 .2rem 0 .8rem}nav#side ul li a.navlinks:visited,nav#top ul li a.navlinks:visited{color:#fff}nav#side ul li a.navlinks.active,nav#side ul li a.navlinks:hover,nav#top ul li a.navlinks.active,nav#top ul li a.navlinks:hover{border-bottom:#f58220 3px solid;padding-bottom:5px}a.active{border-bottom:#f58220 2px solid}aside#inhoudsopgave{min-width:250px;flex:0 0 250px;background-color:var(--light-grey);padding:1rem;text-wrap:nowrap;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}aside#hiddeninhoudsopgave{display:none}aside#hiddeninhoudsopgave a.panel,aside#inhoudsopgave a.panel{display:inline-block;background-color:#fff;border-radius:.2rem;padding:0 .5rem 0 .5rem}aside#hiddeninhoudsopgave a{position:relative;top:1rem;left:1rem;padding:.2rem .5rem .2rem .5rem;margin-right:20px}div.toc ul{list-style-type:none;font-weight:500;padding-left:0}div.toc ul li a{text-decoration:none;color:var(--dark-grey)}:target{display:block}div.section:has(:target){display:block}div.show{display:block}div.hide{display:none}pre[class*=language-]{background-color:var(--light-grey);font-size:.9rem;overflow-x:auto;white-space:pre}pre[class*=language-] code[class*=language-]{display:block;overflow-x:auto;white-space:pre}code{background-color:var(--code-color);padding:.15rem .3rem;border-radius:.3rem;font-size:.9rem;width:100%}nav#top #hoogte-indicator{display:block;position:relative;top:10px;line-height:.2rem;height:10px;background-color:var(--dark-grey);color:#fff;font-size:.5rem;border-radius:.3rem;padding:.3rem .3rem .5rem .3rem}#panel-in,#panel-out{height:0;width:0}#panel-in img,#panel-out img{position:relative;padding:2px;width:10px;height:10px;top:5px;right:20px}#panel-in img{transform:rotate(180deg)}table,td,th{border-collapse:collapse;border:1px solid var(--dark-grey);padding:2px}@media (max-width:750px){nav#top{display:none}nav#side{max-width:300px;display:flex;flex-direction:column;justify-content:flex-start;margin:0;padding:0;background-color:var(--blue);position:absolute;top:0}nav#side img{display:block}nav#side ul{display:none;box-sizing:border-box;margin:0;padding:3rem 0 1rem 0;flex-direction:column;text-align:left;justify-content:flex-start}nav#side ul li{padding:.3rem 1rem .3rem 1rem}nav#side ul li a.navlinks{padding:.3rem .3rem .3rem .3rem;margin:0}}section#buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}section#buttons .button-container{position:relative;border-top:1rem solid var(--blue);min-width:200px;height:100px;background-color:var(--light-grey);border-radius:.3rem;box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px}section#buttons .button-container:hover{background-color:var(--blue)}section#buttons .button-container:hover div{color:#fff}section#buttons .button-container div{color:var(--blue);font-weight:700;position:absolute;bottom:1rem;left:1rem}section#buttons .button-container div::before{content:'';width:2rem;height:1.4rem;background-image:url('/_assets/right-arrow_f58220.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;vertical-align:middle}details{box-sizing:border-box;border-radius:1px;margin-bottom:1rem;display:block;outline:0;padding:0;text-align:left;transition:.4s;background-color:var(--light-grey);width:100%;padding:1rem 2rem 1rem 2rem;border-radius:.3rem;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}summary{font-weight:700;padding-left:38px;cursor:pointer;list-style:none;position:relative}summary a{color:var(--blue);text-decoration:none}summary::before{content:'';background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(90deg);background-size:contain;background-repeat:no-repeat;display:inline-block;width:20px;height:20px;vertical-align:middle;position:absolute;top:3px;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(270deg)}details p{font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}
     </style>
     <title>AI Development</title>
 </head>
 <body>
-    <header>
+    <header>     
       <nav id="top">   
         <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
         <ul>
-          <li><a href="/easy_canvas/">Home</a></li>
       
           <li><a href="/easy_canvas/ai/introductie/#introductie">Introductie</a></li>
       
@@ -628,7 +26,7 @@ h5 {
       
           <li><a href="/easy_canvas/ai/wat-is-ai/#wat-is-ai">Wat is AI</a></li>
       
-          <li><a href="/easy_canvas/ai/basis2-ai/#basis2-ai">Basis2 AI</a></li>
+          <li><a href="/easy_canvas/ai/opdrachten2/#opdrachten2">Opdrachten2</a></li>
       
           <li><a href="/easy_canvas/ai/undefined/#undefined"></a></li>
       
@@ -646,7 +44,7 @@ h5 {
       
           <li><a href="/easy_canvas/ai/wat-is-ai/#wat-is-ai">Wat is AI</a></li>
       
-          <li><a href="/easy_canvas/ai/basis2-ai/#basis2-ai">Basis2 AI</a></li>
+          <li><a href="/easy_canvas/ai/opdrachten2/#opdrachten2">Opdrachten2</a></li>
       
           <li><a href="/easy_canvas/ai/undefined/#undefined"></a></li>
       
@@ -656,12 +54,52 @@ h5 {
   <div id="page_wrapper">
   
     <main>
-        <h1 id="top">AI Development</h1>
+
+        <div id="content">
+        <div class="section" id="title">
+            <h1>AI Development</h1>
+        </div>
         <div class="section">
 <h3 id="basis-ai">Basis AI</h3>
+<p>Welkom bij het eerste deel van deze cursus over AI. In dit deel leer je meer over AI tools en hoe je die op een verantwoorde manier in kunt zetten voor je studie en je toekomstige werk.</p>
 </div>
 <div class="section">
 <h3 id="wat-is-ai">Wat is AI</h3>
+<h4 id="ai-%3D-kunstmatige-intelligentie">AI = Kunstmatige intelligentie</h4>
+<p>Kunstmatige intelligentie is het maken van computers en machines die taken kunnen uitvoeren die normaal gesproken menselijke intelligentie vereisen. Het is als het creëren van een digitaal brein dat kan denken, leren en problemen oplossen.</p>
+<h4 id="belangrijke-punten%3A">Belangrijke punten:</h4>
+<ol>
+<li>Nabootsen van menselijk denken: AI probeert menselijke denkprocessen na te bootsen, zoals redeneren, leren en begrijpen.</li>
+<li>Leren uit gegevens: AI-systemen worden 'getraind' met grote hoeveelheden gegevens om patronen te herkennen en beslissingen te nemen.</li>
+<li>Probleemoplossing: AI kan complexe problemen aanpakken en oplossingen vinden, vaak sneller dan mensen.</li>
+<li>Aanpassing: Geavanceerde AI-systemen kunnen leren van nieuwe ervaringen en zich aanpassen aan nieuwe situaties.</li>
+<li>Toepassingen: AI wordt gebruikt in veel gebieden, zoals:
+<ol>
+<li><a href="https://www.youtube.com/watch?v=BOUTfUmI8vs">Spraakherkenning</a> (bijv. Siri of Alexa)</li>
+<li><a href="https://www.youtube.com/watch?v=LHye0MHFvZk">Gezichtsherkenning</a></li>
+<li><a href="https://www.youtube.com/watch?v=q5K6xyyQMFQ">Aanbevelingssystemen</a> (bijv. Google, Netflix of Spotify)</li>
+<li>Zelfrijdende auto's</li>
+<li>Medische diagnostiek</li>
+</ol>
+</li>
+<li>Verschillende types: Er zijn verschillende vormen van AI, van eenvoudige systemen die specifieke taken uitvoeren tot meer geavanceerde systemen die kunnen redeneren en leren zoals mensen.</li>
+</ol>
+<h4 id="generatieve-ai">Generatieve AI</h4>
+<p>Generatieve AI is een type kunstmatige intelligentie dat nieuwe dingen kan maken, zoals tekst, afbeeldingen of muziek.</p>
+<p>Het werkt als volgt:</p>
+<ul>
+<li>Leren: De AI bestudeert enorme hoeveelheden bestaande gegevens, zoals boeken, artikelen of afbeeldingen.</li>
+<li>Patronen herkennen: Het systeem leert patronen en regels te herkennen in deze gegevens.</li>
+<li>Creëren: Wanneer je het iets vraagt te maken, gebruikt het deze geleerde patronen om iets nieuws te genereren.</li>
+<li>Aanpassen: Het past zijn creatie aan op basis van jouw specifieke verzoek.</li>
+</ul>
+<p>Enkele voorbeelden:</p>
+<ul>
+<li>Chatbots die mensachtige gesprekken kunnen voeren</li>
+<li>AI die realistische afbeeldingen kan maken op basis van tekstbeschrijvingen</li>
+<li>Programma's die muziek of verhalen kunnen componeren</li>
+</ul>
+<p>AI heeft het potentieel om ons leven op vele manieren te verbeteren. Het kan ons helpen om productiever te zijn, betere beslissingen te nemen en nieuwe kennis te ontdekken.</p>
 <p>Kunnen mensen het verschil ontdekken tussen computers en mensen?</p>
 <ul>
 <li>
@@ -683,174 +121,267 @@ h5 {
 <p>Computers kunnen zich aanpassen aan nieuwe situaties en omstandigheden.</p>
 </li>
 </ul>
-<h4 id="ai-%3D-kunstmatige-intelligentie">AI = Kunstmatige intelligentie</h4>
-<p>Kunstmatige intelligentie is het maken van computers en machines die taken kunnen uitvoeren die normaal gesproken menselijke intelligentie vereisen. Het is als het creëren van een digitaal brein dat kan denken, leren en problemen oplossen.</p>
-<h4 id="belangrijke-punten%3A">Belangrijke punten:</h4>
-<ol>
-<li>Nabootsen van menselijk denken: AI probeert menselijke denkprocessen na te bootsen, zoals redeneren, leren en begrijpen.</li>
-<li>Leren uit gegevens: AI-systemen worden 'getraind' met grote hoeveelheden gegevens om patronen te herkennen en beslissingen te nemen.</li>
-<li>Probleemoplossing: AI kan complexe problemen aanpakken en oplossingen vinden, vaak sneller dan mensen.</li>
-<li>Aanpassing: Geavanceerde AI-systemen kunnen leren van nieuwe ervaringen en zich aanpassen aan nieuwe situaties.</li>
-<li>Toepassingen: AI wordt gebruikt in veel gebieden, zoals:
-<ol>
-<li><a href="https://www.youtube.com/watch?v=BOUTfUmI8vs">Spraakherkenning</a> (bijv. Siri of Alexa)</li>
-<li><a href="https://www.youtube.com/watch?v=LHye0MHFvZk">Gezichtsherkenning</a></li>
-<li><a href="https://www.youtube.com/watch?v=q5K6xyyQMFQ">Aanbevelingssystemen</a> (bijv. Google, Netflix of Spotify)</li>
-<li>Zelfrijdende auto's</li>
-<li>Medische diagnostiek</li>
-</ol>
-</li>
-<li>Verschillende types: Er zijn verschillende vormen van AI, van eenvoudige systemen die specifieke taken uitvoeren tot meer geavanceerde systemen die kunnen redeneren en leren zoals mensen.</li>
-</ol>
-<h3 id="generatieve-ai">Generatieve AI</h3>
-<p>Generatieve AI is een type kunstmatige intelligentie dat nieuwe dingen kan maken, zoals tekst, afbeeldingen of muziek.</p>
-<p>Het werkt als volgt:</p>
-<ul>
-<li>Leren: De AI bestudeert enorme hoeveelheden bestaande gegevens, zoals boeken, artikelen of afbeeldingen.</li>
-<li>Patronen herkennen: Het systeem leert patronen en regels te herkennen in deze gegevens.</li>
-<li>Creëren: Wanneer je het iets vraagt te maken, gebruikt het deze geleerde patronen om iets nieuws te genereren.</li>
-<li>Aanpassen: Het past zijn creatie aan op basis van jouw specifieke verzoek.</li>
-</ul>
-<p>Enkele voorbeelden:</p>
-<ul>
-<li>Chatbots die mensachtige gesprekken kunnen voeren</li>
-<li>AI die realistische afbeeldingen kan maken op basis van tekstbeschrijvingen</li>
-<li>Programma's die muziek of verhalen kunnen componeren</li>
-</ul>
-<p>AI heeft het potentieel om ons leven op vele manieren te verbeteren. Het kan ons helpen om productiever te zijn, betere beslissingen te nemen en nieuwe kennis te ontdekken.</p>
-<h4 id="links-en-tests">Links en Tests</h4>
-<ul>
-<li><a href="https://tests.quest.nl/maatschappij-cultuur/test-dit-ai-door-een-mens-gemaakt">Is dit door een mens of AI gemaakt?</a></li>
-<li><a href="https://tests.quest.nl/maatschappij-cultuur/test-hoeveel-weet-jij-van-ai">Hoeveel weet jij van AI</a></li>
-<li><a href="https://www.youtube.com/watch?v=rwF-X5STYks">Wat is generatieve AI</a></li>
-</ul>
 </div>
 <div class="section">
 <h3 id="prompten">Prompten</h3>
-<p>Door beter te prompten krijg je betere resultaten met AI. Om je daarbij te helpen is hier een promptbibliotheek die jullie makkelijk kunt gebruiken zodat je AI beter en makkelijker kunt inzetten voor je studie.</p>
+<p>Door beter te prompten krijg je betere resultaten met AI. Om je daarbij te helpen is hier een promptbibliotheek die je  kunt gebruiken zodat je AI beter en makkelijker kunt inzetten.</p>
 <ul>
 <li><a href="https://aivoorstudenten.nl/prompts/">Leren prompten</a></li>
+<li>Je zal zien dat de prompts allemaal een bepaalde opbouw hebben. Check eens met Gemini of Copilot wat voorwaarden zijn voor een goede prompt. Vraag bijvoorbeeld: &quot;Wat maakt een prompt een goede prompt?&quot;.</li>
 </ul>
-<div class="section">
-<h3 id="machine-learning">Machine Learning</h3>
+<h4 id="waar-moet-je-altijd-op-letten%3A">Waar moet je altijd op letten:</h4>
+<p>Prompten is mooi, maar is wat je terugkrijgt ook dat wat je wilde hebben? Hier moet je op letten:
+De grootste valkuil is het blindelings vertrouwen op AI:</p>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=0RpEF8ZwBGE&amp;t=10s">Machine learning met teachable machine</a></li>
-<li><a href="https://teachablemachine.withgoogle.com">Teachable machine</a></li>
-<li><a href="https://www.youtube.com/watch?v=DFBbSTvtpy4">Teachable machine voorbeelden</a></li>
-<li><a href="https://www.youtube.com/watch?v=CO67EQ0ZWgA">TM 2</a></li>
-<li><a href="https://www.youtube.com/watch?v=n-zeeRLBgd0">TM 3</a></li>
+<li><strong>AI 'hallucineert':</strong> Dit is de term die we gebruiken als een AI met vol vertrouwen informatie geeft die feitelijk <strong>onjuist</strong> is of gewoon compleet is verzonnen.</li>
+<li><strong>Controleer de feiten:</strong> Zie de AI als een slimme assistent die je een <em>concept</em> of <em>eerste uitwerking</em> geeft, maar <strong>niet</strong> als een betrouwbare bron.</li>
+<li><strong>Geen bronvermelding:</strong> LLM's hebben vaak geen duidelijke bronnen. Je kunt AI wel vragen waar het informatie heeft gevonden, zo kun je zelf de website controleren waar de informatie vandaan komt.</li>
+<li><strong>Verfijn en Verbeter:</strong> Zie de AI-output als een schets.
+<ul>
+<li><strong>Taal en Stijl:</strong> AI klinkt soms heel formeel, 'houterig' of herhaalt zichzelf. Pas de tekst aan zodat het echt klinkt alsof <strong>jij</strong> het hebt geschreven. Je kunt AI weer vragen je te helpen met het maken van zinnen die bij jou passen. (bijv. Hee AI, schrijf dit zoals een mbo-4 student dat zou doen)</li>
+<li><strong>Relevantie:</strong> Gooi de stukken weg die niet relevant zijn en voeg jouw eigen, specifieke voorbeelden toe.</li>
+</ul>
+</li>
+<li><strong>Houd de Regie:</strong> De AI is een <strong>tool</strong>, jij bent de <strong>vakman/vrouw</strong>. Jij bent verantwoordelijk voor het eindresultaat.</li>
+</ul>
+<p><strong>3. Gebruik AI voor waar het goed in is:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Goed in:</th>
+<th style="text-align:left">Toepassen:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Brainstormen en Starters</strong></td>
+<td style="text-align:left">Vraag om 5 ideeën voor een projectplan of een eerste opzet voor een inleiding.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Samenvatten en Vereenvoudigen</strong></td>
+<td style="text-align:left">Geef de AI een lastige tekst en vraag om een samenvatting in Jip-en-Janneke taal.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Grammatica en Spelling</strong></td>
+<td style="text-align:left">Vraag de AI om je geschreven tekst te controleren op taalfouten of om zinnen helderder te maken.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Oefenen</strong></td>
+<td style="text-align:left">Vraag om voorbeeldvragen over een specifiek onderwerp om jezelf te testen.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section">
+<h3 id="lerende-machines">Lerende machines</h3>
+<h4 id="machine-learning">Machine learning</h4>
+<p>Machine learning is een tak van kunstmatige intelligentie (AI) waarbij computers leren van data. Algoritmes worden getraind op grote hoeveelheden data om patronen te herkennen en voorspellingen te doen.</p>
+<h4 id="voorbeelden-van-toepassingen">Voorbeelden van toepassingen</h4>
+<ul>
+<li><strong>Afbeeldingsherkenning:</strong> Gezichtsherkenning, objectdetectie in foto's.</li>
+<li><strong>Natuurlijke taalverwerking:</strong> Vertaling, sentimentanalyse, chatbots.</li>
+<li><strong>Aanbevelingssystemen:</strong> Product- of content-aanbevelingen op basis van gebruikersgedrag.</li>
+<li><strong>Medische diagnose:</strong> Het detecteren van ziektes op basis van medische beelden.</li>
+<li><strong>Financiële voorspelling:</strong> Voorspellen van aandelenkoersen of fraudedetectie.</li>
+</ul>
+<h4 id="waarom-is-machine-learning-belangrijk%3F">Waarom is machine learning belangrijk?</h4>
+<ul>
+<li><strong>Automatisering:</strong> Veel taken kunnen worden geautomatiseerd, waardoor bedrijven efficiënter kunnen werken.</li>
+<li><strong>Inzicht in data:</strong> Machine learning kan complexe patronen in grote datasets ontdekken die voor mensen moeilijk te zien zijn.</li>
+<li><strong>Persoonlijke ervaringen:</strong> Aanbevelingssystemen kunnen gepersonaliseerde ervaringen bieden aan gebruikers.</li>
+<li><strong>Innovatie:</strong> Machine learning drijft innovatie in veel sectoren aan.</li>
+</ul>
+<p>In essentie stelt machine learning computers in staat om te leren en zich aan te passen aan nieuwe informatie, waardoor ze steeds slimmer worden.</p>
+<h4 id="deep-learning">Deep Learning</h4>
+<ul>
+<li><strong>Geïnspireerd door het menselijk brein:</strong> Deep learning maakt gebruik van kunstmatige neurale netwerken, die zijn ontworpen om de werking van het menselijk brein na te bootsen.</li>
+<li><strong>Feature learning:</strong> In tegenstelling tot machine learning, leren deep learning modellen zelf de relevante kenmerken uit de data.</li>
+<li><strong>Complexe modellen:</strong> Deep learning modellen zijn vaak complexer en hebben grote hoeveelheden data nodig om te trainen.</li>
+</ul>
+<p><strong>Voorbeeld:</strong> Een zelfrijdende auto die objecten in zijn omgeving herkent en beslissingen neemt over het sturen, remmen en accelereren.</p>
+<p><strong>Wanneer gebruik je wat?</strong></p>
+<ul>
+<li><strong>Machine learning:</strong> Geschikt voor kleinere datasets, eenvoudige problemen en wanneer je de kenmerken duidelijk kunt definiëren.</li>
+<li><strong>Deep learning:</strong> Geschikt voor grote datasets, complexe problemen en wanneer je de relevante kenmerken niet vooraf kunt bepalen.</li>
+</ul>
+<h4 id="links-en-tests">Links en Tests</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=f_uwKZIAeM0">Machine learning uitgelegd</a></li>
+<li><a href="https://moodle.edutorial.nl/mod/quiz/view.php?id=16">Test over DL, ML en Generatieve AI</a></li>
+<li><a href="https://www.youtube.com/watch?v=aircAruvnKk">Hoe werken neurale netwerken</a></li>
 </ul>
 </div>
+<div class="section">
+<h3 id="robotica">Robotica</h3>
+<p>Om robots effectief te laten bewegen en functioneren in een door mensen gemaakte en gevormde omgeving (<strong>menselijke wereld</strong>), staat de robotica voor een <strong>enorme uitdaging</strong>. Mensen en dieren hebben miljoenen jaren van <strong>evolutie</strong> doorstaan, waardoor onze biologische systemen <strong>intuïtief en efficiënt</strong> zijn afgestemd op de complexiteit van deze wereld.</p>
+<p>Om robots succesvol in die wereld te laten <strong>samenwerken</strong> (<em>collaborative robotics</em>), moeten ze de <strong>analoge en onvoorspelbare data</strong> van die omgeving kunnen vertalen naar precieze, uitvoerbare, <strong>digitale acties</strong>.</p>
+<h4 id="dataverwerking-en-bewegingsplanning">Dataverwerking en Bewegingsplanning</h4>
+<p>Dit vertaalproces vereist aanzienlijke <strong>computerkracht</strong>. Robots moeten <strong>enorm veel data</strong> verwerken die via sensoren (zoals camera's, LiDAR en tactiele sensoren) binnenkomt. Deze data omvat:</p>
+<ol>
+<li><strong>Omgevingsperceptie:</strong> Het herkennen van objecten, mensen, obstakels en de veranderende licht- en geluidsomstandigheden (dit is het domein van <strong>Computer Vision</strong> en <strong>Sensor Fusion</strong>).</li>
+<li><strong>Lokalisatie en Mapping (SLAM):</strong> Bepalen waar de robot zich bevindt en tegelijkertijd een interne kaart van de omgeving opbouwen.</li>
+<li><strong>Bewegingsplanning (<em>Motion Planning</em>):</strong> Op basis van de verzamelde data razendsnel berekenen hoe de robot zich moet bewegen – welke spieren (actuators) aangestuurd moeten worden – om een taak te voltooien zonder te botsen.</li>
+</ol>
+<p>Het doel is om een robot te creëren die niet alleen taken kan uitvoeren, maar dit ook kan doen met de <strong>veerkracht, flexibiliteit en het aanpassingsvermogen</strong> dat wij als mensen van nature bezitten. Dit vormt de kern van geavanceerde <strong>Artificiële Intelligentie (AI)</strong> in robotica.</p>
+<h4 id="huishoudelijk-gebruik">Huishoudelijk gebruik</h4>
+<ul>
+<li>Vloeren dweilen en stogzuigen met <a href="https://fulinrobots.nl/">Fülin Robots</a></li>
+<li><a href="https://www.youtube.com/watch?v=2i35XmvbpBs">Grasmaaiers</a></li>
+</ul>
+<h4 id="zelfrijdende-auto's">Zelfrijdende auto's</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=hubWIuuz-e4">Waymo</a> en <a href="https://www.youtube.com/watch?v=kN0MLclnWa0">deze</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xErZYpzQEXk">Een ritje met Waymo (bright)</a></li>
+<li><a href="https://www.youtube.com/watch?v=-Rxvl3INKSg">Waymo trouble</a></li>
+<li><a href="https://www.youtube.com/watch?v=kN0MLclnWa0">2 Waymo's willen dezelfde kant op</a></li>
+<li><a href="https://www.youtube.com/watch?v=Xvs0K1LG1ac">Honking Waymo's</a></li>
+<li><a href="https://www.youtube.com/watch?v=8MfyIsPWhTk">Actiegroep tegen Waymo</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=q-PZ6IAYfv8">Nuro</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=WDeZ3DTyQTI">The Nuro driver</a></li>
+<li><a href="https://www.youtube.com/watch?v=3WJnTNynmxI">Aggressive driver</a></li>
+<li><a href="https://www.youtube.com/watch?v=XtUsR_cdXzM">Narrow work zone</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=56yvmC8AdS8">Appolo Go (China)</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Oi4KXpA9hS0">Allemaal tegelijk...</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="humanoids">Humanoids</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lBvuRpKU9N0&amp;t=2s">Robots in de bediening</a></li>
+<li>Boston Dynamics <a href="https://www.youtube.com/watch?v=LeeiN9smjjY">Atlas</a> en <a href="https://www.youtube.com/watch?v=29ECwExc-_M">New Atlas</a> en <a href="https://www.youtube.com/watch?v=DecYIeB44aE">Sparkles</a></li>
+<li><a href="https://www.youtube.com/watch?v=TnEj6L-Z2nU">Starten met Robotics, Meet Tom</a></li>
+<li>Boston Dynamics [New Atlas]https://www.youtube.com/watch?v=oe1dke3Cf7I) <a href="https://www.youtube.com/watch?v=v8UaiRgqvlc&amp;t=45s">En nog een nieuwe atlas 2025</a>]</li>
+<li><a href="https://www.youtube.com/watch?v=bPSLMX_V38E">Unitree</a>
+<ul>
+<li>Robot Dogs in <a href="https://www.youtube.com/watch?v=hJ4SRlIbb08">oorlogsgebied</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=p5dXv_FN4AA">Robots in de ouderenzorg</a></li>
+<li><a href="https://www.youtube.com/watch?v=KY8-WjpvRdk">Robots in medicine</a></li>
+<li><a href="https://www.youtube.com/watch?v=Wz7m3Zi_Tnk">China robot challenge 2025</a></li>
+</ul>
 </div>
 <div class="section">
-<h3 id="data">Data</h3>
+<h3 id="ai-in-de-zorg">AI in de zorg</h3>
+<p><strong>Robots in de zorg</strong> zijn machines die helpen bij verschillende taken in ziekenhuizen, bij behandelingen, of bij het ondersteunen van mensen die zorg nodig hebben. Deze robots kunnen heel veel verschillende dingen doen, van operaties uitvoeren tot mensen helpen met bewegen of zelfs gezelschap houden.</p>
+<p>Er zijn <strong>verschillende soorten robots</strong>, en ze worden steeds slimmer. In de toekomst worden ze waarschijnlijk zelfs nog belangrijker voor de zorg. Laten we eens kijken naar de soorten robots die er op dit moment zijn en wat ze doen.</p>
+<h4 id="1.-chirurgische-robots">1. <strong>Chirurgische robots</strong></h4>
+<p>Chirurgische robots zijn ontworpen om artsen te helpen bij operaties. Een bekend voorbeeld hiervan is de <strong>Da Vinci-robot</strong>.</p>
+<ul>
+<li><strong>Wat doen ze?</strong>
+<ul>
+<li>Ze helpen chirurgen bij <strong>preciesere operaties</strong>. De robot heeft zeer fijne bewegingen, waardoor de arts met een kleine incisie (een klein snijwondje) heel precies kan werken.</li>
+<li>Dit maakt operaties <strong>minder ingrijpend</strong>, wat betekent dat de patiënt sneller kan herstellen.</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=bgRAkBNFMHk">Voorbeeld van een robot die een chirurgische ingreep doet</a></li>
+<li><a href="https://www.youtube.com/shorts/JPI6khz3dhc">Davinci Surgical Robot</a></li>
+<li><a href="https://www.youtube.com/watch?v=uhUrVCir37I">Davinci 5 Robot</a></li>
+</ul>
+<h4 id="2.-zorgrobots">2. <strong>Zorgrobots</strong></h4>
+<p>Er zijn robots die speciaal zijn ontworpen om <strong>oudere of verstandelijk gehandicapte mensen</strong> te ondersteunen, vooral als ze niet meer goed voor zichzelf kunnen zorgen. Een bekend voorbeeld is de pepper-robot.</p>
+<p class="lti-embed" style="text-align: left; margin-top:40px; margin-bottom:0px"><strong>
+        <iframe class="lti-embed" style="width:640px; height:480px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube-nocookie.com/embed/bra0PBl7m2U">
+            </iframe></strong></p>.
+<ul>
+<li><strong>Pepper</strong> kan gesprekken voeren, gezelschap bieden, herinneringen geven (zoals medicijnen innemen of afspraken), en zelfs simpele taken uitvoeren, zoals het bedienen van apparatuur.</li>
+<li>Robots kunnen <strong>sociale interactie</strong> bieden, wat belangrijk is voor ouderen die zich vaak eenzaam voelen.</li>
+</ul>
+<h4 id="3.-revalidatierobots">3. <strong>Revalidatierobots</strong></h4>
+<p>Deze robots helpen mensen die herstellen van een blessure of operatie om <strong>weer te bewegen</strong> en <strong>sterker te worden</strong>. Ze kunnen bijvoorbeeld helpen na een beroerte, wanneer iemand moeite heeft met lopen.</p>
+<ul>
+<li>
+<p><strong>Wat doen ze?</strong></p>
+<ul>
+<li>Deze robots helpen patiënten om <strong>bewegingspatronen</strong> te oefenen. Dit kunnen robots zijn die patiënten <strong>helpen bij het lopen</strong> of armbewegingen.</li>
+<li>Ze passen zich aan aan de <strong>behoeften van de patiënt</strong>, zodat de patiënt in zijn of haar eigen tempo kan herstellen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Voorbeeld:</strong></p>
+<ul>
+<li>Een patiënt die een <strong>beroerte</strong> heeft gehad kan een robot gebruiken om <strong>oefeningen</strong> te doen die hen helpen weer te leren lopen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="4.-logistieke-robots-in-ziekenhuizen">4. <strong>Logistieke robots in ziekenhuizen</strong></h4>
+<p>Ziekenhuizen hebben veel spullen die moeten worden verplaatst, zoals medicijnen, bloedmonsters of schone bedden. Sommige ziekenhuizen gebruiken robots om deze taken te <strong>automatiseren</strong>.</p>
+<ul>
+<li><strong>Wat doen ze?</strong>
+<ul>
+<li>Deze robots kunnen bijvoorbeeld medicijnen <strong>afleveren bij de juiste patiënt</strong> of <strong>bloedmonsters naar het laboratorium brengen</strong>.</li>
+<li>Dit bespaart tijd voor het ziekenhuispersoneel, zodat zij zich kunnen concentreren op andere belangrijke taken.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5.-gezondheidsmonitoringrobots">5. <strong>Gezondheidsmonitoringrobots</strong></h4>
+<p>Er zijn ook robots die helpen bij het <strong>monitoren van de gezondheid</strong> van patiënten, vooral op de <strong>intensive care (IC)</strong> of in <strong>verpleegtehuizen</strong>.</p>
+<ul>
+<li><strong>Wat doen ze?</strong>
+<ul>
+<li>Deze robots kunnen <strong>leefomstandigheden monitoren</strong>, zoals de hartslag, bloeddruk of ademhaling van een patiënt.</li>
+<li>Ze kunnen de arts of verpleegkundige <strong>waarschuwen</strong> als er iets mis is.</li>
+</ul>
+</li>
+</ul>
+<h4 id="links">Links</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=UDV_Kohol5k">Attendi spraakgestuurd rapporteren</a></li>
+<li><a href="https://www.zorgsaam.org/over-ons/nieuws/4161/#:~:text=Ziekenhuis%20ZorgSaam%20test%20robot%20schoonmakers,robots%20dit%20jaar%20nog%20ingevoerd.">Robots om patientenkamers te desinfecteren</a></li>
+<li><a href="https://www.youtube.com/watch?v=fvgMWNnyIHQ">Medido medicijndispencer</a></li>
+<li><a href="https://www.youtube.com/watch?v=JAY_DzwWF2I">Medimo medicijncontrole</a></li>
+<li>Tinybots in de zorg zoals <a href="https://www.youtube.com/watch?v=8Q-5Z8IbaRk&amp;t=11s">Tessa</a> en <a href="https://www.youtube.com/watch?v=rkWAoGQ1fx4&amp;t=1s">Maatje</a></li>
+<li><a href="https://www.youtube.com/watch?v=_5JQ_QWy0NE">Smart glasses in de zorg om medicijnen te controleren</a> en <a href="https://www.youtube.com/watch?v=PFpZsSf3FgY">om studenten te begeleiden en het mee laten beoordelen tijdens wondzorg</a></li>
+<li>Flo. Terugvinden van apparatuur op met airtags</li>
+</ul>
 </div>
 <div class="section">
-<h3 id="ethiek">Ethiek</h3>
+<h3 id="ai-interactie">AI interactie</h3>
+<h4 id="augmented-reality">Augmented Reality</h4>
+<p>Augmented Reality (AR) is een technologie die digitale beelden, geluiden of andere informatie toevoegt aan de echte wereld om je omgeving interactiever te maken. Je kijkt bijvoorbeeld door je telefoon of een speciale bril, en ziet bovenop wat er echt is, extra informatie zoals 3D-objecten, tekst of animaties. Een bekend voorbeeld is het spel Pokémon GO, waar je via je telefoon virtuele wezens in de echte wereld kunt zien.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GB_qT6rAPyY">Pepsi Max bushokje</a></li>
+<li><a href="https://www.youtube.com/watch?v=SHustgmtcuo">Fectar AR Anatomy les</a></li>
+<li><a href="https://www.youtube.com/watch?v=gXvGVrrQruA">Zelf aan de slag met Fectar studio</a></li>
+<li><a href="https://www.youtube.com/watch?v=vx6_Sy0pbCk">Maak een city-tour met Wintor</a></li>
+<li><a href="https://www.youtube.com/watch?v=Axam9Gr4UJ0">Adobe Aero</a></li>
+</ul>
+<h4 id="virtual-reality">Virtual Reality</h4>
+<p>Virtual Reality (VR) is een technologie waarmee je volledig in een digitale, computergegenereerde wereld kunt stappen. In plaats van de echte wereld om je heen te zien, zet je een speciale VR-bril op die je het gevoel geeft dat je je in een andere omgeving bevindt, zoals in een spel, een film, of een virtuele ruimte. Alles wat je ziet en soms hoort, is digitaal gemaakt, waardoor je helemaal kunt opgaan in die virtuele wereld.</p>
+<ul>
+<li><a href="https://www.apple.com/apple-vision-pro/">Apple Vision Pro</a></li>
+<li><a href="https://www.youtube.com/watch?v=CTBKG9hxckM">Elders VR - ouderenzorg</a></li>
+<li><a href="https://www.youtube.com/watch?v=pPLWIL64sgQ">Orion van Meta</a> met <a href="https://www.youtube.com/watch?v=fGO0f1Krp4Y">video-uitleg</a></li>
+<li><a href="https://www.youtube.com/watch?v=BZeLhUvaIYA">Ray-ban Meta samenwerking</a></li>
+<li><a href="https://www.youtube.com/watch?v=Nh4K_dZ7LvQ">Snow world</a>. Dit is een game om pijn bij brandwonden te verlichten.</li>
+</ul>
+<h4 id="extended-reality">Extended Reality</h4>
+<p>XR, oftewel Extended Reality, is een verzamelnaam voor alle technologieën die de fysieke en virtuele wereld combineren. Het omvat zowel Virtual Reality (VR), Augmented Reality (AR) als Mixed Reality (MR). XR verwijst naar alle ervaringen waarbij de grenzen tussen de echte en digitale wereld vervagen, of het nu gaat om volledig digitale werelden (VR), digitale elementen in de echte wereld (AR) of een combinatie van beiden waar digitale objecten interactie hebben met de fysieke wereld (MR). XR wordt gebruikt in games, onderwijs, training en andere toepassingen om een meeslepende ervaring te bieden.</p>
 </div>
 
-        <div id="leerdoelen_wrapper">
-            
-                
-            
-                
-                    
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
+        
         </div>
-    </main>
-    <aside id="inhoudsopgave">
+        <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
-        <div class="toc">
-        <ul><li><a href="#basis-ai">Basis AI</a></li><li><a href="#wat-is-ai">Wat is AI</a></li><li><a href="#generatieve-ai">Generatieve AI</a></li><li><a href="#prompten">Prompten</a></li><li><a href="#machine-learning">Machine Learning</a></li><li><a href="#data">Data</a></li><li><a href="#ethiek">Ethiek</a></li></ul>
-      </div>
-    </aside>
-
+            <div class="toc">
+        <ul><li><a href="#basis-ai">Basis AI</a></li><li><a href="#wat-is-ai">Wat is AI</a></li><li><a href="#prompten">Prompten</a></li><li><a href="#lerende-machines">Lerende machines</a></li><li><a href="#robotica">Robotica</a></li><li><a href="#ai-in-de-zorg">AI in de zorg</a></li><li><a href="#ai-interactie">AI interactie</a></li></ul>
+      </div>        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
  
-    <div id="panel-in" class="klapper" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
-    <div id="panel-out" class="klapper" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
-  </div>
-
-    <footer>
-
-    </footer>
+   </div>
     <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
-      window.addEventListener('DOMContentLoaded', function() {
-        showPanel();
-      });
-      window.addEventListener('hashchange', function() {
-        if (!window.location.hash) return;
-        console.log('De URL-hashtag is veranderd!');
-        
-        // Je kunt nu de nieuwe URL ophalen
-        const newHash = window.location.hash;
-        console.log('Nieuwe hashtag:', newHash);
-        
-        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
-        handleHashChange(newHash);
-      });
-
-      function handleHashChange(hash) {
-        setTimeout(function() {
-          const targetElement = document.querySelector(window.location.hash);
-          
-          if (targetElement) {
-            const newScrollPosition = targetElement.offsetTop - 160;
-            
-            window.scrollTo({
-              top: newScrollPosition,
-              //behavior: 'smooth'
-            });
-          }
-        }, 0);
-      } 
-
-      function hidePanel() {
-        console.log("hidePanel");
-        const arrow_in = document.getElementById('panel-in');
-        const arrow_out = document.getElementById('panel-out');
-        const panel = document.getElementById('inhoudsopgave');
-        arrow_out.style.display = 'none';
-        arrow_in.style.display = 'block';
-        panel.style.flex = 0;
-        panel.style.padding = 0;
-        panel.style.overflow = 'hidden';
-        panel.style.minWidth = '0px';
-      }
-
-      function showPanel() {
-        console.log("showPanel");
-        const panel = document.getElementById('inhoudsopgave');
-        const arrow_in = document.getElementById('panel-in');
-        const arrow_out = document.getElementById('panel-out');
-        arrow_out.style.display = 'block';
-        arrow_in.style.display = 'none';
-        panel.style.flexBasis = 'content';
-        panel.style.padding = '1rem';
-        panel.style.overflow = 'auto';
-        panel.style.minWidth = '250px';
-      }
-
-
-
-      function toggleNav() {
-        const nav = document.querySelector('nav#side ul');
-        if (nav.style.display === 'flex')  {
-          nav.style.display = 'none';
-        } else {
-          nav.style.display = 'flex';
-        }
-      }
-    
+     function handleHashChange(e){setTimeout(function(){const e=document.querySelector(window.location.hash);if(e){console.log("Positie van het doel-element:",e.offsetTop);const o=0;console.log("Nieuwe scrollpositie:",o),window.scrollTo({top:o,behavior:"smooth"})}},100)}function hidePanel(){console.log("hidePanel");const e=document.getElementById("panel-in"),o=document.getElementById("panel-out"),n=document.getElementById("inhoudsopgave");o.style.display="none",e.style.display="block",n.style.display="none"}function showPanel(){console.log("showPanel");const e=document.getElementById("inhoudsopgave"),o=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",o.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),console.log("De DOM is volledig geladen en geparsed")}),(inhoud=document.querySelector("#inhoudsopgave .toc ul li"))&&inhoud.addEventListener("click",function(e){if(console.log("Inhoudsopgave - Click event detected"),!window.location.hash)return void console.log("Inhoudsopgave - Geen hashtag aanwezig");const o=window.location.hash;console.log("Inhoudsopgave - hashtag:",o)}),window.addEventListener("hashchange",function(){if(!window.location.hash)return void console.log("Geen hashtag aanwezig");const e=window.location.hash;console.log("Hash is veranderd:",e)});
     </script>
     </body> 
 </html>
