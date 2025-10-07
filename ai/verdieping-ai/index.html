@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <style>
+      @font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:bold;font-weight:700;src:url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:black;font-weight:900;src:url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:light;font-weight:300;src:url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:thin;font-weight:100;src:url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2")}code[class*=language-],pre[class*=language-]{color:#393a34;background-color:var(--light-grey);font-family:"IBM Plex Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L","Courier New",Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre>code[class*=language-]{font-size:1em}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#c1def1}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#c1def1}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border:1px solid #ddd;background-color:#fff}:not(pre)>code[class*=language-]{padding:.2em;padding-top:1px;padding-bottom:1px;background:#f8f8f8;border:1px solid #ddd}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:green;font-style:italic}.token.namespace{opacity:.7}.token.string{color:#a31515}.token.operator,.token.punctuation{color:#393a34}.token.boolean,.token.constant,.token.inserted,.token.number,.token.symbol,.token.url,.token.variable{color:#36acaa}.language-autohotkey .token.selector,.language-json .token.boolean,.language-json .token.number,.token.atrule,.token.attr-value,.token.keyword,code[class*=language-css]{color:#00f}.token.function{color:#393a34}.language-autohotkey .token.tag,.token.deleted{color:#9a050f}.language-autohotkey .token.keyword,.token.selector{color:#00009f}.token.important{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.language-json .token.property,.token.class-name{color:#2b91af}.token.selector,.token.tag{color:maroon}.token.attr-name,.token.entity,.token.property,.token.regex{color:red}.token.directive.tag .tag{background:#ff0;color:#393a34}.line-numbers.line-numbers .line-numbers-rows{border-right-color:#a5a5a5}.line-numbers .line-numbers-rows>span:before{color:#2b91af}.line-highlight.line-highlight{background:rgba(193,222,241,.2);background:-webkit-linear-gradient(left,rgba(193,222,241,.2) 70%,rgba(221,222,241,0));background:linear-gradient(to right,rgba(193,222,241,.2) 70%,rgba(221,222,241,0))}:root{--dark-grey:#17171a;--light-grey:#f5f4f7;--orange:#f58220;--blue:#343368;--code-color:#dcf0ff;font-family:BuenosAires,sans-serif;font-weight:400;font-size:16px;line-height:1.9rem;color:var(--blue);scroll-behavior:smooth}body{margin:0;padding:0;background-color:var(--light-grey);font-size:16px;line-height:1.5rem;overflow:scroll}h1{font-size:2rem;font-weight:700;line-height:1rem;text-wrap:nowrap}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.1rem}h5{font-size:1rem}h1[id],h2[id],h3[id]{scroll-margin-top:300px}div#page_wrapper{max-width:1200px;margin:0 auto 0 auto;box-sizing:border-box}main{display:flex;flex-direction:row;margin:0 auto 0 auto;background-color:#fff;justify-content:space-between}div.section{display:none;width:100%;align-items:top}div#title{display:block}div#content{display:flex;flex-direction:column;padding:2rem 2rem 2rem 2rem;min-width:290px;width:100%}header{box-sizing:border-box;width:100%;height:60px;max-height:60px;position:sticky;top:0;z-index:100;color:#fff;padding:0 1rem 0 0;background-color:var(--blue)}header div#title h1{font-weight:700;font-size:1.5rem;width:100%}nav#top{max-width:1200px;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 0 auto;padding:0}nav#side{display:none}nav#top ul.hide{display:none}nav#side img,nav#top img{display:none;position:relative;top:20px;left:10px}nav#top ul{box-sizing:border-box;list-style-type:none;margin:0;padding:1rem 0 0 0;display:flex;flex-direction:row;justify-content:flex-end;text-align:right}nav#top ul li{box-sizing:border-box;padding:0}nav#side ul li a,nav#top ul li a{box-sizing:border-box;color:#fff;text-decoration:none;font-weight:700;text-wrap:nowrap;padding:0 0 .3rem 0;margin:0 .2rem 0 .8rem}nav#side ul li a.navlinks:visited,nav#top ul li a.navlinks:visited{color:#fff}nav#side ul li a.navlinks.active,nav#side ul li a.navlinks:hover,nav#top ul li a.navlinks.active,nav#top ul li a.navlinks:hover{border-bottom:#f58220 3px solid;padding-bottom:5px}.toc a.active,.toc a:hover{border-bottom:#f58220 1.5px solid;padding-bottom:1px}a.active{border-bottom:#f58220 2px solid}aside#inhoudsopgave{min-width:250px;flex:0 0 250px;background-color:var(--light-grey);padding:1rem;text-wrap:nowrap;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}aside#hiddeninhoudsopgave{display:none}aside#hiddeninhoudsopgave a.panel,aside#inhoudsopgave a.panel{display:inline-block;background-color:#fff;border-radius:.2rem;padding:0 .5rem 0 .5rem}aside#hiddeninhoudsopgave a{position:relative;top:1rem;left:1rem;padding:.2rem .5rem .2rem .5rem;margin-right:20px}div.toc ul{list-style-type:none;padding-left:0;line-height:2rem}div.toc ul li a{text-decoration:none;color:var(--dark-grey)}.green{background-color:#90ee90}:target{display:block}div.section:has(:target){display:block}div.show{display:block}div.hide{display:none}pre[class*=language-]{background-color:var(--light-grey);font-size:.9rem;overflow-x:auto;white-space:pre}pre[class*=language-] code[class*=language-]{display:block;overflow-x:auto;white-space:pre}code{background-color:var(--code-color);padding:.15rem .3rem;border-radius:.3rem;font-size:.9rem;width:100%}nav#top #hoogte-indicator{display:block;position:relative;top:10px;line-height:.2rem;height:10px;background-color:var(--dark-grey);color:#fff;font-size:.5rem;border-radius:.3rem;padding:.3rem .3rem .5rem .3rem}#panel-in,#panel-out{height:0;width:0}#panel-in img,#panel-out img{position:relative;padding:2px;width:10px;height:10px;top:5px;right:20px}#panel-in img{transform:rotate(180deg)}table,td,th{border-collapse:collapse;border:1px solid var(--dark-grey);padding:4px}@media (max-width:750px){nav#top{display:none}nav#side{max-width:300px;display:flex;flex-direction:column;justify-content:flex-start;margin:0;padding:0;background-color:var(--blue);position:absolute;top:0}nav#side img{display:block}nav#side ul{display:none;box-sizing:border-box;margin:0;padding:3rem 0 1rem 0;flex-direction:column;text-align:left;justify-content:flex-start}nav#side ul li{padding:.3rem 1rem .3rem 1rem}nav#side ul li a.navlinks{padding:.3rem .3rem .3rem .3rem;margin:0}}section#buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}section#buttons .button-container{position:relative;border-top:1rem solid var(--blue);min-width:200px;height:100px;background-color:var(--light-grey);border-radius:.3rem;box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px}section#buttons .button-container:hover{background-color:var(--blue)}section#buttons .button-container:hover div{color:#fff}section#buttons .button-container div{color:var(--blue);font-weight:700;position:absolute;bottom:1rem;left:1rem}section#buttons .button-container div::before{content:'';width:2rem;height:1.4rem;background-image:url('/_assets/right-arrow_f58220.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;vertical-align:middle}details{box-sizing:border-box;border-radius:1px;margin-bottom:1rem;display:block;outline:0;padding:0;text-align:left;transition:.4s;background-color:var(--light-grey);width:100%;padding:1rem 2rem 1rem 2rem;border-radius:.3rem;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}summary{font-weight:700;padding-left:38px;cursor:pointer;list-style:none;position:relative}summary a{color:var(--blue);text-decoration:none}summary::before{content:'';background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(90deg);background-size:contain;background-repeat:no-repeat;display:inline-block;width:20px;height:20px;vertical-align:middle;position:absolute;top:3px;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(270deg)}details p{font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}
+    </style>
+    <title>AI Development</title>
+</head>
+<body>
+    <header>     
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/ai/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/ai/basis-ai/#basis-ai">Basis AI</a></li>
+      
+          <li><a href="/easy_canvas/ai/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/ai/verdieping-ai/#verdieping-ai" class="active">Verdieping AI</a></li>
+      
+          <li><a href="/easy_canvas/ai/projecten/#projecten">Projecten</a></li>
+      
+          <li><a href="/easy_canvas/ai/undefined/#undefined"></a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/ai/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/ai/basis-ai/#basis-ai">Basis AI</a></li>
+      
+          <li><a href="/easy_canvas/ai/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/ai/verdieping-ai/#verdieping-ai" class="active">Verdieping AI</a></li>
+      
+          <li><a href="/easy_canvas/ai/projecten/#projecten">Projecten</a></li>
+      
+          <li><a href="/easy_canvas/ai/undefined/#undefined"></a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+
+        <div id="content">
+        <div class="section" id="title">
+            <h1>AI Development</h1>
+        </div>
+        <div class="section">
+<h3 id="verdieping-ai">Verdieping AI</h3>
+<p>In dit gedeelte ga je dieper in op het programmeren met AI.</p>
+<picture><source type="image/avif" srcset="/easy_canvas/ai/verdieping-ai/4cijnlLRIj-900.avif 900w"><source type="image/webp" srcset="/easy_canvas/ai/verdieping-ai/4cijnlLRIj-900.webp 900w"><img src="/easy_canvas/ai/verdieping-ai/4cijnlLRIj-900.jpeg" alt="Afbeelding AI Engineer" width="900" height="283"></picture>
+<h4 id="rol">Rol</h4>
+<ul>
+<li>Wat doet een AI Engineer</li>
+</ul>
+<h4 id="technieken%3A">Technieken:</h4>
+<ul>
+<li>Structured output</li>
+<li>Rag</li>
+<li>MCP</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="ai-engineer">AI Engineer</h3>
+<h4 id="wat-doet-een-ai-engineer%3F">Wat doet een AI Engineer?</h4>
+<ul>
+<li><strong>AI gebruiken in software</strong> → Denk aan gezichtsherkenning in een app of een chatbot.</li>
+<li><strong>Bestaande AI-modellen koppelen</strong> → Bijvoorbeeld via OpenAI (ChatGPT), Google AI of andere systemen.</li>
+<li><strong>AI sneller en slimmer maken</strong> → Zorgen dat AI niet te veel geheugen gebruikt en goed werkt.</li>
+<li><strong>AI automatiseren</strong> → Taken laten uitvoeren zonder dat iemand het handmatig hoeft te doen.</li>
+<li><strong>Samenwerken met programmeurs</strong> → Werken in een team om AI-oplossingen te bouwen.</li>
+</ul>
+<p>Het is een <strong>creatief en technisch beroep</strong> waarin je AI toepast om slimme software te maken.</p>
+<h4 id="full-stack-vs.-data-scientist">Full Stack vs. Data Scientist</h4>
+<ul>
+<li><strong>Full-Stack Developer:</strong> Dit is de <strong>alleskunner</strong>. Hij of zij bouwt zowel de voorkant (het scherm dat je ziet) als de achterkant (de server die alles laat werken) van de app. Ze zorgen ervoor dat de app er goed uitziet en goed werkt.</li>
+<li><strong>Data Scientist:</strong> Dit is de <strong>data-analist</strong>. Ze duiken in grote hoeveelheden data om patronen en trends te vinden. Ze gebruiken wiskunde en statistiek om bijvoorbeeld te voorspellen wat klanten willen of om problemen op te sporen.</li>
+<li><strong>AI Engineer:</strong> Dit is de <strong>nieuwe speler</strong> in het team. Ze gebruiken <strong>slimme AI-modellen</strong> (die al door anderen zijn gemaakt) om apps nóg slimmer te maken. Ze hoeven niet per se zelf AI-modellen te bouwen, maar ze weten wel hoe ze deze modellen in een app kunnen stoppen.</li>
+</ul>
+<p><strong>Het belangrijkste verschil:</strong></p>
+<ul>
+<li>De full-stack developer bouwt de <strong>basis</strong> van de app.</li>
+<li>De data scientist analyseert <strong>data</strong> en maakt voorspellingen.</li>
+<li>De AI engineer maakt de app <strong>intelligent</strong> door slimme AI-modellen te gebruiken.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="ai-tools">AI Tools</h3>
+<ul>
+<li><strong>Python</strong>: Programmeertaal (zie ook cursus <a href="https://www.edutorial.nl/python/introductie/">Python</a>)</li>
+<li><strong>Pydantic</strong>: Een data validatie library.</li>
+<li><strong>Python-dotenv</strong>: Zorgt ervoor dat gevoelige informatie zoals API keys veilig buiten de versiebeheeropslagplaats blijft.</li>
+<li><strong>Streamlit</strong>: Een Python-framework waarmee je snel interactieve webapplicaties kunt bouwen voor AI. Het maakt het eenvoudig om Python-code om te zetten in een visuele interface.</li>
+<li><strong>FastAPI</strong>: Een library voor het bouwen van API's, vooral handig vanwege de integratie met Pydantic.</li>
+<li><strong>Celery</strong>: Voor het bouwen van task queues om werk te verdelen over meerdere threads of machines.</li>
+<li><strong>PostgreSQL</strong>: Een SQL database. (zie ook cursus <a href="https://deltionict.github.io/easy_canvas/dbq/introductie/">Database queries</a> en <a href="https://www.edutorial.nl/dbo/introductie/">Database ontwerp</a>)</li>
+<li><strong><a href="https://www.timescale.com/">Timescale</a></strong>: Een extensie op PostgreSQL voor vector-opslag (ai-toepassingen)</li>
+<li><strong>Pycopg</strong>: Python library voor PostgreSQL.</li>
+<li><strong>SQLAlchemy</strong>: Vereenvoudigt operaties met SQL databases zoals PostgreSQL.</li>
+<li><strong>Alembic</strong>: Beheert database migraties in combinatie met SQLAlchemy.</li>
+<li><strong>Pandas</strong>: Voor het structureren en manipuleren van data in rijen en kolommen.</li>
+<li><strong>OpenAI API, Anthropic API, Google's API</strong>: Verschillende API's van model providers.</li>
+<li><strong>Instructor</strong>: Wordt gebruikt om gestructureerde uitvoer te halen uit modellen.</li>
+<li><strong>PG Vector</strong>: Vector databases voor het opslaan en ophalen van context.</li>
+<li><strong>PiMuPDF, PyPDF2</strong>: Libraries om informatie te extraheren uit documenten of PDFs.</li>
+<li><strong>Jinja</strong>: Een templating engine voor Python, handig voor het bouwen van dynamische prompts.</li>
+</ul>
+<h4 id="links">Links</h4>
+<ul>
+<li><a href="https://github.com/open-webui/open-webui">OpenWebUI</a>
+<ul>
+<li>Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.</li>
+</ul>
+</li>
+<li><a href="https://github.com/BerriAI/litellm">LiteLLM</a>
+<ul>
+<li>Call all LLM APIs using the OpenAI format [Bedrock, Huggingface, VertexAI, TogetherAI, Azure, OpenAI, Groq etc.]</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="structured-output">Structured output</h3>
+<p>Structured Output betekent dat je de AI (zoals een Large Language Model, LLM) niet zomaar een lap tekst laat schrijven, maar dat je <strong>expliciet vraagt om de output in een vast, voorspelbaar formaat</strong>, zoals JSON, XML, of een Python-object.</p>
+<h4 id="waarom-is-gestructureerde-output-wenselijk">Waarom is gestructureerde output wenselijk</h4>
+<p><strong>Ongestructureerde Output:</strong></p>
+<ul>
+<li><strong>Vraag:</strong> &quot;Maak een lijst met wat we nodig hebben voor de lunch.&quot;</li>
+<li><strong>Antwoord (Vrije Tekst):</strong> &quot;We hebben brood, kaas, en melk nodig. Oh ja, en vergeet de ham niet die we gisteren zagen.&quot;</li>
+<li><strong>Probleem:</strong> Dit is prima voor een mens, maar een computer (een app of een ander programma) kan deze vrije tekst niet makkelijk verwerken. Het moet de tekst analyseren om erachter te komen welk woord het item is en welk woord een opmerking.</li>
+</ul>
+<p><strong>Gestructureerde Output (JSON):</strong></p>
+<ul>
+<li><strong>Vraag:</strong> &quot;Maak een boodschappenlijstje, maar geef het terug als een JSON-lijst met alleen de naam en de hoeveelheid.&quot;</li>
+<li><strong>Antwoord (JSON):</strong><pre class="language-json"><code class="language-json"><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span><span class="token property">"item"</span><span class="token operator">:</span> <span class="token string">"Brood"</span><span class="token punctuation">,</span> <span class="token property">"hoeveelheid"</span><span class="token operator">:</span> <span class="token string">"1 stuk"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token property">"item"</span><span class="token operator">:</span> <span class="token string">"Kaas"</span><span class="token punctuation">,</span> <span class="token property">"hoeveelheid"</span><span class="token operator">:</span> <span class="token string">"200 gram"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token property">"item"</span><span class="token operator">:</span> <span class="token string">"Melk"</span><span class="token punctuation">,</span> <span class="token property">"hoeveelheid"</span><span class="token operator">:</span> <span class="token string">"1 liter"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span><span class="token property">"item"</span><span class="token operator">:</span> <span class="token string">"Ham"</span><span class="token punctuation">,</span> <span class="token property">"hoeveelheid"</span><span class="token operator">:</span> <span class="token string">"150 gram"</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+</li>
+<li><strong>Voordeel:</strong> Nu is het supermakkelijk voor een Python-programma! Je gebruikt gewoon de ingebouwde JSON-parser, en je hebt direct een bruikbare <strong>lijst met objecten</strong> in Python. Geen ingewikkelde tekstanalyse nodig.</li>
+</ul>
+<h4 id="technieken-voor-python-programmeren-met-ai">Technieken voor Python-Programmeren met AI</h4>
+<p>In Python, wanneer je met een LLM API werkt (zoals die van Google, OpenAI, of Meta), zijn er twee hoofdmanieren om dit te bereiken:</p>
+<ol>
+<li>
+<p><strong>Instructies in de Prompt (De Basis):</strong></p>
+<ul>
+<li>Je voegt duidelijke, dwingende zinnen toe aan je prompt: &quot;Je antwoord moet <strong>uitsluitend</strong> in JSON-formaat zijn.&quot; of &quot;Gebruik dit XML-schema.&quot;</li>
+<li><em>Nadeel:</em> Dit is niet 100% betrouwbaar. Soms 'vergeet' de AI de instructie en voegt toch extra tekst of uitleg toe.</li>
+</ul>
+</li>
+<li>
+<p><strong>Schema's/Tools Gebruiken (De Professionele Manier):</strong></p>
+<ul>
+<li>Dit is de beste manier. Je geeft de AI niet alleen de tekstprompt, maar ook een <strong>formeel schema</strong> (vaak met de <strong>Pydantic</strong>-bibliotheek in Python).</li>
+<li>Je definieert in Python hoe de output eruit <em>moet</em> zien (bijvoorbeeld: een klasse <code>Product</code> met de velden <code>naam</code> (string) en <code>prijs</code> (float)).</li>
+<li>De LLM API dwingt zichzelf af om de JSON-output te genereren die exact aan dat schema voldoet.</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Voorbeeld met een hypothetisch schema</span>
+<span class="token keyword">class</span> <span class="token class-name">Product</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    naam<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    prijs<span class="token punctuation">:</span> <span class="token builtin">float</span>
+    is_op_voorraad<span class="token punctuation">:</span> <span class="token builtin">bool</span>
+
+<span class="token comment"># Je roept de AI aan met dit schema</span>
+<span class="token comment"># De output is gegarandeerd JSON die hieraan voldoet!</span></code></pre>
+</li>
+<li>
+<p><a href="https://github.com/siewers32/structured_output">Github repository met een voorbeeld van structured output op basis van python en pydantic</a></p>
+</li>
+</ol>
+<p>Voor bedrijven is gestructureerde output geen luxe, maar vaak een <strong>noodzaak</strong> voor automatisering en betrouwbaarheid.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Reden</th>
+<th style="text-align:left">Uitleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Automatisering</strong></td>
+<td style="text-align:left"><strong>De 'Mensenloze' Pipeline:</strong> In een bedrijf wordt data vaak van het ene systeem naar het andere doorgegeven (bijvoorbeeld: van een AI-samenvatting naar een database of een rapportage-tool). Als de input altijd hetzelfde formaat heeft, kan het verwerkingsprogramma (de Python-code) zonder menselijke tussenkomst blijven draaien. <strong>Dit bespaart tijd en loonkosten.</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Betrouwbaarheid</strong></td>
+<td style="text-align:left"><strong>Geen Kapotte Systemen:</strong> Als de AI plotseling een emoji of een extra zin in de output zet, crasht het volgende programma dat de JSON verwacht. Met structured output <strong>garandeer je dat de data altijd valide is</strong>, wat leidt tot minder fouten en minder 'downtime'.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Uniformiteit</strong></td>
+<td style="text-align:left"><strong>Standaardisatie:</strong> Een bedrijf wil dat alle gegevens op dezelfde manier worden opgeslagen, ongeacht of de data uit een formulier, een database, of de AI komt. Gestructureerde data zorgt voor <strong>consistentie</strong> over alle afdelingen heen.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Schaalbaarheid</strong></td>
+<td style="text-align:left"><strong>Klaar voor Grote Hoeveelheden:</strong> Als je duizenden taken per dag met AI moet uitvoeren, kun je niet elke output handmatig controleren. Doordat de output gestructureerd is, kunnen systemen <strong>grote volumes data snel en foutloos</strong> verwerken en opslaan.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section">
+<h3 id="rag">RAG</h3>
+<h4 id="wat-betekent-retrieval-augmented-generation%3F">Wat betekent Retrieval Augmented Generation?</h4>
+<p>Het is een techniek waarbij een AI extra informatie opzoekt voordat hij een antwoord geeft. Je kunt het vergelijken met een student die een vraag krijgt en eerst even iets opzoekt op internet of in een boek, en daarna pas antwoord geeft.</p>
+<h4 id="stap-voor-stap-uitgelegd">Stap voor stap uitgelegd</h4>
+<h4 id="1.-je-stelt-een-vraag">1. Je stelt een vraag</h4>
+<p>Bijvoorbeeld:<br>
+<em>&quot;Hoe werkt zonne-energie?&quot;</em></p>
+<h4 id="2.-de-ai-gaat-op-zoek-(retrieval)">2. De AI gaat op zoek (retrieval)</h4>
+<p>In plaats van meteen te antwoorden, zoekt de AI eerst naar betrouwbare teksten of documenten waar iets staat over zonne-energie. Dit kunnen dingen zijn als artikelen, websites, of een interne kennisbank.</p>
+<h4 id="3.-ai-leest-en-haalt-informatie-op">3. AI leest en haalt informatie op</h4>
+<p>De AI kiest stukjes tekst die het meest lijken op wat jij vroeg. Bijvoorbeeld een alinea uit een Wikipedia-pagina over zonne-energie.</p>
+<h4 id="4.-de-ai-maakt-een-antwoord-(generation)">4. De AI maakt een antwoord (generation)</h4>
+<p>Nu gebruikt de AI die gevonden informatie om een nieuw antwoord te maken dat goed past bij jouw vraag.</p>
+<h4 id="5.-je-krijgt-een-slimmer-antwoord">5. Je krijgt een slimmer antwoord</h4>
+<p>Omdat de AI eerst informatie heeft opgezocht, krijg je een antwoord dat vaak nauwkeuriger en actueler is dan wanneer de AI het helemaal uit z’n eigen &quot;geheugen&quot; haalt.</p>
+<h4 id="simpele-vergelijking">Simpele vergelijking</h4>
+<ul>
+<li>Zonder RAG: De AI probeert alles te herinneren, zoals een student zonder aantekeningen.</li>
+<li>Met RAG: De AI zoekt het eerst even op, net zoals een student die in zijn boek kijkt voordat hij antwoordt.</li>
+</ul>
+<h4 id="wanneer-wordt-dit-gebruikt%3F">Wanneer wordt dit gebruikt?</h4>
+<ul>
+<li>Bij chatbots van klantenservice</li>
+<li>In zoekmachines met slimme AI-antwoorden</li>
+<li>Voor bedrijven die willen dat AI antwoorden geeft op basis van hun eigen documenten</li>
+</ul>
+<h4 id="voorbeeldcode">Voorbeeldcode</h4>
+<ul>
+<li><a href="https://github.com/siewers32/rag">RAG-code in python op github</a></li>
+</ul>
+</div>
+<div class="section">
+<h3 id="mcp">MCP</h3>
+<p>MCP staat voor <strong>Model Context Protocol</strong>. Het is een open en universeel protocol dat fungeert als een gestandaardiseerde communicatiebrug tussen AI-modellen (zoals grote taalmodellen of 'Large Language Models', LLM's) en externe tools, data en diensten.</p>
+<p>Je kunt MCP zien als de <strong>USB-C-poort voor AI-applicaties</strong>: het zorgt voor een uniforme, plug-and-play-manier om AI te verbinden met de rest van de digitale wereld, waardoor AI-modellen niet meer 'geïsoleerd' werken.</p>
+<h4 id="waarom-mcp-nodig-is">Waarom MCP Nodig Is</h4>
+<p>AI-modellen zijn slim, maar ze zijn getraind op een vaste set data. Ze kunnen zelf geen acties ondernemen buiten hun eigen context. MCP lost dit op door AI-systemen toegang te geven tot:</p>
+<ol>
+<li><strong>Realtime Data:</strong> De AI kan actuele informatie opvragen (zoals het weer, beurskoersen of de nieuwste bedrijfsdocumenten).</li>
+<li><strong>Externe Tools:</strong> De AI kan acties uitvoeren in andere programma's (zoals een e-mail versturen, een taak aanmaken in een projectmanager of data ophalen uit een CRM-systeem).</li>
+</ol>
+<p>Dit maakt de AI een <strong>Agent</strong> die autonoom taken kan uitvoeren en beslissingen kan nemen op basis van actuele en specifieke context.</p>
+<h4 id="de-componenten-van-mcp">De Componenten van MCP</h4>
+<p>MCP werkt met twee hoofdcomponenten:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Component</th>
+<th style="text-align:left">Functie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>MCP Client</strong></td>
+<td style="text-align:left">Het AI-systeem of de applicatie die de hulp vraagt. Dit kan een AI-chatbot, een IDE (zoals VS Code), of een op AI gebaseerde workflowtool zijn.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MCP Server</strong></td>
+<td style="text-align:left">De 'adapter' of 'connector' die de toegang tot een specifieke tool of databron regelt (bijvoorbeeld een GitHub-server of een database-server). De Server vertaalt de gestructureerde vraag van de AI naar een actie in de tool, en stuurt het resultaat terug.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hoe-mcp-werkt-met-docker">Hoe MCP Werkt met Docker</h4>
+<p>Docker is de ideale partner voor MCP omdat het de servers die je nodig hebt voor AI-integraties, <strong>veilig en eenvoudig</strong> isoleert en beheert.</p>
+<p>MCP-servers hebben vaak specifieke runtime-vereisten (zoals een bepaalde versie van Python of Node.js), en ze moeten omgaan met gevoelige gegevens (API-sleutels). Docker lost deze problemen op:</p>
+<h4 id="1.-isolatie-en-beveiliging-(containers)">1. Isolatie en Beveiliging (Containers)</h4>
+<p>Voordat Docker moesten MCP-servers vaak direct op je lokale machine worden uitgevoerd, wat beveiligingsrisico's met zich meebracht (de AI kon in theorie toegang krijgen tot je lokale bestanden).</p>
+<ul>
+<li><strong>De Docker Oplossing:</strong> Door elke MCP Server in een afzonderlijke <strong>Docker Container</strong> te plaatsen, creëer je een <strong>sandbox-omgeving</strong>. De AI krijgt alleen toegang tot wat je expliciet deelt, zoals een database of een specifieke API, en niet tot het hele hostsysteem.</li>
+<li><strong>Geheim Beheer:</strong> Docker kan gevoelige gegevens (API-sleutels, tokens) veilig opslaan als <strong>Docker Secrets</strong>, waardoor ze niet als platte tekst in configuratiebestanden hoeven te staan.</li>
+</ul>
+<h4 id="2.-eenvoudige-deployment-en-beheer-(toolkit)">2. Eenvoudige Deployment en Beheer (Toolkit)</h4>
+<p>Docker heeft een set tools ontwikkeld, waaronder de <strong>Docker MCP Toolkit</strong> en <strong>MCP Catalogus</strong>, om het opzetten van MCP-servers te vereenvoudigen.</p>
+<ul>
+<li><strong>Docker MCP Catalogus:</strong> Dit is een gecentraliseerde hub (vaak geïntegreerd in Docker Desktop) waar ontwikkelaars geverifieerde, kant-en-klare MCP Servers (voor GitHub, Jira, Perplexity, etc.) kunnen vinden. Je hoeft de code niet zelf te bouwen.</li>
+<li><strong>Docker MCP Toolkit:</strong> Met deze tool kun je de gevonden MCP Servers direct installeren, configureren en starten met de vertrouwde Docker-commando's of via een simpele klik in Docker Desktop. Het beheert de volledige levenscyclus van de server.</li>
+<li><strong>Uniforme Interface (Gateway):</strong> Docker stelt een <strong>MCP Gateway</strong> in, een enkel toegangspunt waar alle MCP Clients (zoals de AI-assistent in je IDE) verbinding mee maken. Deze gateway regelt de communicatie met alle afzonderlijk draaiende MCP Servers, wat de configuratie voor de gebruiker vereenvoudigt.</li>
+</ul>
+</div>
+
+        
+        </div>
+        <aside id="inhoudsopgave">
+            <span><b>Inhoudsopgave</b></span>
+            <div class="toc">
+        <ul><li><a href="#verdieping-ai">Verdieping AI</a></li><li><a href="#ai-engineer">AI Engineer</a></li><li><a href="#ai-tools">AI Tools</a></li><li><a href="#structured-output">Structured output</a></li><li><a href="#rag">RAG</a></li><li><a href="#mcp">MCP</a></li></ul>
+      </div>        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
+ 
+   </div>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
+    <script>
+     function styleActiveLink(){if(!window.location.hash)return void console.log("Geen hashtag aanwezig");const e=window.location.hash;console.log("Hash is veranderd:",e);let o=document.querySelector('a[href="'+e+'"]'),n=document.querySelectorAll(".toc a");for(let e=0;e<n.length;e++)n[e].classList.remove("active");o.classList.add("active"),console.log("Actieve link:",o)}function handleHashChange(e){setTimeout(function(){const e=document.querySelector(window.location.hash);if(e){console.log("Positie van het doel-element:",e.offsetTop);const o=0;console.log("Nieuwe scrollpositie:",o),window.scrollTo({top:o,behavior:"smooth"})}},100)}function hidePanel(){console.log("hidePanel");const e=document.getElementById("panel-in"),o=document.getElementById("panel-out"),n=document.getElementById("inhoudsopgave");o.style.display="none",e.style.display="block",n.style.display="none"}function showPanel(){console.log("showPanel");const e=document.getElementById("inhoudsopgave"),o=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",o.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),console.log("De DOM is volledig geladen en geparsed")}),(inhoud=document.querySelector("#inhoudsopgave .toc ul li"))&&inhoud.addEventListener("click",function(e){if(console.log("Inhoudsopgave - Click event detected"),!window.location.hash)return void console.log("Inhoudsopgave - Geen hashtag aanwezig");const o=window.location.hash;console.log("Inhoudsopgave - hashtag:",o)}),window.addEventListener("hashchange",styleActiveLink);
+    </script>
+    </body> 
+</html>
