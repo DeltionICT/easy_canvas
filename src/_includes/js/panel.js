@@ -1,5 +1,6 @@
       window.addEventListener('DOMContentLoaded', function() {
         showPanel();
+        styleActiveLink()
        // const newHash = window.location.hash;
        // handleHashChange(newHash);
         console.log('De DOM is volledig geladen en geparsed');
@@ -18,18 +19,24 @@
         });
       }
          
-      window.addEventListener('hashchange', function() {
+      window.addEventListener('hashchange', styleActiveLink);
+
+      function styleActiveLink() {
         if (!window.location.hash) {
           console.log('Geen hashtag aanwezig');
           return;
         }
-        // Je kunt nu de nieuwe URL ophalen
         const newHash = window.location.hash;
         console.log('Hash is veranderd:', newHash);
-        
-        // Voer hier je eigen logica uit, bijvoorbeeld een functie aanroepen
-        // handleHashChange(newHash);
-      });
+        let active_link = document.querySelector('a[href="' + newHash + '"]');
+        let navlinks = document.querySelectorAll('.toc a');
+        for (let i = 0; i < navlinks.length; i++) {
+          navlinks[i].classList.remove('active');
+        }
+        active_link.classList.add('active');
+        console.log('Actieve link:', active_link);
+      }
+
 
       function handleHashChange(hash) {
         setTimeout(function() {

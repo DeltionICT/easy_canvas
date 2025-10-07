@@ -24,6 +24,7 @@ body {
     background-color: var(--light-grey);        
     font-size: 16px;
     line-height: 1.5rem; 
+    overflow: scroll;
 }
 
 h1 {
@@ -84,7 +85,7 @@ div#title {
 div#content {
     display: flex;
     flex-direction: column;
-    padding:2rem 2rem 0 2rem;
+    padding:2rem 2rem 2rem 2rem;
     min-width:290px;
     width:100%;
 
@@ -164,10 +165,21 @@ nav#top ul li a.navlinks:visited, nav#side ul li a.navlinks:visited {
     color: white;
 } 
 
-nav#top ul li a.navlinks:hover, nav#top ul li a.navlinks.active, nav#side ul li a.navlinks:hover, nav#side ul li a.navlinks.active {
+nav#top ul li a.navlinks:hover, 
+nav#top ul li a.navlinks.active, 
+nav#side ul li a.navlinks:hover, 
+nav#side ul li a.navlinks.active {
     /* background-color: var(--orange); */
     border-bottom: #f58220 3px solid;
     padding-bottom:5px;
+    /* border-radius: 0.3rem; */
+}
+
+.toc a:hover,
+.toc a.active {
+    /* background-color: var(--orange); */
+    border-bottom: #f58220 1.5px solid;
+    padding-bottom:1px;
     /* border-radius: 0.3rem; */
 }
 
@@ -205,17 +217,22 @@ aside#hiddeninhoudsopgave a {
     padding: 0.2rem 0.5rem 0.2rem 0.5rem;
     margin-right:20px;
 }
+
+
 div.toc ul {
     list-style-type: none;
-    font-weight: 500;
     padding-left: 0;
+    line-height: 2rem;
 }
 
 div.toc ul li a {
     text-decoration: none;
     color: var(--dark-grey);
 }
-  
+
+.green {
+    background-color: lightgreen;
+}
 
 :target {
     display:block
@@ -296,7 +313,7 @@ nav#top #hoogte-indicator {
 table, th, td {
     border-collapse: collapse;
     border: 1px solid var(--dark-grey);
-    padding:2px;
+    padding:4px;
 }
 
 
