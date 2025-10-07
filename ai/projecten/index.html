@@ -59,12 +59,122 @@
         <div class="section" id="title">
             <h1>AI Development</h1>
         </div>
-        
+        <div class="section">
+<h3 id="projecten">Projecten</h3>
+<p>In dit onderdeel vind je projecten die je kunt doen om te oefenen met AI en Python. Je kunt ook zelf een project bedenken of een project gebruiken maar aanpassen naar een onderwerp dat voor jou relevant is.</p>
+</div>
+<div class="section">
+<h3 id="structured-output-projecten">Structured output Projecten</h3>
+<h4 id="de-gestructureerde-samenvatter-(de-perfecte-json-tool)">De Gestructureerde Samenvatter (De Perfecte JSON-Tool)</h4>
+<ul>
+<li><strong>Het Probleem:</strong> AI's schrijven vaak lange samenvattingen, maar je hebt alleen de kernfeiten nodig in een vaste database-structuur.</li>
+<li><strong>De Tool:</strong> Bouw een Python-script met <strong>FastAPI</strong> (voor de API-interface) dat een stuk tekst (bijvoorbeeld een nieuwsartikel of een klant-e-mail) als input neemt.</li>
+<li><strong>De AI-Actie:</strong> Je definieert een Pydantic-klasse, bijvoorbeeld <code>ArtikelSamenvatting</code>, met vaste velden:<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ArtikelSamenvatting</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    hoofd_onderwerp<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    urgentie_score<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token comment"># Van 1 tot 10</span>
+    actiepunten<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span>
+    sentiment<span class="token punctuation">:</span> Literal<span class="token punctuation">[</span><span class="token string">"positief"</span><span class="token punctuation">,</span> <span class="token string">"neutraal"</span><span class="token punctuation">,</span> <span class="token string">"negatief"</span><span class="token punctuation">]</span></code></pre>
+</li>
+<li><strong>De Output:</strong> Je gebruikt een LLM API om de input-tekst te analyseren en de AI te dwingen de output <strong>exact</strong> in dit Pydantic-formaat te leveren (structured output).</li>
+<li><strong>De Winst:</strong> Je hebt nu een betrouwbare tool die willekeurige tekst omzet in opslagbare en filterbare data.</li>
+</ul>
+<h4 id="code-refactor-suggesties-tool-(de-slimme-code-reviewer)">Code-Refactor Suggesties Tool (De Slimme Code Reviewer)</h4>
+<p>Als software developer is dit een project met directe meerwaarde. Je richt je op het analyseren van Python-code en het geven van gestructureerde verbeteringen.</p>
+<ul>
+<li><strong>Het Probleem:</strong> Het handmatig controleren van code op kleine verbeteringen (bijv. type-hints toevoegen of onnodige importen verwijderen) kost tijd.</li>
+<li><strong>De Tool:</strong> Creëer een tool die een Python-bestand leest en dit naar de AI stuurt met de vraag om refactoring-suggesties.</li>
+<li><strong>De AI-Actie:</strong> Je Pydantic-schema dwingt de AI om elke suggestie op deze manier terug te geven:<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">RefactorSuggestie</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    regel_nummer<span class="token punctuation">:</span> <span class="token builtin">int</span>
+    oorspronkelijke_code<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    verbeterde_code<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    uitleg<span class="token punctuation">:</span> <span class="token builtin">str</span></code></pre>
+</li>
+<li><strong>De Output:</strong> Je programma kan de lijst met <code>RefactorSuggestie</code>-objecten doorlopen en bijvoorbeeld automatisch een overzichtelijke Markdown-tabel genereren, of zelfs direct een <em>pull request</em> voorbereiden.</li>
+<li><strong>Uitbreiding:</strong> Gebruik <strong>Docker</strong> om deze tool eenvoudig te draaien op een CI/CD-server.</li>
+</ul>
+<h4 id="dynamische-vragenlijst-generator-(de-formulier-automatisator)">Dynamische Vragenlijst Generator (De Formulier-Automatisator)</h4>
+<p>Veel data is nog steeds ongestructureerd. Je kunt de AI een formulier laten bouwen dat past bij de content.</p>
+<ul>
+<li><strong>Het Probleem:</strong> Je hebt een lange transcriptie van een klantgesprek en je wilt snel een paar specifieke vragen kunnen beantwoorden, maar de vragen staan nog niet vast.</li>
+<li><strong>De Tool:</strong> Neem een lange tekst (bijv. een document of een verslag) als input. De AI moet een relevante vragenlijst genereren om de essentie van het document te toetsen.</li>
+<li><strong>De AI-Actie:</strong> Het schema zorgt voor een gestructureerde lijst met vragen en de document-locatie van het antwoord:<pre class="language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Vragenlijst</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    titel<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    vragen<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Of een tweede stap waarbij de AI de antwoorden in het document zoekt:</span>
+<span class="token keyword">class</span> <span class="token class-name">DocumentAntwoord</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    vraag<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    gevonden_antwoord<span class="token punctuation">:</span> <span class="token builtin">str</span>
+    pagina_nummer_of_sectie<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token builtin">str</span><span class="token punctuation">]</span></code></pre>
+</li>
+<li><strong>De Winst:</strong> Je hebt een tool die de AI gebruikt om snel de belangrijkste informatie uit willekeurige documenten te destilleren en te structureren, ideaal voor bijvoorbeeld het verwerken van juridische teksten of technische handleidingen.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="rag-projecten">RAG Projecten</h3>
+<h4 id="interne-documentatie-zoekmachine">Interne Documentatie Zoekmachine</h4>
+<p>Dit is een klassiek RAG-project met directe bedrijfswaarde. Je lost het probleem op dat belangrijke informatie verspreid ligt over honderden documenten.</p>
+<ul>
+<li>Het Probleem: Technische handleidingen, HR-beleid en verslagen zijn opgeslagen als ongestructureerde PDF's of tekstbestanden. Vragen beantwoorden is traag.</li>
+<li>De Projectfocus: Bouw een systeem dat de documenten opsplitst in kleine stukjes (chunks), deze omzet in vector embeddings, en opslaat in een PostgreSQL-database met behulp van de pgvector extensie (een must-have voor RAG met Postgres).</li>
+</ul>
+<p><strong>De Architectuur:</strong></p>
+<ul>
+<li>Met <code>pypdf</code> of <code>python-docx</code>: Voor het extraheren van ruwe tekst uit PDF- of Word-bestanden.</li>
+<li>LangChain (Text Splitters): Hoewel LangChain een groter framework is, is de module voor Text Splitting (chunks maken) de industriestandaard en zeer efficiënt (bijv. RecursiveCharacterTextSplitter).</li>
+<li>Embeddings (Transform): Sentence-transformers: Dit is de meest gangbare en gebruiksvriendelijke bibliotheek om tekst om te zetten in vector embeddings (een lijst van getallen). Je laadt hier eenvoudig een geschikt model mee, zoals bijvoorbeeld all-MiniLM-L6-v2.</li>
+<li>Database Connectiviteit (Load): psycopg2 of asyncpg: Python-drivers om verbinding te maken met je PostgreSQL-database en SQL-commando's uit te voeren.</li>
+<li>SQLAlchemy (optioneel): Handig als je object-relational mapping (ORM) wilt gebruiken in plaats van pure SQL.</li>
+<li>Query (Het Latere Gebruik) Hoewel dit buiten de ETL-pipeline valt, is dit het doel van de hele operatie.
+<ul>
+<li>Een gebruiker stelt een vraag (bijv. &quot;Wat is het beleid voor thuiswerken?&quot;). Je genereert een vector van deze vraag met hetzelfde sentence-transformers model.</li>
+<li>Vector Search: Je voert een SELECT query uit op PostgreSQL, waarbij je de afstand berekent tussen de vraagvector en alle chunk-vectoren in je tabel. Je gebruikt hiervoor de speciale pgvector operatoren (bijv. ORDER BY embedding &lt;-&gt; vraag_vector LIMIT 5).</li>
+<li>RAG Generatie: Je stuurt de 5 meest relevante tekstfragmenten (de chunks) samen met de oorspronkelijke vraag naar de LLM om het definitieve antwoord te genereren (de Generation).</li>
+</ul>
+</li>
+</ul>
+<h4 id="real-time-productcatalogus">Real-time Productcatalogus</h4>
+<p>Dit project richt zich op het dynamisch ophalen van feitelijke data, wat de ware kracht van RAG laat zien wanneer het gekoppeld is aan een relationele database.</p>
+<ul>
+<li>Het Probleem: Klanten stellen complexe, specifieke vragen over productvoorraad, prijzen, of specificaties die te vaak veranderen om in de training van een LLM te zitten.</li>
+<li>De Projectfocus: De RAG-data is de feitelijke productdata uit je PostgreSQL-tabellen (prijs, voorraad, SKU, beschrijving). Je gebruikt de AI om natuurlijke taalvragen te beantwoorden door de feitelijke data op te halen.</li>
+</ul>
+<p><strong>De Architectuur:</strong></p>
+<ul>
+<li>PostgreSQL Data: De database bevat de gestructureerde productinformatie.</li>
+<li>RAG &amp; LLM Integration: Wanneer een gebruiker vraagt: &quot;Wat is de prijs van de groene laptop die op voorraad is in Amsterdam?&quot;, kan de AI:
+<ul>
+<li>Optie A (Text Embeddings): De vraag omzetten in een vector en matchen met de productbeschrijvingen/metadata in pgvector.</li>
+<li>Optie B (Tool Use/Function Calling): De AI genereren om een gestructureerde SQL-query te bouwen, die je Python-code uitvoert op de PostgreSQL-database.</li>
+</ul>
+</li>
+<li>Pydantic-Output: De AI verwerkt de opgevraagde (en actuele) data en presenteert een gestructureerd antwoord:</li>
+</ul>
+<pre class="language-python"><code class="language-python">  <span class="token keyword">class</span> <span class="token class-name">PrijsEnVoorraad</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      productnaam<span class="token punctuation">:</span> <span class="token builtin">str</span>
+      actuele_prijs<span class="token punctuation">:</span> <span class="token builtin">float</span>
+      voorraad_locatie<span class="token punctuation">:</span> <span class="token builtin">str</span>
+</code></pre>
+</div>
+<div class="section">
+<h3 id="docker-mcp">Docker MCP</h3>
+<p>In dit project ga je demonstreren hoe je met Docker Model Context Protocol een systeem kunt maken dat gebruik maakt van de MCP servers voor &quot;Obsidian&quot; en &quot;DuckDuckGo&quot;. Je stelt een vraag aan AI om iets op te zoeken op het internet en het resultaat te plaatsen in een markdown-document.</p>
+<h4 id="de-belangrijkste-stappen-van-de-demonstratie%3A">De belangrijkste stappen van de demonstratie:</h4>
+<ol>
+<li><strong>Opzetten van de Omgeving:</strong> De demonstratie maakt lokaal gebruik van <strong>Docker Desktop</strong> met de <strong>MCP Toolkit</strong> ingeschakeld.</li>
+<li><strong>Installatie van de MCP Server:</strong> Een officiële <strong>Obsidian MCP server</strong> wordt toegevoegd vanuit de Docker-catalogus.</li>
+<li><strong>Configuratie van de Server:</strong> Voor Obsidian is een <strong>API-sleutel</strong> nodig die wordt verkregen via een community-plugin (local REST API) in Obsidian en vervolgens in het configuratieveld van de MCP server wordt geplakt.</li>
+<li><strong>Connectie met de Client:</strong> De LLM-applicatie <strong>Claude Desktop</strong> wordt als client verbonden met de Docker MCP gateway.</li>
+</ol>
+</div>
+
         
         </div>
         <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
-                    
+            <div class="toc">
+        <ul><li><a href="#projecten">Projecten</a></li><li><a href="#structured-output-projecten">Structured output Projecten</a></li><li><a href="#rag-projecten">RAG Projecten</a></li><li><a href="#docker-mcp">Docker MCP</a></li></ul>
+      </div>        
          </aside> 
          <div id="panel-in" class="panel" onclick="showPanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
          <div id="panel-out" class="panel" onclick="hidePanel()"><img src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
