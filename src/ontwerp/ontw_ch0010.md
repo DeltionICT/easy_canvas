@@ -5,58 +5,59 @@ leerdoelen:
 -
   titel: Communicatie en analyse
   items:
-    - De student kan actief communiceren met een klant of opdrachtgever om de behoeften en wensen met betrekking tot de informatievoorziening te achterhalen.
-    - De student is in staat om eisen en wensen te inventariseren en deze te vertalen naar concrete functionele en niet-functionele vereisten .
-    - De student kan relevante aanvullende informatie verzamelen bij de klant, leveranciers of andere stakeholders om de technische (on)mogelijkheden te beoordelen.
+    - Je kunt actief communiceren met een klant of opdrachtgever om de behoeften en wensen met betrekking tot de informatievoorziening te achterhalen.
+    - Je bent in staat om eisen en wensen te inventariseren en deze te vertalen naar concrete functionele en niet-functionele vereisten.
+    - Je kunt relevante aanvullende informatie verzamelen bij de klant, leveranciers of andere stakeholders om de technische (on)mogelijkheden te beoordelen.
 -
   titel: Ontwerp en Oplossingsgerichtheid
   items:
-    - De student kan verschillende alternatieve oplossingen afwegen op basis van de verzamelde vereisten en technische haalbaarheid.
-    - De student kan een eenvoudig ontwerp van een informatievoorziening opstellen en deze duidelijk visualiseren en documenteren.
-    - De student kan een gekozen oplossing gedetailleerd beschrijven, inclusief de benodigde infrastructuur (hardware, software, devices), de ontwikkelingsmethodiek en beveiligingsaspecten.
-    - De student kan de gekozen oplossing en het bijbehorende ontwerp effectief presenteren en communiceren aan de klant en andere betrokkenen.
-- 
+    - Je kunt verschillende alternatieve oplossingen afwegen op basis van de verzamelde vereisten en technische haalbaarheid.
+    - Je kunt een eenvoudig ontwerp van een informatievoorziening opstellen en deze duidelijk visualiseren en documenteren.
+    - Je kunt een gekozen oplossing gedetailleerd beschrijven, inclusief de benodigde infrastructuur (hardware, software, devices), de ontwikkelingsmethodiek en beveiligingsaspecten.
+    - Je kunt de gekozen oplossing en het bijbehorende ontwerp effectief presenteren en communiceren aan de klant en andere betrokkenen.
+-
   titel: Methodieken en Praktische Vaardigheden
-  items: 
-    - De student is in staat om een gangbare ontwikkelingsmethodiek zoals Agile, Scrum of de Watervalmethode toe te passen in een praktijkcasus.
-    - De student kan de theorie van deze methodieken koppelen aan de praktische uitvoering van het ontwerpproces.
-    - De student kan een bestaand technisch ontwerp lezen en interpreteren om de werking van een systeem te begrijpen.
-- 
+  items:
+    - Je bent in staat om een gangbare ontwikkelingsmethodiek zoals Agile, Scrum of de Watervalmethode toe te passen in een praktijkcasus.
+    - Je kunt de theorie van deze methodieken koppelen aan de praktische uitvoering van het ontwerpproces.
+    - Je kunt een bestaand technisch ontwerp lezen en interpreteren om de werking van een systeem te begrijpen.
 ---
+
 
 ::: section
-Om de competenties van een ICT-engineer (mbo-4) te vertalen naar effectieve leerdoelen voor een cursus, splitsen we de werkzaamheden, gedragingen en vereiste kennis op in concrete en meetbare doelen. Deze doelen richten zich op de vaardigheden en kennis die de student moet verwerven om de beschreven taken succesvol te kunnen uitvoeren.
+### {{ title }}
 
----
+Als ICT Engineer ben je de schakel tussen de gebruiker (de klant) en de techniek. De klant heeft een probleem of een wens, maar meestal geen technisch ontwerp:
 
-## Leerdoelen voor een Cursus ICT Engineer (MBO-4)
+#### Van wens naar oplossing
 
-### Deel 1: Communicatie en Analyse
-Deze leerdoelen richten zich op het begrijpen van de klantvraag en het in kaart brengen van de technische mogelijkheden.
+* **Behoeften Analyseren:** De ontwerpfase begint met het **achterhalen van de echte behoefte** (de *requirements*). Je leert door te vragen wat de klant écht nodig heeft en dit te vertalen naar concrete, functionele en niet-functionele eisen. Zonder goed ontwerp kun je de wens van de klant niet vertalen naar een werkend IT-systeem.
+* **Functioneel versus Technisch:** Het ontwerp splits je op in wat het systeem moet *doen* (**functioneel ontwerp**) en hoe je dat technisch gaat *bouwen* (**technisch ontwerp**). Dit zorgt voor helderheid in elke fase van het project.
 
-* De student kan **actief communiceren** met een klant of opdrachtgever om de **behoeften en wensen** met betrekking tot de informatievoorziening te achterhalen.
-* De student is in staat om **eisen en wensen te inventariseren** en deze te vertalen naar concrete **functionele en niet-functionele vereisten**.
-* De student kan **relevante aanvullende informatie verzamelen** bij de klant, leveranciers of andere stakeholders om de technische (on)mogelijkheden te beoordelen.
 
----
+#### De Basis voor Kwaliteit en Efficiëntie
 
-### Deel 2: Ontwerp en Oplossingsgerichtheid
-Deze leerdoelen focussen op het daadwerkelijke ontwerpproces en het bedenken van passende oplossingen.
+Ontwerpen zorgt ervoor dat je werk niet lukraak, maar **gestructureerd** en **efficiënt** verloopt.
 
-* De student kan **verschillende alternatieve oplossingen afwegen** op basis van de verzamelde vereisten en technische haalbaarheid.
-* De student kan een **eenvoudig ontwerp** van een informatievoorziening opstellen en deze duidelijk **visualiseren** en **documenteren**.
-* De student kan een gekozen oplossing gedetailleerd **beschrijven**, inclusief de benodigde **infrastructuur (hardware, software, devices)**, de **ontwikkelingsmethodiek** en **beveiligingsaspecten**.
-* De student kan de gekozen oplossing en het bijbehorende ontwerp **effectief presenteren en communiceren** aan de klant en andere betrokkenen.
+* **Fouten Voorkomen:** Fouten in de ontwerpfase zijn veel makkelijker en **goedkoper op te lossen** dan fouten die pas tijdens of na de implementatie aan het licht komen. Een goed ontwerp fungeert als een blauwdruk.
+* **Haalbaarheid en Afweging:** Je leert **verschillende oplossingen af te wegen** (bijvoorbeeld lokaal, cloud, of hybride) op basis van vereisten, budget en technische haalbaarheid. Dit maakt je een strategische partner, geen pure uitvoerder.
+* **Documentatie:** Het ontwerp is de **documentatie** voor jou en je collega's. Hierin staat precies beschreven hoe het systeem in elkaar zit (inclusief infrastructuur, beveiliging en methodiek), wat essentieel is voor toekomstig beheer, onderhoud en uitbreiding.
 
----
 
-### Deel 3: Methodieken en Praktische Vaardigheden
-Deze leerdoelen richten zich op het toepassen van gangbare werkwijzen en methodieken in de praktijk.
+#### Voorbereiding op de Toekomst
 
-* De student is in staat om een **gangbare ontwikkelingsmethodiek** zoals Agile, Scrum of de Watervalmethode toe te passen in een praktijkcasus.
-* De student kan de theorie van deze methodieken koppelen aan de **praktische uitvoering** van het ontwerpproces.
-* De student kan een **bestaand technisch ontwerp lezen en interpreteren** om de werking van een systeem te begrijpen.
+* **Projectmatig Werken:** Ontwerpen is de eerste stap in elke moderne ontwikkelmethodiek, zoals **Agile of Scrum**. Zonder een goed initiële (of iteratieve) planning en ontwerp, is een project gedoemd te mislukken.
+* **Doorgroeimogelijkheden:** Op MBO-niveau 4 leg je de basis voor doorgroei. Ontwerpen is een van de **belangrijkste competenties** op HBO-niveau (bijvoorbeeld bij Netwerk- en Systeembeheer). Door deze vaardigheid nu te ontwikkelen, verhoog je je **slagingskans** bij een eventuele vervolgstudie.
+* **Je Rol in de Praktijk:** Als ICT Engineer ben je bezig met het **ontwerpen, ontwikkelen, testen en beheren van IT-systemen**. De ontwerpfase is dus een officieel en cruciaal onderdeel van je toekomstige beroepsuitoefening.
 
-Door deze competenties te vertalen naar specifieke leerdoelen, wordt de opleiding gericht op **meetbare resultaten** en kan de voortgang van de student effectief worden beoordeeld.
+{% video "EMrS2KxjzGs" %}
+
 :::
 
+::: section
+
+### Leerdoelen
+
+{{ leerdoelen | leerdoelFilter }}
+
+:::

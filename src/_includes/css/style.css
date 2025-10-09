@@ -1,6 +1,7 @@
 :root {
     --dark-grey:#17171a;
     --light-grey:#f5f4f7;
+    --medium-grey:#afafaf;
     --orange: #f58220;
     --blue:#343368;
     --code-color:#dcf0ff;
@@ -316,6 +317,28 @@ table, th, td {
     padding:4px;
 }
 
+blockquote {
+    border-left: 4px solid var(--blue);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: var(--dark-grey);
+    background-color: var(--light-grey);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--medium-grey);
+    margin: 2rem 0 2rem 0;
+}
+
+img {
+    max-width:100%;
+    height: auto;
+    display:block;
+    margin:0 auto 0 auto;
+}
 
 @media (max-width:750px) {
 

@@ -1,5 +1,5 @@
 ---
-title: Gegevens opvragen
+title: Queries
 date: 2025-09-09
 ---
 

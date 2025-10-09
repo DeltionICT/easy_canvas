@@ -108,7 +108,7 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addShortcode("video", (yt_id, width=640, height=480, align="left") => {
         return `<p class="lti-embed" style="text-align: ${align}; margin-top:40px; margin-bottom:0px"><strong>
-        <iframe class="lti-embed" style="width:${width}px; height:${height}px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        <iframe class="lti-embed" style="width:100%; height:480px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen frameborder="0" height="auto"
                 src="https://www.youtube-nocookie.com/embed/${yt_id}">
             </iframe></strong></p>`

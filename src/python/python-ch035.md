@@ -1,43 +1,101 @@
 ---
-title: Berekeningen
-date: 2022-04-05
+title: Projecten
+date: 2025-10-08
 ---
 
-# {{ course-title }}
+::: section
+### {{ title }}
 
-{% video "Gke1mGBNIRc" %}
+Projecten zijn omvangrijker opdrachten, waarbij je meerdere technieken met elkaar moet laten samenwerken.
+:::
 
-## {{ title }}
-Zoals veel andere script- en programmeertalen kun je in python verbluffend goed rekenen. Je kunt natuurlijk optellen, aftrekken, vermenigvuldigen en delen maar er zijn nog een aantal bewerkingen die handig zijn zoals de modulus, machtsverheffen.
-Met de modulus bewerking (%) kun je bepalen of een getal deelbaar is door een ander getal. Als het niet deelbaar is de restwaarde de uitkomst
-> 5 % 3 = 2 want als je 5 door 3 deelt dan kan dat 1 keer en hou je 2 over  
-> 6 % 3 = 0 want als je 6 door 3 deelt dan kan dat 2 keer en hou je niks over  
-> 0.3 % 3 = 0.3 want als je 0.3 deelt door 3 dan kan dat 0 keer en hou je 0.3 over
-> 8.3 % 0.3 = 0.2 want 0.3 x 27 = 8.1 dus hou je 0.2 over. 
+::: section
+### De stembus
+Zoals je weet wordt er tijdens de verkiezingen in Nederland gebruik gemaakt van 'de stembus'. Al jarenlang wordt er geprobeerd om het stemmen te digitaliseren, maar helaas is dat tot op heden nog niet gelukt. Een nobele taak dus voor een nieuwe lichting IT-ers om hier verandering in aan te brengen.
 
-Machtsverheffen doe je met (**)
-> 2 ** 2 = 4 want 2 tot de macht 2 = 2 x 2 = 4  
-> 2 ** 3 = 8 want 2 tot de macht 3 = 2 x 2 x 2 = 8  
-> 5 ** 4 = 625 want 5 x 5 x 5 x 5 = 625  
+#### Projectgroep
+Als projectgroep van 3 personen ga je een opstelling maken met 3 laptops. Stemgerechtigden maken gebruik van jullie python-applicatie om hun stem uit te brengen op een van de verkiesbaar gestelde politici. Aan het einde van de stemdag kun je met de applicatie weergeven hoeveel stemmen de verschillende politici hebben gekregen.
 
-Delen is altijd tricky
-> 9 / 3 = 3  
-> 19 / 3 = 6.33333333 (float) 
-> 21 / 0 = ZeroDivisionError: division by zero 
+Zo kan het invoerscherm er uit zien:
 
-Als je een integer deelt door een andere integer dan kan de uitkomst een float zijn. Python kan niet door 0 delen dus zie een division by zero error op het scherm. Je kunt ook delen en altijd een integer als uitkomst hebben. Je gebruikt dan <code>//</code> ipv <code>/</code>
+> Maak hieronder een keuze?
+> 
+> #### Groenlinks
+> 1. Roelfs, A.H. (Anja) (v) Zwolle
+> 2. Pelman, P. (Patrick) (m) Zwolle
+> 3. Roetman-Visser, M. (Marloes) (v) 
+> 
+> #### ChristenUnie
+> 4. van de Belt, R.A. (Ruben) (m) Zwolle
+> 5. Rots, D.G. (Gerdien) (v) Zwolle
+> 6. de Boer, J.W. (Wietse) (m) Zwolle
 
-> 9 // 3 = 3  
-> 19 // 3 = 6  
-> 21 // 0 = ZeroDivisionError: integer division or modulo by zero
+* Het [complete overzicht](https://www.kiesraad.nl/) van beschikbare politieke partijen vind je op [kiesraad.nl](https://www.kiesraad.nl/). Er is een  lijst te vinden met alle kandidaten voor de komende tweede kamer verkiezingen. Maak een werkbare selectie (10 - 20 kandidaten kunnen kiezen is voldoende voor jouw applicatie).
 
-## Bewerkingen en prioriteiten
-Als je meer dan 2 waarden moet bewerken, dan moet je opletten in welke volgorde de berekening wordt uitgevoerd...
-> 24 / 4 - 3 = 3 en niet 24 (eest delen dan aftrekken)  
-> 8 + 16 // 4 = 12 en niet 8 (eerst delen dan optellen)  
+* De applicatie moet 'hufter-proof' zijn. Probeer errors op het scherm te vermijden.
+* De applicatie moet 'veilig' zijn. Dat is lastig, maar probeer te voorkomen dat mensen meerdere keren kunnen stemmen.
+* Er moet met 3 computers tegelijk gestemd kunnen worden.
+* Nadat er gestemd is kun je een overzicht genereren van alle politici en het aantal keer dat er op ze is gestemd. De lijst wordt aflopend gesorteerd op het aantal keer dat is gestemd.
 
-Je kunt prioriteit afdwingen door haakjes te gebruiken:
-> (8 + 16) // 4 = 6 en niet 12 (eerst haakjes dan delen)
+:::
 
-## Opdrachten
-De opdrachten bij dit hoofdstuk staan op...
+::: section
+### Warmred
+* Download de behoefte-analyse voor het [project Warmred](https://static.edutorial.nl/python/proefexamen_warmred.docx)
+* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven
+* [Voorbeeld stroomdiagram](https://static.edutorial.nl/python/python_stroomschema.pdf)
+* Gebruik [deze bestanden](https://static.edutorial.nl/python/apachelog_v2.zip) om een tool te maken volgens de beschrijving in de behoefte-analyse.
+* Hieronder zie je een voorbeeld van het keuzemenu dat de tool laat zien nadat de applicatie is opgestart.
+```csv
+===============================================================
+Maak een keuze
+0. Maak MySQL-tabel apache-log leeg
+1. Laadt het apache-log in mysql
+2. Overzicht van top 10 meest gebruikte browsers
+3. enz. enz.
+===============================================================
+Maak een keuze:
+```
+:::
+
+::: section
+### Flitspaal
+* Download de behoefte-analyse voor het [project flitspaal](https://static.edutorial.nl/python/proefexamen_flitspaal_v2.docx).
+* Download de (gedeeltelijke) applicatie. [Projectbestanden flitspaal](https://static.edutorial.nl/python/project_flits_v2.zip)
+* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
+* Pas opdracht.py aan, zodat de werking van de applicatie voldoet aan de opdracht
+* Hieronder zie je de uitwerking van het keuzescherm:
+
+```csv
+===============================================================
+Maak een keuze
+1. Tabellen leegmaken en nieuwe csv-bestanden inlezen
+2. Overzicht van de flitscameras en hun locatie
+3. Overzicht van de boetes op 50-kilometer wegen
+4. Overzicht van auto's waarvan het kenteken bestaat uit 1 letter, 3 cijfers en 2 letters (bijv. X-999-XX)
+5. Overzicht van overtredingen voor een bepaald kenteken
+6. De top 10 van camera's die de hoogste gemiddelde snelheidsoverschrijding hebben gemeten
+7. De top 10 van auto's die het meest geflitst zijn
+8. De top 10 van camera's die het meeste geflitst hebben
+9. De top 10 van kentekens met het hoogste bedrag aan boetes en het aantal keer dat ze geflitst zijn
+===============================================================
+Maak een keuze: 
+```
+:::
+
+::: section
+### Proefexamen
+
+#### Project Superduper
+
+* Download de behoefte-analyse voor het [project superduper](https://static.edutorial.nl/python/behoefte-analyse_proefexamen_superduper.docx).
+* Download de (gedeeltelijke) applicatie. [Projectbestanden superduper](https://static.edutorial.nl/python/superduper2.zip)
+* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
+* Pas opdracht.py aan, zodat de werking van de applicatie voldoet aan de opdracht
+
+{% video "videoseries?list=PLBtXOV0WuE_E9pWd45goHHqxGe2yemBoP" %}
+
+
+:::
+
+
