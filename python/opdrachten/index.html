@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <style>
+      @font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:bold;font-weight:700;src:url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:black;font-weight:900;src:url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:light;font-weight:300;src:url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:thin;font-weight:100;src:url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2")}code[class*=language-],pre[class*=language-]{color:#393a34;background-color:var(--light-grey);font-family:"IBM Plex Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L","Courier New",Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre>code[class*=language-]{font-size:1em}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#c1def1}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#c1def1}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border:1px solid #ddd;background-color:#fff}:not(pre)>code[class*=language-]{padding:.2em;padding-top:1px;padding-bottom:1px;background:#f8f8f8;border:1px solid #ddd}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:green;font-style:italic}.token.namespace{opacity:.7}.token.string{color:#a31515}.token.operator,.token.punctuation{color:#393a34}.token.boolean,.token.constant,.token.inserted,.token.number,.token.symbol,.token.url,.token.variable{color:#36acaa}.language-autohotkey .token.selector,.language-json .token.boolean,.language-json .token.number,.token.atrule,.token.attr-value,.token.keyword,code[class*=language-css]{color:#00f}.token.function{color:#393a34}.language-autohotkey .token.tag,.token.deleted{color:#9a050f}.language-autohotkey .token.keyword,.token.selector{color:#00009f}.token.important{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.language-json .token.property,.token.class-name{color:#2b91af}.token.selector,.token.tag{color:maroon}.token.attr-name,.token.entity,.token.property,.token.regex{color:red}.token.directive.tag .tag{background:#ff0;color:#393a34}.line-numbers.line-numbers .line-numbers-rows{border-right-color:#a5a5a5}.line-numbers .line-numbers-rows>span:before{color:#2b91af}.line-highlight.line-highlight{background:rgba(193,222,241,.2);background:-webkit-linear-gradient(left,rgba(193,222,241,.2) 70%,rgba(221,222,241,0));background:linear-gradient(to right,rgba(193,222,241,.2) 70%,rgba(221,222,241,0))}:root{--dark-grey:#17171a;--light-grey:#f5f4f7;--medium-grey:#afafaf;--orange:#f58220;--blue:#343368;--code-color:#dcf0ff;font-family:BuenosAires,sans-serif;font-weight:400;font-size:16px;line-height:1.9rem;color:var(--blue);scroll-behavior:smooth}body{margin:0;padding:0;background-color:var(--light-grey);font-size:16px;line-height:1.5rem;overflow:scroll}h1{font-size:2rem;font-weight:700;line-height:1rem;text-wrap:nowrap}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.1rem}h5{font-size:1rem}h1[id],h2[id],h3[id]{scroll-margin-top:300px}div#page_wrapper{max-width:1200px;margin:0 auto 0 auto;box-sizing:border-box}main{display:flex;flex-direction:row;margin:0 auto 0 auto;background-color:#fff;justify-content:space-between}div.section{display:none;width:100%;align-items:top}div#title{display:block}div#content{display:flex;flex-direction:column;padding:2rem 2rem 2rem 2rem;min-width:290px;width:100%}header{box-sizing:border-box;width:100%;height:60px;max-height:60px;position:sticky;top:0;z-index:100;color:#fff;padding:0 1rem 0 0;background-color:var(--blue)}header div#title h1{font-weight:700;font-size:1.5rem;width:100%}nav#top{max-width:1200px;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 0 auto;padding:0}nav#side{display:none}nav#top ul.hide{display:none}nav#side img,nav#top img{display:none;position:relative;top:20px;left:10px}nav#top ul{box-sizing:border-box;list-style-type:none;margin:0;padding:1rem 0 0 0;display:flex;flex-direction:row;justify-content:flex-end;text-align:right}nav#top ul li{box-sizing:border-box;padding:0}nav#side ul li a,nav#top ul li a{box-sizing:border-box;color:#fff;text-decoration:none;font-weight:700;text-wrap:nowrap;padding:0 0 .3rem 0;margin:0 .2rem 0 .8rem}nav#side ul li a.navlinks:visited,nav#top ul li a.navlinks:visited{color:#fff}nav#side ul li a.navlinks.active,nav#side ul li a.navlinks:hover,nav#top ul li a.navlinks.active,nav#top ul li a.navlinks:hover{border-bottom:#f58220 3px solid;padding-bottom:5px}.toc a.active,.toc a:hover{border-bottom:#f58220 1.5px solid;padding-bottom:1px}a.active{border-bottom:#f58220 2px solid}aside#inhoudsopgave{min-width:250px;flex:0 0 250px;background-color:var(--light-grey);padding:1rem;text-wrap:nowrap;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}aside#hiddeninhoudsopgave{display:none}aside#hiddeninhoudsopgave a.panel,aside#inhoudsopgave a.panel{display:inline-block;background-color:#fff;border-radius:.2rem;padding:0 .5rem 0 .5rem}aside#hiddeninhoudsopgave a{position:relative;top:1rem;left:1rem;padding:.2rem .5rem .2rem .5rem;margin-right:20px}div.toc ul{list-style-type:none;padding-left:0;line-height:2rem}div.toc ul li a{text-decoration:none;color:var(--dark-grey)}.green{background-color:#90ee90}:target{display:block}div.section:has(:target){display:block}div.show{display:block}div.hide{display:none}pre[class*=language-]{background-color:var(--light-grey);font-size:.9rem;overflow-x:auto;white-space:pre}pre[class*=language-] code[class*=language-]{display:block;overflow-x:auto;white-space:pre}code{background-color:var(--code-color);padding:.15rem .3rem;border-radius:.3rem;font-size:.9rem;width:100%}nav#top #hoogte-indicator{display:block;position:relative;top:10px;line-height:.2rem;height:10px;background-color:var(--dark-grey);color:#fff;font-size:.5rem;border-radius:.3rem;padding:.3rem .3rem .5rem .3rem}#panel-in,#panel-out{height:0;width:0}#panel-in img,#panel-out img{position:relative;padding:2px;width:10px;height:10px;top:5px;right:20px}#panel-in img{transform:rotate(180deg)}table,td,th{border-collapse:collapse;border:1px solid var(--dark-grey);padding:4px}blockquote{border-left:4px solid var(--blue);margin-left:0;margin-right:0;padding:.5rem 1rem .5rem 1rem;color:var(--dark-grey);background-color:var(--light-grey)}hr{border:0;height:1px;background:var(--medium-grey);margin:2rem 0 2rem 0}img{max-width:100%;height:auto;display:block;margin:0 auto 0 auto}@media (max-width:750px){nav#top{display:none}nav#side{max-width:300px;display:flex;flex-direction:column;justify-content:flex-start;margin:0;padding:0;background-color:var(--blue);position:absolute;top:0}nav#side img{display:block}nav#side ul{display:none;box-sizing:border-box;margin:0;padding:3rem 0 1rem 0;flex-direction:column;text-align:left;justify-content:flex-start}nav#side ul li{padding:.3rem 1rem .3rem 1rem}nav#side ul li a.navlinks{padding:.3rem .3rem .3rem .3rem;margin:0}}section#buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}section#buttons .button-container{position:relative;border-top:1rem solid var(--blue);min-width:200px;height:100px;background-color:var(--light-grey);border-radius:.3rem;box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px}section#buttons .button-container:hover{background-color:var(--blue)}section#buttons .button-container:hover div{color:#fff}section#buttons .button-container div{color:var(--blue);font-weight:700;position:absolute;bottom:1rem;left:1rem}section#buttons .button-container div::before{content:'';width:2rem;height:1.4rem;background-image:url('/_assets/right-arrow_f58220.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;vertical-align:middle}details{box-sizing:border-box;border-radius:1px;margin-bottom:1rem;display:block;outline:0;padding:0;text-align:left;transition:.4s;background-color:var(--light-grey);width:100%;padding:1rem 2rem 1rem 2rem;border-radius:.3rem;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}summary{font-weight:700;padding-left:38px;cursor:pointer;list-style:none;position:relative}summary a{color:var(--blue);text-decoration:none}summary::before{content:'';background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(90deg);background-size:contain;background-repeat:no-repeat;display:inline-block;width:20px;height:20px;vertical-align:middle;position:absolute;top:3px;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(270deg)}details p{font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}
+    </style>
+    <title>Python</title>
+</head>
+<body>
+    <header>     
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/python/uitleg/#uitleg">Uitleg</a></li>
+      
+          <li><a href="/easy_canvas/python/opdrachten/#opdrachten" class="active">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/python/projecten/#projecten">Projecten</a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/python/uitleg/#uitleg">Uitleg</a></li>
+      
+          <li><a href="/easy_canvas/python/opdrachten/#opdrachten" class="active">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/python/projecten/#projecten">Projecten</a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+
+        <div id="content">
+        <div class="section" id="title">
+            <h1>Python</h1>
+        </div>
+        <div class="section">
+<h3 id="opdrachten">Opdrachten</h3>
+<p>In dit onderdeel vind je verschillende opdrachten om te oefenen met Python.<br>
+Dit zijn relatief 'makkelijke' opdrachten. Dat wil zeggen: Als je iets voor het eerst doet is het natuurlijk moeilijk, maar met AI kun je de antwoorden makkelijk vinden. Toch is het de bedoeling dat je de opdrachten zo veel mogelijk zelf maakt. Gebruik AI alleen om iets uit te laten leggen.
+Het gaat er dus niet om dat je alle opdrachten 'af' moet hebben, het gaat er om dat je leert om zelf 'eenvoudige' python-programma's te maken en te begrijpen.</p>
+</div>
+<div class="section">
+<h3 id="variabelen">Variabelen</h3>
+<h4 id="opdracht-1">Opdracht 1</h4>
+<blockquote>
+<p>Stop onderstaande waarden als <code>list</code> in een variabele <code>my_list</code><br>
+Zorg ervoor dat de <code>my_list</code> wordt geprint op het scherm.</p>
+<p>13<br>
+&quot;wat een weertje&quot;<br>
+12.5<br>
+8</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'wat een weertje'</span><span class="token punctuation">,</span> <span class="token number">12.5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-2">Opdracht 2</h4>
+<blockquote>
+<p>Ken onderstaande waarden toe aan een variabele <code>my_tuple</code> van het type tuple.
+Zorg ervoor dat de tuple wordt geprint.</p>
+<p>11<br>
+&quot;Oh een tuple&quot;<br>
+13.5<br>
+8009</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_tuple<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token string">"Oh een tuple"</span><span class="token punctuation">,</span> <span class="token number">13.5</span><span class="token punctuation">,</span> <span class="token number">8009</span><span class="token punctuation">)</span></code></pre>
+<hr>
+<h4 id="opdracht-3">Opdracht 3</h4>
+<blockquote>
+<p>Ken onderstaande waarden toe aan een variabele <code>my_dict</code> van het type dictionary<br>
+Zorg ervoor dat de dictionary wordt geprint.</p>
+<p>naam = willem<br>
+achternaam = van de Broek<br>
+leeftijd = 23<br>
+favoriete kleur = blauw</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_dict<span class="token punctuation">)</span>
+<span class="token punctuation">{</span><span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"willem"</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">"van de Broek"</span><span class="token punctuation">,</span> <span class="token string">"leeftijd"</span><span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">"favoriete kleur"</span><span class="token punctuation">:</span> <span class="token string">"blauw"</span><span class="token punctuation">}</span></code></pre>
+<hr>
+</div>
+<div class="section">
+<h3 id="tekstfuncties">Tekstfuncties</h3>
+<h4 id="opdracht-4">Opdracht 4</h4>
+<blockquote>
+<p>Op <a href="https://www.w3schools.com/python/python_ref_string.asp">w3schools</a> vind je verschillende functies die je op tekst toe kan passen. Gebruik ze bij de volgende opdracht.</p>
+<ul>
+<li>
+<p>Maak gebruik van het bestand: opdr_1.py</p>
+</li>
+<li>
+<p>Pas de code aan van opdr_1.py</p>
+</li>
+<li>
+<p>Commit en push je code naar github</p>
+</li>
+<li>
+<p>Zorg dat de volgende zin op het scherm wordt getoond met de print-functie:
+O mamma mia, wat maak je toch heerlijke pizza's</p>
+</li>
+<li>
+<p>Ken de waarde 'Albert' toe aan de variabele <code>voornaam</code></p>
+</li>
+<li>
+<p>Ken de waarde 'Einstein' toe aan de variabele <code>achternaam</code></p>
+</li>
+<li>
+<p>Combineer beide variabelen in een printopdracht zodat onderstaande op het scherm wordt getoond:</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Albert Einstein zei ooit<span class="token punctuation">:</span> <span class="token string">'Als je niks fout doet, dan kun je ook niks leren!'</span></code></pre>
+<hr>
+<h4 id="opdracht-5">Opdracht 5</h4>
+<blockquote>
+<p>Print op het scherm hoevaak de letter &quot;t&quot; voorkomt in onderstaande tekst.<br>
+Maak gebruik van een python string-methode om dit te berekenen.<br>
+Je vind meer uitleg over string-methoden op <a href="https://www.w3schools.com/python/python_ref_string.asp">w3schools python string-methods</a></p>
+<p><code>my_string</code> = &quot;Tinus gaat op zijn tandem naar de hottentottententoonstelling&quot;</p>
+<p>Zorg ervoor dat de volgende zin op het scherm verschijnt:</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">De letter <span class="token string">"t"</span> komt 10x voor <span class="token keyword">in</span> my_string</code></pre>
+<hr>
+<h4 id="opdracht-6">Opdracht 6</h4>
+<blockquote>
+<p>Met onderstaande code kun je een mooie kerstboom op het scherm tonen
+Aan jou de taak om vijf bomen naast elkaar te tekenen.</p>
+<p>TIP: Maak gebruik van de mogelijkheid van python om met teksten een berekening uit te kunnen voeren</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"    *"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"   ***"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"  ******"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">" ********"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"***********"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"    ***"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"    ***"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"    ***"</span><span class="token punctuation">)</span></code></pre>
+</div>
+<div class="section">
+<h3 id="berekeningen">Berekeningen</h3>
+<h4 id="opdracht-7">Opdracht 7</h4>
+<blockquote>
+<p>Maak 3 variabelen met de namen van je beste vrienden en hun leeftijd:</p>
+<pre class="language-python"><code class="language-python">joe <span class="token operator">=</span> <span class="token number">23</span>
+bob <span class="token operator">=</span> <span class="token number">15</span>
+fred <span class="token operator">=</span> <span class="token number">22</span></code></pre>
+<p>Maak berekeningen en geef de volgende gegevens weer op het scherm.
+Laat python het rekenwerk doen en ga het niet zelf uitrekenen!</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Dit weten we over Joe<span class="token punctuation">,</span> Bob en Fred<span class="token punctuation">:</span>  
+De totale waarde van alle leeftijden bij elkaar opgeteld <span class="token operator">=</span> <span class="token number">60</span>  
+De gemiddelde leeftijd van deze Joe<span class="token punctuation">,</span> Bob en Fred <span class="token keyword">is</span><span class="token punctuation">:</span> <span class="token number">20</span></code></pre>
+<hr>
+<h4 id="opdracht-8">Opdracht 8</h4>
+<blockquote>
+<p>Zoek op internet op hoe je de temperatuur in Celcius naar Fahrenheit omrekent en andersom.</p>
+<p>Maak 2 variabelen c en f voor respectievelijk Celsius en Fahrenheit:
+Geef de variabelen onderstaande waarde en zorg ervoor dat je programma de bijbehorende output genereerd</p>
+<pre class="language-python"><code class="language-python">c <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">12</span>
+f <span class="token operator">=</span> <span class="token number">102</span></code></pre>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token operator">-</span><span class="token number">12</span> graden Celsius <span class="token keyword">is</span> gelijk aan <span class="token number">10.4</span> graden Fahrenheit  
+<span class="token number">102</span> graden Fahrenheit <span class="token keyword">is</span> gelijk aan <span class="token number">38.9</span> graden Celcius</code></pre>
+<blockquote>
+<pre class="language-python"><code class="language-python">c <span class="token operator">=</span> <span class="token number">62.2</span>
+f <span class="token operator">=</span> <span class="token number">96</span></code></pre>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token number">62.2</span> graden Celsius <span class="token keyword">is</span> gelijk aan <span class="token number">144</span> graden Fahrenheit  
+<span class="token number">96</span> graden Fahrenheit <span class="token keyword">is</span> gelijk aan <span class="token number">35.6</span> graden Celcius</code></pre>
+</div>
+<div class="section">
+<h3 id="dictionaries">Dictionaries</h3>
+<h4 id="opdracht-9">Opdracht 9</h4>
+<blockquote>
+<p>Schrijf een programma waarin je een list aanmaakt.</p>
+<ul>
+<li>Maak 4 dictionaries om gegevens van personen in op te slaan. Je mag zelf namen bedenken.</li>
+<li>Voorbeeld:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">{</span> <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">""</span> <span class="token punctuation">}</span></code></pre>
+<ul>
+<li>Voeg de 4 dictionaries toe aan de list. Maak hierbij gebruik van een list-methode!</li>
+<li>Print de volledige naam van de 2e persoon op het scherm door de juiste gegevens op de plek van de vraagtekens te zetten.</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>lijst<span class="token punctuation">[</span>?<span class="token punctuation">]</span><span class="token punctuation">[</span>?<span class="token punctuation">]</span><span class="token punctuation">,</span> lijst<span class="token punctuation">[</span>?<span class="token punctuation">]</span><span class="token punctuation">[</span>?<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+</blockquote>
+<hr>
+<h4 id="opdracht-10">Opdracht 10</h4>
+<blockquote>
+<p>Maak een dictionary met een aantal grote rivieren en de landen waar ze doorheen stromen<br>
+Bij deze opdracht heb je ook een lijst nodig met de landen waar de rivieren door stromen.
+Die lijst kun je zo maken:</p>
+<pre class="language-python"><code class="language-python">rivier_info <span class="token operator">=</span> <span class="token punctuation">{</span> 
+    <span class="token string">"rijn"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"nederland"</span><span class="token punctuation">,</span> <span class="token string">"duitsland"</span><span class="token punctuation">,</span> <span class="token string">"Frankrijk"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token string">"maas"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"nederland"</span><span class="token punctuation">,</span> <span class="token string">"belgië"</span><span class="token punctuation">,</span> <span class="token string">"duitsland"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token string">"nijl"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"egypte"</span><span class="token punctuation">,</span> <span class="token string">"soedan"</span><span class="token punctuation">,</span> <span class="token string">"oeganda"</span><span class="token punctuation">]</span> 
+<span class="token punctuation">}</span>
+
+rivieren <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>rivier_info<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+<span class="token comment"># rivieren is nu een list met alleen de riviernamen: ['rijn', 'maas', 'nijl']</span>
+</code></pre>
+<ul>
+<li>Print de naam van de 1e rivier</li>
+<li>Print het 2e land waar de 1e rivier doorheen stroomt</li>
+<li>Zowel land als rivier beginnen met een hoofdletter, gebruik hiervoor een tekstfunctie.</li>
+<li>Gebruik bij alle opdrachten deze code rivieren[?]. Vul in wat er op de plek van het vraagteken moet komen.</li>
+<li>Gebruik ook deze code rivier_info[?][?]. Vul in wat er op de plek van de vraaktekens moet komen.</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">De rivier Rijn stroomt onder andere door Duitsland</code></pre>
+<blockquote>
+<ul>
+<li>Print de naam van de 2e rivier</li>
+<li>Print het 1e land waar de 1e rivier doorheen stroomt</li>
+<li>Zowel land als rivier beginnen met een hoofdletter</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">De rivier Maas stroomt onder andere door Nederland</code></pre>
+<blockquote>
+<p>Print de naam van de 3e rivier<br>
+Print het 3e land waar de 3e rivier doorheen stroomt
+Zowel land als rivier beginnen met een hoofdletter</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">De rivier Nijl stroomt onder andere door Oeganda</code></pre>
+</div>
+<div class="section">
+<h3 id="gebruikersinput">Gebruikersinput</h3>
+<h4 id="opdracht-11">Opdracht 11</h4>
+<blockquote>
+<p>Schrijf een programma dat twee input variabelen accepteert.</p>
+<ul>
+<li>De variabelen stellen twee zijden van een rechthoekig driehoek voor.</li>
+<li>Bereken de lengte van de 3e zijde door gebruik te maken van de stelling van pythagoras. (effe googlen!)</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Geef de lengte van de eerste zijde  
+<span class="token number">4</span>  
+Geef de lengte van de tweede zijde  
+<span class="token number">3</span>   
+De lengte van de schuine zijde <span class="token keyword">is</span><span class="token punctuation">:</span> <span class="token number">5</span></code></pre>
+<pre class="language-python"><code class="language-python">Geef de lengte van de eerste zijde  
+<span class="token number">12</span> 
+Geef de lengte van de tweede zijde  
+<span class="token number">9</span>   
+De lengte van de schuine zijde <span class="token keyword">is</span><span class="token punctuation">:</span> <span class="token number">15</span></code></pre>
+<pre class="language-python"><code class="language-python">Geef de lengte van de eerste zijde  
+<span class="token number">11</span> 
+Geef de lengte van de tweede zijde  
+<span class="token number">9</span>  
+De lengte van de schuine zijde <span class="token keyword">is</span><span class="token punctuation">:</span> <span class="token number">14.21267040355189</span></code></pre>
+<hr>
+<h4 id="opdracht-12">Opdracht 12</h4>
+<blockquote>
+<ul>
+<li>Je gaat uit eten met Paul, Kees, Marie en Hilda.</li>
+<li>Je moet dit aan het restaurant doorgeven dus schrijf je een handig programma dat een lijstje gasten maakt. Maak zoveel mogelijk gebruik van <a href="https://www.w3schools.com/python/python_ref_list.asp">list-methods</a></li>
+<li>Voeg jezelf ook toe aan de lijst en print de lijst op het scherm:</li>
+</ul>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">"Jij"</span><span class="token punctuation">,</span> <span class="token string">"Paul"</span><span class="token punctuation">,</span> <span class="token string">"Kees"</span><span class="token punctuation">,</span> <span class="token string">"Marie"</span><span class="token punctuation">,</span> <span class="token string">"Hilda"</span><span class="token punctuation">]</span></code></pre>
+<blockquote>
+<p>Nou belt Marie dat ze niet meer meegaat.
+Zorg ervoor dat Marie uit de lijst wordt gehaald.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">"Jij"</span><span class="token punctuation">,</span> <span class="token string">"Paul"</span><span class="token punctuation">,</span> <span class="token string">"Kees"</span><span class="token punctuation">,</span> <span class="token string">"Hilda"</span><span class="token punctuation">]</span></code></pre>
+<blockquote>
+<p>Even later belt George, hij wil ook mee. George wil naast Kees zitten!
+Zorg ervoor dat George naast Kees wordt toegevoegd.</p>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">"Jij"</span><span class="token punctuation">,</span> <span class="token string">"Paul"</span><span class="token punctuation">,</span> <span class="token string">"Kees"</span><span class="token punctuation">,</span> <span class="token string">"George"</span><span class="token punctuation">,</span> <span class="token string">"Hilda"</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-13">Opdracht 13</h4>
+<blockquote>
+<ul>
+<li>Gebruik de input functie om een lijst met minimaal 5 objecten te maken. Dat mag van alles zijn: games, voertuigen, motoren, snoep, whatever.</li>
+<li>Print de lijst gesorteerd in omgekeerde volgorde, dus woorden die met een z beginnen staan vooraan.</li>
+</ul>
+<p>Stel je vraagt de gebruiker om steden in te vullen:<br>
+Amsterdam, Zwolle, Dronten, Haarlem, Zaanstad</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">"Zwolle"</span><span class="token punctuation">,</span> <span class="token string">"Zaanstad"</span><span class="token punctuation">,</span> <span class="token string">"Haarlem"</span><span class="token punctuation">,</span> <span class="token string">"Dronten"</span><span class="token punctuation">,</span> <span class="token string">"Amsterdam"</span><span class="token punctuation">]</span></code></pre>
+</div>
+<div class="section">
+<h3 id="loops">Loops</h3>
+<h4 id="opdracht-14">Opdracht 14</h4>
+<blockquote>
+<p>Maak een loop waarin je een lijst vult met de getallen van 1 t/m 10.
+Print de lijst op het scherm</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-15">Opdracht 15</h4>
+<blockquote>
+<ul>
+<li>Maak gebruik van een for-loop en een range-functie om de volgende list op het scherm te tonen:</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-16">Opdracht 16</h4>
+<blockquote>
+<ul>
+<li>Maak een for-loop met een range-functie die loopt van 3 tot 81 en iedere keer 3 optelt bij het vorige getal.</li>
+<li>Doe alle getallen uit de range in het kwadraat en deel ze vervolgens door 3</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">3.0</span><span class="token punctuation">,</span> <span class="token number">12.0</span><span class="token punctuation">,</span> <span class="token number">27.0</span><span class="token punctuation">,</span> <span class="token number">48.0</span><span class="token punctuation">,</span> <span class="token number">75.0</span><span class="token punctuation">,</span> <span class="token number">108.0</span><span class="token punctuation">,</span> <span class="token number">147.0</span><span class="token punctuation">,</span> <span class="token number">192.0</span><span class="token punctuation">,</span> <span class="token number">243.0</span><span class="token punctuation">,</span> <span class="token number">300.0</span><span class="token punctuation">,</span> <span class="token number">363.0</span><span class="token punctuation">,</span> <span class="token number">432.0</span><span class="token punctuation">,</span> <span class="token number">507.0</span><span class="token punctuation">,</span> <span class="token number">588.0</span><span class="token punctuation">,</span> <span class="token number">675.0</span><span class="token punctuation">,</span> <span class="token number">768.0</span><span class="token punctuation">,</span> <span class="token number">867.0</span><span class="token punctuation">,</span> <span class="token number">972.0</span><span class="token punctuation">,</span> <span class="token number">1083.0</span><span class="token punctuation">,</span> <span class="token number">1200.0</span><span class="token punctuation">,</span> <span class="token number">1323.0</span><span class="token punctuation">,</span> <span class="token number">1452.0</span><span class="token punctuation">,</span> <span class="token number">1587.0</span><span class="token punctuation">,</span> <span class="token number">1728.0</span><span class="token punctuation">,</span> <span class="token number">1875.0</span><span class="token punctuation">,</span> <span class="token number">2028.0</span><span class="token punctuation">]</span></code></pre>
+</div>
+<div class="section">
+<h3 id="listfuncties">Listfuncties</h3>
+<h4 id="opdracht-17">Opdracht 17</h4>
+<blockquote>
+<p>Gebruik precies twee regels code om de volgende opdracht te maken.</p>
+<ul>
+<li>Maak een comprehensive list waarbij de y waarde voor punten op een lijn worden berekend.</li>
+<li>De formule voor de lijn is: y = 4x + 7</li>
+<li>Bereken met een range van 1 tot 10 wat de uitkomst is voor y</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">39</span><span class="token punctuation">,</span> <span class="token number">43</span><span class="token punctuation">]</span>
+</code></pre>
+<hr>
+<h4 id="opdracht-18">Opdracht 18</h4>
+<blockquote>
+<p>Maak een comprehensive list.</p>
+<ul>
+<li>Gebruik een range met getallen van 1 tot 20</li>
+<li>Vermenigvuldig alle getallen met 3</li>
+<li>print alleen de eerste 6  getallen van de list.</li>
+<li>Dit kan weer met maximaal 2 regels code!!</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-19">Opdracht 19</h4>
+<blockquote>
+<p>In deze opdracht ga je list-methoden gebruiken om een lijst pizza's aan te passen en te printen.</p>
+<ul>
+<li>Gebruik deze lijst met pizza's:</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'margharita'</span><span class="token punctuation">,</span> <span class="token string">'calzone'</span><span class="token punctuation">,</span> <span class="token string">'verdi'</span><span class="token punctuation">,</span> <span class="token string">'olivio'</span><span class="token punctuation">,</span> <span class="token string">'quattro stagioni'</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Sorteer de lijst op alfabet</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'calzone'</span><span class="token punctuation">,</span> <span class="token string">'margharita'</span><span class="token punctuation">,</span> <span class="token string">'olivio'</span><span class="token punctuation">,</span> <span class="token string">'quattro stagioni'</span><span class="token punctuation">,</span> <span class="token string">'verdi'</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Voeg naar eigen smaak nog een pizza toe</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'calzone'</span><span class="token punctuation">,</span> <span class="token string">'margharita'</span><span class="token punctuation">,</span> <span class="token string">'olivio'</span><span class="token punctuation">,</span> <span class="token string">'quattro stagioni'</span><span class="token punctuation">,</span> <span class="token string">'verdi'</span><span class="token punctuation">,</span> <span class="token string">'yo-favorito'</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Verwijder de pizza die je het minst lekker vindt</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'calzone'</span><span class="token punctuation">,</span> <span class="token string">'margharita'</span><span class="token punctuation">,</span> <span class="token string">'quattro stagioni'</span><span class="token punctuation">,</span> <span class="token string">'verdi'</span><span class="token punctuation">,</span> <span class="token string">'yo-favorito'</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Print de eerste 3 pizza's uit de lijst</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'calzone'</span><span class="token punctuation">,</span> <span class="token string">'margharita'</span><span class="token punctuation">,</span> <span class="token string">'quattro stagioni'</span><span class="token punctuation">]</span>  </code></pre>
+<ul>
+<li>Print alleen de middelste pizza uit de lijst</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'quattro stagioni'</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Print de laatste 3 pizza's uit de lijst</li>
+</ul>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token string">'quattro stagioni'</span><span class="token punctuation">,</span> <span class="token string">'verdi'</span><span class="token punctuation">,</span> <span class="token string">'yo-favorito'</span><span class="token punctuation">]</span></code></pre>
+</blockquote>
+</div>
+<div class="section">
+<h3 id="condities">Condities</h3>
+<h4 id="opdracht-20">Opdracht 20</h4>
+<blockquote>
+<ul>
+<li>Maak een loop waarin je een lijst vult met de getallen van 1 t/m 10.</li>
+<li>Print alleen de getallen die groter zijn dan 4 op het scherm.</li>
+<li>Gebruik hiervoor de loop en het if-statement.</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span></code></pre>
+<hr>
+<h4 id="opdracht-21">Opdracht 21</h4>
+<blockquote>
+<ul>
+<li>Maak gebruik van een for-loop en een if-statement om de getallen die deelbaar zijn door 3 op het scherm te tonen</li>
+<li>Gebruik deze getallen [43948, 878768, 38768, 87555, 765765]</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="opdracht-22">Opdracht 22</h4>
+<blockquote>
+<p>Bekijk de volgende dictionaries:</p>
+<pre class="language-python"><code class="language-python">normale_toegangsprijs <span class="token operator">=</span> <span class="token number">12.50</span>
+kortings_percentages <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"baby"</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"kinderen"</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"volwassenen"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"ouderen"</span><span class="token punctuation">:</span> <span class="token number">30</span> <span class="token punctuation">}</span>
+leeftijd <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"baby"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"kinderen"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"volwassenen"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"ouderen"</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">150</span><span class="token punctuation">)</span> <span class="token punctuation">}</span></code></pre>
+<p>Voor een attractiepark moet de toegangsprijs voor bezoekers worden berekend.</p>
+<ul>
+<li>Schrijf een programma dat gebruik maakt van de gegeven variabelen en een input functie waarmee de leeftijd van een bezoeker wordt gevraagd.</li>
+</ul>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Geef uw leeftijd <span class="token keyword">in</span> aantal jaar  
+<span class="token number">3</span>  
+U behoort tot de groep kinderen  
+U krijgt <span class="token number">50</span><span class="token operator">%</span> korting  
+U betaalt daarom <span class="token number">6.25</span>  
+
+Geef uw leeftijd <span class="token keyword">in</span> aantal jaar   
+<span class="token number">23</span>  
+U behoort tot de groep volwassenen  
+U krijgt <span class="token number">0</span><span class="token operator">%</span> korting  
+U betaalt daarom <span class="token number">12.5</span>  
+
+Geef uw leeftijd <span class="token keyword">in</span> aantal jaar   
+<span class="token number">89</span>  
+U behoort tot de groep ouderen  
+U krijgt <span class="token number">30</span><span class="token operator">%</span> korting  
+U betaalt daarom <span class="token number">8.75</span>  
+</code></pre>
+<hr>
+<h4 id="opdracht-23">Opdracht 23</h4>
+<blockquote>
+<p>Je wilt extra topping voor op je pizza bestellen.</p>
+<ul>
+<li>Maak een input functie waarmee je kunt kiezen uit een lijst met toppings.</li>
+<li>Bouw de lijst op met behulp van de variabele toppings</li>
+</ul>
+<pre class="language-python"><code class="language-python">toppings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">"olijven"</span><span class="token punctuation">,</span> <span class="token number">4.50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">"kaas"</span><span class="token punctuation">,</span> <span class="token number">3.50</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">"salami"</span><span class="token punctuation">,</span> <span class="token number">3.00</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">"pepperoni"</span><span class="token punctuation">,</span> <span class="token number">2.00</span><span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">"ansjovis"</span><span class="token punctuation">,</span> <span class="token number">2.50</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+<p>Als je een keuze hebt gemaakt krijg je te zien wat je hebt gekozen en de prijs die je moet betalen.</p>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Maak een keuze uit onze toppings<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'olijven'</span><span class="token punctuation">,</span> <span class="token string">'kaas'</span><span class="token punctuation">,</span> <span class="token string">'salami'</span><span class="token punctuation">,</span> <span class="token string">'pepperoni'</span><span class="token punctuation">,</span> <span class="token string">'ansjovis'</span><span class="token punctuation">]</span>   
+salami  
+U heeft salami besteld<span class="token punctuation">.</span> Dat kost <span class="token number">3.0</span>
+
+Maak een keuze uit onze toppings<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'olijven'</span><span class="token punctuation">,</span> <span class="token string">'kaas'</span><span class="token punctuation">,</span> <span class="token string">'salami'</span><span class="token punctuation">,</span> <span class="token string">'pepperoni'</span><span class="token punctuation">,</span> <span class="token string">'ansjovis'</span><span class="token punctuation">]</span>  
+sdfjsdf  
+Uw keuze zit niet <span class="token keyword">in</span> ons assortiment</code></pre>
+</div>
+<div class="section">
+<h3 id="tekstbestanden">Tekstbestanden</h3>
+<h4 id="opdracht-24">Opdracht 24</h4>
+<blockquote>
+<p>In deze opdracht ga je een korte enquete maken.</p>
+<ul>
+<li>Je hebt 3 vragen waar je graag antwoord op wil hebben.</li>
+<li>Dit zijn ze:
+<ul>
+<li>Wat vind je van de huidige regering?</li>
+<li>Wat vind je van de Python-lessen tot nu toe?</li>
+<li>Wat vind jij de mooiste stad van Nederland?</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>Als de 3 vragen zijn beantwoord worden de resultaten opgeslagen in een tekstbestand.</p>
+<hr>
+<h4 id="opdracht-25">Opdracht 25</h4>
+<blockquote>
+<p>In deze opdracht maak je het spel &quot;Raad een nummertje&quot;</p>
+<ul>
+<li>Je programma verzint een random getal tussen de 1 en 100.</li>
+<li>De gebruiker voert een getal in</li>
+<li>Het programma antwoord met 'hoger' of 'lager' totdat de gebruiker het juiste getal heeft geraden!</li>
+<li>De uitvoer van het programma geeft weer wat het te raden getal is</li>
+<li>Het programma geeft het aantal keer dat de gebruiker moest raden weer.</li>
+</ul>
+</blockquote>
+<p><strong>Output:</strong></p>
+<pre class="language-python"><code class="language-python">Raad mijn geheime getal   
+<span class="token number">50</span>  
+hoger  
+Raad mijn geheime getal   
+<span class="token number">75</span>  
+Je hebt het getal geraden het <span class="token keyword">is</span> <span class="token number">75</span>!  
+Je hebt het <span class="token keyword">in</span> <span class="token number">2</span> keer gedaan</code></pre>
+<hr>
+<h4 id="opdracht-26">Opdracht 26</h4>
+<blockquote>
+<p>In deze opdracht ga je een input-functie gebruiken om de feestgangers te bevragen.</p>
+<ul>
+<li>Zet de vragen in een lijst (type list)</li>
+<li>Geef de vragen genummerd weer op het scherm</li>
+<li>De voornaam, achternaam, eten en drank van iedere feestganger sla je op in een dictionary</li>
+<li>De antwoorden worden opgeslagen in een textbestand.</li>
+</ul>
+<p><strong>Uitvoer op het scherm:</strong></p>
+<ol>
+<li>Wat is je voornaam?<br>
+Bertus</li>
+<li>Wat is je achternaam?<br>
+Stijgerpijp</li>
+<li>Wat neem je mee aan drank?<br>
+Bier</li>
+<li>Wat neem je mee om te eten?<br>
+Patat</li>
+</ol>
+<p>Bedankt voor het invullen!<br>
+See you at the party.</p>
+</blockquote>
+<p><strong>Inhoud van tekstbestand</strong></p>
+<pre class="language-python"><code class="language-python">  
+voornaam<span class="token punctuation">:</span> Bertus  
+achternaam<span class="token punctuation">:</span> Stijgerpijp  
+drank<span class="token punctuation">:</span> Bier  
+eten<span class="token punctuation">:</span> Patat  
+
+voornaam<span class="token punctuation">:</span> Pieter  
+achternaam<span class="token punctuation">:</span> Boersma  
+drank<span class="token punctuation">:</span> Cognac  
+eten<span class="token punctuation">:</span> Lasagna  
+</code></pre>
+</div>
+<div class="section">
+<h3 id="functies">Functies</h3>
+<h4 id="opdracht-27">Opdracht 27</h4>
+<blockquote>
+<p>Schrijf een functie met de titel write_to_file.
+De functie accepteert 2 argumenten:</p>
+<ol>
+<li>de naam van het bestand</li>
+<li>de tekst die moet worden weggeschreven.</li>
+</ol>
+<p>Als het bestand al bestaat moet de tekst worden toegevoegd aan de inhoud.</p>
+</blockquote>
+<p><strong>Output:</strong></p>
+<pre class="language-python"><code class="language-python">my_tekst <span class="token operator">=</span> <span class="token string">"Schrijf dit maar even in een bestandje"</span>
+my_file <span class="token operator">=</span> <span class="token string">"test.txt"</span>
+write_to_file<span class="token punctuation">(</span>my_file<span class="token punctuation">,</span> my_tekst<span class="token punctuation">)</span></code></pre>
+<hr>
+<h4 id="opdracht-28">Opdracht 28</h4>
+<blockquote>
+<p>Schrijf 2 functies</p>
+<ul>
+<li>De eerste functie berekent het opgegeven aantal kilometers om naar miles.</li>
+<li>De tweede funtie doet het juist andersom, die berekent miles om naar kilometers.</li>
+<li>1 mile = 1.609344 km.</li>
+</ul>
+<p>De functies moet je op de volgende manier kunnen aanroepen:</p>
+<pre class="language-python"><code class="language-python">kilometers <span class="token operator">=</span> <span class="token number">1223</span>
+miles <span class="token number">867</span>
+miles <span class="token operator">=</span> kilometers_naar_miles<span class="token punctuation">(</span>kilometers<span class="token punctuation">)</span>
+km <span class="token operator">=</span> miles_naar_kilometers<span class="token punctuation">(</span>miles<span class="token punctuation">)</span></code></pre>
+</blockquote>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token number">1223</span> kilometers <span class="token operator">=</span> <span class="token number">759.9369681062594</span> miles  
+<span class="token number">867</span> miles <span class="token operator">=</span> <span class="token number">1395.301248</span> kilometers</code></pre>
+<hr>
+<h4 id="opdracht-29">Opdracht 29</h4>
+<blockquote>
+<p>Schrijf 2 functies die het volume uitrekenen.</p>
+<ul>
+<li>De eerste functie berekent de inhoud van een kubus.</li>
+<li>Alle zijden van de kubus zijn even lang.</li>
+<li><a href="https://nl.wikibooks.org/wiki/Wiskunde/Volume">Zo bereken je het volume</a></li>
+<li>De functie moet je op de volgende manier kunnen aanroepen:</li>
+</ul>
+<pre class="language-python"><code class="language-python">volume <span class="token operator">=</span> kubus_vol<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span></code></pre>
+<p>Output:
+De inhoud van deze kubus is: 125</p>
+<p>De tweede functie berekent het volume van een bol.</p>
+<ul>
+<li><a href="https://nl.wikibooks.org/wiki/Wiskunde/Volume">Zo bereken je het volume</a></li>
+<li>Je hebt in ieder geval het getal pi nodig.</li>
+<li>Python heeft een eigen nauwkeurige versie van het getal pi namelijk math.pi</li>
+</ul>
+<pre class="language-python"><code class="language-python">volume <span class="token operator">=</span> bol_vol<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span></code></pre>
+<p>Output:
+De inhoud van deze bol is: 268.082573106329</p>
+</blockquote>
+<hr>
+<h4 id="opdracht-30">Opdracht 30</h4>
+<blockquote>
+<p>Schrijf een functie die een lijst met dictionaries accepteert.
+Iedere dictionary bestaat uit 3 elementen:</p>
+<ul>
+<li>voornaam</li>
+<li>tussenvoegsel</li>
+<li>achternaam</li>
+</ul>
+</blockquote>
+<p><strong>Code</strong></p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">volledige_naam</span><span class="token punctuation">(</span>lijst_met_namen<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># hier komt jouw code</span>
+    <span class="token comment"># LET OP: Er mogen geen dubbele spaties zitten tussen de voor- en achternaam!!</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+namen <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">"Willem"</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">"van"</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">"Dijk"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">"Klaas"</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">"Wopstra"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">"Miep"</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">"van der"</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">"Plas"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">"Carla"</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">"Hoogvliet"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+volledige_naam<span class="token punctuation">(</span>namen<span class="token punctuation">)</span></code></pre>
+<p><strong>Output</strong></p>
+<pre class="language-python"><code class="language-python">Willem van Dijk  
+Klaas Wopstra  
+Miep van der Plas  
+Carla Hoogvliet  </code></pre>
+</div>
+<div class="section">
+<h3 id="modules">Modules</h3>
+<h4 id="opdracht-31">Opdracht 31</h4>
+<blockquote>
+<ul>
+<li>Gebruik de code uit het hoofdstuk over <code>modules</code>.</li>
+<li>Maak hiermee zelf een eigen module en importeer je module in je programma-script.</li>
+<li>Zorg ervoor dat je bestandsstructuur er zo uit komt te zien..</li>
+</ul>
+<pre class="language-python"><code class="language-python">programma
+  <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> opdr_1<span class="token punctuation">.</span>py
+  <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> my_modules <span class="token comment"># Je mag voor deze map ook zelf een naam verzinnen</span>
+        <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> csv<span class="token punctuation">.</span>py</code></pre>
+<p>Zorg dat je het programma werkend krijgt zoals beschreven in het hoofdstuk <code>modules</code></p>
+</blockquote>
+<hr>
+<h4 id="opdracht-32">Opdracht 32</h4>
+<blockquote>
+<p>Gebruik de code uit het hoofdstuk over <code>modules</code>
+Je gaat de bestaande functionaliteit van het programma uitbreiden</p>
+<ul>
+<li>Je kunt de lijst filteren op basis van beginletters</li>
+<li>Maak de functie <code>filter(persoon, filterveld, filter)</code></li>
+</ul>
+</blockquote>
+<pre class="language-python"><code class="language-python"><span class="token builtin">filter</span><span class="token punctuation">(</span>persoon<span class="token punctuation">,</span> <span class="token string">"voornaam"</span><span class="token punctuation">,</span> <span class="token string">"ja"</span><span class="token punctuation">)</span>
+
+Jan Van Der Vliet  
+Jan Jaap Siewers  </code></pre>
+<pre class="language-python"><code class="language-python"><span class="token builtin">filter</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> <span class="token string">"voornaam"</span><span class="token punctuation">,</span> <span class="token string">"Pie"</span><span class="token punctuation">)</span>
+
+Piet De Vries </code></pre>
+<pre class="language-python"><code class="language-python"><span class="token builtin">filter</span><span class="token punctuation">(</span>person<span class="token punctuation">,</span> <span class="token string">"plaats"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">)</span>
+
+Griet Van Der Pol  
+Jan Jaap Siewers </code></pre>
+</div>
+
+        
+        </div>
+        <aside id="inhoudsopgave">
+            <span><b>Inhoudsopgave</b></span>
+            <div class="toc">
+        <ul><li><a href="#opdrachten">Opdrachten</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#tekstfuncties">Tekstfuncties</a></li><li><a href="#berekeningen">Berekeningen</a></li><li><a href="#dictionaries">Dictionaries</a></li><li><a href="#gebruikersinput">Gebruikersinput</a></li><li><a href="#loops">Loops</a></li><li><a href="#listfuncties">Listfuncties</a></li><li><a href="#condities">Condities</a></li><li><a href="#tekstbestanden">Tekstbestanden</a></li><li><a href="#functies">Functies</a></li><li><a href="#modules">Modules</a></li></ul>
+      </div>        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
+ 
+   </div>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
+    <script>
+     function styleActiveLink(){if(!window.location.hash)return void console.log("Geen hashtag aanwezig");const e=window.location.hash;console.log("Hash is veranderd:",e);let o=document.querySelector('a[href="'+e+'"]'),n=document.querySelectorAll(".toc a");for(let e=0;e<n.length;e++)n[e].classList.remove("active");o.classList.add("active"),console.log("Actieve link:",o)}function handleHashChange(e){setTimeout(function(){const e=document.querySelector(window.location.hash);if(e){console.log("Positie van het doel-element:",e.offsetTop);const o=0;console.log("Nieuwe scrollpositie:",o),window.scrollTo({top:o,behavior:"smooth"})}},100)}function hidePanel(){console.log("hidePanel");const e=document.getElementById("panel-in"),o=document.getElementById("panel-out"),n=document.getElementById("inhoudsopgave");o.style.display="none",e.style.display="block",n.style.display="none"}function showPanel(){console.log("showPanel");const e=document.getElementById("inhoudsopgave"),o=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",o.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),console.log("De DOM is volledig geladen en geparsed")}),(inhoud=document.querySelector("#inhoudsopgave .toc ul li"))&&inhoud.addEventListener("click",function(e){if(console.log("Inhoudsopgave - Click event detected"),!window.location.hash)return void console.log("Inhoudsopgave - Geen hashtag aanwezig");const o=window.location.hash;console.log("Inhoudsopgave - hashtag:",o)}),window.addEventListener("hashchange",styleActiveLink);
+    </script>
+    </body> 
+</html>

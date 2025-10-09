@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <style>
+      @font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:bold;font-weight:700;src:url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:black;font-weight:900;src:url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:light;font-weight:300;src:url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:thin;font-weight:100;src:url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2")}code[class*=language-],pre[class*=language-]{color:#393a34;background-color:var(--light-grey);font-family:"IBM Plex Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L","Courier New",Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre>code[class*=language-]{font-size:1em}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#c1def1}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#c1def1}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border:1px solid #ddd;background-color:#fff}:not(pre)>code[class*=language-]{padding:.2em;padding-top:1px;padding-bottom:1px;background:#f8f8f8;border:1px solid #ddd}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:green;font-style:italic}.token.namespace{opacity:.7}.token.string{color:#a31515}.token.operator,.token.punctuation{color:#393a34}.token.boolean,.token.constant,.token.inserted,.token.number,.token.symbol,.token.url,.token.variable{color:#36acaa}.language-autohotkey .token.selector,.language-json .token.boolean,.language-json .token.number,.token.atrule,.token.attr-value,.token.keyword,code[class*=language-css]{color:#00f}.token.function{color:#393a34}.language-autohotkey .token.tag,.token.deleted{color:#9a050f}.language-autohotkey .token.keyword,.token.selector{color:#00009f}.token.important{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.language-json .token.property,.token.class-name{color:#2b91af}.token.selector,.token.tag{color:maroon}.token.attr-name,.token.entity,.token.property,.token.regex{color:red}.token.directive.tag .tag{background:#ff0;color:#393a34}.line-numbers.line-numbers .line-numbers-rows{border-right-color:#a5a5a5}.line-numbers .line-numbers-rows>span:before{color:#2b91af}.line-highlight.line-highlight{background:rgba(193,222,241,.2);background:-webkit-linear-gradient(left,rgba(193,222,241,.2) 70%,rgba(221,222,241,0));background:linear-gradient(to right,rgba(193,222,241,.2) 70%,rgba(221,222,241,0))}:root{--dark-grey:#17171a;--light-grey:#f5f4f7;--medium-grey:#afafaf;--orange:#f58220;--blue:#343368;--code-color:#dcf0ff;font-family:BuenosAires,sans-serif;font-weight:400;font-size:16px;line-height:1.9rem;color:var(--blue);scroll-behavior:smooth}body{margin:0;padding:0;background-color:var(--light-grey);font-size:16px;line-height:1.5rem;overflow:scroll}h1{font-size:2rem;font-weight:700;line-height:1rem;text-wrap:nowrap}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.1rem}h5{font-size:1rem}h1[id],h2[id],h3[id]{scroll-margin-top:300px}div#page_wrapper{max-width:1200px;margin:0 auto 0 auto;box-sizing:border-box}main{display:flex;flex-direction:row;margin:0 auto 0 auto;background-color:#fff;justify-content:space-between}div.section{display:none;width:100%;align-items:top}div#title{display:block}div#content{display:flex;flex-direction:column;padding:2rem 2rem 2rem 2rem;min-width:290px;width:100%}header{box-sizing:border-box;width:100%;height:60px;max-height:60px;position:sticky;top:0;z-index:100;color:#fff;padding:0 1rem 0 0;background-color:var(--blue)}header div#title h1{font-weight:700;font-size:1.5rem;width:100%}nav#top{max-width:1200px;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 0 auto;padding:0}nav#side{display:none}nav#top ul.hide{display:none}nav#side img,nav#top img{display:none;position:relative;top:20px;left:10px}nav#top ul{box-sizing:border-box;list-style-type:none;margin:0;padding:1rem 0 0 0;display:flex;flex-direction:row;justify-content:flex-end;text-align:right}nav#top ul li{box-sizing:border-box;padding:0}nav#side ul li a,nav#top ul li a{box-sizing:border-box;color:#fff;text-decoration:none;font-weight:700;text-wrap:nowrap;padding:0 0 .3rem 0;margin:0 .2rem 0 .8rem}nav#side ul li a.navlinks:visited,nav#top ul li a.navlinks:visited{color:#fff}nav#side ul li a.navlinks.active,nav#side ul li a.navlinks:hover,nav#top ul li a.navlinks.active,nav#top ul li a.navlinks:hover{border-bottom:#f58220 3px solid;padding-bottom:5px}.toc a.active,.toc a:hover{border-bottom:#f58220 1.5px solid;padding-bottom:1px}a.active{border-bottom:#f58220 2px solid}aside#inhoudsopgave{min-width:250px;flex:0 0 250px;background-color:var(--light-grey);padding:1rem;text-wrap:nowrap;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}aside#hiddeninhoudsopgave{display:none}aside#hiddeninhoudsopgave a.panel,aside#inhoudsopgave a.panel{display:inline-block;background-color:#fff;border-radius:.2rem;padding:0 .5rem 0 .5rem}aside#hiddeninhoudsopgave a{position:relative;top:1rem;left:1rem;padding:.2rem .5rem .2rem .5rem;margin-right:20px}div.toc ul{list-style-type:none;padding-left:0;line-height:2rem}div.toc ul li a{text-decoration:none;color:var(--dark-grey)}.green{background-color:#90ee90}:target{display:block}div.section:has(:target){display:block}div.show{display:block}div.hide{display:none}pre[class*=language-]{background-color:var(--light-grey);font-size:.9rem;overflow-x:auto;white-space:pre}pre[class*=language-] code[class*=language-]{display:block;overflow-x:auto;white-space:pre}code{background-color:var(--code-color);padding:.15rem .3rem;border-radius:.3rem;font-size:.9rem;width:100%}nav#top #hoogte-indicator{display:block;position:relative;top:10px;line-height:.2rem;height:10px;background-color:var(--dark-grey);color:#fff;font-size:.5rem;border-radius:.3rem;padding:.3rem .3rem .5rem .3rem}#panel-in,#panel-out{height:0;width:0}#panel-in img,#panel-out img{position:relative;padding:2px;width:10px;height:10px;top:5px;right:20px}#panel-in img{transform:rotate(180deg)}table,td,th{border-collapse:collapse;border:1px solid var(--dark-grey);padding:4px}blockquote{border-left:4px solid var(--blue);margin-left:0;margin-right:0;padding:.5rem 1rem .5rem 1rem;color:var(--dark-grey);background-color:var(--light-grey)}hr{border:0;height:1px;background:var(--medium-grey);margin:2rem 0 2rem 0}img{max-width:100%;height:auto;display:block;margin:0 auto 0 auto}@media (max-width:750px){nav#top{display:none}nav#side{max-width:300px;display:flex;flex-direction:column;justify-content:flex-start;margin:0;padding:0;background-color:var(--blue);position:absolute;top:0}nav#side img{display:block}nav#side ul{display:none;box-sizing:border-box;margin:0;padding:3rem 0 1rem 0;flex-direction:column;text-align:left;justify-content:flex-start}nav#side ul li{padding:.3rem 1rem .3rem 1rem}nav#side ul li a.navlinks{padding:.3rem .3rem .3rem .3rem;margin:0}}section#buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}section#buttons .button-container{position:relative;border-top:1rem solid var(--blue);min-width:200px;height:100px;background-color:var(--light-grey);border-radius:.3rem;box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px}section#buttons .button-container:hover{background-color:var(--blue)}section#buttons .button-container:hover div{color:#fff}section#buttons .button-container div{color:var(--blue);font-weight:700;position:absolute;bottom:1rem;left:1rem}section#buttons .button-container div::before{content:'';width:2rem;height:1.4rem;background-image:url('/_assets/right-arrow_f58220.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;vertical-align:middle}details{box-sizing:border-box;border-radius:1px;margin-bottom:1rem;display:block;outline:0;padding:0;text-align:left;transition:.4s;background-color:var(--light-grey);width:100%;padding:1rem 2rem 1rem 2rem;border-radius:.3rem;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}summary{font-weight:700;padding-left:38px;cursor:pointer;list-style:none;position:relative}summary a{color:var(--blue);text-decoration:none}summary::before{content:'';background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(90deg);background-size:contain;background-repeat:no-repeat;display:inline-block;width:20px;height:20px;vertical-align:middle;position:absolute;top:3px;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(270deg)}details p{font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}
+    </style>
+    <title>Database Querying</title>
+</head>
+<body>
+    <header>     
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/dbq/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/dbq/installeren/#installeren">Installeren</a></li>
+      
+          <li><a href="/easy_canvas/dbq/queries/#queries" class="active">Queries</a></li>
+      
+          <li><a href="/easy_canvas/dbq/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/dbq/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/dbq/installeren/#installeren">Installeren</a></li>
+      
+          <li><a href="/easy_canvas/dbq/queries/#queries" class="active">Queries</a></li>
+      
+          <li><a href="/easy_canvas/dbq/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+
+        <div id="content">
+        <div class="section" id="title">
+            <h1>Database Querying</h1>
+        </div>
+        <div class="section">
+<h3 id="queries">Queries</h3>
+<p>Databases zijn uitermate geschikt om gestructureerde data in op te slaan. Denk bijvoorbeeld aan persoonsgegevens, producten of ordergegevens. Voor dit soort gegevens kun je een kaartenbakje maken waarbij je voor iedere persoon of produkt dezelfde soort gegevens opslaat.
+Door deze manier van data-opslag is een database in staat om heel snel gegevens op te  zoeken en te presenteren.</p>
+</div>
+<div class="section">
+<h3 id="starten-met-queries">Starten met queries</h3>
+<p>Bekijk welke tabellen er zijn:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> Tables_in_school <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span>
+<span class="token operator">|</span> c_regel          <span class="token operator">|</span>
+<span class="token operator">|</span> cursist          <span class="token operator">|</span>
+<span class="token operator">|</span> cursus           <span class="token operator">|</span>
+<span class="token operator">|</span> docent           <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------------+</span></code></pre>
+<p>Bekijk welke records er zijn in de tabel docent:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span>
+<span class="token operator">|</span> doc_code <span class="token operator">|</span> doc_naam   <span class="token operator">|</span> straat        <span class="token operator">|</span> postcode <span class="token operator">|</span> plaats     <span class="token operator">|</span> telefoon   <span class="token operator">|</span> uurloon <span class="token operator">|</span> geb_datum  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span>
+<span class="token operator">|</span> WI       <span class="token operator">|</span> Witlok     <span class="token operator">|</span> Madeseweg <span class="token number">8</span>   <span class="token operator">|</span> <span class="token number">4841</span> PT  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>  <span class="token number">100.00</span> <span class="token operator">|</span> <span class="token number">1957</span><span class="token operator">-</span><span class="token number">04</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span>
+<span class="token operator">|</span> HM       <span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Ignatiusstr <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">4847</span> EZ  <span class="token operator">|</span> Breda      <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>  <span class="token number">200.00</span> <span class="token operator">|</span> <span class="token number">1952</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">01</span> <span class="token operator">|</span>
+<span class="token operator">|</span> GR       <span class="token operator">|</span> Grond      <span class="token operator">|</span> Bolwerk <span class="token number">10</span>    <span class="token operator">|</span> <span class="token number">4541</span> CC  <span class="token operator">|</span> Tilburg    <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>  <span class="token number">150.00</span> <span class="token operator">|</span> <span class="token number">1958</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">25</span> <span class="token operator">|</span>
+<span class="token operator">|</span> PE       <span class="token operator">|</span> Peters     <span class="token operator">|</span> Breedonk <span class="token number">64</span>   <span class="token operator">|</span> <span class="token number">4142</span> EC  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>  <span class="token number">185.50</span> <span class="token operator">|</span> <span class="token number">1963</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> SE       <span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bredaseweg <span class="token number">2</span>  <span class="token operator">|</span> <span class="token number">4344</span> DE  <span class="token operator">|</span> Bavel      <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>  <span class="token number">110.00</span> <span class="token operator">|</span> <span class="token number">1955</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">17</span> <span class="token operator">|</span>
+<span class="token operator">|</span> MO       <span class="token operator">|</span> Mol        <span class="token operator">|</span> Waterstr <span class="token number">8</span>    <span class="token operator">|</span> <span class="token number">4841</span> KA  <span class="token operator">|</span> Breda      <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>  <span class="token number">300.00</span> <span class="token operator">|</span> <span class="token number">1948</span><span class="token operator">-</span><span class="token number">11</span><span class="token operator">-</span><span class="token number">30</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+---------------+----------+------------+------------+---------+------------+</span></code></pre>
+<p>Bekijk nu welke velden er zijn in de tabel 'docent':</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">fields</span> <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> Field     <span class="token operator">|</span> <span class="token keyword">Type</span>         <span class="token operator">|</span> <span class="token boolean">Null</span> <span class="token operator">|</span> <span class="token keyword">Key</span> <span class="token operator">|</span> <span class="token keyword">Default</span> <span class="token operator">|</span> Extra <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> doc_code  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> doc_naam  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> straat    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> postcode  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>   <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> plaats    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> telefoon  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> uurloon   <span class="token operator">|</span> <span class="token keyword">decimal</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geb_datum <span class="token operator">|</span> <span class="token keyword">date</span>         <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------------+------+-----+---------+-------+</span>
+</code></pre>
+<p>Je ziet nu dat de eerste rij van de records van docent overeenkomst met de eerste kolom in het overzicht van de velden van een docent.<br>
+In de query <code>select * from docent</code> staat het sterretje voor 'alle velden/kolommen'.<br>
+Alle kolommen worden weergegeven uit de tabel docent.<br>
+Met <code>select</code> bepaal je dus welke kolommen worden weergegeven
+Met <code>from</code> bepaal je welke tabel je gebruikt.<br>
+Je kunt na <code>select</code> opgeven welke kolommen je wil zien:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent<span class="token punctuation">;</span>
+
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> Witlok     <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Grond      <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters     <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span></code></pre>
+</div>
+<div class="section">
+<h3 id="gegevens-filteren">Gegevens filteren</h3>
+<p class="lti-embed" style="text-align: left; margin-top:40px; margin-bottom:0px"><strong>
+        <iframe class="lti-embed" style="width:100%; height:480px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube-nocookie.com/embed/9_5Ey_3oi30">
+            </iframe></strong></p>
+<p>Stel dat je niet alle records uit een tabel wil opvragen maar je wilt gegevens filteren.<br>
+In onderstaand voorbeeld worden alleen de kolommen <code>doc_naam</code> en <code>telefoon</code> weergegeven uit de tabel docent. Met <code>where</code> worden de gegevens gefilterd. De data uit de kolom <code>doc_naam</code> moet overeenkomen met de tekst 'Witlok'. Omdat het om tekst gaat, moet 'Witlok' tussen aanhalingstekens worden geplaatst.</p>
+<pre class="language-sql"><code class="language-sql"> <span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> doc_naam <span class="token operator">=</span> <span class="token string">'Witlok'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span></code></pre>
+<p>Filteren op plaatsnaam:</p>
+<pre class="language-sql"><code class="language-sql"> <span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">=</span> <span class="token string">'Oosterhout'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters   <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+</span></code></pre>
+<h4 id="like">LIKE</h4>
+<p>Zowel Peters al Witlok wonen in Oosterhout!</p>
+<p>Er kan ook gefilterd worden op een deel van de data. Stel dat alle namen en telefoonnumers van docenten uit plaatsen die beginnen met de letter 'B' moeten worden weergegeven. Dan kan dat door weer gebruik te maken van <code>where</code> en de operator <code>like</code>.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">like</span> <span class="token string">'B%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> plaats <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bavel  <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+</code></pre>
+<p>Met bovenstaande query worden de docenten uit 'Bavel' en 'Breda' weergegeven.
+Het '%'-tekentje in de query staat voor een 'wildcard'. Je kunt voor een %-teken iedere reeks van karakters in de plaats zetten. Zo moet een plaats in ieder geval beginnen met de letter 'B', maar maakt het niet uit welke karakters daar nog achteraan komen.</p>
+<h4 id="filters-combineren">Filters combineren</h4>
+<p>Het is ook mogelijk om op meerdere criteria te filteren.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> plaats <span class="token operator">=</span> <span class="token string">'Bavel'</span> <span class="token operator">or</span> plaats <span class="token operator">=</span> <span class="token string">'Oosterhout'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> plaats     <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span>
+<span class="token operator">|</span> Witlok   <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters   <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers  <span class="token operator">|</span> Bavel      <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+------------+------------+</span></code></pre>
+<p>In <code>where plaats = 'Bavel' or plaats = 'Oosterhout'</code> uit bovenstaand voorbeeld worden alle docenten getoond die wonen in Bavel <strong>of</strong> Oosterhout. Beide plaatsen worden in het overzicht getoond.</p>
+<p>Je kunt de criteria ook aanscherpen zodat data aan meerdere voorwaarden moet voldoen.
+Hieronder worden alle docenten getoond waarvan de naam eindigt op 'rs' <strong>en</strong> de plaats begint met een 'B'. Met <code>where doc_naam like '%rs' and plaats like 'B%'</code> gelden beide voorwaarden alleen voor Hooymayers en Sengers!</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> plaats<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> doc_naam <span class="token operator">like</span> <span class="token string">'%rs'</span> <span class="token operator">and</span> plaats <span class="token operator">like</span> <span class="token string">'B%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> plaats <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> Breda  <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Sengers    <span class="token operator">|</span> Bavel  <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+--------+------------+</span></code></pre>
+<h4 id="is-null">IS NULL</h4>
+<p>Er kan ook gefilterd worden op velden die leeg zijn. Sommige docenten hebben geen telefoon. Om te bepalen wie dat zijn kan de volgende query worden gebruikt:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> telefoon <span class="token operator">is</span> <span class="token boolean">null</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span>
+<span class="token operator">|</span> doc_naam <span class="token operator">|</span> telefoon <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span>
+<span class="token operator">|</span> Sengers  <span class="token operator">|</span> <span class="token boolean">NULL</span>     <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+----------+</span></code></pre>
+<p>Met <code>is null</code> vind je alle lege velden.</p>
+<p>De omgekeerde select kan ook handig zijn. In onderstaand voorbeeld worden alle docenten met een telefoon weergegeven:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> doc_naam<span class="token punctuation">,</span> telefoon <span class="token keyword">from</span> docent <span class="token keyword">where</span> <span class="token operator">not</span> telefoon <span class="token operator">is</span> <span class="token boolean">null</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> doc_naam   <span class="token operator">|</span> telefoon   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+<span class="token operator">|</span> Witlok     <span class="token operator">|</span> <span class="token number">071</span><span class="token operator">-</span><span class="token number">123378</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Hooymayers <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">442786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Grond      <span class="token operator">|</span> <span class="token number">013</span><span class="token operator">-</span><span class="token number">426786</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Peters     <span class="token operator">|</span> <span class="token number">01620</span><span class="token operator">-</span><span class="token number">3429</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Mol        <span class="token operator">|</span> <span class="token number">076</span><span class="token operator">-</span><span class="token number">227788</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">------------+------------+</span>
+</code></pre>
+<p>Met <code>not</code> voor de veldnaam-operator-waarde (<code>telefoon is null</code>) wordt de omgekeerde selectie getoond.</p>
+<h4 id="distinct">Distinct</h4>
+<p>Als je een overzicht wilt opvragen van de verschillende woonplaatsen van de cursisten dan kun je de volgende query gebruiken:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> plaats <span class="token keyword">from</span> cursist<span class="token punctuation">;</span></code></pre>
+<pre class="language-shell"><code class="language-shell">+------------+
+<span class="token operator">|</span> plaats     <span class="token operator">|</span>
++------------+
+<span class="token operator">|</span> Made       <span class="token operator">|</span>
+<span class="token operator">|</span> Oosterhout <span class="token operator">|</span>
+<span class="token operator">|</span> Goirle     <span class="token operator">|</span>
+<span class="token operator">|</span> Breda      <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
++------------+</code></pre>
+<p>Zoals je ziet krijg je ook dubbele waarden. Er zijn meerdere cursisten die uit Dronten komen. Je kunt alleen unieke waarden opvragen door de dubbele waarnden te filteren met <code>distinct</code>.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> plaats <span class="token keyword">from</span> cursist<span class="token punctuation">;</span></code></pre>
+<pre class="language-shell"><code class="language-shell">+------------+
+<span class="token operator">|</span> plaats     <span class="token operator">|</span>
++------------+
+<span class="token operator">|</span> Made       <span class="token operator">|</span>
+<span class="token operator">|</span> Oosterhout <span class="token operator">|</span>
+<span class="token operator">|</span> Goirle     <span class="token operator">|</span>
+<span class="token operator">|</span> Breda      <span class="token operator">|</span>
+<span class="token operator">|</span> Dronten    <span class="token operator">|</span>
++------------+</code></pre>
+<p>Dronten komt nog maar 1 keer voor in de uitvoer.</p>
+</div>
+<div class="section">
+<h3 id="aggregatie">Aggregatie</h3>
+<h4 id="sorteren-van-data">Sorteren van data</h4>
+<p>Data kan gesorteerd worden weergegeven. Om de cursussen in de tabel te sorteren voeg je aan het einde van de query 'order by' en het veld waarop gesorteerd moet worden toe. Bijvoorbeeld:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs<span class="token punctuation">;</span> 
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<p>De gegevens worden gesorteerd op prijs weergegeven.
+Standaard wordt er oplopend gesorteerd (ascending). Om aflopend te sorteren moet de afkorting 'desc' na de veldnaam komen. Bijvoorbeeld:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs <span class="token keyword">desc</span><span class="token punctuation">;</span> 
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<p>In bovenstaand voorbeeld hebben 'Wordperfect' en 'Programmeren in C++' dezelfde prijs. In de query kunnen we nog specificeren dat nadat er op prijs is gesorteerd er ook nog gesorteerd moet worden op omschrijving, zodat eerst 'Programmeren in C++' wordt weergegeven en dan pas 'Wordperfect'. Dat gaat zo:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> curs_prijs <span class="token keyword">from</span> cursus <span class="token keyword">order</span> <span class="token keyword">by</span> curs_prijs <span class="token keyword">desc</span><span class="token punctuation">,</span> omschr <span class="token keyword">asc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> omschr              <span class="token operator">|</span> curs_prijs <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span>
+<span class="token operator">|</span> Dbase IV            <span class="token operator">|</span>    <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus      <span class="token operator">|</span>    <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Normaliseren        <span class="token operator">|</span>    <span class="token number">3000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">3.0</span>     <span class="token operator">|</span>    <span class="token number">2600.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span>     <span class="token operator">|</span>    <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Programmeren <span class="token operator">in</span> C<span class="token operator">+</span><span class="token operator">+</span> <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Wordperfect         <span class="token operator">|</span>    <span class="token number">1450.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Framework           <span class="token operator">|</span>     <span class="token number">850.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">---------------------+------------+</span></code></pre>
+<h4 id="berekeningen">Berekeningen</h4>
+<p>MySQL kan ook gebruikt worden om berekeningen uit te voeren op data. Het aantal records kan geteld worden of de gemiddelde prijs kan worden berekend. Hieronder 2 voorbeelden:
+Tel het aantal records in de tabel cursus</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+</span>
+<span class="token operator">|</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+</span>
+<span class="token operator">|</span>        <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+</span></code></pre>
+<p>Om de weergave wat interessanter te maken kun je de kop in de eerste regel aanpassen. In dit geval zit er een spatie tussen aantal en records. Hierdoor moet <code>aantal records</code> tussen 'backticks' worden geplaatst. Dit zijn niet de normale aanhalingstekens, maar een speciaal naar links hellend aanhalingsteken dat je meestal aan de linkerkant van je toetsenbord kunt vinden.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>aantal records<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span>
+<span class="token operator">|</span> aantal records <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span>
+<span class="token operator">|</span>              <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+</span></code></pre>
+<p>In dit voorbeeld wordt gekeken naar de cursus die het meeste kost.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>curs_prijs<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>kost het meest<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursus<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span>
+<span class="token operator">|</span> omschr         <span class="token operator">|</span> kost het meest <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span>
+<span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>        <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------------+----------------+</span></code></pre>
+<p>Vind nog meer voorbeelden op W3Schools.com:</p>
+<ul>
+<li>https://www.w3schools.com/sql/sql_min_max.asp</li>
+<li>https://www.w3schools.com/sql/sql_count_avg_sum.asp</li>
+</ul>
+<h4 id="groeperen-van-data">Groeperen van data</h4>
+<p>Om berekeningen te maken over groepen data kun je in mysql gebruik maken van 'group by'. Door data te groeperen kun je gemiddelden uitrekenen of data optellen en tellen hoe vaak gegevens voorkomen.
+Stel er moet een overzicht komen van het aantal cursussen per plaats. In het voorbeeld hieronder worden de unieke plaatsnamen weergegeven en er wordt met de functie <code>count()</code> geteld hoe vaak iedere naam voorkomt in de tabel.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal <span class="token keyword">from</span> cursus <span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Etten     <span class="token operator">|</span>      <span class="token number">1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+<p>Je kunt gegevens die zijn gegenereerd met group by ook nog filteren. Je gebruikt dan 'having' in plaats van 'where'. 'Where' gebruik je voor groepering en 'having' erna.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal 
+<span class="token keyword">from</span> cursus 
+<span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts <span class="token keyword">having</span> aantal <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+<p>In onderstaand voorbeeld wordt er eerst gefilterd op cursusprijs. Met die selectie wordt er gegroepeerd. Als er in een plaats meer dan 1 cursussen zijn die meer kosten dan 1400 euro, dan wordt de plaats weergegeven en het aantal cursussen dat voldoet aan de criteria.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> curs_plts<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>curs_plts<span class="token punctuation">)</span> <span class="token keyword">as</span> aantal 
+<span class="token keyword">from</span> cursus <span class="token keyword">where</span> curs_prijs <span class="token operator">></span> <span class="token number">1400</span> 
+<span class="token keyword">group</span> <span class="token keyword">by</span> curs_plts <span class="token keyword">having</span> aantal <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> curs_plts <span class="token operator">|</span> aantal <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span>
+<span class="token operator">|</span> Breda     <span class="token operator">|</span>      <span class="token number">4</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Made      <span class="token operator">|</span>      <span class="token number">2</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+--------+</span></code></pre>
+</div>
+<div class="section">
+<h3 id="databases-maken">Databases maken</h3>
+<p>Stel je moet een database maken voor een bibliotheek. De database bestaat uit 3 tabellen:</p>
+<ul>
+<li>De tabel klanten bestaat uit de volgende velden: <code>voornaam</code>, <code>achternaam</code>, <code>emailadres</code></li>
+<li>De tabel boeken bestaat uit de velden: <code>titel</code>, <code>jaar</code> en <code>hoeveelste druk</code></li>
+<li>De tabel uitleen bestaat uit <code>uitleendatum</code>, <code>retourdatum</code>, <code>klant_id</code>, <code>boek_id</code></li>
+<li>Alle tabellen hebben een veld <code>id</code> dat tevens de primaire sleutel is.</li>
+<li>De tabel uitleen heeft 2 vreemde sleutels:
+<ul>
+<li><code>klant_id</code> die refereert naar de primaire sleutel <code>id</code> in de tabel klanten</li>
+<li>en <code>boek_id</code> die refereert naar de primaire sleutel <code>id</code> in de tabel boeken.</li>
+</ul>
+</li>
+</ul>
+<p>Hieronder zie je het script om de database aan te maken:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> bibliotheek<span class="token punctuation">;</span>
+<span class="token keyword">USE</span> bibliotheek<span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> klanten <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    voornaam <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    achternaam <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    emailadres <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> boeken <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    titel <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    jaar <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    druk <span class="token keyword">INT</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> uitleengegevens <span class="token punctuation">(</span>
+    id <span class="token keyword">INT</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+    uitleendatum <span class="token keyword">DATE</span><span class="token punctuation">,</span>
+    retourdatum <span class="token keyword">DATE</span><span class="token punctuation">,</span>
+    klant_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    boek_id <span class="token keyword">INT</span><span class="token punctuation">,</span>
+    <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>klant_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> klanten<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>boek_id<span class="token punctuation">)</span> <span class="token keyword">REFERENCES</span> boeken<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="uitleg">Uitleg</h4>
+<ul>
+<li>In de regel <code>id INT AUTO_INCREMENT PRIMARY KEY</code> geef je aan dat je een veld met de naam <code>id</code> wilt aanmaken van het type <code>INT</code>. <code>id</code> is een primaire sleutel. De waarde is een unieke integer die het record identificeert. Met <code>AUTO_INCREMENT</code> wordt aangegeven bij ieder nieuw record het <code>id</code> automatisch wordt gegenereerd naar het eerst volgende integer.</li>
+<li>Met <code>VAR_CHAR(50)</code> wordt aangegeven dat de waarde van het type <code>string</code> of <code>tekst</code> is. Het mag maximaal 50 karakters bevatten.</li>
+<li>Met <code>INT</code> wordt een geheel getal bedoeld</li>
+<li>Met <code>DATE</code> gaat het om een datum-veld.</li>
+<li>Onderaan bij uitleen zie je dat de vreemde sleutels <code>FOREIGN KEY</code> verwijzen naar de velden id in de klanten- en boekentabel.</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="crud">Crud</h3>
+<p>CRUD staat voor CReate, Update en Delete. Het toevoegen, aanpassen of verwijderen van records uit een tabel. Stel dat er nieuwe cursist zich heeft aangemeld. De cursist moet worden toegevoegd aan de tabel <code>cursist</code>.</p>
+<h4 id="records-toevoegen">Records toevoegen</h4>
+<p>Om records toe te kunnen voegen aan de tabel moet helder zijn wat de structuur van de tabel is.
+Hieronder worden de velden weergegeven met hun eigenschappen. Zo kun je zien dat de postcode van het type <code>varchar</code> moet zijn en maximaal 7 karakters mag hebben. <code>varchar</code> staat voor variabel aantal karakters. In de kolom 'Null' staat bij ieder veld 'YES'. Dit betekent dat dit veld leeg gelaten mag worden. Het is dus niet nodig om alle gegevens te gebruiken voor het aanmaken van een nieuwe cursist!</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">show</span> <span class="token keyword">fields</span> <span class="token keyword">from</span> cursist<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> Field     <span class="token operator">|</span> <span class="token keyword">Type</span>        <span class="token operator">|</span> <span class="token boolean">Null</span> <span class="token operator">|</span> <span class="token keyword">Key</span> <span class="token operator">|</span> <span class="token keyword">Default</span> <span class="token operator">|</span> Extra <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span>
+<span class="token operator">|</span> cursistnr <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> naam      <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> roepnaam  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> straat    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> postcode  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> plaats    <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geslacht  <span class="token operator">|</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">|</span> geb_datum <span class="token operator">|</span> <span class="token keyword">date</span>        <span class="token operator">|</span> YES  <span class="token operator">|</span>     <span class="token operator">|</span> <span class="token boolean">NULL</span>    <span class="token operator">|</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-------------+------+-----+---------+-------+</span></code></pre>
+<p>Stel 'Kees Stofman' moet worden toegevoegd. Van 'Kees' is zijn naam, zijn postcode en plaats bekend...</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> cursist <span class="token punctuation">(</span>cursistnr<span class="token punctuation">,</span> roepnaam<span class="token punctuation">,</span> postcode<span class="token punctuation">,</span> plaats<span class="token punctuation">)</span> 
+<span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token number">92</span><span class="token punctuation">,</span> <span class="token string">'Kees'</span><span class="token punctuation">,</span> <span class="token string">'4889 HJ'</span><span class="token punctuation">,</span> <span class="token string">'Rotterdam'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span></code></pre>
+<p>Met <code>insert into cursist</code> wordt aangegeven dat er een record toegevoegd gaat worden aan de tabel 'cursist'. Tussen aanhalingstekens volgen dan de veldnamen waar waarden voor beschikbaar zijn. De waarden die moeten worden toegevoegd staan tussen haakjes achter values. Ze corresponderen met de positie van de velden.</p>
+<h4 id="records-updaten">Records updaten</h4>
+<p>Stel dat inmiddels de geboortedatum van Kees bekend is. Het record van Kees wordt op de volgende manier aangepast.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">update</span> cursist <span class="token keyword">set</span> geb_datum <span class="token operator">=</span> <span class="token string">'1999-03-22'</span> <span class="token keyword">where</span> cursistnr <span class="token operator">=</span> <span class="token number">92</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span>
+<span class="token keyword">Rows</span> <span class="token keyword">matched</span>: <span class="token number">1</span>  Changed: <span class="token number">1</span>  <span class="token keyword">Warnings</span>: <span class="token number">0</span></code></pre>
+<p>Met <code>update cursist</code> wordt aangegeven dat het om de tabel cursist gaat. Met <code>set geb_datum = '1999-03-22'</code> wordt aangegeven welk veld aangepast moet worden. Gelukkig heeft Kees ook een uniek cursistnummer gekregen zo is precies bekend welke 'Kees' aangepast moet worden. Je kunt meerdere records tegelijk aanpassen, dus zorg ervoor dat de where-clause klopt! Zonder where-clause wordt van alle records in de tabel de geboortedatum aangepast.
+PS: De where-clause is het gedeelte van de query dat na <code>where</code> komt.</p>
+<h4 id="records-verwijderen">Records verwijderen</h4>
+<p>Om een record te kunnen verwijderen is weer een unieke waarde nodig zoals 'cursistnr'. Met cursistnr wordt aangegeven welk record precies verwijdert moet worden.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">delete</span> <span class="token keyword">from</span> cursist <span class="token keyword">where</span> cursistnr <span class="token operator">=</span> <span class="token number">92</span><span class="token punctuation">;</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">00</span> sec<span class="token punctuation">)</span><span class="token identifier"><span class="token punctuation">`</span><span class="token punctuation">`</span></span><span class="token punctuation">`</span></code></pre>
+</div>
+<div class="section">
+<h3 id="tabellen-combineren">Tabellen combineren</h3>
+<p>De mooiste resultaten krijg je als je gegevens uit tabellen kunt combineren. In de school-database is het bijvoorbeeld handig als je een lijst kunt opvragen van de namen van cursisten die aan een cursus meedoen. Om dit overzicht te maken zijn de gegevens uit meerdere tabellen nodig.
+Bekijk hiervoor de inhoud uit de tabel cursisten en de tabel c_regel.<br>
+In c_regel wordt bijgehouden wie voor welke cursus is ingeschreven.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> c_regel<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span>
+<span class="token operator">|</span> curs_code <span class="token operator">|</span> cursistnr <span class="token operator">|</span> cijfer <span class="token operator">|</span> betaald <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">64</span>        <span class="token operator">|</span>      <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span>      <span class="token number">6</span> <span class="token operator">|</span>    <span class="token boolean">NULL</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB3       <span class="token operator">|</span> <span class="token number">68</span>        <span class="token operator">|</span>      <span class="token number">9</span> <span class="token operator">|</span> <span class="token number">3300.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span>      <span class="token number">5</span> <span class="token operator">|</span> <span class="token number">2400.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">88</span>        <span class="token operator">|</span>      <span class="token number">7</span> <span class="token operator">|</span> <span class="token number">2000.00</span> <span class="token operator">|</span>
+<span class="token operator">|</span> OA2       <span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span>      <span class="token number">9</span> <span class="token operator">|</span>    <span class="token boolean">NULL</span> <span class="token operator">|</span>
+<span class="token operator">|</span> DB4       <span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span>      <span class="token number">6</span> <span class="token operator">|</span> <span class="token number">3600.00</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+-----------+--------+---------+</span></code></pre>
+<p>Hieronder de gegevens uit de cursisten-tabel</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> cursist<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span>
+<span class="token operator">|</span> cursistnr <span class="token operator">|</span> naam    <span class="token operator">|</span> roepnaam <span class="token operator">|</span> straat         <span class="token operator">|</span> postcode <span class="token operator">|</span> plaats     <span class="token operator">|</span> geslacht <span class="token operator">|</span> geb_datum  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span>
+<span class="token operator">|</span> <span class="token number">64</span>        <span class="token operator">|</span> Broeken <span class="token operator">|</span> Bram     <span class="token operator">|</span> Drimmelseweg <span class="token number">8</span> <span class="token operator">|</span> <span class="token number">4395</span> XX  <span class="token operator">|</span> Made       <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1988</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">24</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">88</span>        <span class="token operator">|</span> Vos     <span class="token operator">|</span> Henk     <span class="token operator">|</span> Besbeemd <span class="token number">64</span>    <span class="token operator">|</span> <span class="token number">4142</span> CE  <span class="token operator">|</span> Oosterhout <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1989</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">22</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">2</span>         <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Tanja    <span class="token operator">|</span> Tilburgseweg <span class="token number">2</span> <span class="token operator">|</span> <span class="token number">4222</span> BB  <span class="token operator">|</span> Goirle     <span class="token operator">|</span> V        <span class="token operator">|</span> <span class="token number">1990</span><span class="token operator">-</span><span class="token number">02</span><span class="token operator">-</span><span class="token number">08</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">14</span>        <span class="token operator">|</span> Norbart <span class="token operator">|</span> Niels    <span class="token operator">|</span> Gershof <span class="token number">8</span>      <span class="token operator">|</span> <span class="token number">4841</span> PL  <span class="token operator">|</span> Breda      <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1987</span><span class="token operator">-</span><span class="token number">12</span><span class="token operator">-</span><span class="token number">06</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">89</span>        <span class="token operator">|</span> Stofman <span class="token operator">|</span> Kees     <span class="token operator">|</span> Lindenlaan <span class="token number">23</span>  <span class="token operator">|</span> <span class="token number">4998</span> XF  <span class="token operator">|</span> Dronten    <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token number">1987</span><span class="token operator">-</span><span class="token number">03</span><span class="token operator">-</span><span class="token number">22</span> <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">91</span>        <span class="token operator">|</span> Stofman <span class="token operator">|</span> Kees     <span class="token operator">|</span> Lindenlaan <span class="token number">23</span>  <span class="token operator">|</span> <span class="token number">4998</span> XF  <span class="token operator">|</span> Dronten    <span class="token operator">|</span> M        <span class="token operator">|</span> <span class="token boolean">NULL</span>       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------+---------+----------+----------------+----------+------------+----------+------------+</span></code></pre>
+<h4 id="join">Join</h4>
+<p>In tabel c_regel vind je de cursus-code, terwijl in de tabel cursisten de namen van de cursisten te vinden zijn. Je kunt beide tabellen combineren omdat in de tabel c_regel cursistnummers worden gebrukt om aan te geven wie aan welke cursus meedoet. In de eerste rij zie je dat cursist 64 meedoet met de cursus 'DB3'. De cursistnummers in de tabel c_regel komen overeen met cursistnummers in de tabel cursist. Met <code>join</code> worden de tabellen gecombineerd. Daarna wordt er met <code>on</code> aangegeven wat de relatie is tussen de tabellen. Het cursistnummer in tabel cursisten moet corresponderen met het cursistnummer in de tabel c_regel...</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> curs_code <span class="token keyword">from</span> cursist c <span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> curs_code <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> DB3       <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> DB3       <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> OA2       <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> DB4       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------+</span></code></pre>
+<p>In de query wordt de naam van de tabel cursist afgekort naar de letter c. Dat scheelt veel tekst en maakt de query overzichtelijker. De naam van de tabel c_regel wordt afgekort naar cr. Zo kun je beide tabellen combineren op basis van het cursistnummer.
+In het volgende voorbeeld willen we de volledige naam van de cursus weergeven. Deze naam komt wel voor in de cursus-tabel, maar niet in c_regel. Beide tabellen kunnen worden gecombineerd omdat de cursus-code wel in beide tabellen voorkomt. Op basis van de cursuscode kan in de cursus-tabel de omschrijving van de cursus worden opgehaald.</p>
+<h4 id="joins-combineren">Joins combineren</h4>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> omschr <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code<span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> omschr          <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> Dbase IV        <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+-----------------+</span>
+</code></pre>
+<p>Na het samenvoegen van tabellen kan er weer gefilterd en gegroepeerd worden. Met filtering worden alleen de Dbase-cursussen getoond:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> omschr <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">where</span> omschr <span class="token operator">like</span> <span class="token string">'Dbase%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> omschr         <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span> Dbase III Plus <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span> Dbase IV       <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+----------------+</span>
+</code></pre>
+<h4 id="berekeningen-en-filteren">Berekeningen en filteren</h4>
+<p>Een overzicht genereren van de cursussen met hoogst behaalde cijfers;</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> omschr<span class="token punctuation">,</span> <span class="token function">max</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>highest score<span class="token punctuation">`</span></span> <span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">group</span> <span class="token keyword">by</span> cu<span class="token punctuation">.</span>curs_code <span class="token keyword">order</span> <span class="token keyword">by</span> cu<span class="token punctuation">.</span>curs_code <span class="token keyword">desc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+<span class="token operator">|</span> omschr          <span class="token operator">|</span> highest score <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+<span class="token operator">|</span> <span class="token keyword">Open</span> Access <span class="token number">2.1</span> <span class="token operator">|</span>             <span class="token number">9</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase IV        <span class="token operator">|</span>             <span class="token number">6</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Dbase III Plus  <span class="token operator">|</span>             <span class="token number">8</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">-----------------+---------------+</span>
+</code></pre>
+<p>Een overzicht van de namen en resultaten van de studenten aflopend gesorteerd op gemiddeld cijfer:</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">select</span> roepnaam<span class="token punctuation">,</span> naam<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token identifier"><span class="token punctuation">`</span>gemiddelde score<span class="token punctuation">`</span></span> 
+<span class="token keyword">from</span> cursist c 
+<span class="token keyword">join</span> c_regel cr <span class="token keyword">on</span> c<span class="token punctuation">.</span>cursistnr <span class="token operator">=</span> cr<span class="token punctuation">.</span>cursistnr 
+<span class="token keyword">join</span> cursus cu <span class="token keyword">on</span> cr<span class="token punctuation">.</span>curs_code <span class="token operator">=</span> cu<span class="token punctuation">.</span>curs_code 
+<span class="token keyword">group</span> <span class="token keyword">by</span> c<span class="token punctuation">.</span>cursistnr <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token function">avg</span><span class="token punctuation">(</span>cijfer<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span>
+<span class="token operator">|</span> roepnaam <span class="token operator">|</span> naam    <span class="token operator">|</span> gemiddelde score <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span>
+<span class="token operator">|</span> Bram     <span class="token operator">|</span> Broeken <span class="token operator">|</span>           <span class="token number">8.0000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Tanja    <span class="token operator">|</span> Krimpen <span class="token operator">|</span>           <span class="token number">7.5000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Henk     <span class="token operator">|</span> Vos     <span class="token operator">|</span>           <span class="token number">7.0000</span> <span class="token operator">|</span>
+<span class="token operator">|</span> Niels    <span class="token operator">|</span> Norbart <span class="token operator">|</span>           <span class="token number">5.5000</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment">----------+---------+------------------+</span></code></pre>
+</div>
+
+        
+        </div>
+        <aside id="inhoudsopgave">
+            <span><b>Inhoudsopgave</b></span>
+            <div class="toc">
+        <ul><li><a href="#queries">Queries</a></li><li><a href="#starten-met-queries">Starten met queries</a></li><li><a href="#gegevens-filteren">Gegevens filteren</a></li><li><a href="#aggregatie">Aggregatie</a></li><li><a href="#databases-maken">Databases maken</a></li><li><a href="#crud">Crud</a></li><li><a href="#tabellen-combineren">Tabellen combineren</a></li></ul>
+      </div>        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
+ 
+   </div>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
+    <script>
+     function styleActiveLink(){if(!window.location.hash)return void console.log("Geen hashtag aanwezig");const e=window.location.hash;console.log("Hash is veranderd:",e);let o=document.querySelector('a[href="'+e+'"]'),n=document.querySelectorAll(".toc a");for(let e=0;e<n.length;e++)n[e].classList.remove("active");o.classList.add("active"),console.log("Actieve link:",o)}function handleHashChange(e){setTimeout(function(){const e=document.querySelector(window.location.hash);if(e){console.log("Positie van het doel-element:",e.offsetTop);const o=0;console.log("Nieuwe scrollpositie:",o),window.scrollTo({top:o,behavior:"smooth"})}},100)}function hidePanel(){console.log("hidePanel");const e=document.getElementById("panel-in"),o=document.getElementById("panel-out"),n=document.getElementById("inhoudsopgave");o.style.display="none",e.style.display="block",n.style.display="none"}function showPanel(){console.log("showPanel");const e=document.getElementById("inhoudsopgave"),o=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",o.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),console.log("De DOM is volledig geladen en geparsed")}),(inhoud=document.querySelector("#inhoudsopgave .toc ul li"))&&inhoud.addEventListener("click",function(e){if(console.log("Inhoudsopgave - Click event detected"),!window.location.hash)return void console.log("Inhoudsopgave - Geen hashtag aanwezig");const o=window.location.hash;console.log("Inhoudsopgave - hashtag:",o)}),window.addEventListener("hashchange",styleActiveLink);
+    </script>
+    </body> 
+</html>

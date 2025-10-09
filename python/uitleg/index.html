@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <style>
+      @font-face{font-family:BuenosAires;font-style:normal;font-weight:400;src:url('/easy_canvas/_fonts/BuenosAires-Regular.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:bold;font-weight:700;src:url('/easy_canvas/_fonts/BuenosAires-Bold.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:black;font-weight:900;src:url('/easy_canvas/_fonts/BuenosAires-Black.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:light;font-weight:300;src:url('/easy_canvas/_fonts/BuenosAires-Light.woff2') format("woff2")}@font-face{font-family:BuenosAires;font-style:thin;font-weight:100;src:url('/easy_canvas/_fonts/BuenosAires-Thin.woff2') format("woff2")}code[class*=language-],pre[class*=language-]{color:#393a34;background-color:var(--light-grey);font-family:"IBM Plex Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L","Courier New",Courier,monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;font-size:.9em;line-height:1.2em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre>code[class*=language-]{font-size:1em}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{background:#c1def1}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{background:#c1def1}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border:1px solid #ddd;background-color:#fff}:not(pre)>code[class*=language-]{padding:.2em;padding-top:1px;padding-bottom:1px;background:#f8f8f8;border:1px solid #ddd}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:green;font-style:italic}.token.namespace{opacity:.7}.token.string{color:#a31515}.token.operator,.token.punctuation{color:#393a34}.token.boolean,.token.constant,.token.inserted,.token.number,.token.symbol,.token.url,.token.variable{color:#36acaa}.language-autohotkey .token.selector,.language-json .token.boolean,.language-json .token.number,.token.atrule,.token.attr-value,.token.keyword,code[class*=language-css]{color:#00f}.token.function{color:#393a34}.language-autohotkey .token.tag,.token.deleted{color:#9a050f}.language-autohotkey .token.keyword,.token.selector{color:#00009f}.token.important{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.language-json .token.property,.token.class-name{color:#2b91af}.token.selector,.token.tag{color:maroon}.token.attr-name,.token.entity,.token.property,.token.regex{color:red}.token.directive.tag .tag{background:#ff0;color:#393a34}.line-numbers.line-numbers .line-numbers-rows{border-right-color:#a5a5a5}.line-numbers .line-numbers-rows>span:before{color:#2b91af}.line-highlight.line-highlight{background:rgba(193,222,241,.2);background:-webkit-linear-gradient(left,rgba(193,222,241,.2) 70%,rgba(221,222,241,0));background:linear-gradient(to right,rgba(193,222,241,.2) 70%,rgba(221,222,241,0))}:root{--dark-grey:#17171a;--light-grey:#f5f4f7;--medium-grey:#afafaf;--orange:#f58220;--blue:#343368;--code-color:#dcf0ff;font-family:BuenosAires,sans-serif;font-weight:400;font-size:16px;line-height:1.9rem;color:var(--blue);scroll-behavior:smooth}body{margin:0;padding:0;background-color:var(--light-grey);font-size:16px;line-height:1.5rem;overflow:scroll}h1{font-size:2rem;font-weight:700;line-height:1rem;text-wrap:nowrap}h2{font-size:1.5rem}h3{font-size:1.25rem}h4{font-size:1.1rem}h5{font-size:1rem}h1[id],h2[id],h3[id]{scroll-margin-top:300px}div#page_wrapper{max-width:1200px;margin:0 auto 0 auto;box-sizing:border-box}main{display:flex;flex-direction:row;margin:0 auto 0 auto;background-color:#fff;justify-content:space-between}div.section{display:none;width:100%;align-items:top}div#title{display:block}div#content{display:flex;flex-direction:column;padding:2rem 2rem 2rem 2rem;min-width:290px;width:100%}header{box-sizing:border-box;width:100%;height:60px;max-height:60px;position:sticky;top:0;z-index:100;color:#fff;padding:0 1rem 0 0;background-color:var(--blue)}header div#title h1{font-weight:700;font-size:1.5rem;width:100%}nav#top{max-width:1200px;display:flex;flex-direction:row;justify-content:space-between;margin:0 auto 0 auto;padding:0}nav#side{display:none}nav#top ul.hide{display:none}nav#side img,nav#top img{display:none;position:relative;top:20px;left:10px}nav#top ul{box-sizing:border-box;list-style-type:none;margin:0;padding:1rem 0 0 0;display:flex;flex-direction:row;justify-content:flex-end;text-align:right}nav#top ul li{box-sizing:border-box;padding:0}nav#side ul li a,nav#top ul li a{box-sizing:border-box;color:#fff;text-decoration:none;font-weight:700;text-wrap:nowrap;padding:0 0 .3rem 0;margin:0 .2rem 0 .8rem}nav#side ul li a.navlinks:visited,nav#top ul li a.navlinks:visited{color:#fff}nav#side ul li a.navlinks.active,nav#side ul li a.navlinks:hover,nav#top ul li a.navlinks.active,nav#top ul li a.navlinks:hover{border-bottom:#f58220 3px solid;padding-bottom:5px}.toc a.active,.toc a:hover{border-bottom:#f58220 1.5px solid;padding-bottom:1px}a.active{border-bottom:#f58220 2px solid}aside#inhoudsopgave{min-width:250px;flex:0 0 250px;background-color:var(--light-grey);padding:1rem;text-wrap:nowrap;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}aside#hiddeninhoudsopgave{display:none}aside#hiddeninhoudsopgave a.panel,aside#inhoudsopgave a.panel{display:inline-block;background-color:#fff;border-radius:.2rem;padding:0 .5rem 0 .5rem}aside#hiddeninhoudsopgave a{position:relative;top:1rem;left:1rem;padding:.2rem .5rem .2rem .5rem;margin-right:20px}div.toc ul{list-style-type:none;padding-left:0;line-height:2rem}div.toc ul li a{text-decoration:none;color:var(--dark-grey)}.green{background-color:#90ee90}:target{display:block}div.section:has(:target){display:block}div.show{display:block}div.hide{display:none}pre[class*=language-]{background-color:var(--light-grey);font-size:.9rem;overflow-x:auto;white-space:pre}pre[class*=language-] code[class*=language-]{display:block;overflow-x:auto;white-space:pre}code{background-color:var(--code-color);padding:.15rem .3rem;border-radius:.3rem;font-size:.9rem;width:100%}nav#top #hoogte-indicator{display:block;position:relative;top:10px;line-height:.2rem;height:10px;background-color:var(--dark-grey);color:#fff;font-size:.5rem;border-radius:.3rem;padding:.3rem .3rem .5rem .3rem}#panel-in,#panel-out{height:0;width:0}#panel-in img,#panel-out img{position:relative;padding:2px;width:10px;height:10px;top:5px;right:20px}#panel-in img{transform:rotate(180deg)}table,td,th{border-collapse:collapse;border:1px solid var(--dark-grey);padding:4px}blockquote{border-left:4px solid var(--blue);margin-left:0;margin-right:0;padding:.5rem 1rem .5rem 1rem;color:var(--dark-grey);background-color:var(--light-grey)}hr{border:0;height:1px;background:var(--medium-grey);margin:2rem 0 2rem 0}img{max-width:100%;height:auto;display:block;margin:0 auto 0 auto}@media (max-width:750px){nav#top{display:none}nav#side{max-width:300px;display:flex;flex-direction:column;justify-content:flex-start;margin:0;padding:0;background-color:var(--blue);position:absolute;top:0}nav#side img{display:block}nav#side ul{display:none;box-sizing:border-box;margin:0;padding:3rem 0 1rem 0;flex-direction:column;text-align:left;justify-content:flex-start}nav#side ul li{padding:.3rem 1rem .3rem 1rem}nav#side ul li a.navlinks{padding:.3rem .3rem .3rem .3rem;margin:0}}section#buttons{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}section#buttons .button-container{position:relative;border-top:1rem solid var(--blue);min-width:200px;height:100px;background-color:var(--light-grey);border-radius:.3rem;box-shadow:rgba(50,50,93,.25) 0 6px 12px -2px,rgba(0,0,0,.3) 0 3px 7px -3px}section#buttons .button-container:hover{background-color:var(--blue)}section#buttons .button-container:hover div{color:#fff}section#buttons .button-container div{color:var(--blue);font-weight:700;position:absolute;bottom:1rem;left:1rem}section#buttons .button-container div::before{content:'';width:2rem;height:1.4rem;background-image:url('/_assets/right-arrow_f58220.svg');background-size:contain;background-repeat:no-repeat;display:inline-block;vertical-align:middle}details{box-sizing:border-box;border-radius:1px;margin-bottom:1rem;display:block;outline:0;padding:0;text-align:left;transition:.4s;background-color:var(--light-grey);width:100%;padding:1rem 2rem 1rem 2rem;border-radius:.3rem;box-shadow:rgba(0,0,0,.05) 0 6px 24px 0,rgba(0,0,0,.08) 0 0 0 1px}summary{font-weight:700;padding-left:38px;cursor:pointer;list-style:none;position:relative}summary a{color:var(--blue);text-decoration:none}summary::before{content:'';background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(90deg);background-size:contain;background-repeat:no-repeat;display:inline-block;width:20px;height:20px;vertical-align:middle;position:absolute;top:3px;left:0;font-size:24px;line-height:1;transition:transform .3s}details[open] summary::before{background-image:url('/easy_canvas/_assets/right-arrow_f58220.svg');transform:rotate(270deg)}details p{font-weight:400;padding-left:5px;margin:0}details p.firstchild{padding-top:50px}
+    </style>
+    <title>Python</title>
+</head>
+<body>
+    <header>     
+      <nav id="top">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/python/uitleg/#uitleg" class="active">Uitleg</a></li>
+      
+          <li><a href="/easy_canvas/python/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/python/projecten/#projecten">Projecten</a></li>
+      
+        </ul>
+      </nav>
+      <nav id="side">   
+        <a href="#" onclick="toggleNav()"><picture><source type="image/avif" srcset="/easy_canvas/img/pKxxYu2mCg-20.avif 20w"><source type="image/webp" srcset="/easy_canvas/img/pKxxYu2mCg-20.webp 20w"><img src="/easy_canvas/img/pKxxYu2mCg-20.jpeg" alt="menu" width="20" height="15"></picture></a>
+        <ul>
+      
+          <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/python/uitleg/#uitleg" class="active">Uitleg</a></li>
+      
+          <li><a href="/easy_canvas/python/opdrachten/#opdrachten">Opdrachten</a></li>
+      
+          <li><a href="/easy_canvas/python/projecten/#projecten">Projecten</a></li>
+      
+        </ul>
+      </nav>
+  </header>
+  <div id="page_wrapper">
+  
+    <main>
+
+        <div id="content">
+        <div class="section" id="title">
+            <h1>Python</h1>
+        </div>
+        <div class="section">
+<h3 id="uitleg">Uitleg</h3>
+<p>In dit onderdeel vind je uitleg over het installeren van een ontwikkelomgeving voor Python. Daarnaast worden de basis programmeer principes van python uitgelegd.</p>
+</div>
+<div class="section">
+<h3 id="installatie">Installatie</h3>
+<p>Om met python te kunnen programmeren heb je het volgende nodig:</p>
+<h4 id="python-zelf">Python Zelf</h4>
+<ul>
+<li>De Python-interpreter</li>
+<li>Een Code-Editor of IDE
+<ul>
+<li>Visual Studio Code is erg populair en heeft veel handige extensies voor Python.
+<ul>
+<li>PyCharm** (Community Edition is gratis) is specifiek ontworpen voor Python en wordt veel gebruikt.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="de-commandoregel-(terminal)">De Commandoregel (Terminal)</h4>
+<ul>
+<li>Hoewel je veel vanuit je IDE kunt doen, is het handig om vertrouwd te raken met de <strong>commandoregel</strong> (Terminal op macOS/Linux, Command Prompt of PowerShell op Windows).</li>
+<li>Je gebruikt dit om Python-scripts uit te voeren, pakketten te installeren met <code>pip</code>, en om virtuele omgevingen te beheren.</li>
+</ul>
+<h4 id="pip-(pakketbeheerder)">Pip (Pakketbeheerder)</h4>
+<p>Je gebruikt het om extra bibliotheken en modules te installeren die je nodig hebt voor grotere projecten, zoals <code>requests</code> voor webverzoeken of <code>pandas</code> voor data-analyse.</p>
+<ul>
+<li><code>pip</code> is de standaard <strong>pakketbeheerder</strong> voor Python en is automatisch meegeïnstalleerd met een nieuwe versie van Python.</li>
+<li><code>uv</code> is een nieuwkomer, maar is al snel erg populair geworden door snelheid en gebruiksgemak. Als je <code>uv</code> wilt gebruiken moet je het apart installeren (<em>geen must have</em>).</li>
+</ul>
+<h4 id="docker">Docker</h4>
+<ul>
+<li>We hebben al een versie van Python voorbereid in een Docker-image.</li>
+<li>Naast python bevat de image ook een database-server (mariadb) voor later gebruik.</li>
+<li>Om de database-server te configureren is er ook een versie van phpMyAdmin geïnstalleerd.</li>
+<li><a href="https://github.com/siewers32/docker_python/">Download de repository hier</a></li>
+</ul>
+</div>
+<div class="section">
+<h3 id="variabelen">Variabelen</h3>
+<p class="lti-embed" style="text-align: left; margin-top:40px; margin-bottom:0px"><strong>
+        <iframe class="lti-embed" style="width:100%; height:480px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube-nocookie.com/embed/s0Cw-3Cu66c">
+            </iframe></strong></p>
+<h4 id="verschillende-typen-variabelen">Verschillende typen variabelen</h4>
+<p>Je kunt variabelen gebruiken om verschillende typen informatie op te slaan. Denk aan integers, floats, strings, lists, tuples, dictionaries en meer!</p>
+<p><strong>Integers</strong><br>
+Integers zijn gehele getallen zoals: 5 of 6 of 120993</p>
+<pre class="language-python"><code class="language-python">my_integer <span class="token operator">=</span> <span class="token number">5</span></code></pre>
+<p><strong>Floats</strong><br>
+Floats zijn getallen waar een punt in staat zoals: 4.95 of 45.332
+In nederland is die punt een komma. 4,25 betekent 4 en nog een beetje. 0,25 is een kwart of 25-honderste. In python schrijf je gebroken getallen (floats) altijd met een punt.</p>
+<pre class="language-python"><code class="language-python">my_float <span class="token operator">=</span> <span class="token number">5.0</span></code></pre>
+<p><strong>Strings</strong>
+Een string is een serie karaters of tekst. Je herkent een string aan het feit dat er aanhalingstekens omheen staan zoals:</p>
+<pre class="language-python"><code class="language-python">my_string <span class="token operator">=</span> <span class="token string">"Dit is een stukje tekst"</span></code></pre>
+<p><strong>Lists</strong><br>
+Een list is een lijst die weer bestaat uit verschillende waarden zoals:</p>
+<pre class="language-python"><code class="language-python">mylist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"tekst"</span><span class="token punctuation">,</span> <span class="token number">4.86</span><span class="token punctuation">]</span></code></pre>
+<p><strong>Tuple</strong><br>
+Een tuple lijkt op een list, maar je kunt hem niet aanpassen. In een list kun je gerust andere waarden toevoegen of verwijderen. Een tuple is zoals die is en verandert verder niet. Dit is een voorbeeld (1, 8, 75, &quot;lekker weertje&quot;)</p>
+<pre class="language-python"><code class="language-python">my_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">75</span><span class="token punctuation">,</span> <span class="token string">"lekker weertje"</span><span class="token punctuation">)</span></code></pre>
+<p><strong>Dictionary</strong>
+Een dictionary is ook weer een soort list, maar nu kun je alle waarden in de dictionary ook een naam geven.</p>
+<pre class="language-python"><code class="language-python">my_dictionary <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"pipo"</span><span class="token punctuation">,</span> <span class="token string">"mijn_getal"</span><span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token string">"fav_kleur"</span><span class="token punctuation">:</span> <span class="token string">"groen"</span><span class="token punctuation">}</span></code></pre>
+</div>
+<div class="section">
+<h3 id="tekstfuncties">Tekstfuncties</h3>
+<p>Een function of methode is een actie die je kunt uitvoeren op een stukje data. Je kunt bijvoorbeeld in een stukje tekst automatisch alle woorden met een hoofdletter wil laten beginnen. Hiervoor gebruik je de methode title()</p>
+<pre class="language-python"><code class="language-python">stukje_tekst <span class="token operator">=</span> <span class="token string">"dit is een stukje tekst"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: Dit Is Een Stukje Tekst</span></code></pre>
+<p>Je kunt ook alle letters hoofletters maken...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: DIT IS EEN STUKJE TEKST</span></code></pre>
+<p>... of juist weer kleine letters....</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>stukje_tekst<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># output: dit is een stukje tekst</span></code></pre>
+<h4 id="variabelen-en-functies">Variabelen en functies</h4>
+<p>Je kunt ook variabelen printen en aanpassen.</p>
+<pre class="language-python"><code class="language-python">fname <span class="token operator">=</span> <span class="token string">"ariane"</span>
+lname<span class="token operator">=</span> <span class="token string">"grande"</span>
+fullname <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>fname<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>lname<span class="token punctuation">}</span></span><span class="token string">"</span></span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>fullname<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output: Ariane Grande</span></code></pre>
+<p>De letter f bij fullname staat voor format.  Met format kun je variabelen en tekst door elkaar gebruiken. Aan <code>fullname</code> wordt nu de string &quot;ariane grande&quot; toegekend. Door de title-methode krijgen alle woorden een hoofdletter aan het begin.</p>
+<h4 id="gedoe-met-aanhalingstekens">Gedoe met aanhalingstekens</h4>
+<p>Aanhalingstekens heb je in 2 smaken <code>'</code> en <code>&quot;</code>. Je gebruikt ze vaak in teksten, maar ze worden ook gebruikt om aan python aan te geeven dat een string ergens begint of eindigt.</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Dit kan wel...</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">"The World's Best Place to Be"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span>
+
+<span class="token comment"># Maar dit kan niet....</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">'The World'</span>s Best Place to Be'
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span></code></pre>
+<p>Je kunt best gebruik maken van aanhalingstekens in een string, maar gebruik dan niet dezelfde aanhalingstekens om een string te beginnen en te eindigen.
+Soms ontkom je er niet aan. Je kunt dan een \ voor een speciaal karakter (bijv. een aanhalingsteken) zetten...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Zo kan het ook....</span>
+kroegnaam <span class="token operator">=</span> <span class="token string">'The World\'s Best Place to Be'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kroegnaam<span class="token punctuation">)</span></code></pre>
+<p>Een zogenaamd escape-karakter \ heeft dus een speciale functie in python. Je kunt een escape-karakter ook printen...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Zo kan het ook....</span>
+<span class="token comment"># locatie = "C:\python\mapje wordt dan"</span>
+locatie <span class="token operator">=</span> <span class="token string">"C:\\python\\mapje"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>locatie<span class="token punctuation">)</span>
+
+<span class="token comment">#output C:\python\mapje</span></code></pre>
+<p>Door een escape-karakter \ voor een karakter met een speciale betekenis te zetten, acteert het weer als een gewoon karakter.</p>
+<p>In teksten heb je ook te maken met karakters die je niet kunt zien! Denk aan een karakter om naar de volgende regel te gaan of een tab. In python kun je deze karakters wel gebruiken. Een volgende-regel of next-line charakter is een <code>\n</code>. Een tab wordt aangeduid met een <code>\t</code>.</p>
+<pre class="language-python"><code class="language-python">eerste <span class="token operator">=</span> <span class="token string">"Deze tekst staat op de eerste regel"</span>
+tweede <span class="token operator">=</span> <span class="token string">"Deze tekst staat op de tweede regel"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>eerste<span class="token punctuation">}</span></span><span class="token string">\n</span><span class="token interpolation"><span class="token punctuation">{</span>tweede<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+Deze tekst staat op de eerste regel
+Deze tekst staat op de tweede regel</code></pre>
+<h4 id="berekeningen-met-tekst">Berekeningen met tekst</h4>
+<p>Met teksten kun je natuurlijk niet echt rekenen, maar python neemt berekeningen wel serieus. Bekijk onderstaande code maar eens:</p>
+<pre class="language-python"><code class="language-python">mijn_tekst <span class="token operator">=</span> <span class="token string">"***"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mijn_tekst <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment">#output is twee keer zoveel sterren!!</span>
+<span class="token operator">**</span><span class="token operator">**</span><span class="token operator">**</span></code></pre>
+<pre class="language-python"><code class="language-python">mijn_tekst <span class="token operator">=</span> <span class="token string">"***"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>mijn_tekst <span class="token operator">+</span> mijn_tekst<span class="token punctuation">)</span>
+
+<span class="token comment">#output is twee keer zoveel sterren!!</span>
+<span class="token operator">**</span><span class="token operator">**</span><span class="token operator">**</span></code></pre>
+<p>Je kunt niet alle bewerkingstekens gebruiken. Je kunt tekst niet delen en teksten van elkaar aftrekken werkt ook niet.</p>
+</div>
+<div class="section">
+<h3 id="lists">Lists</h3>
+<p>Lists, tuples en dictionaries bieden de mogelijkheid om een set van informatie op te slaan. Lists zijn bijvoorbeeld handig als je alle namen van files in een directory op wil slaan. Of je wilt de namen en adressen van medewerkers opslaan. Als het gaat om een set van waarden die met elkaar te maken hebben, dan kan een list uitkomst bieden.
+Je kunt bijvoorbeeld de (eerste) letters van het alfabet opslaan in een list...</p>
+<pre class="language-python"><code class="language-python">my_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token string">"D"</span><span class="token punctuation">,</span> <span class="token string">"E"</span><span class="token punctuation">,</span> <span class="token string">"F"</span><span class="token punctuation">]</span></code></pre>
+<p>Je kunt een letter opzoeken op basis van de plek waar hij in de lijst staat. De letter &quot;A&quot; staat op de eerste plek. Bij een list begin je altijd te tellen vanaf 0. Je zou dus kunnen zeggen dat de letter &quot;A&quot; op de 0-de plek staat. Om de letter &quot;A&quot; te printen doe je dit...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Zo toon je het eerste element van de list my_list op het scherm.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+A
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+C
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+D</code></pre>
+<p>Je kunt ook vanaf de andere kant van de list beginnen te tellen.
+Bijvoorbeeld:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+F
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+E</code></pre>
+<h4 id="elementen-in-een-list-aanpassen">Elementen in een list aanpassen</h4>
+<p>Stel je hebt een lijst motoren en je wilt er 1 aanpassen</p>
+<pre class="language-python"><code class="language-python">motorcycles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'honda'</span><span class="token punctuation">,</span> <span class="token string">'yamaha'</span><span class="token punctuation">,</span> <span class="token string">'suzuki'</span><span class="token punctuation">]</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+
+<span class="token comment"># honda wordt aangepast naar ducati</span>
+motorcycles<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'ducati'</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ducati', 'yamaha', 'suzuki']</span></code></pre>
+<h4 id="elementen-toevoegen-aan-een-list">Elementen toevoegen aan een list</h4>
+<p>De honda moet toch weer terugkomen in de lijst. We willen dus een extra element toevoegen. Dat doe je met de methode <code>append()</code></p>
+<pre class="language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">'honda'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ducati', 'yamaha', 'suzuki', 'honda']</span></code></pre>
+<h4 id="elementen-op-een-bepaalde-plek-toevoegen-in-een-lijst">Elementen op een bepaalde plek toevoegen in een lijst</h4>
+<p>Een KTM ontbreekt nog, maar die willen we toevoegen na de ducati. Dit kun je doen met de methode <code>insert()</code>. Insert neemt 2 argumenten, namelijk de plek waar moet worden ingevoegd en de waarde.</p>
+<pre class="language-python"><code class="language-python">motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'ktm'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'suzuki', 'honda']</span>
+
+motorcycles<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'kawasaki'</span><span class="token punctuation">)</span> 
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'kawasaki', 'suzuki', 'honda']</span>
+</code></pre>
+<h4 id="elementen-weggooien">Elementen weggooien</h4>
+<p>Dat kan natuurlijk ook..</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">del</span> motorcycles<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>motorcycles<span class="token punctuation">)</span>
+
+<span class="token comment"># output: ['ktm', 'ducati', 'yamaha', 'suzuki', 'honda']</span></code></pre>
+<h4 id="list-methoden">List methoden</h4>
+<p>Eigenlijk heb je al gewerkt met list methoden. Je kunt door een methode te gebruiken gegevens toevoegen aan een list met <code>insert()</code> of <code>append()</code>. Er zijn nog meer mogelijkheden met lists. Een opsomming vind je op <a href="https://www.w3schools.com/python/python_ref_list.asp">w3schools python list methods</a></p>
+<h4 id="een-list-in-een-list">Een list in een list</h4>
+<p>Lists kunnen zelf ook weer onderdeel uitmaken van een list. Stel dat je een list hebt met voertuigen:</p>
+<pre class="language-python"><code class="language-python">voertuigen <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"vliegtuig"</span><span class="token punctuation">,</span> <span class="token string">"auto"</span><span class="token punctuation">,</span> <span class="token string">"fiets"</span><span class="token punctuation">]</span></code></pre>
+<p>Je hebt nog een 2e list met dieren</p>
+<pre class="language-python"><code class="language-python">dieren <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"aap"</span><span class="token punctuation">,</span> <span class="token string">"mier"</span><span class="token punctuation">,</span> <span class="token string">"rat"</span><span class="token punctuation">]</span></code></pre>
+<p>En nu voegen we beide lists toe aan een nieuwe list</p>
+<pre class="language-python"><code class="language-python">allebei <span class="token operator">=</span> <span class="token punctuation">[</span>voertuigen<span class="token punctuation">,</span> dieren<span class="token punctuation">]</span></code></pre>
+<p>Als je dan &quot;mier&quot; wilt printen dan moet je op zoek naar het 2e element in de 2e list. Aangezien we beginnen te tellen bij 0 wordt dat...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>De aap is dan het eerste element in de 2e list <code>allebei[1][0]</code><br>
+Het vliegtuig is het eerste element in de 1e list <code>allebei[0][0]</code></p>
+<p>We voegen nog een dictionary toe. In een dictionary hebben elementen een naam, bijvoorbeeld:</p>
+<pre class="language-python"><code class="language-python">b <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"Benny"</span><span class="token punctuation">,</span> <span class="token string">"fav_kleur"</span><span class="token punctuation">:</span> <span class="token string">"groen"</span> <span class="token punctuation">}</span>
+g <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"naam"</span><span class="token punctuation">:</span> <span class="token string">"Gerard"</span><span class="token punctuation">,</span> <span class="token string">"fav_kleur"</span><span class="token punctuation">:</span> <span class="token string">"paars"</span> <span class="token punctuation">}</span>
+allebei<span class="token punctuation">.</span>append<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+allebei<span class="token punctuation">.</span>append<span class="token punctuation">(</span>g<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">)</span></code></pre>
+<p>Als je nu de naam van de eerste dictionary wil printen, dan moet je dus zijn bij het 3e element in de list allebei. Van dat 3e element wil je de naam printen:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>allebei<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"naam"</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+</div>
+<div class="section">
+<h3 id="user-input">User input</h3>
+<p class="lti-embed" style="text-align: left; margin-top:40px; margin-bottom:0px"><strong>
+        <iframe class="lti-embed" style="width:100%; height:480px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="auto" src="https://www.youtube-nocookie.com/embed/pDOpoHsTPLs">
+            </iframe></strong></p>
+<p>Python is veelzijdig, je kunt er desktop-apps mee maken, websites, maar je kunt er ook interactieve programma's mee maken die draaien vanaf de command-line.
+Om input van gebruikers te kunnen verwerken kun je gebruik maken van de gelijknamige functie <code>input()</code></p>
+<h4 id="user-input-is-altijd-van-het-type-string">User input is altijd van het type string</h4>
+<p>Wat je ook invult het resultaat is altijd een string.
+Je kunt berekeningen maken met invoer via <code>input()</code>, maar dan moet je de ingevoerde gegevens omzetten naar een integer of een float.</p>
+<pre class="language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Geef me een nummertje tussen 0 en 10 \n"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+Geef me een nummertje tussen <span class="token number">0</span> en <span class="token number">10</span>
+<span class="token number">9</span>
+<span class="token number">99999</span></code></pre>
+<h4 id="typecasting">Typecasting</h4>
+<p>In plaats van de uitkomst van 9 * 5 wordt de variabele num als een string gezien en wordt zodanig 5 keer herhaald dus 99999. Om met input te kunnen rekenen moet de waarde gecast worden naar een ander type. Casting is het omzetten van string naar integer of van integer naar float. Casting lukt niet altijd. De letter &quot;A&quot; is geen getal, dus als je een letter naar een integer probeert te casten krijg je een ValueError.
+Hieronder de aangepaste code</p>
+<pre class="language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Geef me een nummertje tussen 0 en 10 \n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num <span class="token operator">*</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+Geef me een nummertje tussen <span class="token number">0</span> en <span class="token number">10</span>
+<span class="token number">9</span>
+<span class="token number">45</span></code></pre>
+<p>Mogelijke conversies:</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span> <span class="token string">"1"</span>
+num <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+num <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+
+<span class="token comment">#output 1.0</span>
+
+a <span class="token operator">=</span> <span class="token string">"Tekstje"</span>
+a <span class="token operator">=</span> <span class="token builtin">tuple</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+a <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'j'</span><span class="token punctuation">,</span> <span class="token string">'t'</span><span class="token punctuation">,</span> <span class="token string">'s'</span><span class="token punctuation">,</span> <span class="token string">'k'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'T'</span><span class="token punctuation">]</span>
+</code></pre>
+</div>
+<div class="section">
+<h3 id="loops">Loops</h3>
+<p>Vaak komt het voor dat je een bewerking wilt uitvoeren op alle elementen in een list. Als je een list print, dan zie je ook de haken van de list en komma's tussen de elementen. Stel dat je alle elementen gewoon onder elkaar wilt printen, hoe gaat dat?</p>
+<pre class="language-python"><code class="language-python">tovenaars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'tita'</span><span class="token punctuation">,</span> <span class="token string">'merlin'</span><span class="token punctuation">,</span> <span class="token string">'hans klok'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>tovenaars<span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token punctuation">[</span><span class="token string">'tita'</span><span class="token punctuation">,</span> <span class="token string">'merlin'</span><span class="token punctuation">,</span> <span class="token string">'hans klok'</span><span class="token punctuation">]</span></code></pre>
+<p>Hieronder worden de tovenaars 1 voor 1 in een loop getoond op het scherm.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> tovenaar <span class="token keyword">in</span> tovenaars<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tovenaar<span class="token punctuation">)</span>
+ 
+<span class="token comment">#output</span>
+tita
+merlin
+hans klok</code></pre>
+<p>In de regel <code>for tovenaar in tovenaars</code> wordt voor alle tovenaars 1 voor 1 een waarde aan de variabele tovenaar toegekend. Je noemt dit een 'loop' omdat deze actie net zo lang wordt herhaald totdat alle elementen in tovenaars een keer aan de beurt zijn geweest.</p>
+<ul>
+<li>De eerste keer wordt de waarde 'tita' toegekend aan de variabele tovenaar.</li>
+<li>De waarde van tovenaar wordt geprint</li>
+<li>De volgende waarde uit tovenaars wordt opgehaald en opnieuw wordt er geprint</li>
+<li>Dit proces wordt herhaald totdat alle elementen uit de list aan de beurt zijn geweest.</li>
+<li></li>
+</ul>
+<p>Je ziet dat de regel <code>print(tovenaar)</code> iets van de kant af staat. Deze regel is ingesprongen. In Python betekent dit dat de print-opdracht is ingebed in de for-loop. Hier moet je goed op letten, want Python is streng. Als je slordig omgaat met inspringingen dan krijg je foutmeldingen.</p>
+<pre class="language-python"><code class="language-python">counter <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> tovenaar <span class="token keyword">in</span> tovenaars<span class="token punctuation">:</span>
+    counter <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment"># Dit is hetzelfde als counter = counter + 1</span>
+    <span class="token comment"># counter wordt dus steeds 1 meer in de loop</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>tovenaar<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span> tovenaar<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span></span><span class="token string"> is tovenaar </span><span class="token interpolation"><span class="token punctuation">{</span> counter <span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token comment"># Je kunt meerdere opdrachten uitvoeren in een loop!</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Zo, dat was het"</span><span class="token punctuation">)</span></code></pre>
+<p>Zoals je ziet wordt alle code die is ingesprongen herhaald in de for-loop. Als laatste wordt nog &quot;Zo, dat was het&quot; getoond. Dit is niet ingesprongen. Het valt buiten de loop en wordt na de loop maar 1 keer uitgevoerd. De <code>:</code> in de eerste regel can de for-loop en de inspringing bepalen waar de code in de loop begint en waar die eindigt.</p>
+<h4 id="code-herhalen-zonder-list">Code herhalen zonder list</h4>
+<p>Je kunt ook zelf definiëren hoe vaak een loop moet worden gebruikt. Hieronder een voorbeeld:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token number">1</span>
+<span class="token number">2</span></code></pre>
+<p>Met <code>range()</code> kun je aangeven hoe vaak de code in de for-loop moet worden herhaald. De variabele v krijgt steeds de eerstvolgende waarde uit de range.
+Je ziet dat de loop maar 2x wordt uitgevoerd. De eerste waarde in range wordt getoond, maar de laatste niet!</p>
+<p>Je kunt ook nummers overslaan in een range...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token number">2</span>
+<span class="token number">4</span>
+<span class="token number">6</span></code></pre>
+<p>Het derde argument in de functie <code>range()</code> bepaalt hoeveel er wordt opgeteld bij huidig getal.
+De eerste keer wordt 2 weergegeven. Bij 2 wordt 2 opgeteld, dus wordt 4 weergegeven etc. etc.
+Het laatste getal 8 wordt niet meer weergegeven!</p>
+<h4 id="berekeningen-in-een-loop">Berekeningen in een loop</h4>
+<p>Je kunt de variabele <code>v</code> gebruiken om berekeningen mee uit te voeren. Onderstaand voorbeeld laat zien hoe je iedere v kunt vermenigvuldigen met zichzelf (kwadraat). Het resultaat wordt toegevoegd aan een list!</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Een lege list maken</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># kwadraat van zichzelf</span>
+    lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>v <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">]</span></code></pre>
+<h4 id="list-comprehensions">List comprehensions</h4>
+<p>Bovenstaand voorbeeld kun je ook nog korter weergeven. Python heeft hiervoor de list comprehension. Je kunt tussen de rechte haken van een list een klein stukje code opnemen waarmee je de list genereert...</p>
+<pre class="language-python"><code class="language-python">kwadraten <span class="token operator">=</span> <span class="token punctuation">[</span>v <span class="token operator">**</span> <span class="token number">2</span> <span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>kwadraten<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">36</span><span class="token punctuation">]</span></code></pre>
+<h4 id="lists-to-copy-or-not-to-copy">Lists to copy or not to copy</h4>
+<p>Bekijk onderstaande code...</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> a
+b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></code></pre>
+<p>Wat gebeurt hier? Er wordt een lijst <code>a</code> gemaakt. <code>b</code> wordt gelijk aan <code>a</code>. <code>b</code> wordt veranderd, maar uit de print-opdracht blijkt dat <code>a</code> ook is veranderd!
+De opdracht <code>b = a</code> levert alleen een verwijzing op in plaats van een kopie. <code>a</code> en <code>b</code> verwijzen beide naar dezelfde list!</p>
+<h4 id="lists-slicen">Lists slicen</h4>
+<p>We herhalen het bovenstaande nog een keer maar met 1 klein verschil..</p>
+<pre class="language-python"><code class="language-python">a <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+b<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+<p>Door de toevoeging van <code>[:]</code> wordt er wel een echte kopie gemaakt van <code>a</code>!
+Met de <code>[:]</code>-syntax kun je met een gedeelte van een list een nieuwe list maken. Met <code>[:]</code> geef je aan dat je van alle elementen in een bestaande list een nieuwe list wilt maken.<br>
+Als je alle elementen vanaf het 1e element in de list wil hebben dan doe je dat zo...</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></code></pre>
+<p>Alle elementen tot aan list-element 4...</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+<p>Alle elementen vanaf 1 tot 4</p>
+<pre class="language-python"><code class="language-python">my_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+nw_list <span class="token operator">=</span> my_lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nw_list<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span></code></pre>
+</div>
+<div class="section">
+<h3 id="condities">Condities</h3>
+<p>Op basis van condities kun je beslissen wat je programma moet doen in een bepaalde situatie. Stel je wil weten of een bepaalde waarde voorkomt in een list. Dan kan je dat zo doen....</p>
+<pre class="language-python"><code class="language-python">autos <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> auto <span class="token keyword">in</span> autos<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> auto <span class="token operator">==</span> <span class="token string">"bmw"</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"yep, er zit een bmw bij!"</span><span class="token punctuation">)</span></code></pre>
+<p>In bovenstaande code zie je het if-statement weer zijn eigen code-block heeft. Je ziet het if-commando - een conditie die wel of niet waar kan zijn - en een <code>:</code>
+Daarna zie je de ingesprongen tekst &lt;codeprint(&quot;yep, er zit een bmw bij!&quot;). Dit stukje code wordt alleen uitgevoerd als de conditie <code>auto == &quot;bmw&quot;</code> waar is (True).</p>
+<p>De dubbele <code>==</code>-tekens staan voor: 'gelijk aan'.</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># x krijgt de waarde 10 toegewezen</span>
+x <span class="token operator">=</span> <span class="token number">10</span> 
+
+<span class="token comment"># x wordt vergeleken met 10</span>
+x <span class="token operator">==</span> <span class="token number">10</span>
+
+<span class="token comment"># Als x gelijk is aan 10 dan is x == 10 gelijk aan True</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token boolean">True</span></code></pre>
+<p>Vergelijken is dus iets anders dan toekennen waarbij je een waarde in een variabele stopt. Op <a href="https://www.w3schools.com/python/gloss_python_comparison_operators.asp">w3schools</a> vind je een heel overzicht van vergelijkings-operatoren. Dit is er ook een van:</p>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+<span class="token boolean">True</span></code></pre>
+<h4 id="and-en-of">AND en OF</h4>
+<p>Je kunt meerdere vergelijkingen maken in 1 regel...<br>
+Met <code>and</code> moeten beide vergelijkingen <code>True</code> zijn</p>
+<pre class="language-python"><code class="language-python">x <span class="token operator">=</span> <span class="token number">9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span> <span class="token keyword">and</span> x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment"># output</span>
+<span class="token boolean">False</span></code></pre>
+<p>Met <code>or</code> moet een van de vergelijkingen <code>True</code> zijn</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>x <span class="token operator">!=</span> <span class="token number">10</span> <span class="token keyword">or</span> x <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+<span class="token boolean">True</span></code></pre>
+<p>Controleren of een element voorkomt in een list..</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'audi'</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'audi is in the list'</span><span class="token punctuation">)</span></code></pre>
+<p>of juist niet...</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'mercedes'</span> <span class="token keyword">not</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'mercedes is niet in list'</span><span class="token punctuation">)</span></code></pre>
+<h4 id="if-else-statements">if-else statements</h4>
+<p>Je kunt ook de uitkomst van een conditie koppelen aan code die wordt uitgevoerd als de uitkomst <code>True</code> is en weer ander code als de uitkomst juist <code>False</code> is....</p>
+<pre class="language-python"><code class="language-python">lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'audi'</span><span class="token punctuation">,</span> <span class="token string">'bmw'</span><span class="token punctuation">,</span> <span class="token string">'subaru'</span><span class="token punctuation">,</span> <span class="token string">'toyota'</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> <span class="token string">'mercedes'</span> <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Mercedes is wel in de list'</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Mercedes is niet in de list'</span><span class="token punctuation">)</span></code></pre>
+<p>En nog veelzijdiger wordt het als je ook nog verschillende condities kunt testen....</p>
+<pre class="language-python"><code class="language-python">clubs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'PEC Zwolle'</span><span class="token punctuation">,</span> <span class="token string">'Ajax'</span><span class="token punctuation">,</span> <span class="token string">'Feijenoord'</span><span class="token punctuation">,</span> <span class="token string">'AZ'</span><span class="token punctuation">,</span> <span class="token string">'FC Knudde'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> club <span class="token keyword">in</span> clubs<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> club<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'A'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint met de letter A"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">elif</span> club<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'F'</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint met de letter F"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"De eerste letter van </span><span class="token interpolation"><span class="token punctuation">{</span>club<span class="token punctuation">}</span></span><span class="token string"> begint niet met een A of F"</span></span><span class="token punctuation">)</span>
+</code></pre>
+<p>Zoals je ziet kun je met de rechte haken ook in een string refereren naar de plek waar een karakter zich bevindt. Je kunt ook teksten slicen met <code>[:]</code>!</p>
+</div>
+<div class="section">
+<h3 id="while">While</h3>
+<p>Eerder heb je gezien dat je code kunt herhalen in een for-loop. Een while-loop doet in principe precies hetzelfde, maar er zijn situaties waarbij een while-loop een betere oplossing is dan een for-loop.
+Een van die situaties is bij applicaties waar user-input wordt gevraagd.<br>
+Bekijk onderstaande code eens..</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Vertel me iets dan geef ik terug wat je invoerde! \n"</span> \
+         <span class="token string">"Vul 'q' in om het programma te eindigen. \n"</span>
+
+active <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> active<span class="token punctuation">:</span>
+    message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+        active <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span></code></pre>
+<p>In gewoon nederlands:<br>
+Zolang de variabele <code>active</code> gelijk is aan <code>True</code> gaan we het volgende doen:</p>
+<ul>
+<li>Er wordt gechecked of de gebruiker de letter 'q' heeft ingegvoerd.</li>
+<li>Als dat zo is wordt <code>active</code> op False gezet. Het programma wordt dan gestopt.</li>
+<li>Als dan niet zo is dan wordt hetgeen de gebruiker heeft ingevoerd op het scherm getoond.</li>
+</ul>
+<p>Bij een while-loop wordt de code dus net zo lang herhaald totdat de conditie achter <code>while</code>-loop <code>False</code>is. Dan stopt de while loop.</p>
+<p>Als het programma stopt, dan gaat alle gebruikers-input verloren. In het volgende stukje code zie je hoe je die gebruikersinput op kan slaan in een tekst-bestand:</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Vertel me iets dan geef ik terug wat je invoerde! \n"</span> \
+         <span class="token string">"Vul 'q' in om het programma te eindigen. \n"</span>
+
+active <span class="token operator">=</span> <span class="token boolean">True</span>
+lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> active<span class="token punctuation">:</span>
+    message <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> message <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+        active <span class="token operator">=</span> <span class="token boolean">False</span>
+        fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'newtext.txt'</span><span class="token punctuation">,</span> <span class="token string">'wt'</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+            fo<span class="token punctuation">.</span>write<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+        fo<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>message<span class="token punctuation">)</span></code></pre>
+<p>Er wordt een lege list toegevoegd aan de code <code>lst</code><br>
+Alle gebruikersinput wordt toegevoegd aan de list <code>lst</code>.
+Als er op <code>q</code> wordt gedrukt wordt er....</p>
+<ul>
+<li>Een nieuw tekstbestand aangemaakt met de naam <code>newtext.txt</code></li>
+<li>Alle elementen in <code>lst</code> worden in een for-loop naar het text-bestand geschreven</li>
+</ul>
+<h4 id="werken-met-tekstbestanden">Werken met tekstbestanden</h4>
+<pre class="language-python"><code class="language-python">fo <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'newtext.txt'</span><span class="token punctuation">,</span> <span class="token string">'wt'</span><span class="token punctuation">)</span></code></pre>
+<p><code>fo</code> is een zogenaamde 'handle' naar het tekstbestand <code>newtext.txt</code>. De methode <code>open</code> accepteert 2 argumenten. De naam van het bestand en wat je met dat bestande gaat doen. De optie <code>wt</code> staat voor 'write text'. Python gaat anders om met textbestanden dan met binaire bestanden zoals afbeeldingen e.d. De functie write betekent dat het tekstbestand wordt aangemaakt als het nog niet bestaat, maar als het wel bestaat, dan wordt het overschreven.
+Als je informatie toe wilt voegen aan een bestaand bestand, dan gebruik je de optie <code>at</code>. Dit staat voor 'append' zodat je meer tekst toe kan voegen.
+Je kunt ook teksten uit bestanden lezen. Dan geef je de optie <code>rt</code></p>
+<h4 id="charactersets">Charactersets</h4>
+<p>Voor de computer zijn letters eigenlijk gewoon nummers. Een karakter wordt omgezet naar nullen en enen in een byte. Byte betekent letterlijk by eight. Dus er zijn 8 nullen en enen beschikbaar om een karakter op te slaan. Met 8 nullen en enen kun je 2<sup>8</sup> = 256 verschillende tekens maken. De letter 'a' wordt opgeslagen onder code 97, letter 'b' wordt dan 98 en 'c' dus 99 enzovoort. De hoofdletter 'A' wordt opgeslagen als code '65'. Python werkt onder de motorkap ook met deze codes. Je kunt deze codes opzoeken in de <a href="https://nl.wikipedia.org/wiki/ASCII_(tekenset)#Standaard-ASCII">ASCII</a> lijst.
+Kijk maar eens naar de sortering van deze list:</p>
+<pre class="language-python"><code class="language-python">letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span>
+letters<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>letters<span class="token punctuation">)</span>
+
+<span class="token comment">#output</span>
+<span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span></code></pre>
+<p>De hoofdletters komen voor de kleine letters, omdat die een lagere code hebben in de ASCII lijst.
+Je kunt de codering voor karakters opzoeken met python...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+<span class="token number">97</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#output</span>
+a</code></pre>
+<h4 id="uit-een-loop-breken">Uit een loop breken</h4>
+<p>Stel je hebt dit programma....</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Geef me de naam van een voetbalclub \n"</span> \
+          <span class="token string">"(vul een 'q' in om te stoppen) \n"</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+      vc <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> vc <span class="token operator">==</span> <span class="token string">'q'</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"De voetbalclub </span><span class="token interpolation"><span class="token punctuation">{</span>vc<span class="token punctuation">}</span></span><span class="token string"> is helemaal baas!"</span></span><span class="token punctuation">)</span></code></pre>
+<p>Zolang while True is wordt de code herhaald. Daar komt dus nooit een einde aan. In de vorige voorbeelden hadden we nog de variabele 'active' gebruikt om de while-loop te stoppen. In dit geval stoppen we de loop met het commando <code>break</code></p>
+<h4 id="teruggaan-naar-het-begin-van-de-loop">Teruggaan naar het begin van de loop</h4>
+<p>Met het commando <code>continue</code> kun je de rest van de code in een loop overslaan en direct terug gaan naar het begin van de loop.
+Stel je hebt onderstaande code...</p>
+<pre class="language-python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> num <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">:</span>
+      num <span class="token operator">+=</span> <span class="token number">1</span>
+      <span class="token keyword">if</span> num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+      <span class="token keyword">print</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span></code></pre>
+<p>Deze loop gaat net zo lang door totdat de variabele <code>num</code> niet meer kleiner is dan 10. In het if-statement wordt bekeken of <code>num</code> deelbaar is door 2. Als dat zo is wordt <code>num</code> niet op het scherm getoond omdat <code>continue</code> er voor zorgt dat de code wordt afgebroken en het programma weer terug gaat naar het begin van de loop. De print-opdracht aan het einde van het programma wordt dus overgeslagen!</p>
+</div>
+<div class="section">
+<h3 id="foutafhandeling">Foutafhandeling</h3>
+<p>Om er voor te zorgen dat gebruikers niet met foutmeldingen worden geconfronteerd en applicaties niet instorten als een gebruiker iets verkeerd doet, is het belangrijk dat fouten worden afgevangen.</p>
+<p>Bij applicaties waarbij om invoer wordt gevraagd kan niet van tevoren worden voorspeld wat een gebruiker gaat invoeren. Alles is mogelijk, maar een applicatie kan niet altijd met de invoer van een gebruiker overweg....</p>
+<pre class="language-python"><code class="language-python">prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span></code></pre>
+<p>Als de gebruiker nu <code>sdfdsf</code> invult wordt onderstaande error getoond:</p>
+<pre class="language-python"><code class="language-python">ValueError<span class="token punctuation">:</span> invalid literal <span class="token keyword">for</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">with</span> base <span class="token number">10</span><span class="token punctuation">:</span> <span class="token string">'sdfdsf'</span>
+<span class="token punctuation">(</span>venv<span class="token punctuation">)</span> janjaap@iMac<span class="token operator">-</span>Pro<span class="token operator">-</span>van<span class="token operator">-</span>Jan pythoncisco <span class="token operator">%</span> </code></pre>
+<p>Python probeert de input om te zetten naar een <code>int</code>, maar dat lukt niet met <code>sdfs</code>.
+Het programma wordt onderbroken.</p>
+<p>Om te voorkomen dat de programma abrupt stopt nadat er een fout optreedt, kan de code eerst getest worden en kan de developer bepalen wat het programma moet doen bij een fout.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+    getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Oeps, er ging iets mis'</span><span class="token punctuation">)</span></code></pre>
+<p>Door het try/except block wordt de code getest en als er iets fout gaat wordt de regel 'Oeps er ging iets mis' getoond. Nog niet geweldig, maar beter dan een lelijke foutmelding.
+Het programma wordt uitgebreid met een while-lus, zodat de gebruiker net zo lang invoer kan geven totdat het programma een waarde krijgt waarmee de berekening kan worden uitgevoerd....</p>
+<pre class="language-python"><code class="language-python">doorgaan <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> doorgaan<span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+        getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+        doorgaan <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Geef een getal anders kan het programma geen berekening uitvoeren!'</span><span class="token punctuation">)</span></code></pre>
+<p>Hieronder de output van het programma....</p>
+<pre class="language-python"><code class="language-python">Geef een getal tussen <span class="token number">1</span> en <span class="token number">10</span>
+bla
+Geef een getal anders kan het programma geen berekening uitvoeren!
+Geef een getal tussen <span class="token number">1</span> en <span class="token number">10</span>
+<span class="token number">3</span>
+<span class="token number">13</span></code></pre>
+<p>Het programma kan nog robuuster worden gemaakt. De gebruiker moet een getal tussen 1 en 10 geven. Python kan wel controleren of de invoer van het juiste type is, maar de programmeur bepaalt of een getal zich binnen de gewenste range bevindt. Als er een getal hoger dan 10 en lager dan 1 wordt gegeven kan je zelf een error programmeren...</p>
+<pre class="language-python"><code class="language-python">doorgaan <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token keyword">while</span> doorgaan<span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        prompt <span class="token operator">=</span> <span class="token string">"Geef een getal tussen 1 en 10\n"</span>
+        getal <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span>prompt<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> getal <span class="token operator">></span> <span class="token number">10</span> <span class="token keyword">or</span> getal <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">+</span> getal<span class="token punctuation">)</span>
+            doorgaan <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">except</span> ValueError<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Geef een getal anders kan het programma geen berekening uitvoeren!'</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Alleen getallen tussen 1 en 10 zijn geldig!"</span><span class="token punctuation">)</span></code></pre>
+<p>Nu is het vrijwel onmogelijk om het programma nog over zijn toeren te krijgen. Alle input die niet geldig is wordt afgevangen en er wordt een passende melding gegeven. Het programma draait net zo lang door tot de gewenste input is gegeven.</p>
+</div>
+<div class="section">
+<h3 id="functies">Functies</h3>
+<p>Met functies kun je stukken code schrijven die je vaker nodig hebt. In plaats van iedere keer dezelfde code in te typen, kun je een functie <em>definiëren</em> en <em>aanroepen</em> op het moment dat je de code nodig hebt.
+Hieronder een voorbeeld van een simpele functie</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># functie definiëren</span>
+<span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hallo beste gebruiker, leuk dat je er bent"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste gebruiker<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>Met 'def' geef je aan dat je een functie wil definiëren. De code die ingesprongen is, hoort bij de functie. Iedere keer als de functie groet_gebruiker() wordt aangeroepen, zoals in de regels onder de functie, wordt die code uitgevoerd.</p>
+<h4 id="informatie-doorgeven-aan-een-functie">Informatie doorgeven aan een functie</h4>
+<p>Natuurlijk is bovenstaand voorbeeld nog niet zo nuttig. Maar stel je voor dat je iedere gebruiker die inlogt wil begroeten met een persoonlijke groet. Dat kan met onderstaande functie...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>naam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>naam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h4 id="positional-arguments">Positional arguments</h4>
+<p>Bovenstaande functie groet_gebruiker(naam) accepteert 1 argument. Je kunt meerdere argumenten meegeven aan een functie. We kunnen de functie uitbreiden met een voornaam en een achternaam. Python weet niets van voornamen en achternamen, dus je kunt de voor- en achternaam met elkaar verwisselen als je ze in de verkeerde volgorde doorgeeft.
+De positie van de argumenten is dus bepalend.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'van der Broek'</span><span class="token punctuation">,</span> <span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste van der Broek Kees<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h4 id="named-arguments">Named arguments</h4>
+<p>Je kunt python ook forceren om te letten op de namen van de variabelen, zodat je zeker weet dat alles in de juiste volgorde wordt geprint.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span>achternaam<span class="token operator">=</span><span class="token string">'van der Broek'</span><span class="token punctuation">,</span> voornaam<span class="token operator">=</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees van der Broek<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<h4 id="default-waarden-invullen">Default waarden invullen</h4>
+<p>Als een functie 2 argumenten accepteert, maar je weet er maar 1 dan kun je het 2e argument een default waarde aan laten nemen....</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Hallo beste Kees <span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>De achternaam blijft leeg, omdat dat de default waarde is. Er blijft wel een spatie staan, dat komt omdat tussen voornaam en achternaam een spatie staat.
+Zonder default waarde voor achternaam, kun je niet een argument weglaten. Als je dat doet krijg je een foutmelding...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># functie aanroepen    </span>
+groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+TypeError<span class="token punctuation">:</span> groet_gebruiker<span class="token punctuation">(</span><span class="token punctuation">)</span> missing <span class="token number">1</span> required positional argument<span class="token punctuation">:</span> <span class="token string">'achternaam'</span></code></pre>
+<h4 id="return-waarde">Return waarde</h4>
+<p>Een functie kan in plaats van iets te printen ook een waarde teruggeven. Als we bovenstaande functie ombouwen met een return-waarde dan ziet dat er zo uit.</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">groet_gebruiker</span><span class="token punctuation">(</span>voornaam<span class="token punctuation">,</span> achternaam<span class="token operator">=</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"Hallo beste </span><span class="token interpolation"><span class="token punctuation">{</span>voornaam<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>achternaam<span class="token punctuation">}</span></span><span class="token string">, leuk dat je er bent"</span></span>
+
+<span class="token comment"># functie aanroepen</span>
+datum <span class="token operator">=</span> <span class="token string">"Het is vandaag 27 januari."</span>   
+groet <span class="token operator">=</span>  groet_gebruiker<span class="token punctuation">(</span><span class="token string">'Kees'</span><span class="token punctuation">,</span> <span class="token string">'Jansen'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>datum<span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>groet<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token comment"># output</span>
+Het <span class="token keyword">is</span> vandaag <span class="token number">27</span> januari<span class="token punctuation">.</span> Hallo beste Kees Jansen<span class="token punctuation">,</span> leuk dat je er bent</code></pre>
+<p>Je ziet dat je nu de return-waarde van de functie ergens in je programma kunt hergebruiken.</p>
+</div>
+<div class="section">
+<h3 id="modules">Modules</h3>
+<p>Naarmate je code complex wordt, ga je steeds meer code onderbrengen in functies. Hierdoor blijft je code overzichtelijk. Als je logische namen voor functies en variabelen gebruikt houdt je veel meer overzicht over de structuur van je programma.<br>
+Naarmate het aantal functies groeit kun je ook overwegen om functies in aparte bestanden onder te brengen. Dit soort bestanden noem je modules.</p>
+<p>Een voorbeeld:<br>
+Stel je krijgt een .csv bestand met namen van gebruikers die je netjes uit moet printen.
+Het .csv bestand is een soort tekstbestand dat is geëxporteert uit Excel.
+In ons geval bevatten de rijen een voornaam, een tussenvoegsel en een achternaam.
+Dit is het .csv bestand...</p>
+<pre class="language-python"><code class="language-python">Jan<span class="token punctuation">,</span>van der<span class="token punctuation">,</span>vliet<span class="token punctuation">,</span> zandlaan <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4930</span> FJ<span class="token punctuation">,</span> Harsen
+Kees<span class="token punctuation">,</span><span class="token punctuation">,</span>Marijnissen<span class="token punctuation">,</span> Perenboomweg <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">3999</span> GG<span class="token punctuation">,</span> Plaaggeest
+GRIET<span class="token punctuation">,</span>van der<span class="token punctuation">,</span>Pol<span class="token punctuation">,</span> Harlekijnplein <span class="token number">33</span><span class="token punctuation">,</span> <span class="token number">4952</span> DN<span class="token punctuation">,</span> Den haag
+Tara<span class="token punctuation">,</span><span class="token punctuation">,</span>weeslanden<span class="token punctuation">,</span> Kreakenmolenweg <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3900</span> DG<span class="token punctuation">,</span> Muizegat
+clarijn<span class="token punctuation">,</span><span class="token punctuation">,</span>Ommezwaai<span class="token punctuation">,</span> Melemoor <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">4992</span> DS<span class="token punctuation">,</span> Haperen
+Piet<span class="token punctuation">,</span>De<span class="token punctuation">,</span>Vries<span class="token punctuation">,</span> Stelsprong <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">4930</span> DF<span class="token punctuation">,</span> Harsen
+Jan jaap<span class="token punctuation">,</span><span class="token punctuation">,</span>Siewers<span class="token punctuation">,</span> De kaapstander <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8251</span> LH<span class="token punctuation">,</span> Dronten</code></pre>
+<p>Je ziet dat de namen soms met hoofdletters beginnen, maar soms ook weer niet.
+We hebben de taak om de namen netjes af te drukken op het scherm. Onderaan de lijst moet het aantal personen worden weergegeven.<br>
+Dit doen we in een aantal stappen:</p>
+<ul>
+<li>Open het .csv-bestand in read modus</li>
+<li>Lees alle regels uit het .csv bestand en tel de regels</li>
+<li>Zet alle letters in een regel om naar kleine letters</li>
+<li>Breek iedere regel op in een voornaam, tussenvoegsel, achternaam, adres, postcode en plaats</li>
+<li>Zorg ervoor dat voornaam en achternaam beginnen met een hoofdletter</li>
+<li>Voeg een veld volledige_naam toe die is opgebouwd uit voornaam, tussenvoegsel en achternaam</li>
+<li>Print de volledige naam van alle personen op het scherm</li>
+<li>Print het aantal personen op het scherm</li>
+</ul>
+<h4 id="functies-gebruiken">Functies gebruiken</h4>
+<p>Dat zijn heel wat taken om in 1 script uit te voeren!<br>
+Laten we de code opbreken in functies:</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sanitize</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># haal alle dubbele spaties en hoofdletters eruit</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">def</span> <span class="token function">create_person</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># zet de gegevens om in een dictionary</span>
+
+<span class="token keyword">def</span> <span class="token function">add_fullname</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># stel voor- en achternaam samen tot een volledige naam</span>
+    <span class="token keyword">pass</span>
+    
+<span class="token keyword">def</span> <span class="token function">print_persons</span><span class="token punctuation">(</span>persons<span class="token punctuation">,</span> <span class="token builtin">filter</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"full_name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># print de van alle personen de volledige naam en het totaal aantal personen</span>
+    <span class="token keyword">pass</span></code></pre>
+<p>Als je de functies zo bekijkt, kun je al heel goed zien wat het programma gaat doen.
+Hieronder de implementatie van de functies.</p>
+<ol>
+<li>Haal alle dubbele spaties en hoofdletters eruit</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">sanitize</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   <span class="token comment"># kleine letters maken en spaties voor en na het woord weghalen</span>
+   new_lst <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   lst <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+   <span class="token keyword">for</span> item <span class="token keyword">in</span> lst<span class="token punctuation">:</span>
+       new_lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+   <span class="token keyword">return</span> new_lst</code></pre>
+<ol start="2">
+<li>Converteer naar een dictionary zodat we toegang hebben tot de verschillende elementen van de naam:</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">create_person</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"voornaam"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"tussenvoegsel"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"achternaam"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">}</span>
+    person<span class="token punctuation">[</span><span class="token string">"voornaam"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    person<span class="token punctuation">[</span><span class="token string">"tussenvoegsel"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    person<span class="token punctuation">[</span><span class="token string">"achternaam"</span><span class="token punctuation">]</span> <span class="token operator">=</span> lst<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> person</code></pre>
+<ol start="3">
+<li>Voeg de volledige naam toe aan de person dictionary:</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add_fullname</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> person<span class="token punctuation">[</span><span class="token string">"tussenvoegsel"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        person<span class="token punctuation">[</span><span class="token string">'full_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'voornaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'achternaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        person<span class="token punctuation">[</span><span class="token string">'full_name'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'voornaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'tussenvoegsel'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token punctuation">{</span>person<span class="token punctuation">[</span><span class="token string">'achternaam'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token string">"</span></span>
+    <span class="token keyword">return</span> person</code></pre>
+<ol start="4">
+<li>Print volledige naam en aantal personen</li>
+</ol>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">print_persons</span><span class="token punctuation">(</span>persons<span class="token punctuation">,</span> <span class="token builtin">filter</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"full_name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    counter <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> person <span class="token keyword">in</span> persons<span class="token punctuation">:</span>
+        counter <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> attr <span class="token keyword">in</span> <span class="token builtin">filter</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>person<span class="token punctuation">[</span>attr<span class="token punctuation">]</span><span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>end<span class="token operator">=</span><span class="token string">"\n"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Er zijn in totaal </span><span class="token interpolation"><span class="token punctuation">{</span>counter<span class="token punctuation">}</span></span><span class="token string"> personen"</span></span><span class="token punctuation">)</span></code></pre>
+<p>Bovenstaande functies beslaan de totale functionaliteit van het programma.
+Het basis programma bestaat uit volgende functie-aanroepen</p>
+<pre class="language-python"><code class="language-python">persons <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.csv"</span><span class="token punctuation">,</span> <span class="token string">'rt'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lst <span class="token operator">=</span> sanitize<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+    person <span class="token operator">=</span> create_person<span class="token punctuation">(</span>lst<span class="token punctuation">)</span>
+    person <span class="token operator">=</span> add_fullname<span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+    persons<span class="token punctuation">.</span>append<span class="token punctuation">(</span>person<span class="token punctuation">)</span>
+
+print_persons<span class="token punctuation">(</span>persons<span class="token punctuation">)</span></code></pre>
+<p>Dat is best veel code voor het uitprinten van een paar namen. Maar in het ontwerp is al een beetje nagedacht over toekomstige aanpassingen. Zou het niet handig zijn als je kunt aangeven welke gegevens je van personen wilt uitprinten. Misschien willen we later ook kunnen filteren op naam. Door de functies voor deze opdracht in een module onder te brengen kunnen we ze makkelijk hergebruiken en maken ze het uiteindelijke programma veel overzichtelijker.</p>
+<p>Het idee is om nu 2 bestanden aan te maken. Het programma zelf en een module met de functies. Belangrijk is de locatie van de bestanden ten opzicht van elkaar. Als je een module maakt in dezelfde map als het programma, dan kun je de module importeren in het programma...</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># stel je hebt je file csv_module.py genoemd dan werkt dat zo...</span>
+<span class="token keyword">import</span> csv_module
+</code></pre>
+<p>Deze manier van werken is al een beetje riskant, omdat je met python ook modules van anderen kunt importeren. Sterker nog standaard wordt Python met meerdere standaard modules geïnstalleerd. De kans dat er al een module bestaat die 'csv' heet is heel aannemelijk. Sterker nog, die bestaat ook!
+Probeer maar eens vanaf de commandline:</p>
+<pre class="language-python"><code class="language-python">python
+<span class="token operator">>></span><span class="token operator">></span><span class="token keyword">import</span> csv
+<span class="token operator">>></span><span class="token operator">></span><span class="token builtin">dir</span><span class="token punctuation">(</span>csv<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token string">'Dialect'</span><span class="token punctuation">,</span> <span class="token string">'DictReader'</span><span class="token punctuation">,</span> <span class="token string">'DictWriter'</span><span class="token punctuation">,</span> <span class="token string">'Error'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_ALL'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_MINIMAL'</span><span class="token punctuation">,</span> 
+<span class="token string">'QUOTE_NONE'</span><span class="token punctuation">,</span> <span class="token string">'QUOTE_NONNUMERIC'</span><span class="token punctuation">,</span> <span class="token string">'Sniffer'</span><span class="token punctuation">,</span> <span class="token string">'StringIO'</span><span class="token punctuation">,</span> <span class="token string">'_Dialect'</span><span class="token punctuation">,</span> <span class="token string">'__all__'</span><span class="token punctuation">,</span><span class="token string">'__builtins__'</span><span class="token punctuation">,</span> <span class="token string">'__cached__'</span><span class="token punctuation">,</span> <span class="token string">'__doc__'</span><span class="token punctuation">,</span> <span class="token string">'__file__'</span><span class="token punctuation">,</span> <span class="token string">'__loader__'</span><span class="token punctuation">,</span> <span class="token string">'__name__'</span><span class="token punctuation">,</span> 
+<span class="token string">'__package__'</span><span class="token punctuation">,</span> <span class="token string">'__spec__'</span><span class="token punctuation">,</span> <span class="token string">'__version__'</span><span class="token punctuation">,</span> <span class="token string">'excel'</span><span class="token punctuation">,</span> <span class="token string">'excel_tab'</span><span class="token punctuation">,</span> <span class="token string">'field_size_limit'</span><span class="token punctuation">,</span> 
+<span class="token string">'get_dialect'</span><span class="token punctuation">,</span> <span class="token string">'list_dialects'</span><span class="token punctuation">,</span> <span class="token string">'re'</span><span class="token punctuation">,</span> <span class="token string">'reader'</span><span class="token punctuation">,</span> <span class="token string">'register_dialect'</span><span class="token punctuation">,</span> <span class="token string">'unix_dialect'</span><span class="token punctuation">,</span>
+<span class="token string">'unregister_dialect'</span><span class="token punctuation">,</span> <span class="token string">'writer'</span><span class="token punctuation">]</span></code></pre>
+<p>Met dir kun je opvragen welke eigenschappen en functies beschikbaar zijn in een module!</p>
+<p>Als je verwacht dat je nog veel meer functies gaat maken die te maken hebben met het manipuleren van csv bestanden, dan kun je ook een map maken waarin je meerdere modules bewaard.
+Stel je noemt je programma 'main.py' en je hebt een map 'my_modules' met daarin een bestanden met csv-functies. Dit is dan je mappen-structuur</p>
+<pre class="language-python"><code class="language-python">programma
+ <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> main<span class="token punctuation">.</span>py
+ <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> my_modules
+        <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> csv<span class="token punctuation">.</span>py
+        <span class="token operator">|</span><span class="token operator">-</span><span class="token operator">-</span> extra<span class="token punctuation">.</span>py</code></pre>
+<p>In 'main.py' importeer je dan je module met...</p>
+<pre class="language-python"><code class="language-python"><span class="token keyword">from</span> modules <span class="token keyword">import</span> csv
+</code></pre>
+<p>Het voordeel is nu dat je de zelfgemaakte module gewoon 'csv' kunt noemen. Het werkt net als met bestanden. Er zijn veel bestanden die 'help.txt' heten, maar doordat bestanden in verschillende mappen staan kun je ze toch naast elkaar gebruiken. Je kunt niet 2 bestanden met dezelfde naam in een map bewaren!</p>
+<h4 id="opdracht">Opdracht</h4>
+<ul>
+<li>Maak de module csv en plaats die in een map in je project</li>
+<li>Plaats de functies uit dit hoofdstuk in de module</li>
+<li>Maak het csv-bestand zoals hierboven is aangegeven</li>
+<li>Laadt de module in een python-bestand en zorg dat je de functies kunt gebruiken om de lijst met personen weer te geven.</li>
+<li>Voeg een functie do_filter() toe aan de module waarmee je kunt filteren op voornaam of achternaam!</li>
+<li>Test het filter met <code>do_filter(&quot;achternaam&quot;, &quot;V&quot;)</code>. Output is dan:</li>
+</ul>
+<blockquote>
+<p>Jan van der Vliet<br>
+Piet de Vries</p>
+</blockquote>
+<p><code>do_filter(&quot;plaats&quot;, &quot;d&quot;)</code></p>
+<blockquote>
+<p>Griet van der Pol<br>
+Jan Jaap Siewers</p>
+</blockquote>
+</div>
+
+        
+        </div>
+        <aside id="inhoudsopgave">
+            <span><b>Inhoudsopgave</b></span>
+            <div class="toc">
+        <ul><li><a href="#uitleg">Uitleg</a></li><li><a href="#installatie">Installatie</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#tekstfuncties">Tekstfuncties</a></li><li><a href="#lists">Lists</a></li><li><a href="#user-input">User input</a></li><li><a href="#loops">Loops</a></li><li><a href="#condities">Condities</a></li><li><a href="#while">While</a></li><li><a href="#foutafhandeling">Foutafhandeling</a></li><li><a href="#functies">Functies</a></li><li><a href="#modules">Modules</a></li></ul>
+      </div>        
+         </aside> 
+         <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
+         <div id="panel-out" class="panel" onclick="hidePanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="uitklappen"></div>
+    </main>
+ 
+   </div>
+    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
+    <script>
+     function styleActiveLink(){if(!window.location.hash)return void console.log("Geen hashtag aanwezig");const e=window.location.hash;console.log("Hash is veranderd:",e);let o=document.querySelector('a[href="'+e+'"]'),n=document.querySelectorAll(".toc a");for(let e=0;e<n.length;e++)n[e].classList.remove("active");o.classList.add("active"),console.log("Actieve link:",o)}function handleHashChange(e){setTimeout(function(){const e=document.querySelector(window.location.hash);if(e){console.log("Positie van het doel-element:",e.offsetTop);const o=0;console.log("Nieuwe scrollpositie:",o),window.scrollTo({top:o,behavior:"smooth"})}},100)}function hidePanel(){console.log("hidePanel");const e=document.getElementById("panel-in"),o=document.getElementById("panel-out"),n=document.getElementById("inhoudsopgave");o.style.display="none",e.style.display="block",n.style.display="none"}function showPanel(){console.log("showPanel");const e=document.getElementById("inhoudsopgave"),o=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",o.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),console.log("De DOM is volledig geladen en geparsed")}),(inhoud=document.querySelector("#inhoudsopgave .toc ul li"))&&inhoud.addEventListener("click",function(e){if(console.log("Inhoudsopgave - Click event detected"),!window.location.hash)return void console.log("Inhoudsopgave - Geen hashtag aanwezig");const o=window.location.hash;console.log("Inhoudsopgave - hashtag:",o)}),window.addEventListener("hashchange",styleActiveLink);
+    </script>
+    </body> 
+</html>
