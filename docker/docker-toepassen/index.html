@@ -20,17 +20,11 @@
       
           <li><a href="/easy_canvas/docker/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/docker/leerdoelen/#leerdoelen">Leerdoelen</a></li>
+          <li><a href="/easy_canvas/docker/docker-componenten/#docker-componenten">Docker componenten</a></li>
       
-          <li><a href="/easy_canvas/docker/docker/#docker">Docker</a></li>
+          <li><a href="/easy_canvas/docker/docker-toepassen/#docker-toepassen" class="active">Docker toepassen</a></li>
       
-          <li><a href="/easy_canvas/docker/docker-installeren/#docker-installeren">Docker installeren</a></li>
-      
-          <li><a href="/easy_canvas/docker/docker-compose/#docker-compose" class="active">Docker compose</a></li>
-      
-          <li><a href="/easy_canvas/docker/commands/#commands">Commands</a></li>
-      
-          <li><a href="/easy_canvas/docker/undefined/#undefined"></a></li>
+          <li><a href="/easy_canvas/docker/opdrachten/#opdrachten">Opdrachten</a></li>
       
         </ul>
       </nav>
@@ -40,17 +34,11 @@
       
           <li><a href="/easy_canvas/docker/introductie/#introductie">Introductie</a></li>
       
-          <li><a href="/easy_canvas/docker/leerdoelen/#leerdoelen">Leerdoelen</a></li>
+          <li><a href="/easy_canvas/docker/docker-componenten/#docker-componenten">Docker componenten</a></li>
       
-          <li><a href="/easy_canvas/docker/docker/#docker">Docker</a></li>
+          <li><a href="/easy_canvas/docker/docker-toepassen/#docker-toepassen" class="active">Docker toepassen</a></li>
       
-          <li><a href="/easy_canvas/docker/docker-installeren/#docker-installeren">Docker installeren</a></li>
-      
-          <li><a href="/easy_canvas/docker/docker-compose/#docker-compose" class="active">Docker compose</a></li>
-      
-          <li><a href="/easy_canvas/docker/commands/#commands">Commands</a></li>
-      
-          <li><a href="/easy_canvas/docker/undefined/#undefined"></a></li>
+          <li><a href="/easy_canvas/docker/opdrachten/#opdrachten">Opdrachten</a></li>
       
         </ul>
       </nav>
@@ -64,6 +52,99 @@
             <h1>Docker</h1>
         </div>
         <div class="section">
+<h3 id="docker-toepassen">Docker toepassen</h3>
+<p><strong>Installatie Docker voor Windows:</strong><br>
+Docker maakt gebruik van Linux. In Windows 11 kun je gebruik maken van <a href="https://learn.microsoft.com/nl-nl/windows/wsl/about">Windows Subsysteem voor Linux</a>. Hiermee kun je naast windows ook gebruik maken van Linux. Docker kan samenwerken met WSL. Om Docker te installeren moet je dus eerst WSL(2) installeren.</p>
+<ul>
+<li><a href="https://docs.docker.com/desktop/setup/install/windows-install/">Installatie windows op docker.com</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Installeer Docker voor WSL2-backend</a></li>
+</ul>
+<p><strong>Installatie Docker voor Mac:</strong><br>
+Het macintosh besturingssysteem is gebaseerd op Unix (FreeBSD). Docker kan hierop draaien. Je kunt dus direct aan de slag met het installeren van Docker Desktop.</p>
+<p><strong>Installatie Docker voor Linux:</strong><br>
+Installeer op Linux de docker desktop omgeving. Docker is gebaseerd op Linux, dus installatie is eenvoudig. Er zijn echter 2 versies. Je kunt docker engine installeren en docker desktop. Docker desktop geeft ook een grafische interface. Om zaken simpel te houden is het advies om alleen Docker Desktop te installeren.</p>
+<h4 id="images-voor-gebruik-op-school">Images voor gebruik op school</h4>
+<p><a href="https://github.com/siewers32/docker_python">docker_python</a></p>
+<ul>
+<li>Python</li>
+<li>MariaDB</li>
+<li>PHPMyAdmin</li>
+</ul>
+<p><a href="https://github.com/siewers32/docker_python_postgres">docker_python_postgres</a></p>
+<ul>
+<li>Python</li>
+<li>Postgres</li>
+<li>Adminer</li>
+</ul>
+<p><a href="https://github.com/siewers32/docker_just_php">docker_just_php</a></p>
+<ul>
+<li>Alleen PHP</li>
+</ul>
+</div>
+<div class="section">
+<h3 id="docker-images">Docker images</h3>
+<p>Als je docker desktop hebt geinstalleerd kun je gebruik maken van de grafische interface, maar hier gebruiken we de docker-cli. Dit programma werkt in de terminal.
+Om je eerste image te downloaden en een container op te starten type je de volgende regel in je favoriete terminal app (powershell of bash of terminal op mac):</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> run hello-world</code></pre>
+<ul>
+<li>Je ziet nu heel even dat een image wordt gedownload</li>
+<li>Er wordt een container gestart</li>
+<li><code>Hello World</code> wordt weergegeven op het scherm</li>
+<li>De container is weer gestopt en je kijkt naar de prompt in je terminal</li>
+</ul>
+<pre class="language-shell"><code class="language-shell"><span class="token function">docker</span> run <span class="token parameter variable">-it</span> ubuntu <span class="token function">bash</span></code></pre>
+<p>Met docker run maak je nu opnieuw een container. Met de argumenten -ti maak je de container interactief. Je start de container nu op ubuntu wordt geladen en het programma <code>bash</code> wordt gestart. Verschil met <code>hello-word</code> is dat door de toevoeging <code>-ti</code> de container blijft draaien.</p>
+<ul>
+<li>De <code>ubuntu:latest</code> image wordt gedownload</li>
+<li>Er wordt een container opgestart</li>
+<li>Je zit naar een terminal-prompt te kijken zoals hieronder</li>
+<li>Als je het commando ls intypt zie je de inhoud van het startup-volume van een ubuntu server</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">root@24d8a14bb475:/<span class="token comment"># ls</span>
+bin  boot  dev  etc  home  lib  lib64  media  <span class="token punctuation">..</span>.</code></pre>
+</div>
+<div class="section">
+<h3 id="dockerfile">Dockerfile</h3>
+<p>Tot nu toe heb je steeds gebruik gemaakt van standaard images die verkrijgbaar zijn op <a href="https://hub.docker.com">docker hub</a>.
+Hier kun je talloze images vinden die je vrij kunt gebruiken voor projecten.
+Meestal maak je gebruik van een bestaand image om het vervolgens aan te passen naar je eigen wensen.
+Dit doe je met een <code>Dockerfile</code>. Dockerfile is de naam van een simpel tekst-bestand dat je kunt vullen met instructies voor docker.<br>
+Doe het volgende:</p>
+<ul>
+<li>Open een terminal</li>
+<li>Maak een nieuwe directory (=map) met <code>mkdir mijnmap</code></li>
+<li>Navigeer naar die map <code>cd mijnmap</code></li>
+<li>Maak een leeg tekst-bestand aan <code>touch Dockerfile</code></li>
+<li>Gebruik een teksteditor om <code>Dockerfile</code> aan te passen (bijv. nano of notepad++)</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">FROM ubuntu:latest
+RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> apache2
+COPY index.html /var/www/html/index.html
+CMD <span class="token punctuation">[</span><span class="token string">"/usr/sbin/apachectl"</span>, <span class="token string">"-D"</span>, <span class="token string">"FOREGROUND"</span><span class="token punctuation">]</span></code></pre>
+<ul>
+<li>Maak nog en tweede bestand in dezelfde map -&gt; <code>index.html</code> met de tekst: <code>&lt;h1&gt;Message from container&lt;/h1&gt;</code></li>
+<li>Maak het image van de Dockerfile</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">docker</span> build <span class="token parameter variable">-t</span> deltion/apachetest <span class="token builtin class-name">.</span>
+</code></pre>
+<ul>
+<li>Docker zoekt automatisch naar de Dockerfile</li>
+<li>De instructies worden uitgevoerd:
+<ul>
+<li>Ubuntu:latest wordt gedownload</li>
+<li><code>apt-get</code> wordt uitgevoerd om apache webserver te downloaden</li>
+<li>Het bestand <code>index.html</code> wordt vanaf je host naar de image gekopieerd <code>/var/www/html/index.html</code></li>
+<li>De image wordt gestart in detached mode (in de achtergrond). Verwarrend is dan &quot;FOREGROUND&quot;, maar dat is omdat de container anders meteen weer zou worden gestopt.</li>
+<li>Nu kun je de image maken met het build command: <code>docker build -t deltion/apachetest</code></li>
+</ul>
+</li>
+<li>Je hebt nu een image met een apache webserver en een html-file. Om een container op te starten op basis van je nieuwe image gebruik je het volgende commando:</li>
+<li><code>docker run -p 8084:80 deltion/apachetest .</code> (en vergeet die punt niet aan het eind!!)</li>
+<li>Als het goed is heb je nu een webserver opgestart die je met een browser vanaf je host kunt benaderen met <code>http://127.0.0.1:8084/</code></li>
+<li>De opstelling is helemaal geslaagd als je ook nog <code>Message from container</code> in je browserscherm ziet staan.</li>
+</ul>
+</div>
+<div class="section">
 <h3 id="docker-compose">Docker compose</h3>
 <p>Het is handig om voor verschillende processen aparte Docker-images en een <code>docker-compose.yml</code> te gebruiken, omdat je zo je applicatie in onafhankelijke onderdelen opdeelt. Dit principe heet <strong>microservices</strong>.<br>
 Elk proces, zoals je PHP webserver en je database, heeft zijn eigen unieke taak en afhankelijkheden. De PHP-webserver heeft Apache of Nginx nodig en de PHP-code, terwijl de database PostgreSQL of MySQL en de dataopslag nodig heeft.</p>
@@ -72,9 +153,7 @@ Elk proces, zoals je PHP webserver en je database, heeft zijn eigen unieke taak 
 <li><strong>Met Docker:</strong> Je bouwt één image voor je PHP-webserver en een aparte image voor je database. Elke image is gespecialiseerd in één taak en bevat alleen de bestanden die daarvoor nodig zijn. Je kunt de database bijvoorbeeld updaten zonder je PHP-webserver te verstoren. Dit maakt het systeem <strong>stabieler</strong> en <strong>gemakkelijker te onderhouden</strong>.</li>
 </ul>
 <p>Door je project op te splitsen in aparte services, is het eenvoudiger voor meerdere mensen om aan verschillende onderdelen te werken. Ook is het makkelijker om de applicatie te testen en te implementeren.</p>
-</div>
-<div class="section">
-<h3 id="de-rol-van-docker-compose.yml">De rol van <code>docker-compose.yml</code></h3>
+<h4 id="de-rol-van-docker-compose.yml">De rol van <code>docker-compose.yml</code></h4>
 <p>Het <code>docker-compose.yml</code> bestand brengt al deze losse onderdelen samen. Zie het als een <strong>recept</strong> voor je hele applicatie. Je definieert daarin welke services je nodig hebt (bijvoorbeeld <code>php-app</code> en <code>db</code>), welke images ze moeten gebruiken en hoe ze met elkaar moeten communiceren.</p>
 <p><strong>Voorbeeld met PHP en PostgreSQL:</strong></p>
 <ol>
@@ -96,9 +175,7 @@ Elk proces, zoals je PHP webserver en je database, heeft zijn eigen unieke taak 
 │   └── index.php
 ├── docker-compose.yml
 └── Dockerfile</code></pre>
-</div>
-<div class="section">
-<h3 id="dockerfile">Dockerfile</h3>
+<h4 id="maak-de-dockerfile">Maak de Dockerfile</h4>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># Dockerfile</span>
 <span class="token comment"># Gebruik een officiële PHP-image met Apache als basis</span>
 FROM php:8.3-apache
@@ -108,6 +185,7 @@ COPY php-app/ /var/www/html/
 
 <span class="token comment"># Installeer de nodige PHP-extensies, inclusief de PostgreSQL-driver</span>
 RUN docker-php-ext-install pdo pdo_pgsql</code></pre>
+<h4 id="maak-de-docker-compose.yml">Maak de docker-compose.yml</h4>
 <pre class="language-yml"><code class="language-yml"><span class="token comment"># docker-compose.yml</span>
 
 <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>
@@ -131,8 +209,8 @@ RUN docker-php-ext-install pdo pdo_pgsql</code></pre>
       <span class="token key atrule">POSTGRES_DB</span><span class="token punctuation">:</span> <span class="token string">"my_database"</span>
     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> ./db_data<span class="token punctuation">:</span>/var/lib/postgresql/data</code></pre>
-<p><strong>Draai de applicatie</strong>
-Gebruik <code>docker compose up</code></p>
+<h4 id="start-de-containers">Start de containers</h4>
+<p>Gebruik <code>docker compose up</code></p>
 <ul>
 <li>De <code>docker-compose.yml</code> wordt gelezen en uitgevoerd:
 <ul>
@@ -146,26 +224,41 @@ Gebruik <code>docker compose up</code></p>
 </ul>
 </li>
 </ul>
-<p><strong>Stop de applicatie</strong>
-<code>docker compose down -v</code></p>
+<h4 id="stop-de-containers">Stop de containers</h4>
+<p><code>docker compose down -v</code></p>
+<h4 id="overige-commando's">Overige commando's</h4>
+<ul>
+<li>Bekijken welke containers op dit moment actief zijn op je computer met <code>docker ps</code></li>
+<li>De terminal van een draaiende webserver starten met <code>docker exec</code>
+Om de terminal van de webserver te bekijken zoek je de naam (of id) op van de container waarin de webserver draait en start je <code>bash</code></li>
+</ul>
 </div>
 <div class="section">
-<h3 id="opdrachten">Opdrachten</h3>
+<h3 id="commands">Commands</h3>
+<p>Om docker te bedienen maak je gebruik van de docker-cli. Als je Docker desktop installeert krijg je deze applicatie erbij op je systeem. Met de docker-cli kun je commando's sturen naar de docker deamon. Je start de docker-cli in een terminal</p>
+<p><strong>Locaties waar je uitbreide docker instructies kunt vinden:</strong></p>
 <ul>
-<li>Gelukkig zijn er al heel veel <code>docker-compose.yml</code> bestanden gemaakt. Je hoeft dus niet steeds het wiel opnieuw uit te vinden. Ga naar <a href="https://github.com/docker/awesome-compose">awesome-compose</a> en kies minimaal 2 sets met microservices. Installeer en laat zien dat je alle services kunt draaien op je laptop.</li>
-<li>Maak zelf twee microservices voor het verwerken van afbeeldingen
+<li><a href="https://docs.docker.com/get-started/get-docker/">Starten met Docker</a></li>
+<li><a href="https://docs.docker.com/get-started/docker_cheatsheet.pdf">Docker Cheat Sheet</a></li>
+<li><a href="https://github.com/Nikoo-Asadnejad/Docker-Commands-Cheat-Sheet">Cheatsheet from Nikoo Asadnejad</a></li>
+</ul>
+<h4 id="veel-gebruikte-commando's-zijn">Veel gebruikte commando's zijn</h4>
 <ul>
-<li>De eerste microservice is een website waar je plaatjes kunt uploaden</li>
-<li>De tweede microservice is een proces dat de plaatjes aanpast naar een ander formaat bijv. 200px x 200px.</li>
+<li><code>docker compose up</code> en <code>docker compose down -v</code> (zie docker compose)</li>
+<li><code>docker exec -t &lt;id van de container&gt; bash</code> om een bash-terminal te openen zodat je een draaiende container kunt bedienen.</li>
+<li><code>docker ps</code> om alle draaiende containers weer te geven</li>
 </ul>
-</li>
-<li>Maak zelf twee microservices voor het converteren van bestanden bijv. csv naar excel
-<ul>
-<li>De eerste microservice is een website waar je csv-bestanden kunt uploaden</li>
-<li>De tweede microservice is een proces dat de bestanden converteer naar excel.</li>
-</ul>
-</li>
-</ul>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">docker</span> <span class="token function">ps</span>
+
+CONTAINER ID   IMAGE                 PORTS                                         NAMES
+a0e7ee749dc2   deltion/apachetest    <span class="token number">0.0</span>.0.0:8084-<span class="token operator">></span><span class="token number">80</span>/tcp,   <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:8084-<span class="token operator">></span><span class="token number">80</span>/tcp     focused_heisenberg
+ee73e0982163   alpine/psql                                                         gracious_banach
+3e446b9d2df8   adminer:latest        <span class="token number">0.0</span>.0.0:8083-<span class="token operator">></span><span class="token number">8080</span>/tcp, <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:8083-<span class="token operator">></span><span class="token number">8080</span>/tcp   adminer
+e2be9d9d4140   python-postgres-app                                                 python-postgres-app-1
+
+$ <span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> a0e7ee749dc2 <span class="token function">bash</span>
+
+root@a0e7ee749dc2:/<span class="token comment"># </span></code></pre>
 </div>
 
         
@@ -173,7 +266,7 @@ Gebruik <code>docker compose up</code></p>
         <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
             <div class="toc">
-        <ul><li><a href="#docker-compose">Docker compose</a></li><li><a href="#de-rol-van-docker-compose.yml">De rol van docker-compose.yml</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#opdrachten">Opdrachten</a></li></ul>
+        <ul><li><a href="#docker-toepassen">Docker toepassen</a></li><li><a href="#docker-images">Docker images</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#docker-compose">Docker compose</a></li><li><a href="#commands">Commands</a></li></ul>
       </div>        
          </aside> 
          <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
