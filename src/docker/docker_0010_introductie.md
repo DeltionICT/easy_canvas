@@ -1,76 +1,55 @@
 ---
 title: Introductie
 date: 2025-08-25
+leerdoelen:
+  - titel: Basis leerdoelen
+    items:
+      - Docker installeren en configureren. Je bent in staat om Docker Desktop (of de juiste Docker-engine voor jouw besturingssysteem) te installeren, te configureren en de basisfunctionaliteit te verifiëren.
+      - Werken met images en containers. Je kunt een Docker image ophalen uit een registry (zoals Docker Hub), een container opstarten, stoppen en verwijderen.
+      - Eigen images bouwen. Je kunt een eenvoudige Dockerfile schrijven om je eigen applicatie te containeriseren.
+      - Poorten en volumes. Je leert hoe poorten te mappen tussen de host en de container en hoe data persistent te maken door volumes te gebruiken.
+  - titel: Gespecialiseerde doelen
+    items:
+      - Ontwikkelworkflow. Je kunt Docker integreren in een ontwikkelworkflow, inclusief het opzetten van een ontwikkelomgeving voor een specifieke taal of framework.
+      - Docker in CI/CD. Je begrijpt hoe een continuous integration/continuous deployment (CI/CD) pipeline kan worden opgezet met Docker, waarbij images automatisch worden gebouwd en getest na elke code commit.
+      - Microservices. Je kunt een simpele microservices architectuur opzetten met behulp van Docker Compose, waarbij verschillende services in aparte containers draaien.
+  - titel: Beveiliging
+    items:
+      - Beveiliging. Je leert over de basisprincipes van Docker security, zoals het gebruik van non-root gebruikers, het scannen van images op kwetsbaarheden en het configureren van resource-limieten.
+      - Docker in productie. Je hebt inzicht in het draaien van Docker containers in een productieomgeving, inclusief het gebruik van orchestration tools zoals Docker Swarm of een introductie tot Kubernetes concepten.
+      - Monitoring en logging. Je bent in staat om de logs en metrics van containers te verzamelen en te analyseren, en kunt tools gebruiken om de gezondheid van containers en de onderliggende host te monitoren.
+
 ---
+
 
  ::: section
 ### {{ title }}
 Docker verpakt je applicatie en al zijn afhankelijkheden (zoals databases, bibliotheken en de juiste besturingssysteemversie) in een geïsoleerde container. Dit zorgt ervoor dat je applicatie consistent en betrouwbaar draait, of het nu op jouw laptop, de machine van je collega of op een productie server is.
 Het werken met Docker en containers wordt steeds meer toegepast in ict-omgevingen en is relevant voor iedere ict-er en software-ontwikkelaar.
-:::
+  
+Hoewel ICT-engineers en softwareontwikkelaars verschillende beroepspaden bewandelen, krijgen ze in hun werk beide te maken met virtualisatie en containers. Deze cursus biedt een praktische introductie tot Docker, een krachtig platform dat het mogelijk maakt om applicaties te verpakken in containers.
 
-::: section
-### Docker Container
-Een Docker container is een manier om een applicatie te verpakken samen met alles wat het nodig heeft om te kunnen draaien, zoals code, bibliotheken en andere bestanden. Denk aan een container zoals die op schepen worden vervoerd.
-
-* **Geïsoleerd:** De container is compleet gescheiden van de rest van je computer. De applicatie binnenin heeft zijn eigen omgeving, dus het kan geen andere programma's beïnvloeden en andere programma's kunnen de container niet zomaar beïnvloeden.
-* **Draagbaar:** Je kunt de container gemakkelijk verplaatsen van je eigen laptop naar een server van het bedrijf, of naar de computer van een collega. Omdat alles wat de applicatie nodig heeft in de container zit, werkt het overal precies hetzelfde. Dit is de oplossing voor het bekende probleem "bij mij werkt het wel".
-* **Lichtgewicht:** Containers zijn kleiner en efficiënter dan een complete virtuele machine, omdat ze de besturingssysteemkern van de hostcomputer delen. Dit maakt ze snel om op te starten en verbruikt minder bronnen.
-
-
-Het grootste verschil tussen een **Docker container** en een **virtuele machine (VM)** is wat ze inpakken en delen. Een Docker container is als een appartement in een flatgebouw, terwijl een virtuele machine meer lijkt op een compleet, losstaand huis.
-:::
-
-::: section
-### Virtuele Machine (VM)
-Een VM is een volledige simulatie van een fysieke computer. Bovenop je computer (de **host**) draait een speciaal programma, de **hypervisor**, die ervoor zorgt dat je meerdere complete, onafhankelijke besturingssystemen (de **guest OS**) kunt draaien. Elk besturingssysteem heeft zijn eigen kernel, geheugen en opslagruimte. Dit maakt ze groot en zwaar, want je moet elke keer een compleet besturingssysteem opstarten.
-
-* **Vergelijking:** Een apart huis met zijn eigen keuken, badkamer, en elektriciteit.
-* **Besturingssysteem:** Elk VM heeft zijn eigen besturingssysteem.
-* **Grootte:** Vaak meerdere gigabytes.
-* **Opstarttijd:** Duurt minuten, omdat het een heel besturingssysteem moet laden.
+#### Wat is Docker en waarom is het belangrijk?
+Docker vereenvoudigt de manier waarop je software bouwt, deelt en uitvoert. Traditionele virtualisatietechnieken zoals virtuele machines (VM's) zijn vaak zwaar en traag. Docker-containers zijn daarentegen licht en efficiënt. Ze bundelen een applicatie en al haar afhankelijkheden – zoals bibliotheken en configuratiebestanden – in een geïsoleerde omgeving. Dit zorgt ervoor dat een applicatie overal hetzelfde werkt, of het nu op je laptop is, op een server in de cloud, of in een testomgeving. Deze consistentie lost het klassieke probleem op van "het werkt op mijn machine, maar niet op de jouwe."
 
 :::
 
 ::: section
-### Docker vs VM
-Een Docker container is veel lichter en efficiënter. De container deelt de **kernel** van het besturingssysteem van de hostcomputer. Je pakt alleen je applicatie en de bestanden en bibliotheken die je applicatie nodig heeft in de container in. Je hebt geen apart, compleet besturingssysteem meer nodig. Hierdoor zijn containers veel kleiner en starten ze razendsnel op.
+### Leerdoelen
+#### ICT system engineer (Crebonr. 27016, MBO niveau 4)
+*   Heeft kennis van virtualisatie- en containerisatietechnieken.
+*   De ICT system engineer heeft daarnaast nog specialistische kennis van fysieke of virtuele infrastructuurdevices en veelgebruikte cloudomgevingen. Docker is een essentieel hulpmiddel in deze virtuele en cloudomgevingen.
+*   ICT Engineers hebben een proactieve rol bij het zorgen voor stabiliteit en continuïteit en de veiligheid van (onderdelen van) de infrastructuur, waarbij het beheren en/of bouwen van complexere infrastructuren aan bod komt. Containers dragen bij aan deze proactieve benadering.
+*   Bij het automatiseren in netwerken en infrastructuren, spelen Docker en container-orchestratie tools een grote rol.
 
-* **Vergelijking:** Een appartement in een flatgebouw. Meerdere appartementen (containers) delen de fundering en de nutsvoorzieningen (de kernel en het besturingssysteem van de host).
-* **Besturingssysteem:** Deelt het besturingssysteem van de host.
-* **Grootte:** Vaak slechts megabytes.
-* **Opstarttijd:** Duurt seconden.
+#### Software developer (Crebonr. 25998, MBO niveau 4)
+*   Van software developers wordt verwacht dat zij brede kennis hebben van ontwikkelingen op het gebied van software-development-tools, zoals DevOps. Docker is een fundamenteel onderdeel van de DevOps-pipeline voor het bouwen, verzenden en uitvoeren van applicaties.
+*   De developer moet ook kennis hebben van ontwikkelingen op het vlak van ICT-infrastructuur en devices, zoals '...as a service' (SaaS, IaaS, PaaS) en cloud, en de consequenties hiervan voor software development. Containers zijn de basis voor veel van deze "as a service" oplossingen en cloud-native applicaties.
+*   De software kan op verschillende devices draaien en kan betrekking hebben op een complexe (fysieke of virtuele) IT-infrastructuur. Containers bieden een manier om software consistent en geïsoleerd te implementeren over diverse infrastructuren.
+*   De rol van de Software developer is ook om processen te automatiseren door middel van software, wat door containerisatie efficiënter kan worden gedaan.
 
+{{ leerdoelen | leerdoelFilter }}
 
-<img src="/_assets/vm_docker.png" eleventy:widths="400" alt="vm_doker afbeelding">
-:::
-
-::: section
-### Docker Ecosysteem
-
-**Docker Engine:** De Docker Engine is het hart van het Docker-platform. Het bestaat uit twee hoofdcomponenten:
-
-**Docker Daemon (dockerd):** De Docker-daemon draait op de hostmachine en is verantwoordelijk voor het beheren van Docker-objecten, zoals afbeeldingen, containers, netwerken en volumes.
-
-**Docker Client:** De Docker client is een command-line interface (CLI) tool waarmee gebruikers via commando's met de Docker-daemon kunnen communiceren. Gebruikers kunnen Docker-containers bouwen, uitvoeren, stoppen en beheren met behulp van de Docker CLI.
-
-
-**Docker-images:** zijn de bouwstenen van containers. Het zijn alleen-lezen sjablonen die de applicatiecode, runtime, systeemtools, bibliotheken en andere afhankelijkheden bevatten. Docker-images worden gemaakt op basis van Dockerfiles, tekstbestanden met instructies voor het bouwen van de afbeelding laag voor laag.
-
-**Docker-containers:** zijn uitvoerbare instanties van Docker-afbeeldingen. Ze kapselen de applicatie en zijn afhankelijkheden in en bieden een geïsoleerde omgeving voor uitvoering. Containers kunnen worden gemaakt, gestart, gestopt, verplaatst en verwijderd met behulp van Docker-opdrachten.
-
-**Docker-register:** Docker Registry is een gecentraliseerde opslagplaats voor het opslaan en delen van Docker-afbeeldingen. Het standaard openbare register is Docker Hub, waar gebruikers een uitgebreide verzameling afbeeldingen kunnen vinden.
-
-
-**Docker Compose:** is een tool voor het definiëren en uitvoeren van Docker-applicaties met meerdere containers. Het gebruikt een YAML-bestand (docker-compose.yml) om services, netwerken, volumes en andere configuraties op te geven die nodig zijn voor de applicatie. Docker Compose vereenvoudigt het beheer van complexe applicaties die zijn samengesteld uit meerdere onderling verbonden containers.
-
-
-**Docker-volumes** worden gebruikt voor persistente gegevens die worden gegenereerd door en worden gebruikt door Docker-containers. Ze bieden een manier voor containers om gegevens op te slaan en te delen, onafhankelijk van de levenscyclus van de container, en zorgen voor persistentie en overdraagbaarheid van gegevens.
-
-
-**Docker-netwerk:** biedt netwerkmogelijkheden voor containers om met elkaar en met externe netwerken te communiceren. Het maakt gebruik van software-defined netwerken (SDN) om virtuele netwerken te creëren, waardoor connectiviteit en isolatie mogelijk zijn. Gebruikers kunnen aangepaste netwerken maken, containers verbinden met netwerken en netwerkbeleid definiëren met behulp van Docker-opdrachten of Docker Compose.
-
-{% afbeelding "docker_eco.jpg", "80", "100", "center"%}
 :::
 
 

@@ -1,23 +1,17 @@
 ---
-title: Docker 
+title: Docker componenten 
 date: 2025-08-25
 ---
 
 
 ::: section
 ### {{ title }}
-
-Docker is de verzameling van alle tools en diensten die samenwerken om het makkelijker te maken software te bouwen, te verschepen en te draaien.
-:::
-
-::: section
-### Docker Container
+#### Docker Container
 Een Docker container is een manier om een applicatie te verpakken samen met alles wat het nodig heeft om te kunnen draaien, zoals code, bibliotheken en andere bestanden. Denk aan een container zoals die op schepen worden vervoerd.
 
 * **Geïsoleerd:** De container is compleet gescheiden van de rest van je computer. De applicatie binnenin heeft zijn eigen omgeving, dus het kan geen andere programma's beïnvloeden en andere programma's kunnen de container niet zomaar beïnvloeden.
 * **Draagbaar:** Je kunt de container gemakkelijk verplaatsen van je eigen laptop naar een server van het bedrijf, of naar de computer van een collega. Omdat alles wat de applicatie nodig heeft in de container zit, werkt het overal precies hetzelfde. Dit is de oplossing voor het bekende probleem "bij mij werkt het wel".
 * **Lichtgewicht:** Containers zijn kleiner en efficiënter dan een complete virtuele machine, omdat ze de besturingssysteemkern van de hostcomputer delen. Dit maakt ze snel om op te starten en verbruikt minder bronnen.
-
 
 Het grootste verschil tussen een **Docker container** en een **virtuele machine (VM)** is wat ze inpakken en delen. Een Docker container is als een appartement in een flatgebouw, terwijl een virtuele machine meer lijkt op een compleet, losstaand huis.
 :::
