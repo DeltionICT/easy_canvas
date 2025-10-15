@@ -11,9 +11,12 @@
       {% include "css/style.css" %}
       {% include "css/introductie.css" %}
       {% include "css/leerdoelen.njk" %}
+      {% include "css/print.css" %}
     {% endset %}
     {% set js %}
       {% include "js/panel.js" %}
+      {% include "js/print.js" %}
+      {% include "js/hoogte.js" %}
     {% endset %}
     <style>
       {{ css | cssmin | safe }}
@@ -29,6 +32,7 @@
           <li><a href="{{ p.url }}#{{ p.data.title | slugify }}" {% if p.url==page.url %} class="active" {% endif %}>{{ p.data.title }}</a></li>
       {% endfor %}
         </ul>
+        <div id="hight_indicator">1024</div>
       </nav>
       <nav id="side">   
         <a href="#" onclick="toggleNav()"><img src="/_assets/hamburger_white.svg" alt="menu"  eleventy:widths="20"></a>
