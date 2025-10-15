@@ -130,7 +130,9 @@ Maak de queries bij onderstaande vragen:
 
 ::: section
 ### Verschillende queries
-Schrijf de queries voor onderstaande vragen. Maak gebruik van de database `reisbureau`. Je vindt de sql-bestanden voor data en structuur in deze repository: [siewers32/docker_python_postgres repository](https://github.com/siewers32/docker_python_postgres)
+Schrijf de queries voor onderstaande vragen. Maak gebruik van de database `reisbureau`. Je vindt de sql-bestanden voor data en structuur in deze repository: 
+* Voor postgres-gebruikers: [Postgres / Adminer repository](https://github.com/siewers32/docker_python_postgres)
+* voor mysql-gebruikers: [MariaDB / PHPMyAdmin repository](https://github.com/siewers32/docker_python)
 
 #### Deel 1: De Basis (SELECT en WHERE)
 * Toon alle kolommen en rijen van de tabel countries.
