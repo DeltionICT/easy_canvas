@@ -22,7 +22,7 @@
 body {
     margin:0;
     padding:0;
-    background-color: var(--light-grey);        
+    background-color: #FFFFFF;
     font-size: 16px;
     line-height: 1.5rem; 
     overflow: scroll;
@@ -193,6 +193,7 @@ a.active {
 
 aside#inhoudsopgave {
     min-width:250px;
+    height:87vh;
     flex: 0 0 250px;
     background-color: var(--light-grey);
     padding: 1rem;
@@ -293,10 +294,10 @@ nav#top #hoogte-indicator {
     padding:0.3rem 0.3rem 0.5rem 0.3rem;
 }
 
-#panel-in, #panel-out {
+/* #panel-in, #panel-out {
     height: 0;
     width: 0;
-}
+} */
 
 #panel-in img, #panel-out img {
     position:relative; 
