@@ -14,13 +14,13 @@ Projecten zijn omvangrijker opdrachten, waarbij je meerdere technieken met elkaa
 Zoals je weet wordt er tijdens de verkiezingen in Nederland gebruik gemaakt van 'de stembus'. Al jarenlang wordt er geprobeerd om het stemmen te digitaliseren, maar helaas is dat tot op heden nog niet gelukt. Een nobele taak dus voor een nieuwe lichting IT-ers om hier verandering in aan te brengen.
 
 #### Projectgroep
-Als projectgroep van 3 personen ga je een opstelling maken met 3 laptops. Stemgerechtigden maken gebruik van jullie python-applicatie om hun stem uit te brengen op een van de verkiesbaar gestelde politici. Aan het einde van de stemdag kun je met de applicatie weergeven hoeveel stemmen de verschillende politici hebben gekregen.
+Stemgerechtigden gaan gebruik maken van jullie python-applicatie om hun stem uit te brengen op een van de verkiesbaar gestelde politici. Aan het einde van de stemdag kun je met de applicatie weergeven hoeveel stemmen de verschillende politici hebben gekregen.
 
 Zo kan het invoerscherm er uit zien:
 
 > Maak hieronder een keuze?
 > 
-> #### Groenlinks
+> #### PVDA/GroenLinks
 > 1. Roelfs, A.H. (Anja) (v) Zwolle
 > 2. Pelman, P. (Patrick) (m) Zwolle
 > 3. Roetman-Visser, M. (Marloes) (v) 
@@ -32,10 +32,29 @@ Zo kan het invoerscherm er uit zien:
 
 * Het [complete overzicht](https://www.kiesraad.nl/) van beschikbare politieke partijen vind je op [kiesraad.nl](https://www.kiesraad.nl/). Er is een  lijst te vinden met alle kandidaten voor de komende tweede kamer verkiezingen. Maak een werkbare selectie (10 - 20 kandidaten kunnen kiezen is voldoende voor jouw applicatie).
 
+#### Wat moet er gebeuren:
+* Inventariseer wat er moet gebeuren en maak een behoefte-analyse met:
+    * Doel van het project
+    * Wat moet de applicatie kunnen (functionaliteit)
+    * Welke tools/programmeertaal ga je toepassen
+* Maak een ontwerp waarin je uitlegt:
+    * Hoe de applicatie er uit gaat zien (schermen)
+    * Welke invoer-mogelijkheden er zijn 
+    * welke uitvoer-mogelijkheden er zijn 
+    * Een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven.
+
+#### Overige eisen
 * De applicatie moet 'hufter-proof' zijn. Probeer errors op het scherm te vermijden.
-* De applicatie moet 'veilig' zijn. Dat is lastig, maar probeer te voorkomen dat mensen meerdere keren kunnen stemmen.
-* Er moet met 3 computers tegelijk gestemd kunnen worden.
-* Nadat er gestemd is kun je een overzicht genereren van alle politici en het aantal keer dat er op ze is gestemd. De lijst wordt aflopend gesorteerd op het aantal keer dat is gestemd.
+* De applicatie moet 'veilig' zijn. Probeer te voorkomen dat mensen meerdere keren kunnen stemmen.
+* Er moet met meerdere computers tegelijk gestemd kunnen worden.
+
+#### Overzichten
+* Het aantal keer dat er is gestemd
+* Het aantal keer dat is gestemd op een bepaalde kandidaat
+* Het aantal keer dat is gestemd op een bepaalde partij
+* Een overzicht van alle namen van de partijen en het aantal keer dat op die partij is gestemd.
+* Een overzicht van alle kandidaten (voornaam, achternaam en partij) en het aantal keer dat op die kandidaat is gestemd
+* Het aantal keer dat er op partijen is gestemd per plaats
 
 :::
 
