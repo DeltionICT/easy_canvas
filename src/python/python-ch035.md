@@ -13,7 +13,7 @@ Projecten zijn omvangrijker opdrachten, waarbij je meerdere technieken met elkaa
 ### De stembus
 Zoals je weet wordt er tijdens de verkiezingen in Nederland gebruik gemaakt van 'de stembus'. Al jarenlang wordt er geprobeerd om het stemmen te digitaliseren, maar helaas is dat tot op heden nog niet gelukt. Een nobele taak dus voor een nieuwe lichting IT-ers om hier verandering in aan te brengen.
 
-#### Projectgroep
+#### De stemapplicatie
 Stemgerechtigden gaan gebruik maken van jullie python-applicatie om hun stem uit te brengen op een van de verkiesbaar gestelde politici. Aan het einde van de stemdag kun je met de applicatie weergeven hoeveel stemmen de verschillende politici hebben gekregen.
 
 Zo kan het invoerscherm er uit zien:
@@ -54,12 +54,13 @@ Zo kan het invoerscherm er uit zien:
 * Het aantal keer dat is gestemd op een bepaalde partij
 * Een overzicht van alle namen van de partijen en het aantal keer dat op die partij is gestemd.
 * Een overzicht van alle kandidaten (voornaam, achternaam en partij) en het aantal keer dat op die kandidaat is gestemd
-* Het aantal keer dat er op partijen is gestemd per plaats
+* De naam en het aantal keer dat er op partijen is gestemd per plaats
 
 :::
 
 ::: section
 ### Warmred
+#### Opdrachten
 * Download de behoefte-analyse voor het [project Warmred](https://static.edutorial.nl/python/proefexamen_warmred.docx)
 * Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven
 * [Voorbeeld stroomdiagram](https://static.edutorial.nl/python/python_stroomschema.pdf)
@@ -75,6 +76,30 @@ Maak een keuze
 ===============================================================
 Maak een keuze:
 ```
+
+#### Bestanden
+```shell
+apachelog_v2:
+	db:
+		apachelog.sql
+	logmodules:
+		apache.py
+	opdracht.py
+	small_apache.log
+	super_small_apache.log
+```
+
+* `small_apache.log` en `super_small_apache.log` zijn .csv bestanden. CSV-bestanden bevatten tab-gescheiden data. Bekijk de inhoud van beide bestanden. Je zult zien dat `super_small_apache.log` bestaat uit maar een paar regels. Dit is ideaal om mee te testen.
+* `apachelog.sql` bevat de sql-code om de structuur van de database op te zetten. Maak een nieuwe database aan en importeer het sql bestand om de tabellen aan te maken.
+* `apache.py` is een module-bestand. Het bevat functies om connectie te maken met een database en om queries uit te voeren.
+* `opdracht.py` bevat al een deel van de code. Vul dit bestand aan zodat je de applicatie volledig werkend kunt laten zien.
+
+#### Aanpak
+* Lees de behoefte-analyse goed door. Hierin staat beschreven waar het project over gaat en wat er wordt verwacht van de applicatie die je moet maken.
+* Installeer de benodigde modules (pymysql en apachelogs)
+* Creëer de database met een mysql-client
+* Configureer de gegevens voor de database-connectie in apache.py
+
 :::
 
 ::: section
