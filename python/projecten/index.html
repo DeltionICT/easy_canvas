@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
     <style>
@@ -26,6 +28,7 @@
       
           <li><a href="/easy_canvas/python/projecten/#projecten" class="active">Projecten</a></li>
       
+          <li><a href="https://github.com/DeltionICT/easy_canvas/blob/main/./src/python/python-ch035.md"><span style="font-family: 'Material Icons';">edit</span></a></li>
         </ul>
         <div id="hight_indicator">1024</div>
       </nav>
@@ -59,7 +62,7 @@
 <div class="section">
 <h3 id="de-stembus">De stembus</h3>
 <p>Zoals je weet wordt er tijdens de verkiezingen in Nederland gebruik gemaakt van 'de stembus'. Al jarenlang wordt er geprobeerd om het stemmen te digitaliseren, maar helaas is dat tot op heden nog niet gelukt. Een nobele taak dus voor een nieuwe lichting IT-ers om hier verandering in aan te brengen.</p>
-<h4 id="projectgroep">Projectgroep</h4>
+<h4 id="de-stemapplicatie">De stemapplicatie</h4>
 <p>Stemgerechtigden gaan gebruik maken van jullie python-applicatie om hun stem uit te brengen op een van de verkiesbaar gestelde politici. Aan het einde van de stemdag kun je met de applicatie weergeven hoeveel stemmen de verschillende politici hebben gekregen.</p>
 <p>Zo kan het invoerscherm er uit zien:</p>
 <blockquote>
@@ -111,11 +114,12 @@
 <li>Het aantal keer dat is gestemd op een bepaalde partij</li>
 <li>Een overzicht van alle namen van de partijen en het aantal keer dat op die partij is gestemd.</li>
 <li>Een overzicht van alle kandidaten (voornaam, achternaam en partij) en het aantal keer dat op die kandidaat is gestemd</li>
-<li>Het aantal keer dat er op partijen is gestemd per plaats</li>
+<li>De naam en het aantal keer dat er op partijen is gestemd per plaats</li>
 </ul>
 </div>
 <div class="section">
 <h3 id="warmred">Warmred</h3>
+<h4 id="opdrachten">Opdrachten</h4>
 <ul>
 <li>Download de behoefte-analyse voor het <a href="https://static.edutorial.nl/python/proefexamen_warmred.docx">project Warmred</a></li>
 <li>Maak een <a href="https://static.edutorial.nl/python/activiteiten_diagram.docx">stroomdiagram</a> om de activiteiten op volgorde weer te geven</li>
@@ -131,6 +135,28 @@
 <span class="token value">3. enz. enz.</span>
 <span class="token value">===============================================================</span>
 <span class="token value">Maak een keuze:</span></code></pre>
+<h4 id="bestanden">Bestanden</h4>
+<pre class="language-shell"><code class="language-shell">apachelog_v2:
+	db:
+		apachelog.sql
+	logmodules:
+		apache.py
+	opdracht.py
+	small_apache.log
+	super_small_apache.log</code></pre>
+<ul>
+<li><code>small_apache.log</code> en <code>super_small_apache.log</code> zijn .csv bestanden. CSV-bestanden bevatten tab-gescheiden data. Bekijk de inhoud van beide bestanden. Je zult zien dat <code>super_small_apache.log</code> bestaat uit maar een paar regels. Dit is ideaal om mee te testen.</li>
+<li><code>apachelog.sql</code> bevat de sql-code om de structuur van de database op te zetten. Maak een nieuwe database aan en importeer het sql bestand om de tabellen aan te maken.</li>
+<li><code>apache.py</code> is een module-bestand. Het bevat functies om connectie te maken met een database en om queries uit te voeren.</li>
+<li><code>opdracht.py</code> bevat al een deel van de code. Vul dit bestand aan zodat je de applicatie volledig werkend kunt laten zien.</li>
+</ul>
+<h4 id="aanpak">Aanpak</h4>
+<ul>
+<li>Lees de behoefte-analyse goed door. Hierin staat beschreven waar het project over gaat en wat er wordt verwacht van de applicatie die je moet maken.</li>
+<li>Installeer de benodigde modules (pymysql en apachelogs)</li>
+<li>Creëer de database met een mysql-client</li>
+<li>Configureer de gegevens voor de database-connectie in apache.py</li>
+</ul>
 </div>
 <div class="section">
 <h3 id="flitspaal">Flitspaal</h3>
@@ -182,7 +208,6 @@
     </main>
  
    </div>
-    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
      function styleActiveLink(){if(!window.location.hash)return;const e=window.location.hash;let n=document.querySelector('a[href="'+e+'"]'),t=document.querySelectorAll(".toc a");for(let e=0;e<t.length;e++)t[e].classList.remove("active");n.classList.add("active"),console.log("Actieve link:",n)}function hidePanel(){const e=document.getElementById("panel-in"),n=document.getElementById("panel-out"),t=document.getElementById("inhoudsopgave");n.style.display="none",e.style.display="block",t.style.display="none"}function showPanel(){const e=document.getElementById("inhoudsopgave"),n=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",n.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),toonHoogte()}),window.addEventListener("hashchange",styleActiveLink);const mediaQueryList=window.matchMedia("print");let panelstate="";const arrow_in_img=document.querySelector("#panel-in img"),arrow_out_img=document.querySelector("#panel-out img");function voorPrinten(){panelstate=document.getElementById("inhoudsopgave").style.display,hidePanel(),arrow_in_img.style.display="none",arrow_out_img.style.display="none"}function naPrinten(){"none"===panelstate?(hidePanel(),arrow_in_img.style.display="block"):(showPanel(),arrow_out_img.style.display="block")}function toonHoogte(){const e=window.innerHeight,n=document.getElementById("hight_indicator");console.log(`Hoogte: ${e}px`),n.textContent=`${e}px`}window.matchMedia&&mediaQueryList.addListener(function(e){e.matches?voorPrinten():naPrinten()}),(inhoud=document.querySelector("#inhoudsopgave"))&&inhoud.addEventListener("click",function(e){console.log("Inhoudsopgave - Click event detected"),toonHoogte()});
     </script>

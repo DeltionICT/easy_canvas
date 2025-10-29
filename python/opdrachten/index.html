@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
     <style>
@@ -26,6 +28,7 @@
       
           <li><a href="/easy_canvas/python/projecten/#projecten">Projecten</a></li>
       
+          <li><a href="https://github.com/DeltionICT/easy_canvas/blob/main/./src/python/python-ch030.md"><span style="font-family: 'Material Icons';">edit</span></a></li>
         </ul>
         <div id="hight_indicator">1024</div>
       </nav>
@@ -684,7 +687,6 @@ Jan Jaap Siewers </code></pre>
     </main>
  
    </div>
-    <!--  <script src="/_js/hoogte_indicator.js"></script> -->
     <script>
      function styleActiveLink(){if(!window.location.hash)return;const e=window.location.hash;let n=document.querySelector('a[href="'+e+'"]'),t=document.querySelectorAll(".toc a");for(let e=0;e<t.length;e++)t[e].classList.remove("active");n.classList.add("active"),console.log("Actieve link:",n)}function hidePanel(){const e=document.getElementById("panel-in"),n=document.getElementById("panel-out"),t=document.getElementById("inhoudsopgave");n.style.display="none",e.style.display="block",t.style.display="none"}function showPanel(){const e=document.getElementById("inhoudsopgave"),n=document.getElementById("panel-in");document.getElementById("panel-out").style.display="block",n.style.display="none",e.style.display="block"}function toggleNav(){const e=document.querySelector("nav#side ul");"flex"===e.style.display?e.style.display="none":e.style.display="flex"}window.addEventListener("DOMContentLoaded",function(){showPanel(),styleActiveLink(),toonHoogte()}),window.addEventListener("hashchange",styleActiveLink);const mediaQueryList=window.matchMedia("print");let panelstate="";const arrow_in_img=document.querySelector("#panel-in img"),arrow_out_img=document.querySelector("#panel-out img");function voorPrinten(){panelstate=document.getElementById("inhoudsopgave").style.display,hidePanel(),arrow_in_img.style.display="none",arrow_out_img.style.display="none"}function naPrinten(){"none"===panelstate?(hidePanel(),arrow_in_img.style.display="block"):(showPanel(),arrow_out_img.style.display="block")}function toonHoogte(){const e=window.innerHeight,n=document.getElementById("hight_indicator");console.log(`Hoogte: ${e}px`),n.textContent=`${e}px`}window.matchMedia&&mediaQueryList.addListener(function(e){e.matches?voorPrinten():naPrinten()}),(inhoud=document.querySelector("#inhoudsopgave"))&&inhoud.addEventListener("click",function(e){console.log("Inhoudsopgave - Click event detected"),toonHoogte()});
     </script>
