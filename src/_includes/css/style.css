@@ -22,6 +22,7 @@
 body {
     margin:0;
     padding:0;
+    box-sizing: border-box;
     background-color: #FFFFFF;
     font-size: 16px;
     line-height: 1.5rem; 
@@ -55,10 +56,9 @@ h1[id], h2[id], h3[id]{
     scroll-margin-top: 300px; /* Pas deze waarde aan aan de hoogte van je vaste header, plus een beetje extra */
 }
 
-div#page_wrapper {
+div#page_wrapper, div#nav_wrapper {
     max-width:1200px;
     margin:0 auto 0 auto;
-    box-sizing: border-box;
 } 
 
 main {
@@ -86,6 +86,7 @@ div#title {
 div#content {
     display: flex;
     flex-direction: column;
+    /* flex: 0 0 250px; */
     padding:2rem 2rem 2rem 2rem;
     min-width:290px;
     width:100%;
@@ -101,23 +102,21 @@ header {
     top:0;
     z-index: 100;
     color: white;
-    padding: 0rem 1rem 0rem 0rem;
     background-color: var(--blue);
 }
 
-header div#title h1{
+/* header div#title h1{
     font-weight: 700;
     font-size:1.5rem;
     width:100%
-}
+} */
 
 nav#top {
     max-width:1200px;
     display:flex;
     flex-direction: row;
-    /* justify-content: space-between; */
     justify-content: flex-start;
-    margin:0 auto 0 auto;
+    margin:0 1rem 0 1rem;
     padding:0;
 }
 
@@ -129,18 +128,17 @@ nav#top ul.hide {
     display:none;
 }
 
-nav#top img, nav#side img {
+nav#side img {
     display:none;
     position:relative;
     top:20px;
-    left:10px;
+    left:2rem;
 }
 
 
 nav#top ul {
-    box-sizing: border-box;
     list-style-type: none;
-    margin:0;
+    margin:0 0 0 0;
     padding:1rem 0 0 0;
     display: flex;
     flex-direction: row;
@@ -194,9 +192,8 @@ a.active {
 
 aside#inhoudsopgave {
     display:block;
-    min-width:250px;
-    min-height:calc(100vh - 60px - 3rem);
-    flex: 0 0 250px;
+    min-width: 250px;
+    min-height: calc(100vh - 60px - 3rem);
     background-color: var(--light-grey);
     padding: 1rem;
     text-wrap: nowrap;
@@ -307,7 +304,7 @@ nav#top #hight_indicator {
     width:10px; 
     height:10px; 
     top:5px; 
-    right:20px;
+    right:25px;
 }
 
 #panel-in img {
@@ -343,15 +340,10 @@ img {
     margin:0 auto 0 auto;
 }
 
-@media (max-width:750px) {
 
-    nav#top {
-        display:none;
-    }
-    
     nav#side {
         max-width:300px;
-        display:flex;
+        display:none;
         flex-direction: column;
         justify-content: flex-start;
         margin:0 0 0 0;
@@ -360,10 +352,8 @@ img {
         position: absolute;
         top:0px;    
     }
-    nav#side img {
-        display:block;
-    }
-    nav#side ul {
+
+nav#side ul {
         display:none;
         box-sizing: border-box;
         margin:0;
@@ -380,5 +370,66 @@ img {
     nav#side ul li a.navlinks {
         padding:0.3rem 0.3rem 0.3rem 0.3rem;
         margin:0;
+    }
+
+    nav#side img {
+        display:none;
+        margin:0px 1rem 0px 0px;
+    }
+
+@media (min-width:650px) and (max-width:750px) {
+
+    nav#top {
+        display:none;
+    }
+
+    nav#side {
+        display:flex;
+    }
+    nav#side img {
+        display:block;
+    }
+    
+}
+
+@media (max-width:650px) {
+
+    nav#top {
+        display:none;
+    }
+
+    nav#side {
+        display:flex; 
+    }
+
+    nav#side img {
+        display:block;
+        margin:0px 1rem 0px 0px;
+    }
+    /* nav#side ul {
+        display:none;
+        box-sizing: border-box;
+        margin:0;
+        padding:3rem 0 1rem 0rem;
+        flex-direction: column;
+        text-align : left;
+        justify-content: flex-start;
+    } */
+
+
+    aside#inhoudsopgave {
+        position: absolute;
+        top:60px;  
+        right:0px;
+        display:block;
+    }
+
+    #panel-in img, #panel-out img {
+        position:absolute; 
+        top:65px; 
+        right:0px;
+        width:25px; 
+        height:10px; 
+
     }
 }

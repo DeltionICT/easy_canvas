@@ -77,11 +77,14 @@
         panel.style.display = 'block';
       }
 
+      const nav = document.querySelector('nav#side img');
+      const navLinks = document.querySelector('nav#side ul');
+      nav.addEventListener('click', toggleNav);
+
       function toggleNav() {
-        const nav = document.querySelector('nav#side ul');
-        if (nav.style.display === 'flex')  {
-          nav.style.display = 'none';
+        if (navLinks.style.display === 'flex')  {
+          navLinks.style.display = 'none';
         } else {
-          nav.style.display = 'flex';
+          navLinks.style.display = 'flex';
         }
       }
