@@ -125,6 +125,38 @@ Maak een keuze
 ===============================================================
 Maak een keuze: 
 ```
+#### Stappenplan
+1. Update de repository [docker_python](https://github.com/siewers32/docker_python) met `git pull` (of `git clone` bij het opnieuw klonen van de repo op github)
+2. Kopieer de opdrachtbestanden naar de werkmap van je repository
+3. Verwijder het bestand `main.py` (dat wordt niet meer gebruikt)
+4. Verplaats de `.csv`-bestanden naar de `app`.
+5. Verplaats de applicatiebestanden `.py` naar de map `/app`
+6. Maak in de map `app` een nieuwe map met de naam `modules`
+7. Plaats de module `flits_modules/dbc.py` in de map `modules`
+
+Als het goed is ziet je map-structuur er nu zo uit:
+``` shell
+docker_python
+	| app
+		| cameras.csv
+		| fines.csv
+		| flashed.csv
+		| licenses.csv
+		| modules
+			| dbc.py
+		| opdracht.py
+````
+8. Start de docker containers met `docker compose up`
+9. Ga naar `localhost:8082` en log in met `root/secret`
+10. Maak een nieuwe database aan met de naam `rdw`
+11. Selecteer de tap `SQL` voor de nieuwe database voor de inhoud van `project_flits_v2/db/flits.sql` uit
+12. Start de python container om de benodigde scripts aan te kunnen passen `docker exec -it -u appuser docker_python-app-1 bash`
+13. Zorg ervoor dat alle modules die nodig zijn worden geinstalleerd (zie requirements.txt)
+	* Installeer modules met `pip install ....`
+	* Pas `opdracht.py` aan en zorg er voor dat de import regel verwijst naar de module dbc in de map modules: `from modules import dbc`
+14. Volg de instructies in `opdracht.py`
+15. TIP: Met de `keuze = 0` worden de gegevens vanuit de .csv-files overgezet naar de database.
+
 :::
 
 ::: section
