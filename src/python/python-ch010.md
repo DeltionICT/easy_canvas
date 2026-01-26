@@ -5,7 +5,7 @@ leerdoelen_1:
 -
   titel: Programmacode Realiseren (B1-K1-W3)
   items:
-    - Basisconcepten toepassen. Je leert in Python werken met variabelen, datatypes, beslissingen (zoals `if`/`else` statements) en lussen (`for`/`while` loops). 
+    - Basisconcepten toepassen. Je leert in Python werken met variabelen, datatypes, beslissingen (zoals if/else statements) en lussen (for/while loops). 
     - Code schrijven. Je leert de benodigde code te schrijven. Je moet in staat zijn om in een programmeer- of scripttaal een eenvoudig script voor automatisering van een proces of een eenvoudige applicatie te maken. 
     - Structuur en Kwaliteit. Je leert hoe je Python-code realiseert die netjes en goed leesbaar is en voldoet aan gangbare code conventies. 
     - Taalkennis. Je leert de syntax (de regels van de taal) en de semantiek (de betekenis). 
@@ -16,7 +16,7 @@ leerdoelen_1:
   titel: Ontwerpen en Testen (B1-K1-W2 & B1-K1-W4)
   items: 
     - Technisch Ontwerpen. Je moet een technisch (deel)ontwerp voor software kunnen maken. Hierbij interpreteer en pas je de ontwerpeisen toe en houd je rekening met de programmeertaal, de ontwikkelomgeving en zaken als efficiëntie, toegankelijkheid, privacy, ethiek en veiligheid. 
-    - Testen. Je leert testscenario’s te maken. Je kiest een passende testvorm (zoals *unit tests* of *integratietest*) en voert de test(s) uit. Vervolgens interpreteer je de bevindingen en trek je plausibele conclusies.
+    - Testen. Je leert testscenario’s te maken. Je kiest een passende testvorm (zoals unit tests of integratietest) en voert de test(s) uit. Vervolgens interpreteer je de bevindingen en trek je plausibele conclusies.
     - Verbeteren. Op basis van wensen, testresultaten of meldingen doe je verbetervoorstellen voor de software. Dit vereist technisch inzicht en abstractievermogen. 
 
 -
