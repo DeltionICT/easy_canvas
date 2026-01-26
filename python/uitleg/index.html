@@ -23,6 +23,8 @@
       
           <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
       
+          <li><a href="/easy_canvas/python/installatie/#installatie">Installatie</a></li>
+      
           <li><a href="/easy_canvas/python/uitleg/#uitleg" class="active">Uitleg</a></li>
       
           <li><a href="/easy_canvas/python/opdrachten/#opdrachten">Opdrachten</a></li>
@@ -38,6 +40,8 @@
         <ul>
       
           <li><a href="/easy_canvas/python/introductie/#introductie">Introductie</a></li>
+      
+          <li><a href="/easy_canvas/python/installatie/#installatie">Installatie</a></li>
       
           <li><a href="/easy_canvas/python/uitleg/#uitleg" class="active">Uitleg</a></li>
       
@@ -62,128 +66,7 @@
 <p>In dit onderdeel vind je uitleg over het installeren van een ontwikkelomgeving voor Python. Daarnaast worden de basis programmeer principes van python uitgelegd.</p>
 </div>
 <div class="section">
-<h3 id="installatie">Installatie</h3>
-<p>Om in deze cursus met python te kunnen programmeren heb je het volgende nodig:</p>
-<ul>
-<li>Docker Desktop</li>
-<li>Visual Studio Code</li>
-<li>Python 3.xx</li>
-<li>Git en github</li>
-<li>Python 3.xx</li>
-<li>MariaDB of MySQL</li>
-</ul>
-<h4 id="docker-desktop">Docker Desktop</h4>
-<p>Het installeren van Docker Desktop op Windows is tegenwoordig een stuk eenvoudiger dankzij <strong>WSL 2</strong> (Windows Subsystem for Linux). Dit zorgt ervoor dat Docker razendsnel en efficiënt werkt op je systeem.</p>
-<h3 id="stappenplan-voor-installatie">Stappenplan voor installatie</h3>
-<h4 id="stap-1%3A-virtualisatie-controleren">Stap 1: Virtualisatie controleren</h4>
-<p>Open je <strong>Taakbeheer</strong> (Ctrl + Shift + Esc), ga naar het tabblad <strong>Prestaties</strong> en kijk bij <strong>CPU</strong>. Er moet staan: <code>Virtualisatie: Ingeschakeld</code>. Als dit &quot;Uitgeschakeld&quot; is, moet je dit eerst in je computer-BIOS aanzetten.</p>
-<h4 id="stap-2%3A-wsl-2-installeren%2Fupdaten">Stap 2: WSL 2 installeren/updaten</h4>
-<p>Docker werkt het best op de WSL 2 engine.</p>
-<ol>
-<li>Open <strong>PowerShell</strong> als Administrator (Rechtermuisknop op Start &gt; Terminal/PowerShell).</li>
-<li>Typ het volgende commando en druk op Enter:
-<code>wsl --install</code></li>
-<li><strong>Herstart je computer</strong> als de installatie klaar is.</li>
-</ol>
-<h4 id="stap-3%3A-docker-desktop-downloaden-en-installeren">Stap 3: Docker Desktop downloaden en installeren</h4>
-<ol>
-<li>Ga naar de officiële <a href="https://www.docker.com/products/docker-desktop/">Docker website</a>.</li>
-<li>Klik op de knop <strong>Download for Windows</strong>.</li>
-<li>Dubbelklik op de gedownloade installer (<code>Docker Desktop Installer.exe</code>).</li>
-<li>Zorg dat in het installatiescherm de optie <strong>&quot;Use WSL 2 instead of Hyper-V&quot;</strong> is aangevinkt.</li>
-<li>Voltooi de installatie en log (indien gevraagd) opnieuw in op Windows.</li>
-</ol>
-<h4 id="stap-4%3A-docker-desktop-starten">Stap 4: Docker Desktop starten</h4>
-<ul>
-<li>Start de applicatie via het menu Start.</li>
-<li>Accepteer de servicevoorwaarden (<strong>Service Agreement</strong>).</li>
-<li>Wacht tot de status linksbeneden in het Docker-dashboard op groen springt (&quot;Engine Running&quot;).</li>
-</ul>
-<h4 id="stap-5%3A-start-een-python-container">Stap 5: Start een python container</h4>
-<ul>
-<li>Maak een nieuwe map bijv. <code>c:/school/info</code></li>
-<li>Open powershell als administrator</li>
-<li>Navigeer naar de map <code>cd c:/school/info</code></li>
-<li>Maak een bestand aan: <code>c:/school/info/main.py</code></li>
-<li>Gebruik kladblok om de inhoud van main.py te veranderen naar: <code>print(&quot;hello world&quot;)</code></li>
-<li>Start een container met python: <code>docker run -it --rm -v &quot;${PWD}:/app&quot; -w /app python:3 /bin/bash</code></li>
-<li>Type nu: <code>python main.py</code> Als het goed is zie je nu <code>hello world</code> staan op het scherm!</li>
-<li>Installatie is gelukt!!</li>
-</ul>
-<h3 id="testen-of-het-werkt">Testen of het werkt</h3>
-<p>In <a href="https://www.youtube.com/watch?v=yv3Hv_K0fpc">deze handleiding voor het installeren van Docker op Windows</a> zie je stap voor stap hoe je WSL 2 activeert en de software correct instelt.</p>
-<h4 id="visual-studio-code">Visual Studio Code</h4>
-<p>Om te beginnen met programmeren in Python met Visual Studio Code (VS Code), heb je een paar essentiële onderdelen nodig. VS Code is van zichzelf namelijk een tekstverwerker; om het echt slim te maken voor Python, moeten we een paar extra zaken toevoegen.</p>
-<h3 id="wat-heb-je-nodig%3F">Wat heb je nodig?</h3>
-<ol>
-<li><strong>De VS Code Installer:</strong> De editor zelf.</li>
-<li><strong>De Python Interpreter:</strong> De &quot;motor&quot; die jouw code begrijpt en uitvoert.</li>
-<li><strong>De Python Extensie:</strong> Een plug-in voor VS Code die zorgt voor foutcontrole en hulp bij het typen.</li>
-</ol>
-<h4 id="visual-studio-code-1">Visual Studio Code</h4>
-<h4 id="stap-1%3A-python-installeren">Stap 1: Python installeren</h4>
-<p>Voordat je de editor opent, moet Python op je computer staan.</p>
-<ul>
-<li>Ga naar <a href="https://www.python.org/downloads/">python.org</a>.</li>
-<li>Klik op de gele knop <strong>Download Python</strong>.</li>
-<li><strong>Belangrijk:</strong> Tijdens de installatie op Windows moet je het vinkje aanruisen bij <strong>&quot;Add Python to PATH&quot;</strong>. Als je dit vergeet, kan VS Code Python later niet vinden.</li>
-</ul>
-<h4 id="stap-2%3A-visual-studio-code-installeren">Stap 2: Visual Studio Code installeren</h4>
-<ul>
-<li>Ga naar <a href="https://code.visualstudio.com/">code.visualstudio.com</a>.</li>
-<li>Download de versie voor jouw besturingssysteem (Windows, macOS of Linux) en voer de installatie uit.</li>
-</ul>
-<h4 id="stap-3%3A-de-python-extensie-toevoegen">Stap 3: De Python Extensie toevoegen</h4>
-<p>Nu gaan we VS Code &quot;leren&quot; wat Python is.</p>
-<ul>
-<li>Open Visual Studio Code.</li>
-<li>Klik aan de linkerkant op het icoontje met de vierkantjes (de <strong>Extensions Marketplace</strong>).</li>
-<li>Typ bovenin de zoekbalk: <code>Python</code>.</li>
-<li>Zoek de extensie van <strong>Microsoft</strong> en klik op <strong>Install</strong>.</li>
-</ul>
-<h4 id="stap-4%3A-je-eerste-script-maken">Stap 4: Je eerste script maken</h4>
-<ul>
-<li>Ga naar <code>File</code> &gt; <code>New Text File</code>.</li>
-<li>Sla het bestand direct op (Ctrl+S) als <code>hallo.py</code>. De extensie <strong>.py</strong> is essentieel.</li>
-<li>Typ de volgende code:</li>
-</ul>
-<pre class="language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hallo wereld!"</span><span class="token punctuation">)</span>
-</code></pre>
-<h4 id="stap-5%3A-de-code-uitvoeren">Stap 5: De code uitvoeren</h4>
-<ul>
-<li>Rechtsboven in je scherm zie je nu een <strong>Play-knop</strong> (een driehoekje).</li>
-<li>Klik hierop. Onderin opent een paneel (de Terminal) waarin je de tekst &quot;Hallo wereld!&quot; ziet verschijnen.</li>
-</ul>
-<hr>
-<h3 id="handige-tip">Handige tip</h3>
-<p>Als je voor het eerst een <code>.py</code> bestand opent, vraagt VS Code soms rechtsonderin welke &quot;Interpreter&quot; je wilt gebruiken. Kies daar de versie die je in Stap 1 hebt geïnstalleerd.</p>
-<p>Zal ik je helpen met het schrijven van je eerste kleine programma om te zien of alles echt goed werkt?</p>
-<h4 id="git-en-github">Git en github</h4>
-<ul>
-<li>Kies de juiste installer en installeer <a href="https://git-scm.com/install/">Git</a></li>
-</ul>
-<ol>
-<li><strong>Wie is de bedenker van Git</strong> en welk bekend besturingssysteem heeft hij nog meer ontworpen?</li>
-<li>Hoe wordt de relatie tussen Git en <strong>GitHub</strong> in de bronnen beschreven?</li>
-<li>Waarom wordt GitHub ook wel een <strong>'Google Drive voor developers'</strong> genoemd?</li>
-<li>Welke twee grote voordelen biedt de combinatie van Git en GitHub bij het werken aan applicaties?</li>
-<li>Wat is de definitie van een <strong>repository</strong> volgens de tekst?</li>
-<li>Wat zijn de eerste twee stappen die je moet ondernemen voordat je met een repository kunt gaan werken?</li>
-<li>Wat is <strong>Git bash</strong> en waarin verschilt dit van een GUI zoals Git Desktop?</li>
-<li>Wat wordt er bedoeld met de <strong>'working directory'</strong>?</li>
-<li>Met welk specifiek commando initialiseer je een nieuwe git repository?</li>
-<li>Wat gebeurt er precies wanneer je het commando <code>git add .</code> gebruikt?</li>
-<li>Wat is de functie van de <strong>'stage'</strong> in het proces van het opslaan van bestanden?</li>
-<li>Waar dient de toevoeging <strong>'-m'</strong> voor bij het uitvoeren van een commit?</li>
-<li>Welke <strong>twee stappen</strong> moet je altijd doorlopen om bestanden daadwerkelijk in een repository op te slaan?</li>
-<li>Hoe kun je aan de naam van een map of bestand zien dat deze <strong>verborgen</strong> is?</li>
-<li>Welk commando gebruik je om een <strong>kopie van een bestaande repository</strong> (bijvoorbeeld van GitHub) te maken?</li>
-<li>Wat is het verschil tussen de commando's <strong><code>git push</code></strong> en <strong><code>git pull</code></strong>?</li>
-<li>Met welk commando kun je controleren welke bestanden er momenteel in de <strong>stage</strong> staan?</li>
-<li>Wat is de functie van het commando <strong><code>git log</code></strong>?</li>
-<li>Waarom wordt het commando <strong><code>rm -rf ./.git</code></strong> als destructief beschreven en wat blijft er nog over van je project nadat je dit hebt uitgevoerd?</li>
-</ol>
-<h4 id="python">Python</h4>
+<h3 id="python">Python</h3>
 <ul>
 <li>De Python-interpreter</li>
 <li>Een Code-Editor of IDE
@@ -986,7 +869,7 @@ Jan Jaap Siewers</p>
         <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
             <div class="toc">
-        <ul><li><a href="#uitleg">Uitleg</a></li><li><a href="#installatie">Installatie</a></li><li><a href="#stappenplan-voor-installatie">Stappenplan voor installatie</a></li><li><a href="#testen-of-het-werkt">Testen of het werkt</a></li><li><a href="#wat-heb-je-nodig%3F">Wat heb je nodig?</a></li><li><a href="#handige-tip">Handige tip</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#tekstfuncties">Tekstfuncties</a></li><li><a href="#lists">Lists</a></li><li><a href="#user-input">User input</a></li><li><a href="#loops">Loops</a></li><li><a href="#condities">Condities</a></li><li><a href="#while">While</a></li><li><a href="#foutafhandeling">Foutafhandeling</a></li><li><a href="#functies">Functies</a></li><li><a href="#modules">Modules</a></li></ul>
+        <ul><li><a href="#uitleg">Uitleg</a></li><li><a href="#python">Python</a></li><li><a href="#variabelen">Variabelen</a></li><li><a href="#tekstfuncties">Tekstfuncties</a></li><li><a href="#lists">Lists</a></li><li><a href="#user-input">User input</a></li><li><a href="#loops">Loops</a></li><li><a href="#condities">Condities</a></li><li><a href="#while">While</a></li><li><a href="#foutafhandeling">Foutafhandeling</a></li><li><a href="#functies">Functies</a></li><li><a href="#modules">Modules</a></li></ul>
       </div>        
          </aside> 
          <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
