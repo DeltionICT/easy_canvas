@@ -38,6 +38,7 @@ date: 2025-10-08
 #### 1 april
 * [Uitleg over functies](https://deltionict.github.io/easy_canvas/python/uitleg/#functies)
 * [Opdrachten over functies](https://deltionict.github.io/easy_canvas/python/opdrachten/#functies)
+* TOETS-moment
 
 #### 8 april
 * [Uitleg over modules](https://deltionict.github.io/easy_canvas/python/uitleg/#modules)
