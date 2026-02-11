@@ -74,6 +74,8 @@ my_dictionary = {"naam": "pipo", "mijn_getal": 8, "fav_kleur": "groen"}
 ```
 :::
 
+
+
 ::: section
 ### Tekstfuncties
 
@@ -170,7 +172,45 @@ Je kunt niet alle bewerkingstekens gebruiken. Je kunt tekst niet delen en tekste
 :::
 
 ::: section
-### Lists
+### Berekeningen
+
+{% video "Gke1mGBNIRc" %}
+
+Zoals veel andere script- en programmeertalen kun je in python verbluffend goed rekenen. Je kunt natuurlijk optellen, aftrekken, vermenigvuldigen en delen maar er zijn nog een aantal bewerkingen die handig zijn zoals de modulus, machtsverheffen.
+Met de modulus bewerking (%) kun je bepalen of een getal deelbaar is door een ander getal. Als het niet deelbaar is de restwaarde de uitkomst
+> 5 % 3 = 2 want als je 5 door 3 deelt dan kan dat 1 keer en hou je 2 over  
+> 6 % 3 = 0 want als je 6 door 3 deelt dan kan dat 2 keer en hou je niks over  
+> 0.3 % 3 = 0.3 want als je 0.3 deelt door 3 dan kan dat 0 keer en hou je 0.3 over
+> 8.3 % 0.3 = 0.2 want 0.3 x 27 = 8.1 dus hou je 0.2 over. 
+
+Machtsverheffen doe je met (**)
+> 2 ** 2 = 4 want 2 tot de macht 2 = 2 x 2 = 4  
+> 2 ** 3 = 8 want 2 tot de macht 3 = 2 x 2 x 2 = 8  
+> 5 ** 4 = 625 want 5 x 5 x 5 x 5 = 625  
+
+Delen is altijd tricky
+> 9 / 3 = 3  
+> 19 / 3 = 6.33333333 (float) 
+> 21 / 0 = ZeroDivisionError: division by zero 
+
+Als je een integer deelt door een andere integer dan kan de uitkomst een float zijn. Python kan niet door 0 delen dus zie een division by zero error op het scherm. Je kunt ook delen en altijd een integer als uitkomst hebben. Je gebruikt dan <code>//</code> ipv <code>/</code>
+
+> 9 // 3 = 3  
+> 19 // 3 = 6  
+> 21 // 0 = ZeroDivisionError: integer division or modulo by zero
+
+#### Bewerkingen en prioriteiten
+Als je meer dan 2 waarden moet bewerken, dan moet je opletten in welke volgorde de berekening wordt uitgevoerd...
+> 24 / 4 - 3 = 3 en niet 24 (eest delen dan aftrekken)  
+> 8 + 16 // 4 = 12 en niet 8 (eerst delen dan optellen)  
+
+Je kunt prioriteit afdwingen door haakjes te gebruiken:
+> (8 + 16) // 4 = 6 en niet 12 (eerst haakjes dan delen)
+
+:::
+
+::: section
+### Dictionaries
 
 Lists, tuples en dictionaries bieden de mogelijkheid om een set van informatie op te slaan. Lists zijn bijvoorbeeld handig als je alle namen van files in een directory op wil slaan. Of je wilt de namen en adressen van medewerkers opslaan. Als het gaat om een set van waarden die met elkaar te maken hebben, dan kan een list uitkomst bieden.
 Je kunt bijvoorbeeld de (eerste) letters van het alfabet opslaan in een list...
@@ -279,7 +319,8 @@ print(allebei[2]["naam"])
 :::
 
 ::: section
-### User input
+### Gebruikersinput
+
 {% video "pDOpoHsTPLs" %}
 
 Python is veelzijdig, je kunt er desktop-apps mee maken, websites, maar je kunt er ook interactieve programma's mee maken die draaien vanaf de command-line.
@@ -576,10 +617,7 @@ for club in clubs:
 Zoals je ziet kun je met de rechte haken ook in een string refereren naar de plek waar een karakter zich bevindt. Je kunt ook teksten slicen met <code>[:]</code>!
 
 
-:::
-
-::: section
-### While
+#### While
 
 Eerder heb je gezien dat je code kunt herhalen in een for-loop. Een while-loop doet in principe precies hetzelfde, maar er zijn situaties waarbij een while-loop een betere oplossing is dan een for-loop.
 Een van die situaties is bij applicaties waar user-input wordt gevraagd.  
@@ -629,8 +667,10 @@ Alle gebruikersinput wordt toegevoegd aan de list <code>lst</code>.
 Als er op <code>q</code> wordt gedrukt wordt er....
 * Een nieuw tekstbestand aangemaakt met de naam <code>newtext.txt</code>
 * Alle elementen in <code>lst</code> worden in een for-loop naar het text-bestand geschreven
+:::
 
-#### Werken met tekstbestanden
+::: section
+### Tekstbestanden
 ```python
 fo = open('newtext.txt', 'wt')
 ```
@@ -689,77 +729,6 @@ while num < 10:
       print(num)
 ```
 Deze loop gaat net zo lang door totdat de variabele <code>num</code> niet meer kleiner is dan 10. In het if-statement wordt bekeken of <code>num</code> deelbaar is door 2. Als dat zo is wordt <code>num</code> niet op het scherm getoond omdat <code>continue</code> er voor zorgt dat de code wordt afgebroken en het programma weer terug gaat naar het begin van de loop. De print-opdracht aan het einde van het programma wordt dus overgeslagen!
-
-:::
-
-::: section
-### Foutafhandeling
-Om er voor te zorgen dat gebruikers niet met foutmeldingen worden geconfronteerd en applicaties niet instorten als een gebruiker iets verkeerd doet, is het belangrijk dat fouten worden afgevangen.
-
-Bij applicaties waarbij om invoer wordt gevraagd kan niet van tevoren worden voorspeld wat een gebruiker gaat invoeren. Alles is mogelijk, maar een applicatie kan niet altijd met de invoer van een gebruiker overweg....
-
-```python
-prompt = "Geef een getal tussen 1 en 10\n"
-getal = int(input(prompt))
-print(10 + getal)
-```
-Als de gebruiker nu <code>sdfdsf</code> invult wordt onderstaande error getoond:
-```python
-ValueError: invalid literal for int() with base 10: 'sdfdsf'
-(venv) janjaap@iMac-Pro-van-Jan pythoncisco % 
-```
-Python probeert de input om te zetten naar een <code>int</code>, maar dat lukt niet met <code>sdfs</code>.
-Het programma wordt onderbroken.
-
-Om te voorkomen dat de programma abrupt stopt nadat er een fout optreedt, kan de code eerst getest worden en kan de developer bepalen wat het programma moet doen bij een fout.
-```python
-try:
-    prompt = "Geef een getal tussen 1 en 10\n"
-    getal = int(input(prompt))
-    print(10 + getal)
-except:
-    print('Oeps, er ging iets mis')
-```
-Door het try/except block wordt de code getest en als er iets fout gaat wordt de regel 'Oeps er ging iets mis' getoond. Nog niet geweldig, maar beter dan een lelijke foutmelding.
-Het programma wordt uitgebreid met een while-lus, zodat de gebruiker net zo lang invoer kan geven totdat het programma een waarde krijgt waarmee de berekening kan worden uitgevoerd....
-```python
-doorgaan = True
-while doorgaan:
-    try:
-        prompt = "Geef een getal tussen 1 en 10\n"
-        getal = int(input(prompt))
-        print(10 + getal)
-        doorgaan = False
-    except:
-        print('Geef een getal anders kan het programma geen berekening uitvoeren!')
-```
-Hieronder de output van het programma....  
-```python
-Geef een getal tussen 1 en 10
-bla
-Geef een getal anders kan het programma geen berekening uitvoeren!
-Geef een getal tussen 1 en 10
-3
-13
-```
-Het programma kan nog robuuster worden gemaakt. De gebruiker moet een getal tussen 1 en 10 geven. Python kan wel controleren of de invoer van het juiste type is, maar de programmeur bepaalt of een getal zich binnen de gewenste range bevindt. Als er een getal hoger dan 10 en lager dan 1 wordt gegeven kan je zelf een error programmeren...
-```python
-doorgaan = True
-while doorgaan:
-    try:
-        prompt = "Geef een getal tussen 1 en 10\n"
-        getal = int(input(prompt))
-        if getal > 10 or getal < 0:
-            raise Exception
-        else:
-            print(10 + getal)
-            doorgaan = False
-    except ValueError:
-        print('Geef een getal anders kan het programma geen berekening uitvoeren!')
-    except:
-        print("Alleen getallen tussen 1 en 10 zijn geldig!")
-```
-Nu is het vrijwel onmogelijk om het programma nog over zijn toeren te krijgen. Alle input die niet geldig is wordt afgevangen en er wordt een passende melding gegeven. Het programma draait net zo lang door tot de gewenste input is gegeven.
 
 :::
 
@@ -862,6 +831,77 @@ print(f"{datum} {groet}")
 Het is vandaag 27 januari. Hallo beste Kees Jansen, leuk dat je er bent
 ```
 Je ziet dat je nu de return-waarde van de functie ergens in je programma kunt hergebruiken.
+
+:::
+
+::: section
+### Foutafhandeling
+Om er voor te zorgen dat gebruikers niet met foutmeldingen worden geconfronteerd en applicaties niet instorten als een gebruiker iets verkeerd doet, is het belangrijk dat fouten worden afgevangen.
+
+Bij applicaties waarbij om invoer wordt gevraagd kan niet van tevoren worden voorspeld wat een gebruiker gaat invoeren. Alles is mogelijk, maar een applicatie kan niet altijd met de invoer van een gebruiker overweg....
+
+```python
+prompt = "Geef een getal tussen 1 en 10\n"
+getal = int(input(prompt))
+print(10 + getal)
+```
+Als de gebruiker nu <code>sdfdsf</code> invult wordt onderstaande error getoond:
+```python
+ValueError: invalid literal for int() with base 10: 'sdfdsf'
+(venv) janjaap@iMac-Pro-van-Jan pythoncisco % 
+```
+Python probeert de input om te zetten naar een <code>int</code>, maar dat lukt niet met <code>sdfs</code>.
+Het programma wordt onderbroken.
+
+Om te voorkomen dat de programma abrupt stopt nadat er een fout optreedt, kan de code eerst getest worden en kan de developer bepalen wat het programma moet doen bij een fout.
+```python
+try:
+    prompt = "Geef een getal tussen 1 en 10\n"
+    getal = int(input(prompt))
+    print(10 + getal)
+except:
+    print('Oeps, er ging iets mis')
+```
+Door het try/except block wordt de code getest en als er iets fout gaat wordt de regel 'Oeps er ging iets mis' getoond. Nog niet geweldig, maar beter dan een lelijke foutmelding.
+Het programma wordt uitgebreid met een while-lus, zodat de gebruiker net zo lang invoer kan geven totdat het programma een waarde krijgt waarmee de berekening kan worden uitgevoerd....
+```python
+doorgaan = True
+while doorgaan:
+    try:
+        prompt = "Geef een getal tussen 1 en 10\n"
+        getal = int(input(prompt))
+        print(10 + getal)
+        doorgaan = False
+    except:
+        print('Geef een getal anders kan het programma geen berekening uitvoeren!')
+```
+Hieronder de output van het programma....  
+```python
+Geef een getal tussen 1 en 10
+bla
+Geef een getal anders kan het programma geen berekening uitvoeren!
+Geef een getal tussen 1 en 10
+3
+13
+```
+Het programma kan nog robuuster worden gemaakt. De gebruiker moet een getal tussen 1 en 10 geven. Python kan wel controleren of de invoer van het juiste type is, maar de programmeur bepaalt of een getal zich binnen de gewenste range bevindt. Als er een getal hoger dan 10 en lager dan 1 wordt gegeven kan je zelf een error programmeren...
+```python
+doorgaan = True
+while doorgaan:
+    try:
+        prompt = "Geef een getal tussen 1 en 10\n"
+        getal = int(input(prompt))
+        if getal > 10 or getal < 0:
+            raise Exception
+        else:
+            print(10 + getal)
+            doorgaan = False
+    except ValueError:
+        print('Geef een getal anders kan het programma geen berekening uitvoeren!')
+    except:
+        print("Alleen getallen tussen 1 en 10 zijn geldig!")
+```
+Nu is het vrijwel onmogelijk om het programma nog over zijn toeren te krijgen. Alle input die niet geldig is wordt afgevangen en er wordt een passende melding gegeven. Het programma draait net zo lang door tot de gewenste input is gegeven.
 
 :::
 
