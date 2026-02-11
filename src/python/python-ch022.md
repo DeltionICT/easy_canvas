@@ -58,6 +58,11 @@ Docker werkt het best op de WSL 2 engine.
 #### Testen of het werkt
 
 In [deze handleiding voor het installeren van Docker op Windows](https://www.youtube.com/watch?v=yv3Hv_K0fpc) zie je stap voor stap hoe je WSL 2 activeert en de software correct instelt.
+
+#### Easy python
+*  Aangezien dit.. `docker run -it --rm -v "${PWD}:/app" -w /app python:3 /bin/bash` nogal een lang commando is...
+* Is er een batch-file (executable) van gemaakt die je makkelijk kan opstarten.
+* [Download ](https://github.com/DeltionICT/python_exec/archive/refs/heads/main.zip)
 :::
 
 ::: section
