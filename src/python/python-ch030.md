@@ -75,10 +75,6 @@ print(my_dict)
 #### Opdracht 4
 
 > Op [w3schools](https://www.w3schools.com/python/python_ref_string.asp) vind je verschillende functies die je op tekst toe kan passen. Gebruik ze bij de volgende opdracht.  
-> * Maak gebruik van het bestand: opdr_1.py
-> * Pas de code aan van opdr_1.py
-> * Commit en push je code naar github
-> 
 > * Zorg dat de volgende zin op het scherm wordt getoond met de print-functie:
 > O mamma mia, wat maak je toch heerlijke pizza's
 > 
