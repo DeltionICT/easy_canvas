@@ -25,7 +25,7 @@ Alle ontwikkelaars in een softwareteam maken branches voor de features waar ze a
 
 #### Bugfixes
 Naast features zijn er ook altijd bugs op te lossen. Meestal kiezen teams voor een aparte branche voor het oplossen van bugs. Bugs moeten snel en goed worden opgelost. Door gebruik te maken van een aparte branch kunnen bugfixes zowel aan de main-branche als aan nieuwe features worden toegevoegd (gemerged).
-<img src="https://static.edutorial.nl/git/git-versions3.svg" eleventy:widths="700" alt="git versions">
+<img src="/_assets/git/git-versions3.svg" eleventy:widths="700" alt="git versions">
 
 [Git branches en merging](https://www.varonis.com/blog/git-branching/)
 :::

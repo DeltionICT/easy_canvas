@@ -40,7 +40,7 @@ Met 'add' voeg je alle bestanden uit de 'working directory' toe aan de 'stage'.
 Met 'commit' worden de bestanden uit de 'working directory' opgeslagen in de repository. '-m'  geeft nog de mogelijkheid om een message mee te bewaren die iets zegt over de commit. Bijv. 'first commit'.
 Om je bestanden toe te voegen aan een repository moet je 2 stappen doen. Je voegt de bestanden toe aan de 'stage', daarmee zet je ze klaar om opgeslagen te worden. Daarna doe je een 'commit' waarmee de bestanden worden opgeslagen in de repository. 
 
-![Stadia van working directory naar repository met Git](https://static.edutorial.nl/git/git.svg)
+![Stadia van working directory naar repository met Git](/_assets/git/git.svg)
 
 
 Als je 'git init' start vanuit een directory, dan krijg je in die directory een 'verborgen' mapje met de naam '.git'. Een bestandsnaam of map die begint met een punt is verborgen. Je kunt ook verborgen bestanden zien als je de toevoeging '-a' gebruikt bij het commando 'ls' (list directory)

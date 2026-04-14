@@ -41,7 +41,7 @@ Zo kan het invoerscherm er uit zien:
     * Hoe de applicatie er uit gaat zien (schermen)
     * Welke invoer-mogelijkheden er zijn 
     * welke uitvoer-mogelijkheden er zijn 
-    * Een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven.
+    * Een [stroomdiagram](/_assets/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven.
 
 #### Overige eisen
 * De applicatie moet 'hufter-proof' zijn. Probeer errors op het scherm te vermijden.
@@ -61,10 +61,10 @@ Zo kan het invoerscherm er uit zien:
 ::: section
 ### Warmred
 #### Opdrachten
-* Download de behoefte-analyse voor het [project Warmred](https://static.edutorial.nl/python/proefexamen_warmred.docx)
-* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven
-* [Voorbeeld stroomdiagram](https://static.edutorial.nl/python/python_stroomschema.pdf)
-* Gebruik [deze bestanden](https://static.edutorial.nl/python/apachelog_v2.zip) om een tool te maken volgens de beschrijving in de behoefte-analyse.
+* Download de behoefte-analyse voor het [project Warmred](/_assets/python/proefexamen_warmred.docx)
+* Maak een [stroomdiagram](/_assets/python/activiteiten_diagram.docx) om de activiteiten op volgorde weer te geven
+* [Voorbeeld stroomdiagram](/_assets/python/python_stroomschema.pdf)
+* Gebruik [deze bestanden](/_assets/python/apachelog_v2.zip) om een tool te maken volgens de beschrijving in de behoefte-analyse.
 * Hieronder zie je een voorbeeld van het keuzemenu dat de tool laat zien nadat de applicatie is opgestart.
 ```csv
 ===============================================================
@@ -104,9 +104,9 @@ apachelog_v2:
 
 ::: section
 ### Flitspaal
-* Download de behoefte-analyse voor het [project flitspaal](https://static.edutorial.nl/python/proefexamen_flitspaal_v2.docx).
-* Download de (gedeeltelijke) applicatie. [Projectbestanden flitspaal](https://static.edutorial.nl/python/project_flits_v2.zip)
-* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
+* Download de behoefte-analyse voor het [project flitspaal](/_assets/python/proefexamen_flitspaal_v2.docx).
+* Download de (gedeeltelijke) applicatie. [Projectbestanden flitspaal](/_assets/python/project_flits_v2.zip)
+* Maak een [stroomdiagram](/_assets/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
 * Pas opdracht.py aan, zodat de werking van de applicatie voldoet aan de opdracht
 * Hieronder zie je de uitwerking van het keuzescherm:
 
@@ -164,9 +164,9 @@ docker_python
 
 #### Project Superduper
 
-* Download de behoefte-analyse voor het [project superduper](https://static.edutorial.nl/python/behoefte-analyse_proefexamen_superduper.docx).
-* Download de (gedeeltelijke) applicatie. [Projectbestanden superduper](https://static.edutorial.nl/python/superduper2.zip)
-* Maak een [stroomdiagram](https://static.edutorial.nl/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
+* Download de behoefte-analyse voor het [project superduper](/_assets/python/behoefte-analyse_proefexamen_superduper.docx).
+* Download de (gedeeltelijke) applicatie. [Projectbestanden superduper](/_assets/python/superduper2.zip)
+* Maak een [stroomdiagram](/_assets/python/activiteiten_diagram.docx) voor het bouwen van de applicatie.
 * Pas opdracht.py aan, zodat de werking van de applicatie voldoet aan de opdracht
 
 {% video "videoseries?list=PLBtXOV0WuE_E9pWd45goHHqxGe2yemBoP" %}

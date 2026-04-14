@@ -3,6 +3,37 @@ title: Planning
 date: 2025-10-08
 ---
 
+::: section
+### Planning
+
+#### 15 april - functions
+* [Uitleg over functies](https://deltionict.github.io/easy_canvas/python/uitleg/#functies)
+* [Opdrachten over functies](https://deltionict.github.io/easy_canvas/python/opdrachten/#functies)
+
+#### 6 mei - modules
+* [Uitleg over modules](https://deltionict.github.io/easy_canvas/python/uitleg/#modules)
+* [Opdrachten over modules](https://deltionict.github.io/easy_canvas/python/opdrachten/#modules)
+
+#### 13 mei - projecten
+*  Werken aan projecten
+
+#### 27 mei - projecten
+*  Werken aan projecten
+
+#### 3 juni - projecten
+*  Werken aan projecten
+
+#### 10 juni - projectopleveringen
+* Op eigen laptop werk laten zien en presenteren
+
+#### 17 juni - herkansingen
+* Herkansen van toets op 1 april
+* Opnieuw opleveren van python projecten
+
+:::
+
+::: section
+### Periode 1
 #### 4 februari
 * [Uitleg over variabelen](https://deltionict.github.io/easy_canvas/python/uitleg/#variabelen)
 * [Opdrachten over variabelen](https://deltionict.github.io/easy_canvas/python/opdrachten/#variabelen)
@@ -46,3 +77,5 @@ date: 2025-10-08
 
 #### Extra opdrachten
 [Extra opdrachten](https://deltionict.github.io/lucy/subjects/python/introductie/)
+
+:::

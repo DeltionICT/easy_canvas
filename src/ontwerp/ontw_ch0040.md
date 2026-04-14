@@ -70,7 +70,7 @@ Een School heeft Docenten en Studenten.
 * Aggregatie → `Student` volgt `Vak` (vakken kunnen onafhankelijk bestaan)
 * Compositie → `Vak` bevat `Lesmateriaal` (lesmateriaal hoort onlosmakelijk bij een vak)
 
-<img src="https://static.edutorial.nl/projecten/classdiagram.svg" alt="classdiagram voorbeeld" style="width:20%">
+<img src="/_assets/projecten/classdiagram.svg" alt="classdiagram voorbeeld" style="width:20%">
 
 :::
 

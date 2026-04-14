@@ -236,6 +236,6 @@ In het geval van een **school en studenten** kan een activity diagram bijvoorbee
 - Het **studieproces** (keuze van vakken, deelname aan lessen, examens) te modelleren.
 - De **interactie met docenten en systemen** te structureren.
 
-<img src="https://static.edutorial.nl/projecten/activity_diagram.svg" alt="Voorbeeld van een activiteitendiagram" style="width:80%">
+<img src="/_assets/projecten/activity_diagram.svg" alt="Voorbeeld van een activiteitendiagram" style="width:80%">
 :::
 

@@ -18,7 +18,7 @@ Om conflicten op te lossen moet je begrijpen dat git werkt met versies. Iedere c
 Je zult dan toch samen moeten bekijken hoe je de wijzigingen in zo'n bestand samenvoegt.  
 
 Hieronder zie je een voorbeeld van een merge-conflict in Visual Studio Code....  
-<img src="https://static.edutorial.nl/git/merge-conflict.png" eleventy:widths="700" alt="merge conflict">
+<img src="/_assets/git/merge-conflict.png" eleventy:widths="700" alt="merge conflict">
 * Bij <code><<<<<<< HEAD (Current change)</code> tot aan <code>=======</code> zie je de code van je collega.   
 * Jouw code is de code vanaf <code>>>>>>>>Test (Incoming change)</code>
 Pas het bestand aan zodat alleen de gewenste code nog overblijft

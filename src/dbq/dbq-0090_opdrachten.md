@@ -98,7 +98,7 @@ Maak nu het sql-script voor een database met 3 tabellen:
 
 ::: section
 ### CRUD oefeningen
-* Maak een nieuwe database aan met de naam 'reisbureau' en voer de queries uit van [dit sql-bestand](https://static.edutorial.nl/projecten/reisbureau_001.sql).
+* Maak een nieuwe database aan met de naam 'reisbureau' en voer de queries uit van [dit sql-bestand](/_assets/projecten/reisbureau_001.sql).
 * Als je de postgres-variant gebruikt vind je de database-bestanden in de [siewers32/docker_python_postgres repository](https://github.com/siewers32/docker_python_postgres)
 * Geef de query om alle tabellen in de database 'reisbureau' weer te gegeven
 * Voeg 2 nieuwe klanten toe aan de tabel 'customers' (je mag de waarden zelf bedenken)

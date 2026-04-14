@@ -52,13 +52,13 @@ De meest spraakmakende mislukkingen leidden in 2014 tot een parlementair onderzo
 Dit toont aan dat projecten niet alleen om techniek gaan, maar vooral om **menselijke factoren, management en heldere communicatie.**
 
 #### Problemen bij projectmanagement
-![projectmanagement](https://static.edutorial.nl/projecten/projectmanagement_20.jpg)
+![projectmanagement](/_assets/projecten/projectmanagement_20.jpg)
 :::
 
 ::: section
 ### Waterval
 
-<img src="https://static.edutorial.nl/projecten/waterval.jpg" alt="Waterval methode" style="width:70%">
+<img src="/_assets/projecten/waterval.jpg" alt="Waterval methode" style="width:70%">
 
 De **Watervalmethode** is een traditionele, stapsgewijze aanpak voor projectmanagement. Het is vernoemd naar een waterval omdat de fases **strikt na elkaar** verlopen, net als water dat alleen naar beneden stroomt. Je mag pas aan de volgende stap beginnen als de vorige helemaal is afgerond en goedgekeurd.
 
@@ -99,7 +99,7 @@ Deze methode is goed om de basis van projectmanagement te leren, maar in de mode
 ::: section
 ### Scrum
 
-![scrumplanning](https://static.edutorial.nl/projecten/scrumplanning.jpg) 
+![scrumplanning](/_assets/projecten/scrumplanning.jpg) 
 
 De **Scrum-methode** is een flexibele, moderne manier van projectmanagement. Het is een van de populairste methoden binnen **Agile** werken. In plaats van een groot project in één keer te plannen, wordt het opgedeeld in korte, herhaalde werkcycli.
 
@@ -124,7 +124,7 @@ Om de taken te verdelen en om een inschatting te maken van de tijd die nodig is 
 * Vervolgens start een volgende ronde en gooit iedereen opnieuw een kaart op.
 * Dit herhaalt zich totdat er overeenstemming is bereikt en duidelijk is wie de taak op gaat pakken.
 
-<img src="https://static.edutorial.nl/projecten/scrum/poker.png" alt="M&M" style="width:50%;">
+<img src="/_assets/projecten/scrum/poker.png" alt="M&M" style="width:50%;">
 
 #### Daily Stand-up
 Elke dag, staand, maximaal 15 minuten. Iedereen vertelt:
@@ -132,7 +132,7 @@ Elke dag, staand, maximaal 15 minuten. Iedereen vertelt:
 * Wat ga ik vandaag doen?
 * Welke problemen (blokkades) zie ik?
 
-![scrumboard](https://static.edutorial.nl/projecten/scrumboard.jpg)
+![scrumboard](/_assets/projecten/scrumboard.jpg)
 
 #### Sprint Review:
 Aan het einde: het team demonstreert het werkende deelproduct aan de Product Owner/klant voor feedback.
@@ -149,14 +149,14 @@ Er zijn verschillende methoden om een retrospective te doen:
 Vervolgens plakken ze de post-its bij de betreffende arm van de zeester.  
 Dit maakt de antwoorden van elk teamlid transparant en stimuleert de discussie.  
 
-<img src="https://static.edutorial.nl/projecten/scrum/de-zeester.png" alt="De zeester" style="width:50%;">
+<img src="/_assets/projecten/scrum/de-zeester.png" alt="De zeester" style="width:50%;">
 
 **K.A.L.M.**
 * Op het bord worden de woorden More, Keep, Less en Add geschreven. 
 * Teamleden schrijven hun punten op post-its en plakken deze bij het juiste woord. 
 Dit zorgt voor een visuele weergave van alle punten en start de discussie.  
 
-<img src="https://static.edutorial.nl/projecten/scrum/kalm.png" alt="K.A.L.M" style="width:50%;">
+<img src="/_assets/projecten/scrum/kalm.png" alt="K.A.L.M" style="width:50%;">
 
 
 **De Racewagen**
@@ -164,14 +164,14 @@ Dit zorgt voor een visuele weergave van alle punten en start de discussie.
 * Teamleden schrijven op post-its wat hen heeft afgeremd of versneld en plakken deze bij de parachute of de racewagen.
 * Dit leidt tot een discussie over verbeteracties.  
 
-<img src="https://static.edutorial.nl/projecten/scrum/de-racewagen.png" alt="De racewagen" style="width:50%;">
+<img src="/_assets/projecten/scrum/de-racewagen.png" alt="De racewagen" style="width:50%;">
 
 **Gevoelens tijdlijn**
 * De Scrum Master tekent een tijdlijn van de sprint met belangrijke gebeurtenissen. 
 * Boven de tijdlijn staat een happy face en onder de tijdlijn een sad face.
 * Teamleden schrijven hun punten op post-its en plaatsen deze op de tijdlijn, waarbij positieve punten hoog en negatieve punten laag worden geplaatst.  
 
-<img src="https://static.edutorial.nl/projecten/scrum/gevoelenslijn.png" alt="Gevoelenslijn" style="width:50%;">
+<img src="/_assets/projecten/scrum/gevoelenslijn.png" alt="Gevoelenslijn" style="width:50%;">
 
 **M&M retrospective**
 Elk teamlid pakt een M&M uit een pot. De kleur van de M&M bepaalt welke vraag beantwoord moet worden.
@@ -181,7 +181,7 @@ Elk teamlid pakt een M&M uit een pot. De kleur van de M&M bepaalt welke vraag be
 * Groen: Welke activiteit moeten we meer doen?
 * Blauw: Welke activiteit moeten we minder doen?  
 
-<img src="https://static.edutorial.nl/projecten/scrum/mm.png" alt="M&M" style="width:50%;">
+<img src="/_assets/projecten/scrum/mm.png" alt="M&M" style="width:50%;">
 
 <i>Bron: [Agile Scrum Group](https://agilescrumgroup.nl/retrospective-vormen-ideeen-voorbeelden/)</i>
 

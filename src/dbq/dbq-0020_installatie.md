@@ -23,7 +23,7 @@ MariaDB is een doorontwikkeling van MySQL. Het is een database die bekend staat 
 #### Installatie
 * [Download Python en MariaDB](https://github.com/siewers32/docker_python)
 * Hier vind je de uitleg en instructie voor het installeren van de containers voor Python en MariaDB. Gebruik `git clone` om de repository op je eigen machine te installeren.
-* In de opdrachten wordt verwezen naar de [School database](https://static.edutorial.nl/dbq/school.sql). Download het sql-bestand en importeer de sql-code in phpMyAdmin.
+* In de opdrachten wordt verwezen naar de [School database](/_assets/dbq/school.sql). Download het sql-bestand en importeer de sql-code in phpMyAdmin.
 :::
 
 
