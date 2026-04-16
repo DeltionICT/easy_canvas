@@ -128,6 +128,99 @@
 </ul>
 </div>
 <div class="section">
+<h3 id="secure-file-organizer">Secure File Organizer</h3>
+<h4 id="introductie">Introductie</h4>
+<p>Je gaat een tool bouwen die een rommelige map (zoals &quot;Downloads&quot;) automatisch opschoont, bestanden sorteert in mappen op basis van hun type, en gevoelige documenten kan beveiligen met professionele encryptie. Je werkt volgens het principe van <strong>Modulair Programmeren</strong>.</p>
+<hr>
+<h4 id="fase-0%3A-logisch-ontwerp-(de-blauwdruk)">Fase 0: Logisch Ontwerp (De Blauwdruk)</h4>
+<p><strong>Doel:</strong> Het visueel in kaart brengen van de datastromen en beslismomenten van de applicatie.</p>
+<p>Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.</p>
+<h4 id="de-opdracht%3A">De Opdracht:</h4>
+<p>Maak een <a href="https://edutorial.nl/projecten/activiteitendiagram/"><strong>Activity Diagram</strong> (stroomdiagram)</a> van het volledige proces. Gebruik hiervoor een tool zoals <em>draw.io</em>, <em>Lucidchart</em>, of gewoon pen en papier.</p>
+<p><strong>In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:</strong></p>
+<ol>
+<li><strong>Start:</strong> De gebruiker start <code>main.py</code>.</li>
+<li><strong>Input:</strong> De gebruiker voert een mappad in.</li>
+<li><strong>Beslismoment (Validatie):</strong> Bestaat de map? Zo nee, geef foutmelding en vraag opnieuw.</li>
+<li><strong>Proces - Sorteren:</strong>
+<ul>
+<li>Lees <code>config.json</code> uit.</li>
+<li>Loop door elk bestand in de map.</li>
+<li>Check de extensie en bepaal de doelmap.</li>
+<li>Verplaats het bestand.</li>
+</ul>
+</li>
+<li><strong>Beslismoment (Beveiliging):</strong> Vraag de gebruiker: &quot;Wilt u een map versleutelen?&quot;
+<ul>
+<li>Indien ja: Roep de <code>crypto_vault</code> module aan.</li>
+<li>Indien nee: Ga naar de afsluiting.</li>
+</ul>
+</li>
+<li><strong>Einde:</strong> Bevestig dat de acties zijn voltooid en sluit het programma veilig af.</li>
+</ol>
+<h4 id="deliverable-fase-0%3A">Deliverable Fase 0:</h4>
+<ul>
+<li>Een afbeelding of PDF van je diagram.</li>
+<li>Een korte tekstuele uitleg (max. 100 woorden) waarin je uitlegt hoe jouw <code>main.py</code> de functies uit de andere modules (<code>organizer.py</code> en <code>crypto_vault.py</code>) aanroept.</li>
+</ul>
+<hr>
+<h4 id="fase-1%3A-architectuur-%26-bestandssortering">Fase 1: Architectuur &amp; Bestandssortering</h4>
+<p><strong>Doel:</strong> Het opzetten van de mappenstructuur en de eerste logica voor bestandsbeheer.</p>
+<h4 id="opdrachten%3A">Opdrachten:</h4>
+<ol>
+<li><strong>Mappenstructuur:</strong> Richt je project in met een hoofdmap <code>SFO/</code> en een submap <code>modules/</code>.</li>
+<li><strong>Configuratie:</strong> Maak een <code>config.json</code> waarin je definieert welke extensies bij welke map horen (bijv. <code>.jpg</code> en <code>.png</code> naar &quot;Afbeeldingen&quot;).</li>
+<li><strong>Module <code>organizer.py</code>:</strong> Schrijf een module met de functie <code>sort_files(target_dir)</code>.
+<ul>
+<li>Deze functie moet mappen aanmaken als ze niet bestaan.</li>
+<li>Bestanden moeten verplaatst worden (gebruik <code>shutil</code>) naar de juiste map op basis van de <code>config.json</code>.</li>
+</ul>
+</li>
+<li><strong>Main script:</strong> Maak een <code>main.py</code> die de gebruiker vraagt welk pad moet worden opgeschoond en roep je module aan.</li>
+</ol>
+<p><strong>Deliverable:</strong> Een werkend script dat bestanden fysiek verplaatst naar de juiste submappen.</p>
+<hr>
+<h4 id="fase-2%3A-de-%22crypto-vault%22">Fase 2: De &quot;Crypto Vault&quot;</h4>
+<p><strong>Doel:</strong> Werken met externe libraries en beveiliging.</p>
+<h4 id="opdrachten%3A-1">Opdrachten:</h4>
+<ol>
+<li><strong>Installatie:</strong> Installeer de externe library <code>cryptography</code> via pip.</li>
+<li><strong>Module <code>crypto_vault.py</code>:</strong> Schrijf een module die de volgende functies bevat:
+<ul>
+<li><code>load_or_generate_key()</code>: Controleert of er een <code>secret.key</code> bestand is, zo niet: maak er een aan.</li>
+<li><code>encrypt_file(filepath)</code>: Leest een bestand in, versleutelt de data met de sleutel, en overschrijft het origineel.</li>
+<li><code>decrypt_file(filepath)</code>: Doet het omgekeerde.</li>
+</ul>
+</li>
+<li><strong>Integratie:</strong> Voeg in <code>main.py</code> een menu-optie toe: &quot;Versleutel een map&quot;. Als de gebruiker dit kiest, moeten alle bestanden in een specifieke map onleesbaar worden gemaakt.</li>
+</ol>
+<p><strong>Deliverable:</strong> Een module die bestanden kan &quot;locken&quot; en &quot;unlocken&quot;. De bestanden mogen niet meer te openen zijn in bijvoorbeeld Word of een fotoviewer zolang ze versleuteld zijn.</p>
+<hr>
+<h4 id="fase-3%3A-robuustheid-%26-logging">Fase 3: Robuustheid &amp; Logging</h4>
+<p><strong>Doel:</strong> De code professioneel maken (Error handling &amp; Logging).</p>
+<h4 id="opdrachten%3A-2">Opdrachten:</h4>
+<ol>
+<li><strong>Foutafhandeling:</strong> Zorg dat je programma niet crasht als:
+<ul>
+<li>De gebruiker een ongeldig pad invoert.</li>
+<li>Een bestand al open staat in een ander programma.</li>
+<li>De <code>secret.key</code> ontbreekt bij het ontsleutelen.</li>
+</ul>
+</li>
+<li><strong>Logging:</strong> Importeer de standaard <code>logging</code> module. Houd een <code>app.log</code> bij waarin elke actie (verplaatsen, versleutelen, foutmelding) wordt opgeslagen met een tijdstempel.</li>
+<li><strong>Documentatie:</strong> Schrijf voor elke functie in je eigen modules een korte <em>docstring</em> (<code>&quot;&quot;&quot; tekst &quot;&quot;&quot;</code>) waarin je uitlegt wat de parameters zijn en wat de functie teruggeeft.</li>
+</ol>
+<hr>
+<h4 id="beoordelingscriteria-(code-review)">Beoordelingscriteria (Code Review)</h4>
+<p>Tijdens het inleveren moet je de volgende vragen kunnen beantwoorden:</p>
+<ul>
+<li>Waarom heb je gekozen voor <code>shutil.move()</code> en niet voor <code>os.rename()</code>?</li>
+<li>Wat gebeurt er met je data als je de <code>secret.key</code> verwijdert?</li>
+<li>Hoe heb je voorkomen dat het script zichzelf (de <code>.py</code> bestanden) per ongeluk verplaatst of versleutelt?</li>
+<li>Laat zien hoe je AI hebt gebruikt om een specifiek probleem op te lossen (bijv. een regex voor extensies) en leg uit hoe die code werkt.</li>
+</ul>
+</div>
+<div class="section">
 <h3 id="warmred">Warmred</h3>
 <h4 id="opdrachten">Opdrachten</h4>
 <ul>
@@ -245,7 +338,7 @@
         <aside id="inhoudsopgave">
             <span><b>Inhoudsopgave</b></span>
             <div class="toc">
-        <ul><li><a href="#projecten">Projecten</a></li><li><a href="#de-stembus">De stembus</a></li><li><a href="#warmred">Warmred</a></li><li><a href="#flitspaal">Flitspaal</a></li><li><a href="#proefexamen">Proefexamen</a></li></ul>
+        <ul><li><a href="#projecten">Projecten</a></li><li><a href="#de-stembus">De stembus</a></li><li><a href="#secure-file-organizer">Secure File Organizer</a></li><li><a href="#warmred">Warmred</a></li><li><a href="#flitspaal">Flitspaal</a></li><li><a href="#proefexamen">Proefexamen</a></li></ul>
       </div>        
          </aside> 
          <div id="panel-in" class="panel" onclick="showPanel()"><img style="max-width: initial;" src="/easy_canvas/_assets/2pijltjes_f58220.svg" alt="inklappen"></div>
