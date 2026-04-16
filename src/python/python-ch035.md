@@ -57,7 +57,94 @@ Zo kan het invoerscherm er uit zien:
 * De naam en het aantal keer dat er op partijen is gestemd per plaats
 
 :::
+::: section
+### Secure File Organizer
 
+#### Introductie
+Je gaat een tool bouwen die een rommelige map (zoals "Downloads") automatisch opschoont, bestanden sorteert in mappen op basis van hun type, en gevoelige documenten kan beveiligen met professionele encryptie. Je werkt volgens het principe van **Modulair Programmeren**.
+
+---
+
+#### Fase 0: Logisch Ontwerp (De Blauwdruk)
+**Doel:** Het visueel in kaart brengen van de datastromen en beslismomenten van de applicatie.
+
+Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.
+
+#### De Opdracht:
+Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/activiteitendiagram/) van het volledige proces. Gebruik hiervoor een tool zoals *draw.io*, *Lucidchart*, of gewoon pen en papier.
+
+**In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:**
+1.  **Start:** De gebruiker start `main.py`.
+2.  **Input:** De gebruiker voert een mappad in.
+3.  **Beslismoment (Validatie):** Bestaat de map? Zo nee, geef foutmelding en vraag opnieuw.
+4.  **Proces - Sorteren:**
+    * Lees `config.json` uit.
+    * Loop door elk bestand in de map.
+    * Check de extensie en bepaal de doelmap.
+    * Verplaats het bestand.
+5.  **Beslismoment (Beveiliging):** Vraag de gebruiker: "Wilt u een map versleutelen?"
+    * Indien ja: Roep de `crypto_vault` module aan.
+    * Indien nee: Ga naar de afsluiting.
+6.  **Einde:** Bevestig dat de acties zijn voltooid en sluit het programma veilig af.
+
+
+#### Deliverable Fase 0:
+* Een afbeelding of PDF van je diagram.
+* Een korte tekstuele uitleg (max. 100 woorden) waarin je uitlegt hoe jouw `main.py` de functies uit de andere modules (`organizer.py` en `crypto_vault.py`) aanroept.
+
+---
+
+#### Fase 1: Architectuur & Bestandssortering
+**Doel:** Het opzetten van de mappenstructuur en de eerste logica voor bestandsbeheer.
+
+#### Opdrachten:
+1.  **Mappenstructuur:** Richt je project in met een hoofdmap `SFO/` en een submap `modules/`.
+2.  **Configuratie:** Maak een `config.json` waarin je definieert welke extensies bij welke map horen (bijv. `.jpg` en `.png` naar "Afbeeldingen").
+3.  **Module `organizer.py`:** Schrijf een module met de functie `sort_files(target_dir)`.
+    * Deze functie moet mappen aanmaken als ze niet bestaan.
+    * Bestanden moeten verplaatst worden (gebruik `shutil`) naar de juiste map op basis van de `config.json`.
+4.  **Main script:** Maak een `main.py` die de gebruiker vraagt welk pad moet worden opgeschoond en roep je module aan.
+
+**Deliverable:** Een werkend script dat bestanden fysiek verplaatst naar de juiste submappen.
+
+---
+
+#### Fase 2: De "Crypto Vault"
+**Doel:** Werken met externe libraries en beveiliging.
+
+#### Opdrachten:
+1.  **Installatie:** Installeer de externe library `cryptography` via pip.
+2.  **Module `crypto_vault.py`:** Schrijf een module die de volgende functies bevat:
+    * `load_or_generate_key()`: Controleert of er een `secret.key` bestand is, zo niet: maak er een aan.
+    * `encrypt_file(filepath)`: Leest een bestand in, versleutelt de data met de sleutel, en overschrijft het origineel.
+    * `decrypt_file(filepath)`: Doet het omgekeerde.
+3.  **Integratie:** Voeg in `main.py` een menu-optie toe: "Versleutel een map". Als de gebruiker dit kiest, moeten alle bestanden in een specifieke map onleesbaar worden gemaakt.
+
+**Deliverable:** Een module die bestanden kan "locken" en "unlocken". De bestanden mogen niet meer te openen zijn in bijvoorbeeld Word of een fotoviewer zolang ze versleuteld zijn.
+
+---
+
+#### Fase 3: Robuustheid & Logging
+**Doel:** De code professioneel maken (Error handling & Logging).
+
+#### Opdrachten:
+1.  **Foutafhandeling:** Zorg dat je programma niet crasht als:
+    * De gebruiker een ongeldig pad invoert.
+    * Een bestand al open staat in een ander programma.
+    * De `secret.key` ontbreekt bij het ontsleutelen.
+2.  **Logging:** Importeer de standaard `logging` module. Houd een `app.log` bij waarin elke actie (verplaatsen, versleutelen, foutmelding) wordt opgeslagen met een tijdstempel.
+3.  **Documentatie:** Schrijf voor elke functie in je eigen modules een korte *docstring* (`""" tekst """`) waarin je uitlegt wat de parameters zijn en wat de functie teruggeeft.
+
+---
+
+#### Beoordelingscriteria (Code Review)
+Tijdens het inleveren moet je de volgende vragen kunnen beantwoorden:
+* Waarom heb je gekozen voor `shutil.move()` en niet voor `os.rename()`?
+* Wat gebeurt er met je data als je de `secret.key` verwijdert?
+* Hoe heb je voorkomen dat het script zichzelf (de `.py` bestanden) per ongeluk verplaatst of versleutelt?
+* Laat zien hoe je AI hebt gebruikt om een specifiek probleem op te lossen (bijv. een regex voor extensies) en leg uit hoe die code werkt.
+
+:::
 ::: section
 ### Warmred
 #### Opdrachten
