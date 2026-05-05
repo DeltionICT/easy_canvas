@@ -73,12 +73,11 @@ Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen
 #### De Opdracht:
 Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/activiteitendiagram/) van het volledige proces. Gebruik hiervoor een tool zoals *draw.io*, *Lucidchart*, of gewoon pen en papier.
 
-**In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:**
+In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 1.  **Start:** De gebruiker start `main.py`.
 2.  **Input:** De gebruiker voert een mappad in.
 3.  **Beslismoment (Validatie):** Bestaat de map? Zo nee, geef foutmelding en vraag opnieuw.
 4.  **Proces - Sorteren:**
-    * Lees `config.json` uit.
     * Loop door elk bestand in de map.
     * Check de extensie en bepaal de doelmap.
     * Verplaats het bestand.
@@ -89,27 +88,53 @@ Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/a
 
 
 #### Deliverable Fase 0:
-* Een afbeelding of PDF van je diagram.
+* Een PDF van je diagram.
 * Een korte tekstuele uitleg (max. 100 woorden) waarin je uitlegt hoe jouw `main.py` de functies uit de andere modules (`organizer.py` en `crypto_vault.py`) aanroept.
 
 ---
 
-#### Fase 1: Architectuur & Bestandssortering
-**Doel:** Het opzetten van de mappenstructuur en de eerste logica voor bestandsbeheer.
+#### Fase 1: Architectuur & Bestanden sorteren
+**Doel:** Het opzetten van de mappenstructuur en de eerste logica voor het sorteren.
 
 #### Opdrachten:
 1.  **Mappenstructuur:** Richt je project in met een hoofdmap `SFO/` en een submap `modules/`.
-2.  **Configuratie:** Maak een `config.json` waarin je definieert welke extensies bij welke map horen (bijv. `.jpg` en `.png` naar "Afbeeldingen").
-3.  **Module `organizer.py`:** Schrijf een module met de functie `sort_files(target_dir)`.
-    * Deze functie moet mappen aanmaken als ze niet bestaan.
-    * Bestanden moeten verplaatst worden (gebruik `shutil`) naar de juiste map op basis van de `config.json`.
-4.  **Main script:** Maak een `main.py` die de gebruiker vraagt welk pad moet worden opgeschoond en roep je module aan.
+2.  Bestanden moeten verplaatst worden naar de juiste map op basis van de extensie.
+3.  **Module:** Maak gebruik van de module `organizer.py`, hierin staan de functies die je nodig hebt om bestanden in te delen.
+4.  **Main script:** Maak een `main.py` die de gebruiker vraagt welke map gearchiveerd moet worden.
 
-**Deliverable:** Een werkend script dat bestanden fysiek verplaatst naar de juiste submappen.
+**Deliverable:** Een werkende applicatie die de bestanden in een map verplaatst naar een archiefmap met de juiste submappen.
 
 ---
 
-#### Fase 2: De "Crypto Vault"
+#### Fase 2: De "Configuratie"
+**Doel:** Eenvoudig de applicatie kunnen aanpassen voor specifieke gebruikerswensen.
+
+1. **Mappenstructuur:** Misschien heb je tot nu toe de mappen zelf aangemaakt, maar dat gaat je applicatie nu doen.
+2. **Configuratiebestand:** Maak een configuratiebestand waarin staat hoe je applicatie de bestanden moet opruimen. Op basis van de bestandsextensie wordt bepaalt naar welke map een bestand verplaatst moet worden.
+3. **Mappen aanmaken:** Laat je applicatie controleren op basis van de configuratie welke mappen nog aangemaakt moeten worden.
+4. **Verplaats bestanden:** Als de mappen zijn aangemaakt laat je de applicatie de bestanden in de juiste map zetten.
+
+```json
+// Voorbeeld configuratie:
+{
+    "versleutelen" : true,
+    "archiefmap" : "archief",
+    "bestandsindeling" : 
+    {
+        "afbeeldingen" : [
+        ".jpg", ".jpeg", ".png", ".gif", ".webp"
+        ],
+        "documenten" : [
+            ".pdf", ".docx", ".txt"
+        ],
+        "video" : [
+            ".mp4", ".avi", ".mkv", ".m4a"
+        ]
+    }
+}
+```
+
+#### Fase 3: De "Crypto Vault"
 **Doel:** Werken met externe libraries en beveiliging.
 
 #### Opdrachten:
@@ -136,6 +161,8 @@ Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/a
 3.  **Documentatie:** Schrijf voor elke functie in je eigen modules een korte *docstring* (`""" tekst """`) waarin je uitlegt wat de parameters zijn en wat de functie teruggeeft.
 
 ---
+
+2.  **Configuratie:** Maak een `config.json` waarin je definieert welke extensies bij welke map horen (bijv. `.jpg` en `.png` naar "Afbeeldingen").
 
 #### Beoordelingscriteria (Code Review)
 Tijdens het inleveren moet je de volgende vragen kunnen beantwoorden:
