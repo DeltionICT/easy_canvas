@@ -34,7 +34,8 @@ date: 2025-10-08
 * Opnieuw opleveren van python projecten
 :::
 
-#### Cesuur
+::: section
+### Cesuur
 * Toets: max 3 punten (=cijfer * 0.3)
 * Opdracht 1 SFO: max 3 punten
 * Opdracht 2 SFO: max 2 punten
@@ -52,7 +53,7 @@ of
 
 > (3.5 * 0.3) = 1.05 + 2 + 1 + 0 = 4
 
-
+:::
 
 ::: section
 ### Periode 1
