@@ -137,14 +137,13 @@
 <p>Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.</p>
 <h4 id="de-opdracht%3A">De Opdracht:</h4>
 <p>Maak een <a href="https://edutorial.nl/projecten/activiteitendiagram/"><strong>Activity Diagram</strong> (stroomdiagram)</a> van het volledige proces. Gebruik hiervoor een tool zoals <em>draw.io</em>, <em>Lucidchart</em>, of gewoon pen en papier.</p>
-<p><strong>In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:</strong></p>
+<p>In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:</p>
 <ol>
 <li><strong>Start:</strong> De gebruiker start <code>main.py</code>.</li>
 <li><strong>Input:</strong> De gebruiker voert een mappad in.</li>
 <li><strong>Beslismoment (Validatie):</strong> Bestaat de map? Zo nee, geef foutmelding en vraag opnieuw.</li>
 <li><strong>Proces - Sorteren:</strong>
 <ul>
-<li>Lees <code>config.json</code> uit.</li>
 <li>Loop door elk bestand in de map.</li>
 <li>Check de extensie en bepaal de doelmap.</li>
 <li>Verplaats het bestand.</li>
@@ -160,27 +159,47 @@
 </ol>
 <h4 id="deliverable-fase-0%3A">Deliverable Fase 0:</h4>
 <ul>
-<li>Een afbeelding of PDF van je diagram.</li>
+<li>Een PDF van je diagram.</li>
 <li>Een korte tekstuele uitleg (max. 100 woorden) waarin je uitlegt hoe jouw <code>main.py</code> de functies uit de andere modules (<code>organizer.py</code> en <code>crypto_vault.py</code>) aanroept.</li>
 </ul>
 <hr>
-<h4 id="fase-1%3A-architectuur-%26-bestandssortering">Fase 1: Architectuur &amp; Bestandssortering</h4>
-<p><strong>Doel:</strong> Het opzetten van de mappenstructuur en de eerste logica voor bestandsbeheer.</p>
+<h4 id="fase-1%3A-architectuur-%26-bestanden-sorteren">Fase 1: Architectuur &amp; Bestanden sorteren</h4>
+<p><strong>Doel:</strong> Het opzetten van de mappenstructuur en de eerste logica voor het sorteren.</p>
 <h4 id="opdrachten%3A">Opdrachten:</h4>
 <ol>
 <li><strong>Mappenstructuur:</strong> Richt je project in met een hoofdmap <code>SFO/</code> en een submap <code>modules/</code>.</li>
-<li><strong>Configuratie:</strong> Maak een <code>config.json</code> waarin je definieert welke extensies bij welke map horen (bijv. <code>.jpg</code> en <code>.png</code> naar &quot;Afbeeldingen&quot;).</li>
-<li><strong>Module <code>organizer.py</code>:</strong> Schrijf een module met de functie <code>sort_files(target_dir)</code>.
-<ul>
-<li>Deze functie moet mappen aanmaken als ze niet bestaan.</li>
-<li>Bestanden moeten verplaatst worden (gebruik <code>shutil</code>) naar de juiste map op basis van de <code>config.json</code>.</li>
-</ul>
-</li>
-<li><strong>Main script:</strong> Maak een <code>main.py</code> die de gebruiker vraagt welk pad moet worden opgeschoond en roep je module aan.</li>
+<li>Bestanden moeten verplaatst worden naar de juiste map op basis van de extensie.</li>
+<li><strong>Module:</strong> Maak gebruik van de module <code>organizer.py</code>, hierin staan de functies die je nodig hebt om bestanden in te delen.</li>
+<li><strong>Main script:</strong> Maak een <code>main.py</code> die de gebruiker vraagt welke map gearchiveerd moet worden.</li>
 </ol>
-<p><strong>Deliverable:</strong> Een werkend script dat bestanden fysiek verplaatst naar de juiste submappen.</p>
+<p><strong>Deliverable:</strong> Een werkende applicatie die de bestanden in een map verplaatst naar een archiefmap met de juiste submappen.</p>
 <hr>
-<h4 id="fase-2%3A-de-%22crypto-vault%22">Fase 2: De &quot;Crypto Vault&quot;</h4>
+<h4 id="fase-2%3A-de-%22configuratie%22">Fase 2: De &quot;Configuratie&quot;</h4>
+<p><strong>Doel:</strong> Eenvoudig de applicatie kunnen aanpassen voor specifieke gebruikerswensen.</p>
+<ol>
+<li><strong>Mappenstructuur:</strong> Misschien heb je tot nu toe de mappen zelf aangemaakt, maar dat gaat je applicatie nu doen.</li>
+<li><strong>Configuratiebestand:</strong> Maak een configuratiebestand waarin staat hoe je applicatie de bestanden moet opruimen. Op basis van de bestandsextensie wordt bepaalt naar welke map een bestand verplaatst moet worden.</li>
+<li><strong>Mappen aanmaken:</strong> Laat je applicatie controleren op basis van de configuratie welke mappen nog aangemaakt moeten worden.</li>
+<li><strong>Verplaats bestanden:</strong> Als de mappen zijn aangemaakt laat je de applicatie de bestanden in de juiste map zetten.</li>
+</ol>
+<pre class="language-json"><code class="language-json"><span class="token comment">// Voorbeeld configuratie:</span>
+<span class="token punctuation">{</span>
+    <span class="token property">"versleutelen"</span> <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"archiefmap"</span> <span class="token operator">:</span> <span class="token string">"archief"</span><span class="token punctuation">,</span>
+    <span class="token property">"bestandsindeling"</span> <span class="token operator">:</span> 
+    <span class="token punctuation">{</span>
+        <span class="token property">"afbeeldingen"</span> <span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">".jpg"</span><span class="token punctuation">,</span> <span class="token string">".jpeg"</span><span class="token punctuation">,</span> <span class="token string">".png"</span><span class="token punctuation">,</span> <span class="token string">".gif"</span><span class="token punctuation">,</span> <span class="token string">".webp"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"documenten"</span> <span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">".pdf"</span><span class="token punctuation">,</span> <span class="token string">".docx"</span><span class="token punctuation">,</span> <span class="token string">".txt"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"video"</span> <span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">".mp4"</span><span class="token punctuation">,</span> <span class="token string">".avi"</span><span class="token punctuation">,</span> <span class="token string">".mkv"</span><span class="token punctuation">,</span> <span class="token string">".m4a"</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="fase-3%3A-de-%22crypto-vault%22">Fase 3: De &quot;Crypto Vault&quot;</h4>
 <p><strong>Doel:</strong> Werken met externe libraries en beveiliging.</p>
 <h4 id="opdrachten%3A-1">Opdrachten:</h4>
 <ol>
@@ -211,6 +230,9 @@
 <li><strong>Documentatie:</strong> Schrijf voor elke functie in je eigen modules een korte <em>docstring</em> (<code>&quot;&quot;&quot; tekst &quot;&quot;&quot;</code>) waarin je uitlegt wat de parameters zijn en wat de functie teruggeeft.</li>
 </ol>
 <hr>
+<ol start="2">
+<li><strong>Configuratie:</strong> Maak een <code>config.json</code> waarin je definieert welke extensies bij welke map horen (bijv. <code>.jpg</code> en <code>.png</code> naar &quot;Afbeeldingen&quot;).</li>
+</ol>
 <h4 id="beoordelingscriteria-(code-review)">Beoordelingscriteria (Code Review)</h4>
 <p>Tijdens het inleveren moet je de volgende vragen kunnen beantwoorden:</p>
 <ul>
