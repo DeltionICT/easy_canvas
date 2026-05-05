@@ -61,52 +61,66 @@ Zo kan het invoerscherm er uit zien:
 ### Secure File Organizer
 
 #### Introductie
-Je gaat een tool bouwen die een rommelige map (zoals "Downloads") automatisch opschoont, bestanden sorteert in mappen op basis van hun type, en gevoelige documenten kan beveiligen met professionele encryptie. Je werkt volgens het principe van **Modulair Programmeren**.
+* Maak een applicatie die een map met bestanden kan archiveren
+* Dit betekent:
+    * `pdf, docx, txt` files worden opslagen in een map `documenten`
+    * Afbeeldingen `jpg, png, gif` worden opgeslagen in de map `afbeeldingen`
+    * Overige documenten zoals `txt, docx, pdf` worden opgeslagen in een `overig`
+* Als je de applicatie start wordt je gevraagd om het pad naar een map met bestanden in te voeren.
+* De applicatie checked of de map bestaat en zal de bestanden naar een archief-map verplaatsen (of kopiëren) en de bestanden onderbrengen in de verschillende submappen
 
----
-
-#### Fase 0: Logisch Ontwerp (De Blauwdruk)
+#### Opdracht 1: Logisch Ontwerp (De Blauwdruk)
 **Doel:** Het visueel in kaart brengen van de datastromen en beslismomenten van de applicatie.
 
 Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.
 
-#### De Opdracht:
+#### Wat moet je doen:
 Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/activiteitendiagram/) van het volledige proces. Gebruik hiervoor een tool zoals *draw.io*, *Lucidchart*, of gewoon pen en papier.
 
 In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
-1.  **Start:** De gebruiker start `main.py`.
+1.  **Start:** De gebruiker start de applicatie (`main.py`).
 2.  **Input:** De gebruiker voert een mappad in.
 3.  **Beslismoment (Validatie):** Bestaat de map? Zo nee, geef foutmelding en vraag opnieuw.
 4.  **Proces - Sorteren:**
     * Loop door elk bestand in de map.
     * Check de extensie en bepaal de doelmap.
     * Verplaats het bestand.
-5.  **Beslismoment (Beveiliging):** Vraag de gebruiker: "Wilt u een map versleutelen?"
-    * Indien ja: Roep de `crypto_vault` module aan.
-    * Indien nee: Ga naar de afsluiting.
-6.  **Einde:** Bevestig dat de acties zijn voltooid en sluit het programma veilig af.
+5.  **Einde:** Bevestig dat de acties zijn voltooid en sluit het programma veilig af.
 
-
-#### Deliverable Fase 0:
+#### Wat lever je in:
 * Een PDF van je diagram.
-* Een korte tekstuele uitleg (max. 100 woorden) waarin je uitlegt hoe jouw `main.py` de functies uit de andere modules (`organizer.py` en `crypto_vault.py`) aanroept.
 
----
+#### Opdracht 2: Bouw de applicatie
+**Doel:** Een werkende applicatie die bestanden kan sorteren en archiveren.
 
-#### Fase 1: Architectuur & Bestanden sorteren
-**Doel:** Het opzetten van de mappenstructuur en de eerste logica voor het sorteren.
-
-#### Opdrachten:
+#### Wat moet je doen:
 1.  **Mappenstructuur:** Richt je project in met een hoofdmap `SFO/` en een submap `modules/`.
-2.  Bestanden moeten verplaatst worden naar de juiste map op basis van de extensie.
-3.  **Module:** Maak gebruik van de module `organizer.py`, hierin staan de functies die je nodig hebt om bestanden in te delen.
-4.  **Main script:** Maak een `main.py` die de gebruiker vraagt welke map gearchiveerd moet worden.
+2.  Bekijk de code en maak zelf een `archief` map met daarin de juiste submappen.
+2.  **Opdracht:** Bestanden moeten verplaatst worden naar de juiste map op basis van de extensie.
+3.  **Module:** Maak gebruik van de module `archive.py`, hierin staan de functies die je nodig hebt om bestanden in te delen.
+4.  **Main script:** Vul het script `main.py` zodat de gebruiker wordt gevraagd welke map gearchiveerd moet worden.
+5.  De bestanden worden gearchiveerd in de juiste mappen.
 
-**Deliverable:** Een werkende applicatie die de bestanden in een map verplaatst naar een archiefmap met de juiste submappen.
+#### Wat lever je in:
+* Toon vanaf je eigen laptop een werkende applicatie die de bestanden in een map verplaatst naar een archiefmap met de juiste submappen.
+* [Download hier de basisbestanden voor de applicatie](https://github.com/siewers32/sfo_01/archive/refs/heads/master.zip)
 
----
 
-#### Fase 2: De "Configuratie"
+#### Opdracht 3: De "Crypto Vault"
+**Doel:** Werken met externe libraries en beveiliging.
+
+#### Wat moet je doen:
+1.  **Installatie:** Installeer de externe library `cryptography` via pip.
+2.  **Module `crypto_vault.py`:** Schrijf een module die de volgende functies bevat:
+    * `load_or_generate_key()`: Controleert of er een `secret.key` bestand is, zo niet: maak er een aan.
+    * `encrypt_file(filepath)`: Leest een bestand in, versleutelt de data met de sleutel, en overschrijft het origineel.
+    * `decrypt_file(filepath)`: Doet het omgekeerde.
+3.  **Integratie:** Voeg in `main.py` een optie toe waarbij de gebruiker wordt gevraagd of de map versleuteld moet worden.Als de gebruiker dit kiest, moeten alle bestanden in de archief-map onleesbaar worden gemaakt.
+
+#### Wat lever je in
+Toon op je eigen laptop dat je bestanden kunt "locken" en "unlocken". De bestanden mogen niet meer te openen zijn in bijvoorbeeld Word of een fotoviewer zolang ze versleuteld zijn.
+
+#### Opdracht 4: De "Configuratie"
 **Doel:** Eenvoudig de applicatie kunnen aanpassen voor specifieke gebruikerswensen.
 
 1. **Mappenstructuur:** Misschien heb je tot nu toe de mappen zelf aangemaakt, maar dat gaat je applicatie nu doen.
@@ -134,25 +148,14 @@ In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 }
 ```
 
-#### Fase 3: De "Crypto Vault"
-**Doel:** Werken met externe libraries en beveiliging.
 
-#### Opdrachten:
-1.  **Installatie:** Installeer de externe library `cryptography` via pip.
-2.  **Module `crypto_vault.py`:** Schrijf een module die de volgende functies bevat:
-    * `load_or_generate_key()`: Controleert of er een `secret.key` bestand is, zo niet: maak er een aan.
-    * `encrypt_file(filepath)`: Leest een bestand in, versleutelt de data met de sleutel, en overschrijft het origineel.
-    * `decrypt_file(filepath)`: Doet het omgekeerde.
-3.  **Integratie:** Voeg in `main.py` een menu-optie toe: "Versleutel een map". Als de gebruiker dit kiest, moeten alle bestanden in een specifieke map onleesbaar worden gemaakt.
-
-**Deliverable:** Een module die bestanden kan "locken" en "unlocken". De bestanden mogen niet meer te openen zijn in bijvoorbeeld Word of een fotoviewer zolang ze versleuteld zijn.
 
 ---
 
-#### Fase 3: Robuustheid & Logging
+#### Opdracht 5: Robuustheid & Logging
 **Doel:** De code professioneel maken (Error handling & Logging).
 
-#### Opdrachten:
+#### Wat moet je doen:
 1.  **Foutafhandeling:** Zorg dat je programma niet crasht als:
     * De gebruiker een ongeldig pad invoert.
     * Een bestand al open staat in een ander programma.
@@ -160,12 +163,9 @@ In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 2.  **Logging:** Importeer de standaard `logging` module. Houd een `app.log` bij waarin elke actie (verplaatsen, versleutelen, foutmelding) wordt opgeslagen met een tijdstempel.
 3.  **Documentatie:** Schrijf voor elke functie in je eigen modules een korte *docstring* (`""" tekst """`) waarin je uitlegt wat de parameters zijn en wat de functie teruggeeft.
 
----
-
-2.  **Configuratie:** Maak een `config.json` waarin je definieert welke extensies bij welke map horen (bijv. `.jpg` en `.png` naar "Afbeeldingen").
 
 #### Beoordelingscriteria (Code Review)
-Tijdens het inleveren moet je de volgende vragen kunnen beantwoorden:
+Tijdens het opleveren moet je de volgende vragen kunnen beantwoorden:
 * Waarom heb je gekozen voor `shutil.move()` en niet voor `os.rename()`?
 * Wat gebeurt er met je data als je de `secret.key` verwijdert?
 * Hoe heb je voorkomen dat het script zichzelf (de `.py` bestanden) per ongeluk verplaatst of versleutelt?
