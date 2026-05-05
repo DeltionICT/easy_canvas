@@ -11,26 +11,48 @@ date: 2025-10-08
 * [Opdrachten over functies](https://deltionict.github.io/easy_canvas/python/opdrachten/#functies)
 
 #### 6 mei - modules
-* [Uitleg over modules](https://deltionict.github.io/easy_canvas/python/uitleg/#modules)
-* [Opdrachten over modules](https://deltionict.github.io/easy_canvas/python/opdrachten/#modules)
+* [Herhaling korte uitleg over modules](https://deltionict.github.io/easy_canvas/python/uitleg/#modules)
+* [Uitleg over project Secure File Organizer](https://deltionict.github.io/easy_canvas/python/projecten/#secure-file-organizer)
 
 #### 13 mei - projecten
-*  Werken aan projecten
+* Ontwerp SFO opleveren <a href="mailto:jsiewers@deltion.nl?subject=SFO Ontwerp">Inleveren per mail</a>
+* Secure File Organizer
 
 #### 27 mei - projecten
-*  Werken aan projecten
+* Secure File Organizer
+* Bouwen applicatie (opdracht 1, 2 en 3)
 
 #### 3 juni - projecten
-*  Werken aan projecten
-
+* Secure File Organizer
+* Bouwen applicatie (opdracht 1, 2 en 3)
+ 
 #### 10 juni - projectopleveringen
 * Op eigen laptop werk laten zien en presenteren
 
 #### 17 juni - herkansingen
 * Herkansen van toets op 1 april
 * Opnieuw opleveren van python projecten
-
 :::
+
+#### Cesuur
+* Toets: max 3 punten (=cijfer * 0.3)
+* Opdracht 1 SFO: max 3 punten
+* Opdracht 2 SFO: max 2 punten
+* Opdracht 3 SFO: max 2 punt
+
+Bijvoorbeeld:
+* Toets = 7.2
+* Opdracht 1 = 3pt
+* Opdracht 2 = 1pt
+* Opdracht 3 = 0pt
+
+> (7.2 * 0.3) = 2.2 + 3 + 1 + 0 = 6.3 
+
+of
+
+> (3.5 * 0.3) = 1.05 + 2 + 1 + 0 = 4
+
+
 
 ::: section
 ### Periode 1
