@@ -69,7 +69,7 @@ Zo kan het invoerscherm er uit zien:
 * Als je de applicatie start wordt je gevraagd om het pad naar een map met bestanden in te voeren.
 * De applicatie checked of de map bestaat en zal de bestanden naar een archief-map verplaatsen (of kopiëren) en de bestanden onderbrengen in de verschillende submappen
 
-#### Opdracht 1: Logisch Ontwerp (De Blauwdruk)
+#### Opdracht 1a: Logisch Ontwerp (De Blauwdruk)
 **Doel:** Het visueel in kaart brengen van de datastromen en beslismomenten van de applicatie.
 
 Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.
@@ -90,7 +90,7 @@ In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 #### Wat lever je in:
 * Een PDF van je diagram.
 
-#### Opdracht 2: Bouw de applicatie
+#### Opdracht 1b: Bouw de applicatie
 **Doel:** Een werkende applicatie die bestanden kan sorteren en archiveren.
 
 #### Wat moet je doen:
@@ -106,7 +106,7 @@ In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 * [Download hier de basisbestanden voor de applicatie](https://github.com/siewers32/sfo_01/archive/refs/heads/master.zip)
 
 
-#### Opdracht 3: De "Crypto Vault"
+#### Opdracht 2: De "Crypto Vault"
 **Doel:** Werken met externe libraries en beveiliging.
 
 #### Wat moet je doen:
@@ -120,7 +120,7 @@ In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 #### Wat lever je in
 Toon op je eigen laptop dat je bestanden kunt "locken" en "unlocken". De bestanden mogen niet meer te openen zijn in bijvoorbeeld Word of een fotoviewer zolang ze versleuteld zijn.
 
-#### Opdracht 4: De "Configuratie"
+#### Opdracht 3a: De "Configuratie"
 **Doel:** Eenvoudig de applicatie kunnen aanpassen voor specifieke gebruikerswensen.
 
 1. **Mappenstructuur:** Misschien heb je tot nu toe de mappen zelf aangemaakt, maar dat gaat je applicatie nu doen.
@@ -152,7 +152,7 @@ Toon op je eigen laptop dat je bestanden kunt "locken" en "unlocken". De bestand
 
 ---
 
-#### Opdracht 5: Robuustheid & Logging
+#### Opdracht 3b: Robuustheid & Logging
 **Doel:** De code professioneel maken (Error handling & Logging).
 
 #### Wat moet je doen:
