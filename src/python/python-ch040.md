@@ -21,12 +21,12 @@ date: 2025-10-08
 #### 27 mei - projecten
 * Secure File Organizer
 * Bouwen applicatie (opdracht 1, 2 en 3)
-* Opleveren opdracht 1 <a href="mailto:jsiewers@deltion.nl?subject=SFO 01">Inleveren per mail</a>
+* Opleveren opdracht 1 <a href="mailto:jsiewers@deltion.nl?subject=SFO 01">ZIP-bestand inleveren per mail</a>
 
 #### 3 juni - projecten
 * Secure File Organizer
 * Bouwen applicatie (opdracht 1, 2 en 3)
-* Opleveren opdracht 2 en 3 <a href="mailto:jsiewers@deltion.nl?subject=SFO 02">Inleveren per mail</a>
+* Opleveren opdracht 2 en 3 <a href="mailto:jsiewers@deltion.nl?subject=SFO 02">ZIP-bestand inleveren per mail</a>
  
 #### 10 juni - projectopleveringen
 * Op eigen laptop werk laten zien en presenteren
