@@ -75,7 +75,7 @@ Zo kan het invoerscherm er uit zien:
 Voordat je begint met coderen, moet je begrijpen hoe de verschillende onderdelen van je programma met elkaar communiceren. Een fout in je logica is makkelijker te herstellen in een tekening dan in 200 regels code.
 
 #### Wat moet je doen:
-Maak een [**Activity Diagram** (stroomdiagram)](https://edutorial.nl/projecten/activiteitendiagram/) van het volledige proces. Gebruik hiervoor een tool zoals *draw.io*, *Lucidchart*, of gewoon pen en papier.
+Maak een [**Activity Diagram** (stroomdiagram)](https://deltionict.github.io/edutorial/projecten/activiteitendiagram/) van het volledige proces. Gebruik hiervoor een tool zoals *draw.io*, *Lucidchart*, of gewoon pen en papier.
 
 In je diagram moeten de volgende onderdelen duidelijk zichtbaar zijn:
 1.  **Start:** De gebruiker start de applicatie (`main.py`).
